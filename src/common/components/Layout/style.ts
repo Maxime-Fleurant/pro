@@ -19,19 +19,15 @@ import {
   pointSize24,
   pointSize16,
   pointSize8,
-  font48,
-  font56,
   font64,
-  backgroundColor400,
-  backgroundColor300,
   backgroundColor100,
   backgroundColor600,
-  backgroundColor900,
   pointSize48,
-  baseColor600,
   baseColor700,
   pointSize120,
   font32,
+  backgroundColor200,
+  font48,
 } from '../../globalStyle';
 
 export const gridCss = css([
@@ -53,7 +49,15 @@ export const gridCss = css([
   `,
 ]);
 
-export const nav = css({ display: 'flex', alignItems: 'center', justifyContent: 'space-between' });
+export const nav = css({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  height: '5.3rem',
+  margin: '0 2rem',
+  borderBottom: `${pointSize1} solid ${baseColor900}`,
+  zIndex: 18,
+});
 export const logo = css(
   css`
     @media (max-width: 1023px) {
@@ -84,11 +88,25 @@ export const activeLink = css([
     }
   `,
 ]);
-export const navBorder = css({
-  borderBottom: `${pointSize1} solid ${baseColor900}`,
-  height: '100%',
-});
-export const navCell = css({ alignSelf: 'center' });
+export const navBorder = css(
+  {
+    borderBottom: `${pointSize1} solid ${baseColor900}`,
+    height: '100%',
+  },
+  css`
+    @media (max-width: 767px) {
+      display: none;
+    }
+  `
+);
+export const navCell = css(
+  { alignSelf: 'center' },
+  css`
+    @media (max-width: 767px) {
+      display: none;
+    }
+  `
+);
 
 export const sideLink = css([
   helveticaThin,
@@ -206,12 +224,14 @@ export const sideWrap = css`
   }
 `;
 
-export const rightSideLink = css({ textAlign: 'right' });
-
 export const menuButton = css(
   font64,
+
   { cursor: 'pointer' },
   css`
+    &:before {
+      color: ${baseColor900};
+    }
     @media (min-width: 1023px) {
       display: none;
     }
@@ -244,6 +264,7 @@ export const openLayer = css(
     opacity: 0.7,
     visibility: 'hidden',
     cursor: 'pointer',
+    zIndex: 1,
     transition: 'visibility 0.2s, opacity 0.2s ',
   },
   backgroundColor600
@@ -269,4 +290,44 @@ export const mainSideLink = css(
       margin-bottom: ${pointSize16};
     }
   `
+);
+
+export const mobileNavWrap = css(
+  {
+    position: 'fixed',
+    bottom: 0,
+    width: '100%',
+    borderTop: `${pointSize1} solid ${baseColor700}`,
+  },
+  css`
+    @media (min-width: 767px) {
+      display: none;
+    }
+  `,
+  backgroundColor100
+);
+
+export const mobileNav = css({
+  margin: ` ${pointSize24} ${pointSize48}`,
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+});
+
+export const backButton = css(
+  textColor900,
+  font48,
+  { cursor: 'pointer' },
+  css`
+    &:before {
+      color: ${baseColor900};
+    }
+  `
+);
+
+export const centerLogo = css({ textAlign: 'center' });
+
+export const navWrap = css(
+  { position: 'fixed', width: '100%', paddingTop: '1rem' },
+  backgroundColor100
 );

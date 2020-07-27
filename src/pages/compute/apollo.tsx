@@ -1,87 +1,70 @@
+import { FunctionComponent } from 'react';
 import { Cell } from '../../common/components/Cell/cell';
 import {
-  title,
-  titleDesc,
   titleLink,
-  titlewrap,
-  upTitleWrap,
   mainText,
   linkWrap,
-  sideInfo,
   video,
   insideLink,
   subTitle,
   subTitleWrap,
   subTitleCell,
-} from '../../common/components/ArticleHead/articleHeaderStyle';
+} from '../../common/components/Article/ArticleHead/articleHeaderStyle';
 import NpmIcon from '../../common/components/icons/Npm';
 import TypegraphqlIcon from '../../common/components/icons/Typegraphql';
 import TypescriptIcon from '../../common/components/icons/Typescript';
-import {
-  bigSideLink,
-  rightSideLink,
-  sideLink,
-  sideWrap,
-} from '../../common/components/Layout/style';
 
-const Apollo = () => {
+import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
+import ArticleHead from '../../common/components/Article/ArticleHead/ArticleHead';
+
+const Apollo: FunctionComponent = () => {
   return (
     <>
-      <Cell deskPos={{ rowStart: 6, columnStart: 21, columnEnd: 25 }} autoRow extraCss={[sideWrap]}>
-        <div css={[bigSideLink, rightSideLink]}>
-          <a>Navigation</a>
-        </div>
-
-        <div css={[sideLink, rightSideLink]}>
-          <a href="#test">Navigation</a>
-        </div>
-      </Cell>
+      <ArticleNavigation
+        content={[
+          { name: 'Navigation', items: [{ name: 'Dataloader', href: '#test' }] },
+          {
+            name: 'Ressources',
+            items: [
+              { name: 'Github', href: 'https://github.com/ApolloAuto/apollo', outside: true },
+              {
+                name: 'Website',
+                href: 'https://www.apollographql.com/',
+                outside: true,
+              },
+              {
+                name: 'NPM',
+                href: 'https://www.npmjs.com/package/apollo-server',
+                outside: true,
+              },
+            ],
+          },
+          { name: 'Related', items: [{ name: 'TypeDI', href: '/compute/typedi', domain: true }] },
+        ]}
+      />
 
       <Cell
         deskPos={{ rowStart: 4, rowEnd: 8, columnStart: 5, columnEnd: 13 }}
-        tabPos={{ rowStart: 7, rowEnd: 8, columnStart: 1, columnEnd: 25 }}
+        tabPos={{ rowStart: 6, rowEnd: 7, columnStart: 1, columnEnd: 25 }}
+        mobilPos={{ rowStart: 1, rowEnd: 2, columnStart: 1, columnEnd: 25 }}
       >
-        <div css={titlewrap}>
-          <div css={upTitleWrap}>
-            <div css={title}>
-              Apollo&nbsp;
-              <span className="icon-a" />
-            </div>
-
-            <div css={titleDesc}>
-              Simplify app development by combining APIs, databases, and microservices into a single
-              data graph that you can query with GraphQL
-            </div>
-          </div>
-
-          <div css={linkWrap}>
-            <div css={titleLink}>
-              <a href="https://www.apollographql.com/" target="_blank" rel="noreferrer">
-                <span className="icon-a" />
-              </a>
-              <a
-                href="https://github.com/apollographql/apollo-server"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <span className="icon-github-filled" />
-              </a>
-              <a
-                href="https://www.npmjs.com/package/apollo-server"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <NpmIcon />
-              </a>
-            </div>
-            <span css={sideInfo}>Api | GraphQL</span>
-          </div>
-        </div>
+        <ArticleHead
+          titleContent="Apollo"
+          logo={<span className="icon-a" />}
+          desc="Simplify app development by combining APIs, databases, and microservices into a single
+          data graph that you can query with GraphQL"
+          wiki="https://www.wikiwand.com/en/GraphQL"
+          npm="https://www.npmjs.com/package/apollo-server-express"
+          official="https://www.apollographql.com/"
+          git="https://github.com/apollographql/apollo-server"
+          detail="Api | GraphQL"
+        />
       </Cell>
 
       <Cell
         deskPos={{ rowStart: 8, rowEnd: 15, columnStart: 5, columnEnd: 13 }}
-        tabPos={{ rowStart: 8, rowEnd: 9, columnStart: 1, columnEnd: 25 }}
+        tabPos={{ rowStart: 7, rowEnd: 8, columnStart: 1, columnEnd: 25 }}
+        mobilPos={{ rowStart: 2, rowEnd: 3, columnStart: 1, columnEnd: 25 }}
       >
         <div css={mainText}>
           Apollo Server is an open-source, spec compliant
@@ -131,7 +114,8 @@ const Apollo = () => {
 
       <Cell
         deskPos={{ rowStart: 8, rowEnd: 13, columnStart: 13, columnEnd: 21 }}
-        tabPos={{ rowStart: 9, rowEnd: 10, columnStart: 1, columnEnd: 25 }}
+        tabPos={{ rowStart: 8, rowEnd: 9, columnStart: 1, columnEnd: 25 }}
+        mobilPos={{ rowStart: 3, rowEnd: 4, columnStart: 1, columnEnd: 25 }}
       >
         <video autoPlay muted loop css={video}>
           <source src="/video/apollo/main.mp4" />
@@ -140,32 +124,23 @@ const Apollo = () => {
 
       <Cell
         deskPos={{ rowStart: 16, rowEnd: 17, columnStart: 5, columnEnd: 13 }}
-        tabPos={{ rowStart: 12, rowEnd: 13, columnStart: 1, columnEnd: 25 }}
+        tabPos={{ rowStart: 11, rowEnd: 12, columnStart: 1, columnEnd: 25 }}
+        mobilPos={{ rowStart: 7, rowEnd: 8, columnStart: 1, columnEnd: 25 }}
         extraCss={[subTitleCell]}
       >
-        <div css={[linkWrap, subTitleWrap]}>
-          <span css={subTitle}>Stitching</span>
-          <div css={titleLink}>
-            <a href="https://www.apollographql.com/" target="_blank" rel="noreferrer">
-              <span className="icon-a" />
-            </a>
-            <a
-              href="https://github.com/apollographql/apollo-server"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <span className="icon-github-filled" />
-            </a>
-            <a href="https://www.npmjs.com/package/apollo-server" target="_blank" rel="noreferrer">
-              <NpmIcon />
-            </a>
-          </div>
-        </div>
+        <ArticleHead
+          sub
+          titleContent="Stitching"
+          wiki="https://www.wikiwand.com/en/GraphQL"
+          npm="https://www.npmjs.com/package/apollo-server-express"
+          official="https://www.apollographql.com/"
+        />
       </Cell>
 
       <Cell
         deskPos={{ rowStart: 17, rowEnd: 24, columnStart: 5, columnEnd: 13 }}
-        tabPos={{ rowStart: 13, rowEnd: 14, columnStart: 1, columnEnd: 25 }}
+        tabPos={{ rowStart: 12, rowEnd: 13, columnStart: 1, columnEnd: 25 }}
+        mobilPos={{ rowStart: 8, rowEnd: 9, columnStart: 1, columnEnd: 25 }}
       >
         <div css={mainText}>
           Apollo Server is an open-source, spec compliant
@@ -215,34 +190,25 @@ const Apollo = () => {
 
       <Cell
         deskPos={{ rowStart: 25, rowEnd: 26, columnStart: 5, columnEnd: 13 }}
+        tabPos={{ rowStart: 15, rowEnd: 16, columnStart: 1, columnEnd: 25 }}
         extraCss={[subTitleCell]}
-        tabPos={{ rowStart: 16, rowEnd: 17, columnStart: 1, columnEnd: 25 }}
+        mobilPos={{ rowStart: 13, rowEnd: 14, columnStart: 1, columnEnd: 25 }}
       >
-        <div css={[linkWrap, subTitleWrap]}>
-          <span css={subTitle}>DataLoader</span>
-          <div css={titleLink}>
-            <a href="https://www.apollographql.com/" target="_blank" rel="noreferrer">
-              <span className="icon-a" />
-            </a>
-            <a
-              href="https://github.com/apollographql/apollo-server"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <span className="icon-github-filled" />
-            </a>
-            <a href="https://www.npmjs.com/package/apollo-server" target="_blank" rel="noreferrer">
-              <NpmIcon />
-            </a>
-          </div>
-        </div>
+        <ArticleHead
+          sub
+          titleContent="Dataloader"
+          wiki="https://www.wikiwand.com/en/GraphQL"
+          npm="https://www.npmjs.com/package/apollo-server-express"
+          official="https://www.apollographql.com/"
+        />
       </Cell>
 
       <Cell
         deskPos={{ rowStart: 26, rowEnd: 33, columnStart: 5, columnEnd: 13 }}
-        tabPos={{ rowStart: 17, rowEnd: 18, columnStart: 1, columnEnd: 25 }}
+        tabPos={{ rowStart: 16, rowEnd: 17, columnStart: 1, columnEnd: 25 }}
+        mobilPos={{ rowStart: 14, rowEnd: 15, columnStart: 1, columnEnd: 25 }}
       >
-        <a id="test"></a>
+        <a id="test" />
         <div css={mainText}>
           Apollo Server is an open-source, spec compliant
           <a css={insideLink}>

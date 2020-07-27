@@ -1,14 +1,5 @@
 import { FunctionComponent } from 'react';
-import { Cell } from '../Cell/cell';
-import {
-  activeSideLink,
-  sideLink,
-  bigSideLink,
-  bigActiveSideLink,
-  linkBlockWrapp,
-  sideWrap,
-} from './style';
-
+import { activeSideLink, sideLink, bigSideLink, bigActiveSideLink, linkBlockWrapp } from './style';
 import CLink from '../CLink';
 import TypegraphqlIcon from '../icons/Typegraphql';
 import ElasticIcon from '../icons/Elastic';

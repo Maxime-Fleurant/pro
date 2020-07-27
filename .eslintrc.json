@@ -49,6 +49,8 @@
     "jsx-a11y/accessible-emoji": "off",
     "react/jsx-one-expression-per-line": "off",
     "jsx-a11y/label-has-associated-control": "off",
-    "@typescript-eslint/no-var-requires": "off"
+    "@typescript-eslint/no-var-requires": "off",
+    "react/no-unescaped-entities": "off",
+    "jsx-a11y/anchor-has-content": "off"
   }
 }

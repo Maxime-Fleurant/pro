@@ -1,5 +1,6 @@
 import { FunctionComponent, useState } from 'react';
-import { useRouter } from 'next/router';
+import { useRouter, Router } from 'next/router';
+import Link from 'next/link';
 import { css } from 'emotion';
 import {
   gridCss,
@@ -20,13 +21,17 @@ import {
   sideWrap,
   sideLinkPage,
   mainSideLink,
+  mobileNavWrap,
+  mobileNav,
+  backButton,
+  centerLogo,
+  navWrap,
 } from './style';
 import { Cell } from '../Cell/cell';
 import { textColor700, textColor900, helveticaThin, helveticaMedium } from '../../globalStyle';
 import ComputeSide from './ComputeSide';
 import DesignSide from './DesignSide';
 import CLink from '../CLink';
-import Link from 'next/link';
 
 const Layout: FunctionComponent = ({ children }) => {
   const router = useRouter();
@@ -55,7 +60,20 @@ const Layout: FunctionComponent = ({ children }) => {
 
   return (
     <>
-      <span css={[sideBar, menuPos]}>
+      <span css={mobileNavWrap}>
+        <div css={mobileNav}>
+          <span className="icon-outline-arrow-back-ios" css={backButton} onClick={router.back} />
+          <div css={[logo, centerLogo]}>
+            <span>
+              <span css={[logoPart, textColor700, helveticaThin]}>Design</span>
+              <br />
+              <span css={[logoPart, textColor900, helveticaMedium]}>Compute</span>
+            </span>
+          </div>
+          <span className="icon-menu-outlined" css={menuButton} onClick={menuHandler} />
+        </div>
+      </span>
+      <span css={[sideBar, menuPos]} onClick={menuHandler}>
         <div css={[logo, sideLogo]}>
           <span>
             <span css={[logoPart, textColor700, helveticaThin]}>Design,</span>
@@ -85,42 +103,34 @@ const Layout: FunctionComponent = ({ children }) => {
         </div>
       </span>
       <span css={css([openLayer, layer])} onClick={menuHandler} />
-      <div css={gridCss}>
-        <Cell
-          deskPos={{ rowStart: 1, rowEnd: 3, columnStart: 1, columnEnd: 25 }}
-          extraCss={[navCell]}
-        >
-          <div css={nav}>
-            <div css={logo}>
-              <span>
-                <span css={[logoPart, textColor700, helveticaThin]}>Design,</span>
-                <br />
-                <span css={[logoPart, textColor900, helveticaMedium]}>Compute.</span>
-              </span>
-            </div>
-            <div>
-              <span className="icon-menu-outlined" css={menuButton} onClick={menuHandler} />
-              <div css={navLinkWrapper}>
-                <CLink href="/design" main nonActiveCss={navLink} activeCss={activeLink}>
-                  <a>Design</a>
-                </CLink>
+      <div css={[navWrap, navCell]}>
+        <div css={nav}>
+          <div css={logo}>
+            <span>
+              <span css={[logoPart, textColor700, helveticaThin]}>Design,</span>
+              <br />
+              <span css={[logoPart, textColor900, helveticaMedium]}>Compute.</span>
+            </span>
+          </div>
+          <div>
+            <span className="icon-menu-outlined" css={menuButton} onClick={menuHandler} />
+            <div css={navLinkWrapper}>
+              <CLink href="/design" main nonActiveCss={navLink} activeCss={activeLink}>
+                <a>Design</a>
+              </CLink>
 
-                <CLink href="/compute" main nonActiveCss={navLink} activeCss={activeLink}>
-                  <a>Compute</a>
-                </CLink>
+              <CLink href="/compute" main nonActiveCss={navLink} activeCss={activeLink}>
+                <a>Compute</a>
+              </CLink>
 
-                <span css={navLink}>Project</span>
-                <span css={navLink}>Life</span>
-              </div>
+              <span css={navLink}>Project</span>
+              <span css={navLink}>Life</span>
             </div>
           </div>
-        </Cell>
+        </div>
+      </div>
 
-        <Cell
-          deskPos={{ rowStart: 1, rowEnd: 3, columnStart: 1, columnEnd: 25 }}
-          extraCss={[navBorder]}
-        />
-
+      <div css={gridCss}>
         <Cell deskPos={{ rowStart: 6, columnEnd: 5, columnStart: 1 }} extraCss={[sideWrap]} autoRow>
           {sidePanel}
         </Cell>

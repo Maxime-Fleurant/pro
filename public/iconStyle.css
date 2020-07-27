@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?dpaowt');
-  src:  url('fonts/icomoon.eot?dpaowt#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?dpaowt') format('truetype'),
-    url('fonts/icomoon.woff?dpaowt') format('woff'),
-    url('fonts/icomoon.svg?dpaowt#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?b5we07');
+  src:  url('fonts/icomoon.eot?b5we07#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?b5we07') format('truetype'),
+    url('fonts/icomoon.woff?b5we07') format('woff'),
+    url('fonts/icomoon.svg?b5we07#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -176,6 +176,10 @@
 }
 .icon-logo-pwa:before {
   content: "\e906";
+}
+.icon-outline-arrow-back-ios:before {
+  content: "\e9d3";
+  color: #626262;
 }
 .icon-openssl:before {
   content: "\e907";

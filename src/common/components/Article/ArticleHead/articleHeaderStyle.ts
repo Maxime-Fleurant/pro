@@ -15,10 +15,8 @@ import {
   pointSize4,
   helveticaRegular,
   font32,
-  pointSize24,
-  pointSize64,
   pointSize56,
-} from '../../globalStyle';
+} from '../../../globalStyle';
 
 export const title = css(
   { display: 'flex', alignItems: 'center' },
@@ -46,7 +44,17 @@ export const titleLink = css(
   { marginBottom: pointSize8 },
   css`
     a {
-      margin-right: ${[pointSize4]};
+      margin-right: ${[pointSize8]};
+    }
+  `
+);
+
+export const subTitleLink = css(
+  fontRegular,
+  { marginBottom: pointSize8 },
+  css`
+    a {
+      margin-left: ${[pointSize8]};
     }
   `
 );

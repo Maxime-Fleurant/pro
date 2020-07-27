@@ -35,6 +35,7 @@ export const Cell: TCell = ({
   autoRow,
   endRowCallback,
   relative,
+  mobilPos,
 }) => {
   const component = useRef<HTMLDivElement>(null);
   const inerComponent = useRef<HTMLDivElement>(null);
@@ -44,6 +45,7 @@ export const Cell: TCell = ({
 
   let withRatioCss = css``;
   let withtabPos = css``;
+  let withMobilPos = css``;
   let withBackground = css``;
 
   const handleResize = (): void => {
@@ -85,6 +87,17 @@ export const Cell: TCell = ({
         grid-row-end: ${tabPos.rowEnd};
         grid-column-start: ${tabPos.columnStart};
         grid-column-end: ${tabPos.columnEnd};
+      }
+    `;
+  }
+
+  if (mobilPos) {
+    withMobilPos = css`
+      @media (max-width: 767px) {
+        grid-row-start: ${mobilPos.rowStart};
+        grid-row-end: ${mobilPos.rowEnd};
+        grid-column-start: ${mobilPos.columnStart};
+        grid-column-end: ${mobilPos.columnEnd};
       }
     `;
   }
@@ -142,7 +155,15 @@ export const Cell: TCell = ({
       <div
         onClick={onClick}
         ref={component}
-        css={[relativeCell, componentCss, withRatioCss, withtabPos, withBackground, ...extraCss]}
+        css={[
+          relativeCell,
+          componentCss,
+          withRatioCss,
+          withtabPos,
+          withBackground,
+          withMobilPos,
+          ...extraCss,
+        ]}
       >
         <div css={relativeChildren}>{children}</div>
       </div>
@@ -154,7 +175,7 @@ export const Cell: TCell = ({
       <div
         onClick={onClick}
         ref={component}
-        css={[componentCss, withRatioCss, withtabPos, withBackground, ...extraCss]}
+        css={[componentCss, withRatioCss, withtabPos, withBackground, withMobilPos, ...extraCss]}
       >
         <div ref={inerComponent}>{children}</div>
       </div>
@@ -165,7 +186,7 @@ export const Cell: TCell = ({
     <div
       onClick={onClick}
       ref={component}
-      css={[componentCss, withRatioCss, withtabPos, withBackground, ...extraCss]}
+      css={[componentCss, withRatioCss, withtabPos, withBackground, withMobilPos, ...extraCss]}
     >
       {children}
     </div>
