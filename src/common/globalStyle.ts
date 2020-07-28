@@ -26,6 +26,7 @@ export const pointSize56 = '2.333rem';
 export const pointSize64 = '2.666rem';
 export const pointSize80 = '3.2rem';
 export const pointSize88 = '3.52rem';
+export const pointSize104 = '4.16rem';
 export const pointSize120 = '5rem';
 
 export const textColor1000 = css({ color: baseColor1000 });
@@ -61,12 +62,18 @@ export const font40 = css({ fontSize: pointSize40 });
 export const font48 = css({ fontSize: pointSize48 });
 export const font56 = css({ fontSize: pointSize56 });
 export const font64 = css({ fontSize: pointSize64 });
+export const font104 = css({ fontSize: pointSize104 });
 export const font120 = css({ fontSize: pointSize120 });
 
 export const baseHelveticaRegular =
   ' HelveticaNeue, Helvetica Neue, HelveticaNeueRoman, HelveticaNeue-Roman, Helvetica Neue Roman, TeXGyreHerosRegular, Helvetica, Tahoma, Geneva, Arial, sans-serif; font-weight:400; font-stretch:normal;';
 
-export const baseHelveticaLight = `HelveticaNeueLight, HelveticaNeue-Light, Helvetica Neue Light, HelveticaNeue, Helvetica Neue, 'TeXGyreHerosRegular', Helvetica, Tahoma, Geneva, Arial, sans-serif; font-weight:300; font-stretch:normal`;
+export const baseHelveticaLight =
+  'HelveticaNeueLight, HelveticaNeue-Light, Helvetica Neue Light, HelveticaNeue, Helvetica Neue, TeXGyreHerosRegular, Helvetica, Tahoma, Geneva, Arial, sans-serif; font-weight:300; font-stretch:normal';
+
+export const baseHelveticaBold = ` HelveticaNeueBold, HelveticaNeue-Bold, Helvetica Neue Bold, HelveticaNeue, Helvetica Neue, 'TeXGyreHerosBold', Helvetica, Tahoma, Geneva, Arial, sans-serif; font-weight:600; font-stretch:normal;`;
+
+export const helveticaBold = css({ fontFamily: baseHelveticaBold });
 
 export const helveticaMedium = css({
   fontFamily:

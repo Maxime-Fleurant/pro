@@ -86,22 +86,6 @@ const ComputeSide: FunctionComponent = () => {
       </div>
 
       <div css={linkBlockWrapp}>
-        <CLink href="/compute/search" nonActiveCss={bigSideLink} activeCss={bigActiveSideLink}>
-          <a>
-            Search&nbsp;
-            <span>🔎</span>
-          </a>
-        </CLink>
-
-        <CLink href="/compute/elasticsearch" nonActiveCss={sideLink} activeCss={activeSideLink}>
-          <a>
-            ElasticSearch&nbsp;
-            <ElasticIcon />
-          </a>
-        </CLink>
-      </div>
-
-      <div css={linkBlockWrapp}>
         <CLink href="/compute/auth" nonActiveCss={bigSideLink} activeCss={bigActiveSideLink}>
           <a>
             Auth&nbsp;

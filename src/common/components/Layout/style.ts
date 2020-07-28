@@ -38,12 +38,12 @@ export const gridCss = css([
     grid-auto-rows: ${(76 - 23 * 1.4) / 24}rem;
 
     margin: 0 2rem;
-    padding: 1rem 0;
 
     @media (max-width: 1023px) {
       grid-auto-rows: auto;
     }
     @media (max-width: 767px) {
+      padding-top: 1rem;
       grid-gap: 0.7rem;
     }
   `,
@@ -53,7 +53,7 @@ export const nav = css({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
-  height: '5.3rem',
+  height: '5rem',
   margin: '0 2rem',
   borderBottom: `${pointSize1} solid ${baseColor900}`,
   zIndex: 18,
@@ -264,7 +264,7 @@ export const openLayer = css(
     opacity: 0.7,
     visibility: 'hidden',
     cursor: 'pointer',
-    zIndex: 1,
+    zIndex: 2,
     transition: 'visibility 0.2s, opacity 0.2s ',
   },
   backgroundColor600
@@ -298,6 +298,7 @@ export const mobileNavWrap = css(
     bottom: 0,
     width: '100%',
     borderTop: `${pointSize1} solid ${baseColor700}`,
+    zIndex: 1,
   },
   css`
     @media (min-width: 767px) {
@@ -327,7 +328,4 @@ export const backButton = css(
 
 export const centerLogo = css({ textAlign: 'center' });
 
-export const navWrap = css(
-  { position: 'fixed', width: '100%', paddingTop: '1rem' },
-  backgroundColor100
-);
+export const navWrap = css({ position: 'fixed', width: '100%', zIndex: 1 }, backgroundColor100);

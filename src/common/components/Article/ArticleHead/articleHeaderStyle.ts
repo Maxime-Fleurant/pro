@@ -12,7 +12,6 @@ import {
   pointSize1,
   helveticaLight,
   font20,
-  pointSize4,
   helveticaRegular,
   font32,
   pointSize56,
