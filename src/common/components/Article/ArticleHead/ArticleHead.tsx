@@ -10,8 +10,11 @@ import {
   subTitleWrap,
   subTitle,
   subTitleLink,
+  subLinkSpe,
 } from './articleHeaderStyle';
 import NpmIcon from '../../icons/Npm';
+import { useTheme } from 'emotion-theming';
+import { ITheme } from '../../Layout/Theme';
 
 // TYPE
 interface IArticleHeadContent {
@@ -40,6 +43,8 @@ const ArticleHead: TArticleHead = ({
   detail,
   sub,
 }) => {
+  const theme = useTheme<ITheme>();
+
   const officialLink = official ? (
     <a href={official} target="_blank" rel="noreferrer">
       {logo}
@@ -52,18 +57,18 @@ const ArticleHead: TArticleHead = ({
   ) : null;
   const wikiLink = wiki ? (
     <a href={wiki} target="_blank" rel="noreferrer">
-      <span className="icon-wikipedia" />
+      <span className="icon-wikipedia" css={subLinkSpe} />
     </a>
   ) : null;
   const gitLink = git ? (
     <a href={git} target="_blank" rel="noreferrer">
-      <span className="icon-github-filled" />
+      <span className="icon-github-filled" css={subLinkSpe} />
     </a>
   ) : null;
 
   if (sub) {
     return (
-      <div css={[linkWrap, subTitleWrap]}>
+      <div css={[linkWrap, subTitleWrap(theme)]}>
         <span css={subTitle}>{titleContent}</span>
         <div css={subTitleLink}>
           {officialLink}

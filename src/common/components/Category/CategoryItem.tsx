@@ -1,6 +1,10 @@
 import { FunctionComponent } from 'react';
 import Link from 'next/link';
-import { detailButton, detailButtonText, detailButtonLogo } from './categoryStyle';
+import {
+  detailButton,
+  detailButtonText,
+  detailButtonLogo,
+} from './categoryStyle';
 
 // TYPE
 interface ICategoryItem {

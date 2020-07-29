@@ -1,13 +1,9 @@
 import { FunctionComponent } from 'react';
+
 import { Cell } from '../../common/components/Cell/cell';
 import {
-  titleLink,
   mainText,
-  linkWrap,
-  video,
   insideLink,
-  subTitle,
-  subTitleWrap,
   subTitleCell,
 } from '../../common/components/Article/ArticleHead/articleHeaderStyle';
 import NpmIcon from '../../common/components/icons/Npm';
@@ -16,17 +12,26 @@ import TypescriptIcon from '../../common/components/icons/Typescript';
 
 import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
 import ArticleHead from '../../common/components/Article/ArticleHead/ArticleHead';
+import CodeBrowser from '../../common/components/Article/CodeBrowser/CodeBrowser';
+import { main } from '../../common/components/Article/CodeBrowser/codes/apollo';
 
 const Apollo: FunctionComponent = () => {
   return (
     <>
       <ArticleNavigation
         content={[
-          { name: 'Navigation', items: [{ name: 'Dataloader', href: '#test' }] },
+          {
+            name: 'Navigation',
+            items: [{ name: 'Dataloader', href: '#test' }],
+          },
           {
             name: 'Ressources',
             items: [
-              { name: 'Github', href: 'https://github.com/ApolloAuto/apollo', outside: true },
+              {
+                name: 'Github',
+                href: 'https://github.com/ApolloAuto/apollo',
+                outside: true,
+              },
               {
                 name: 'Website',
                 href: 'https://www.apollographql.com/',
@@ -39,7 +44,10 @@ const Apollo: FunctionComponent = () => {
               },
             ],
           },
-          { name: 'Related', items: [{ name: 'TypeDI', href: '/compute/typedi', domain: true }] },
+          {
+            name: 'Related',
+            items: [{ name: 'TypeDI', href: '/compute/typedi', domain: true }],
+          },
         ]}
       />
 
@@ -71,9 +79,10 @@ const Apollo: FunctionComponent = () => {
           <a css={insideLink}>
             {` GraphQL `} <span className="icon-graphql" />{' '}
           </a>
-          server that's compatible with any GraphQL client, including Apollo Client. It's the best
-          way to build a production ready, self-documenting GraphQL API that can use data from any
-          source. server that's compatible with any GraphQL client, including Apollo Client
+          server that's compatible with any GraphQL client, including Apollo
+          Client. It's the best way to build a production ready,
+          self-documenting GraphQL API that can use data from any source. server
+          that's compatible with any GraphQL client, including Apollo Client
           <br />
           <br />I am using
           <a css={insideLink}>
@@ -113,20 +122,17 @@ const Apollo: FunctionComponent = () => {
       </Cell>
 
       <Cell
-        deskPos={{ rowStart: 8, rowEnd: 13, columnStart: 13, columnEnd: 21 }}
+        deskPos={{ rowStart: 8, rowEnd: 15, columnStart: 13, columnEnd: 21 }}
         tabPos={{ rowStart: 8, rowEnd: 9, columnStart: 1, columnEnd: 25 }}
         mobilPos={{ rowStart: 3, rowEnd: 4, columnStart: 1, columnEnd: 25 }}
       >
-        <video autoPlay muted loop css={video}>
-          <source src="/video/apollo/main.mp4" />
-        </video>
+        <CodeBrowser language="language-jsx" code={main} />
       </Cell>
 
       <Cell
         deskPos={{ rowStart: 16, rowEnd: 17, columnStart: 5, columnEnd: 13 }}
         tabPos={{ rowStart: 11, rowEnd: 12, columnStart: 1, columnEnd: 25 }}
         mobilPos={{ rowStart: 7, rowEnd: 8, columnStart: 1, columnEnd: 25 }}
-        extraCss={[subTitleCell]}
       >
         <ArticleHead
           sub
@@ -147,9 +153,10 @@ const Apollo: FunctionComponent = () => {
           <a css={insideLink}>
             {` GraphQL `} <span className="icon-graphql" />{' '}
           </a>
-          server that's compatible with any GraphQL client, including Apollo Client. It's the best
-          way to build a production ready, self-documenting GraphQL API that can use data from any
-          source. server that's compatible with any GraphQL client, including Apollo Client
+          server that's compatible with any GraphQL client, including Apollo
+          Client. It's the best way to build a production ready,
+          self-documenting GraphQL API that can use data from any source. server
+          that's compatible with any GraphQL client, including Apollo Client
           <br />
           <br />I am using
           <a css={insideLink}>
@@ -214,9 +221,10 @@ const Apollo: FunctionComponent = () => {
           <a css={insideLink}>
             {` GraphQL `} <span className="icon-graphql" />{' '}
           </a>
-          server that's compatible with any GraphQL client, including Apollo Client. It's the best
-          way to build a production ready, self-documenting GraphQL API that can use data from any
-          source. server that's compatible with any GraphQL client, including Apollo Client
+          server that's compatible with any GraphQL client, including Apollo
+          Client. It's the best way to build a production ready,
+          self-documenting GraphQL API that can use data from any source. server
+          that's compatible with any GraphQL client, including Apollo Client
           <br />
           <br />I am using
           <a css={insideLink}>

@@ -16,6 +16,7 @@ export const pointSize2 = '0.08rem';
 export const pointSize3 = '0.12rem';
 export const pointSize4 = '0.16rem';
 export const pointSize8 = '0.32rem';
+export const pointSize12 = '0.48rem';
 export const pointSize16 = '0.64rem';
 export const pointSize24 = '1rem';
 export const pointSize20 = '0.8rem';
@@ -54,7 +55,10 @@ export const backgroundColor100 = css({ backgroundColor: baseColor100 });
 export const textLineHeight = css({ lineHeight: 1.4 });
 export const titleLineHeight = css({ lineHeight: 1 });
 
-export const regularText = [css({ fontSize: pointSize24, textAlign: 'justify' }), textLineHeight];
+export const regularText = [
+  css({ fontSize: pointSize24, textAlign: 'justify' }),
+  textLineHeight,
+];
 export const fontRegular = css({ fontSize: pointSize24 });
 export const font20 = css({ fontSize: pointSize20 });
 export const font32 = css({ fontSize: pointSize32 });
@@ -99,7 +103,10 @@ export const helveticaRegular = css({
 
 const flexElement = css({ display: 'flex' });
 
-export const centerContent = [flexElement, css({ justifyContent: 'center', alignItems: 'center' })];
+export const centerContent = [
+  flexElement,
+  css({ justifyContent: 'center', alignItems: 'center' }),
+];
 
 export const imgFit = css({
   width: '100%',

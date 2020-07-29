@@ -6,12 +6,12 @@ import CLink from '../CLink';
 
 const DesignSide: FunctionComponent = () => {
   return (
-    <Cell deskPos={{ rowStart: 6, columnEnd: 5, columnStart: 1 }} autoRow extraCss={[sideLink]}>
-      <div>Design </div>
+    <Cell deskPos={{ rowStart: 6, columnEnd: 5, columnStart: 1 }} autoRow>
+      {/* <div>Design </div>
       <div>
         sds&nbsp;
         <PostgresIcon />
-      </div>
+      </div> */}
     </Cell>
   );
 };

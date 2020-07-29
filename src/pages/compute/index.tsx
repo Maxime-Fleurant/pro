@@ -1,19 +1,9 @@
 import { Cell } from '../../common/components/Cell/cell';
-import {
-  catTitle,
-  bigButton,
-  detailButton,
-  detailButtonCell,
-  detailButtonText,
-  detailButtonLogo,
-  bigButtonContent,
-  mobileIcon,
-} from '../../common/components/Category/categoryStyle';
+import { catTitle } from '../../common/components/Category/categoryStyle';
 import TypegraphqlIcon from '../../common/components/icons/Typegraphql';
-import ElasticIcon from '../../common/components/icons/Elastic';
 import PassportIcon from '../../common/components/icons/Passport';
 import JWTIcon from '../../common/components/icons/JWT';
-import Link from 'next/link';
+
 import CategoryItem from '../../common/components/Category/CategoryItem';
 
 const Compute = () => {
@@ -31,7 +21,6 @@ const Compute = () => {
         deskPos={{ rowStart: 7, rowEnd: 11, columnStart: 5, columnEnd: 9 }}
         tabPos={{ rowStart: 9, rowEnd: 10, columnStart: 1, columnEnd: 9 }}
         mobilPos={{ rowStart: 4, rowEnd: 5, columnStart: 1, columnEnd: 25 }}
-        extraCss={[detailButtonCell]}
         ratio={1}
         relative
       >
@@ -47,7 +36,6 @@ const Compute = () => {
         deskPos={{ rowStart: 7, rowEnd: 11, columnStart: 9, columnEnd: 13 }}
         tabPos={{ rowStart: 9, rowEnd: 10, columnStart: 9, columnEnd: 17 }}
         mobilPos={{ rowStart: 5, rowEnd: 6, columnStart: 1, columnEnd: 25 }}
-        extraCss={[detailButtonCell]}
         ratio={1}
         relative
       >
@@ -63,7 +51,6 @@ const Compute = () => {
         deskPos={{ rowStart: 7, rowEnd: 11, columnStart: 13, columnEnd: 17 }}
         tabPos={{ rowStart: 9, rowEnd: 10, columnStart: 17, columnEnd: 25 }}
         mobilPos={{ rowStart: 6, rowEnd: 7, columnStart: 1, columnEnd: 25 }}
-        extraCss={[detailButtonCell]}
         ratio={1}
         relative
       >
@@ -80,7 +67,6 @@ const Compute = () => {
         deskPos={{ rowStart: 7, rowEnd: 11, columnStart: 17, columnEnd: 21 }}
         tabPos={{ rowStart: 10, rowEnd: 11, columnStart: 1, columnEnd: 9 }}
         mobilPos={{ rowStart: 7, rowEnd: 8, columnStart: 1, columnEnd: 25 }}
-        extraCss={[detailButtonCell]}
         ratio={1}
         relative
       >
@@ -95,7 +81,6 @@ const Compute = () => {
 
       <Cell
         deskPos={{ rowStart: 11, rowEnd: 15, columnStart: 5, columnEnd: 9 }}
-        extraCss={[detailButtonCell]}
         tabPos={{ rowStart: 10, rowEnd: 11, columnStart: 9, columnEnd: 17 }}
         mobilPos={{ rowStart: 8, rowEnd: 9, columnStart: 1, columnEnd: 25 }}
         ratio={1}
@@ -111,7 +96,6 @@ const Compute = () => {
 
       <Cell
         deskPos={{ rowStart: 11, rowEnd: 15, columnStart: 9, columnEnd: 13 }}
-        extraCss={[detailButtonCell]}
         tabPos={{ rowStart: 10, rowEnd: 11, columnStart: 17, columnEnd: 25 }}
         mobilPos={{ rowStart: 9, rowEnd: 10, columnStart: 1, columnEnd: 25 }}
         ratio={1}
@@ -127,7 +111,6 @@ const Compute = () => {
 
       <Cell
         deskPos={{ rowStart: 11, rowEnd: 15, columnStart: 13, columnEnd: 17 }}
-        extraCss={[detailButtonCell]}
         tabPos={{ rowStart: 11, rowEnd: 12, columnStart: 1, columnEnd: 9 }}
         mobilPos={{ rowStart: 10, rowEnd: 11, columnStart: 1, columnEnd: 25 }}
         ratio={1}
@@ -144,7 +127,6 @@ const Compute = () => {
 
       <Cell
         deskPos={{ rowStart: 11, rowEnd: 15, columnStart: 17, columnEnd: 21 }}
-        extraCss={[detailButtonCell]}
         tabPos={{ rowStart: 11, rowEnd: 12, columnStart: 9, columnEnd: 17 }}
         mobilPos={{ rowStart: 11, rowEnd: 12, columnStart: 1, columnEnd: 25 }}
         ratio={1}
@@ -160,7 +142,6 @@ const Compute = () => {
 
       <Cell
         deskPos={{ rowStart: 15, rowEnd: 19, columnStart: 5, columnEnd: 9 }}
-        extraCss={[detailButtonCell]}
         tabPos={{ rowStart: 11, rowEnd: 12, columnStart: 17, columnEnd: 25 }}
         mobilPos={{ rowStart: 12, rowEnd: 13, columnStart: 1, columnEnd: 25 }}
         ratio={1}
@@ -176,7 +157,6 @@ const Compute = () => {
 
       <Cell
         deskPos={{ rowStart: 15, rowEnd: 19, columnStart: 9, columnEnd: 13 }}
-        extraCss={[detailButtonCell]}
         tabPos={{ rowStart: 12, rowEnd: 13, columnStart: 1, columnEnd: 9 }}
         mobilPos={{ rowStart: 13, rowEnd: 14, columnStart: 1, columnEnd: 25 }}
         ratio={1}
@@ -192,7 +172,6 @@ const Compute = () => {
 
       <Cell
         deskPos={{ rowStart: 15, rowEnd: 19, columnStart: 13, columnEnd: 17 }}
-        extraCss={[detailButtonCell]}
         tabPos={{ rowStart: 12, rowEnd: 13, columnStart: 9, columnEnd: 17 }}
         mobilPos={{ rowStart: 14, rowEnd: 15, columnStart: 1, columnEnd: 25 }}
         ratio={1}
@@ -208,7 +187,6 @@ const Compute = () => {
 
       <Cell
         deskPos={{ rowStart: 15, rowEnd: 19, columnStart: 17, columnEnd: 21 }}
-        extraCss={[detailButtonCell]}
         tabPos={{ rowStart: 12, rowEnd: 13, columnStart: 17, columnEnd: 25 }}
         mobilPos={{ rowStart: 15, rowEnd: 16, columnStart: 1, columnEnd: 25 }}
         ratio={1}
@@ -224,7 +202,6 @@ const Compute = () => {
 
       <Cell
         deskPos={{ rowStart: 19, rowEnd: 23, columnStart: 5, columnEnd: 9 }}
-        extraCss={[detailButtonCell]}
         tabPos={{ rowStart: 13, rowEnd: 14, columnStart: 1, columnEnd: 9 }}
         mobilPos={{ rowStart: 16, rowEnd: 17, columnStart: 1, columnEnd: 25 }}
         ratio={1}

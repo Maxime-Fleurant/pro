@@ -1,8 +1,10 @@
 import Link from 'next/link';
 import { FunctionComponent } from 'react';
 import { Cell } from '../../Cell/cell';
+import { useTheme } from 'emotion-theming';
 import { bigSideLink, sideWrap, sideLink, linkBlockWrapp } from '../../Layout/style';
 import { rightSideLink } from './ArticleNavigationStyle';
+import { ITheme } from '../../Layout/Theme';
 
 // Type
 interface INavigationItem {
@@ -23,6 +25,8 @@ type TArticleNavigation = FunctionComponent<{ content: TArticleNavigationContent
 
 // React
 const ArticleNavigation: TArticleNavigation = ({ content }) => {
+  const theme = useTheme<ITheme>();
+
   const contentJSX = content.map((block) => {
     const itemsJsx = block.items.map((item) => {
       let itemLink = <a href={item.href}>{item.name}</a>;
@@ -44,7 +48,7 @@ const ArticleNavigation: TArticleNavigation = ({ content }) => {
       }
 
       return (
-        <div key={item.href} css={[sideLink, rightSideLink]}>
+        <div key={item.href} css={[sideLink(theme), rightSideLink]}>
           {itemLink}
         </div>
       );
@@ -52,7 +56,7 @@ const ArticleNavigation: TArticleNavigation = ({ content }) => {
 
     return (
       <div key={block.name} css={linkBlockWrapp}>
-        <div css={[bigSideLink, rightSideLink]}>{block.name}</div>
+        <div css={[bigSideLink(theme), rightSideLink]}>{block.name}</div>
         {itemsJsx}
       </div>
     );

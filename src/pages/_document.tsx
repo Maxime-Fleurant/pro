@@ -1,7 +1,5 @@
 import Document, { Main, NextScript, Head } from 'next/document';
-
 import { extractCritical } from 'emotion-server';
-
 import { css, Global } from '@emotion/core';
 import { reset } from '../common/reset';
 import { backgroundColor100 } from '../common/globalStyle';
@@ -44,9 +42,12 @@ export default class MyDocument extends Document {
         ]}
       >
         <Head>
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+          />
         </Head>
-        <body css={backgroundColor100}>
+        <body>
           <Global
             styles={css`
               ${reset}
