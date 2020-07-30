@@ -3,13 +3,9 @@ import {
   helveticaMedium,
   textLineHeight,
   font48,
-  textColor900,
-  textColor700,
   helveticaThin,
   fontRegular,
   pointSize8,
-  baseColor900,
-  pointSize1,
   helveticaLight,
   font20,
   helveticaRegular,
@@ -66,7 +62,7 @@ export const titlewrap = (theme: ITheme): SerializedStyles =>
     display: 'flex',
     height: '100%',
     flexFlow: 'column',
-    borderBottom: `${pointSize1} solid ${theme.base.baseColor900}`,
+    borderBottom: `1px solid ${theme.base.baseColor800}`,
   });
 
 export const upTitleWrap = css({ flexGrow: 1 });
@@ -74,7 +70,7 @@ export const upTitleWrap = css({ flexGrow: 1 });
 export const mainText = (theme: ITheme): SerializedStyles =>
   css(
     { textAlign: 'justify', wordBreak: 'break-word', hyphens: 'auto' },
-    theme.text.textColor900,
+    theme.text.textColor800,
     helveticaLight,
     textLineHeight,
     fontRegular
@@ -105,13 +101,13 @@ export const subTitleWrap = (theme: ITheme): SerializedStyles =>
   css({
     height: '100%',
     alignItems: 'baseline',
-    borderBottom: `${pointSize1} solid ${theme.base.baseColor900}`,
+    borderBottom: `1px solid ${theme.base.baseColor800}`,
   });
 
 export const subTitle = (theme: ITheme): SerializedStyles =>
   css(font32, helveticaRegular, theme.text.textColor900);
 
-export const subTitleCell = css({ borderBottom: `${pointSize1} solid ${baseColor900}` });
+export const subTitleCell = css({});
 
 export const subLinkSpe = (theme: ITheme): SerializedStyles =>
   css`

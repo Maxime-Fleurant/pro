@@ -27,11 +27,11 @@ export const detailButton = (theme: ITheme): SerializedStyles =>
       cursor: 'pointer',
       height: '100%',
       flexFlow: 'column',
-      border: `${pointSize1} solid ${theme.base.baseColor600}`,
+      border: `1px solid ${theme.base.baseColor600}`,
       padding: pointSize24,
       boxSizing: 'border-box',
     },
-    theme.text.textColor900,
+    theme.text.textColor800,
     css`
       @media (max-width: 767px) {
         padding: ${pointSize64};

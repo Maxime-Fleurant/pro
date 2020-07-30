@@ -1,5 +1,4 @@
 import { FunctionComponent } from 'react';
-
 import { Cell } from '../../common/components/Cell/cell';
 import {
   mainText,
@@ -9,7 +8,6 @@ import {
 import NpmIcon from '../../common/components/icons/Npm';
 import TypegraphqlIcon from '../../common/components/icons/Typegraphql';
 import TypescriptIcon from '../../common/components/icons/Typescript';
-
 import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
 import ArticleHead from '../../common/components/Article/ArticleHead/ArticleHead';
 import CodeBrowser from '../../common/components/Article/CodeBrowser/CodeBrowser';
@@ -122,11 +120,23 @@ const Apollo: FunctionComponent = () => {
       </Cell>
 
       <Cell
-        deskPos={{ rowStart: 8, rowEnd: 15, columnStart: 13, columnEnd: 21 }}
+        deskPos={{ rowStart: 8, rowEnd: 14, columnStart: 13, columnEnd: 21 }}
         tabPos={{ rowStart: 8, rowEnd: 9, columnStart: 1, columnEnd: 25 }}
         mobilPos={{ rowStart: 3, rowEnd: 4, columnStart: 1, columnEnd: 25 }}
+        ratio={0.625}
+        relative
       >
-        <CodeBrowser language="language-jsx" code={main} />
+        <CodeBrowser language="language-tsx" code={main} />
+      </Cell>
+
+      <Cell
+        deskPos={{ rowStart: 17, rowEnd: 23, columnStart: 13, columnEnd: 21 }}
+        tabPos={{ rowStart: 8, rowEnd: 9, columnStart: 1, columnEnd: 25 }}
+        mobilPos={{ rowStart: 3, rowEnd: 4, columnStart: 1, columnEnd: 25 }}
+        ratio={0.625}
+        relative
+      >
+        <CodeBrowser language="language-tsx" code={main} />
       </Cell>
 
       <Cell

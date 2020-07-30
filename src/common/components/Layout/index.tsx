@@ -30,6 +30,8 @@ import {
   navWrap,
   switchButton,
   flexNavWrap,
+  logoSideWrap,
+  logoPartSideWrap,
 } from './style';
 import { Cell } from '../Cell/cell';
 import { helveticaThin, helveticaMedium } from '../../globalStyle';
@@ -71,6 +73,11 @@ const Layout: FunctionComponent = ({ children }) => {
         styles={css`
           body {
             ${theme.background.backgroundColor100}
+            cursor: crosshair
+          }
+
+          .simplebar-track.simplebar-vertical .simplebar-scrollbar:before {
+            background-color: #9198a1;
           }
 
           * {
@@ -105,14 +112,23 @@ const Layout: FunctionComponent = ({ children }) => {
       </span>
       <span css={[sideBar(theme), menuPos]} onClick={menuHandler}>
         <div css={[logo, sideLogo(theme)]}>
-          <span>
-            <span css={[logoPart, theme.text.textColor700, helveticaThin]}>
-              Design,
-            </span>
-            <br />
-            <span css={[logoPart, theme.text.textColor900, helveticaMedium]}>
-              Compute.
-            </span>
+          <span css={logoSideWrap}>
+            <div css={logoPartSideWrap}>
+              <span css={[logoPart, theme.text.textColor700, helveticaThin]}>
+                Design,
+              </span>
+              <br />
+              <span css={[logoPart, theme.text.textColor900, helveticaMedium]}>
+                Compute.
+              </span>
+            </div>
+            <div>
+              <label css={switchButton(theme)}>
+                qsd
+                <input onChange={toggle} type="checkbox" />
+                <div />
+              </label>
+            </div>
           </span>
         </div>
 
@@ -187,6 +203,7 @@ const Layout: FunctionComponent = ({ children }) => {
           </div>
         </div>
       </div>
+
       <div css={gridCss}>
         <Cell
           deskPos={{ rowStart: 6, columnEnd: 5, columnStart: 1 }}
@@ -198,7 +215,6 @@ const Layout: FunctionComponent = ({ children }) => {
 
         {children}
       </div>
-      ;
     </>
   );
 };

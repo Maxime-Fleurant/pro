@@ -1,6 +1,12 @@
 import { FunctionComponent } from 'react';
 import { useTheme } from 'emotion-theming';
-import { activeSideLink, sideLink, bigSideLink, bigActiveSideLink, linkBlockWrapp } from './style';
+import {
+  activeSideLink,
+  sideLink,
+  bigSideLink,
+  bigActiveSideLink,
+  linkBlockWrapp,
+} from './style';
 import CLink from '../CLink';
 import TypegraphqlIcon from '../icons/Typegraphql';
 import PassportIcon from '../icons/Passport';
@@ -151,7 +157,11 @@ const ComputeSide: FunctionComponent = () => {
           </a>
         </CLink>
 
-        <CLink href="/compute/jwt" nonActiveCss={sideLink(theme)} activeCss={activeSideLink(theme)}>
+        <CLink
+          href="/compute/jwt"
+          nonActiveCss={sideLink(theme)}
+          activeCss={activeSideLink(theme)}
+        >
           <a>
             JWT&nbsp;
             <JWTIcon />
