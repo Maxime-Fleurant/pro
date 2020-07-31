@@ -32,6 +32,7 @@ import {
   flexNavWrap,
   logoSideWrap,
   logoPartSideWrap,
+  logoAnimeHeader,
 } from './style';
 import { Cell } from '../Cell/cell';
 import { helveticaThin, helveticaMedium } from '../../globalStyle';
@@ -39,6 +40,7 @@ import ComputeSide from './ComputeSide';
 import DesignSide from './DesignSide';
 import CLink from '../CLink';
 import { ThemeContext, ITheme } from './Theme';
+import LogoAnime from './logoAnime';
 
 const Layout: FunctionComponent = ({ children }) => {
   const router = useRouter();
@@ -157,6 +159,9 @@ const Layout: FunctionComponent = ({ children }) => {
       <div css={[navWrap(theme), navCell]}>
         <div css={nav}>
           <div css={logo}>
+            <div css={logoAnimeHeader}>
+              <LogoAnime />
+            </div>
             <span>
               <span css={[logoPart, theme.text.textColor700, helveticaThin]}>
                 Design,

@@ -24,6 +24,8 @@ import {
   font48,
   pointSize12,
   pointSize4,
+  pointSize64,
+  pointSize80,
 } from '../../globalStyle';
 import { ITheme } from './Theme';
 
@@ -514,46 +516,24 @@ export const logoSideWrap = css({ display: 'flex', alignItems: 'flex-end' });
 
 export const logoPartSideWrap = css({ marginRight: pointSize40 });
 
-export const circleAnimation1 = keyframes`
-  from, to {
-    transform: rotate3D(0, 0, 0, 360deg);
-  }
-
-  50% {
-    transform: rotate3D(1, -1, 0, 360deg);
-
-  }
-`;
-
-export const circleAnimation2 = keyframes`
-  from, to {
-    transform: rotate3D(0, 0, 0, 360deg);
-  }
-
-  50% {
-    transform: rotate3D(1, 1, 0, 360deg);
-
-  }
-`;
-
 export const circleAnimation3 = keyframes`
-  from, to {
-    transform: rotate3D(0, 0, 0, 360deg);
-  }
+from, to {
+  transform: rotateX(0deg);
+}
 
-  50% {
-    transform: rotate3D(1, 0, 0, 360deg);
+50% {
+  transform: rotateX(360deg);
 
-  }
+}
 `;
 
 export const circleAnimation4 = keyframes`
   from, to {
-    transform: rotate3D(0, 0, 0, 360deg);
+    transform: rotateY(0deg);
   }
 
   50% {
-    transform: rotate3D(1, 1, 1, 360deg);
+    transform: rotateY(360deg);
 
   }
 `;
@@ -569,27 +549,53 @@ export const circleAnimation5 = keyframes`
   }
 `;
 
-export const circAnime1 = css({
-  animation: `${circleAnimation1} 8s linear infinite`,
-});
+export const circAnime1 = (theme: ITheme): SerializedStyles =>
+  css({
+    animation: `${circleAnimation3} 8s linear infinite`,
+    stroke: theme.base.baseColor800,
+  });
 
-export const circAnime2 = css({
-  animation: `${circleAnimation2} 8s linear infinite`,
-});
+export const circAnime2 = (theme: ITheme): SerializedStyles =>
+  css({
+    animation: `${circleAnimation3} 8s linear infinite`,
+    stroke: theme.base.baseColor800,
+  });
 
-export const circAnime3 = css({
-  animation: `${circleAnimation3} 5s linear infinite`,
-});
+export const circAnime3 = (theme: ITheme): SerializedStyles =>
+  css({
+    animation: `${circleAnimation3} 5s linear infinite`,
+    stroke: theme.base.baseColor600,
+  });
 
-export const circAnime5 = css({
-  animation: `${circleAnimation5} 5s linear infinite`,
-});
-
-export const circAnime4 = css({
-  animation: `${circleAnimation4} 3s linear infinite`,
-});
+export const circAnime4 = (theme: ITheme): SerializedStyles =>
+  css({
+    animation: `${circleAnimation4} 3s linear infinite`,
+    stroke: theme.base.baseColor500,
+  });
 
 export const circleSvg = css({
   transformOrigin: '50% 50%',
   transformStyle: 'preserve-3d',
+});
+
+export const gAnime = css({
+  transformOrigin: 'center',
+  transformStyle: 'preserve-3d',
+});
+
+export const gAnime1 = css({
+  transform: 'rotateZ(45deg)',
+});
+
+export const gAnime2 = css({
+  transform: 'rotateZ(-45deg)',
+});
+
+export const animeWrapp = css({ width: '50%' });
+
+export const logoAnimeHeader = css({ marginRight: pointSize16 });
+
+export const svgWrap = css({
+  height: pointSize80,
+  display: 'block',
 });
