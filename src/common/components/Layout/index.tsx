@@ -32,12 +32,6 @@ import {
   logoAnimeHeader,
   sidePanelWrap,
   themeSideWrap,
-  subMenuLinkWrap,
-  subMenu,
-  subMenuLinkBox,
-  subMenuBigCat,
-  subMenuMainCat,
-  navMenuSubLink,
 } from './style';
 import { Cell } from '../Cell/cell';
 import { helveticaThin, helveticaMedium } from '../../globalStyle';
@@ -194,50 +188,6 @@ const Layout: FunctionComponent = ({ children }) => {
               onClick={menuHandler}
             />
             <div css={navLinkWrapper}>
-              <div css={subMenuLinkWrap}>
-                <CLink
-                  href="/design"
-                  main
-                  nonActiveCss={navLink(theme)}
-                  activeCss={activeLink(theme)}
-                >
-                  <a>Design</a>
-                </CLink>
-              </div>
-
-              <div css={subMenuLinkWrap}>
-                <CLink
-                  href="/compute"
-                  main
-                  nonActiveCss={navLink(theme)}
-                  activeCss={activeLink(theme)}
-                >
-                  <a>Compute</a>
-                </CLink>
-                <div css={subMenu}>
-                  <div css={subMenuLinkBox}>
-                    <div css={subMenuMainCat}>
-                      <div css={subMenuBigCat}>Back End</div>
-                      <span css={navMenuSubLink}>
-                        <span>dflkdlf</span>
-                        <span>azeazf</span>
-                        <span>qsd</span>
-                        <span>dflkdlf</span>
-                        <span>wxcwcwx</span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div css={subMenuLinkWrap}>
-                <span css={navLink(theme)}>Project</span>
-              </div>
-
-              <div css={subMenuLinkWrap}>
-                <span css={navLink(theme)}>Life</span>
-              </div>
-
               <label css={switchButton(theme)}>
                 qsd
                 <input onChange={toggle} type="checkbox" />

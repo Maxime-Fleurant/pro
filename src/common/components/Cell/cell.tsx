@@ -1,4 +1,10 @@
-import { FunctionComponent, useRef, useState, MouseEventHandler, useEffect } from 'react';
+import {
+  FunctionComponent,
+  useRef,
+  useState,
+  MouseEventHandler,
+  useEffect,
+} from 'react';
 import { css, SerializedStyles } from '@emotion/core';
 import { relativeCell, relativeChildren } from './cellStyle';
 
@@ -62,7 +68,10 @@ export const Cell: TCell = ({
         const cellSideToPx = ((76 - 23 * 1.4) / 24) * remUnitToPx;
         const gapToPx = remUnitToPx * 1.4;
         const endRow = Math.ceil(
-          Math.ceil((inerComponent.current.offsetHeight + gapToPx) / (cellSideToPx + gapToPx))
+          Math.ceil(
+            (inerComponent.current.offsetHeight + gapToPx) /
+              (cellSideToPx + gapToPx)
+          )
         );
         rowRef.current = endRow;
         updateComponentRow(endRow);
@@ -75,7 +84,9 @@ export const Cell: TCell = ({
 
   const componentCss = css`
     grid-row-start: ${deskPos.rowStart};
-    grid-row-end: ${componentRow ? deskPos.rowStart + componentRow : deskPos.rowEnd};
+    grid-row-end: ${componentRow
+      ? deskPos.rowStart + componentRow
+      : deskPos.rowEnd};
     grid-column-start: ${deskPos.columnStart};
     grid-column-end: ${deskPos.columnEnd};
   `;
@@ -127,11 +138,15 @@ export const Cell: TCell = ({
         const gapToPx = remUnitToPx * 1.4;
 
         updateComponentRow(
-          Math.ceil((inerComponent.current.offsetHeight + gapToPx) / (cellSideToPx + gapToPx))
+          Math.ceil(
+            (inerComponent.current.offsetHeight + gapToPx) /
+              (cellSideToPx + gapToPx)
+          )
         );
 
         const endRow = Math.ceil(
-          (inerComponent.current.offsetHeight + gapToPx) / (cellSideToPx + gapToPx)
+          (inerComponent.current.offsetHeight + gapToPx) /
+            (cellSideToPx + gapToPx)
         );
 
         rowRef.current = endRow;
@@ -175,7 +190,14 @@ export const Cell: TCell = ({
       <div
         onClick={onClick}
         ref={component}
-        css={[componentCss, withRatioCss, withtabPos, withBackground, withMobilPos, ...extraCss]}
+        css={[
+          componentCss,
+          withRatioCss,
+          withtabPos,
+          withBackground,
+          withMobilPos,
+          ...extraCss,
+        ]}
       >
         <div ref={inerComponent}>{children}</div>
       </div>
@@ -186,7 +208,14 @@ export const Cell: TCell = ({
     <div
       onClick={onClick}
       ref={component}
-      css={[componentCss, withRatioCss, withtabPos, withBackground, withMobilPos, ...extraCss]}
+      css={[
+        componentCss,
+        withRatioCss,
+        withtabPos,
+        withBackground,
+        withMobilPos,
+        ...extraCss,
+      ]}
     >
       {children}
     </div>

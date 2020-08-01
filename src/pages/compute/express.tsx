@@ -12,7 +12,11 @@ import PostgresIcon from '../../common/components/icons/Postgres';
 import MongoDbIcon from '../../common/components/icons/Mongodb';
 import JWTIcon from '../../common/components/icons/JWT';
 import CodeBrowser from '../../common/components/Article/CodeBrowser/CodeBrowser';
-import { expressMain } from '../../common/components/Article/CodeBrowser/codes/express';
+import {
+  expressMain,
+  expressJwt,
+  expressModel,
+} from '../../common/components/Article/CodeBrowser/codes/express';
 
 const Express = () => {
   return (
@@ -77,7 +81,7 @@ const Express = () => {
       </Cell>
 
       <Cell
-        deskPos={{ rowStart: 7, rowEnd: 15, columnStart: 4, columnEnd: 13 }}
+        deskPos={{ rowStart: 7, rowEnd: 16, columnStart: 4, columnEnd: 13 }}
         tabPos={{ rowStart: 7, rowEnd: 8, columnStart: 1, columnEnd: 25 }}
         mobilPos={{ rowStart: 2, rowEnd: 3, columnStart: 1, columnEnd: 25 }}
       >
@@ -113,14 +117,16 @@ const Express = () => {
           </a>
           . Input validation is handled by
           <a css={insideLink}>
-            {` Celebrate / Joi `} <NpmIcon />{' '}
+            {` Celebrate / Joi `} <NpmIcon />
           </a>
-          and Auth using
+          , Auth using
           <a css={insideLink}>
             {` JWT `} <JWTIcon />{' '}
           </a>
-          tokens. The structure of my Express projects follows the 3 layer
-          pattern.
+          tokens and config using <a css={insideLink}>{` .Env`}</a>
+          . The structure of my Express projects follows the 3 layer pattern to
+          achieve separation of concerns by moving the business logic away from
+          the node.js API Routes.
           <br />
           <br />
           You can find examples of my code using express in the{' '}
@@ -134,7 +140,7 @@ const Express = () => {
       </Cell>
 
       <Cell
-        deskPos={{ rowStart: 7, rowEnd: 14, columnStart: 13, columnEnd: 22 }}
+        deskPos={{ rowStart: 7, rowEnd: 15, columnStart: 13, columnEnd: 22 }}
         tabPos={{ rowStart: 8, rowEnd: 9, columnStart: 1, columnEnd: 25 }}
         mobilPos={{ rowStart: 3, rowEnd: 4, columnStart: 1, columnEnd: 25 }}
         ratio={0.625}
