@@ -16,7 +16,10 @@ import {
 import { ITheme } from '../Layout/Theme';
 
 export const catTitle = (theme: ITheme): SerializedStyles =>
-  css(font104, helveticaBold, theme.text.textColor900);
+  css(font104, helveticaBold, theme.text.textColor900, {
+    height: '100%',
+    borderBottom: `1px solid ${theme.base.baseColor800}`,
+  });
 
 export const detailButtonCell = css({});
 

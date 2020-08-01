@@ -37,25 +37,29 @@ export const titleDesc = (theme: ITheme): SerializedStyles =>
     `
   );
 
-export const titleLink = css(
-  fontRegular,
-  { marginBottom: pointSize8 },
-  css`
-    a {
-      margin-right: ${[pointSize8]};
-    }
-  `
-);
+export const titleLink = (theme: ITheme): SerializedStyles =>
+  css(
+    fontRegular,
+    theme.text.textColor600,
+    { marginBottom: pointSize8 },
+    css`
+      a {
+        margin-right: ${[pointSize8]};
+      }
+    `
+  );
 
-export const subTitleLink = css(
-  fontRegular,
-  { marginBottom: pointSize8 },
-  css`
-    a {
-      margin-left: ${[pointSize8]};
-    }
-  `
-);
+export const subTitleLink = (theme: ITheme): SerializedStyles =>
+  css(
+    theme.text.textColor600,
+    fontRegular,
+    { marginBottom: pointSize8 },
+    css`
+      a {
+        margin-left: ${[pointSize8]};
+      }
+    `
+  );
 
 export const titlewrap = (theme: ITheme): SerializedStyles =>
   css({
@@ -82,19 +86,21 @@ export const linkWrap = css({
 });
 
 export const sideInfo = (theme: ITheme): SerializedStyles =>
-  css(theme.text.textColor900, helveticaThin, font20);
+  css(theme.text.textColor800, helveticaThin, font20);
 
 export const video = css({ width: '100%', height: '100%' });
 
-export const insideLink = css(
-  { cursor: 'pointer', alignItems: 'center' },
-  helveticaRegular,
-  css`
-    span {
-      ${font20}
-    }
-  `
-);
+export const insideLink = (theme: ITheme): SerializedStyles =>
+  css(
+    theme.text.textColor800,
+    { cursor: 'pointer', alignItems: 'center' },
+    helveticaRegular,
+    css`
+      span {
+        ${font20}
+      }
+    `
+  );
 export const insideLinkIcon = css(fontRegular, font20);
 
 export const subTitleWrap = (theme: ITheme): SerializedStyles =>

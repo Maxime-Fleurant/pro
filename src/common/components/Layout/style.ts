@@ -9,7 +9,6 @@ import {
   textLineHeight,
   fontRegular,
   font20,
-  pointSize1,
   helveticaRegular,
   helveticaThin,
   pointSize32,
@@ -24,7 +23,6 @@ import {
   font48,
   pointSize12,
   pointSize4,
-  pointSize64,
   pointSize80,
 } from '../../globalStyle';
 import { ITheme } from './Theme';
@@ -65,7 +63,7 @@ export const logo = css(
       padding: 0.85rem 0;
     }
   `,
-  { display: 'flex', alignItems: 'center' }
+  { display: 'flex', alignItems: 'center', cursor: 'pointer' }
 );
 
 export const logoPart = css([helveticaMedium, font40, titleLineHeight]);
@@ -73,11 +71,10 @@ export const logoPart = css([helveticaMedium, font40, titleLineHeight]);
 export const navLink = (theme: ITheme): SerializedStyles =>
   css([
     theme.text.textColor700,
-    helveticaRegular,
+    helveticaLight,
     fontRegular,
 
     css({
-      marginRight: pointSize40,
       cursor: 'pointer',
       height: '100%',
       display: 'flex',
@@ -94,7 +91,7 @@ export const activeLink = (theme: ITheme): SerializedStyles =>
   css([
     navLink(theme),
     theme.text.textColor900,
-    helveticaRegular,
+    helveticaLight,
     css`
       &:hover {
         ${theme.text.textColor900}
@@ -266,7 +263,7 @@ export const sideBar = (theme: ITheme): SerializedStyles =>
       transition: '0.2s ease-out',
       zIndex: 20,
       padding: `0 ${pointSize48}`,
-      borderRight: `1px solid ${theme.base.baseColor700}`,
+      borderRight: `1px solid ${theme.base.baseColor800}`,
       overflowY: 'auto',
       boxSizing: 'border-box',
     },
@@ -313,12 +310,12 @@ export const navLinkWrapper = css(
 export const sideLogo = (theme: ITheme): SerializedStyles =>
   css({ borderBottom: `1px solid ${theme.base.baseColor800}` });
 
-export const sideLinkPage = css({ marginTop: pointSize120 });
+export const sideLinkPage = css({ marginTop: pointSize48 });
 
 export const mainSideLink = (theme: ITheme): SerializedStyles =>
   css(
     theme.text.textColor800,
-    { marginTop: pointSize32 },
+    { marginTop: pointSize48 },
     css`
       a {
         display: block;
@@ -335,7 +332,7 @@ export const mobileNavWrap = (theme: ITheme): SerializedStyles =>
       position: 'fixed',
       bottom: 0,
       width: '100%',
-      borderTop: `1px solid ${theme.base.baseColor700}`,
+      borderTop: `1px solid ${theme.base.baseColor800}`,
       zIndex: 1,
     },
     css`
@@ -432,14 +429,14 @@ export const codeBox = (theme: ITheme): SerializedStyles =>
   css(
     {
       backgroundColor: `${theme.base.baseColor100}!important`,
-      fontSize: `${pointSize12}!important`,
+      fontSize: `0.55rem!important`,
       padding: `0!important`,
       margin: '0!important',
     },
     css`
       @media (max-width: 1023px) {
         display: inline-block;
-        font-size: 1.7vw !important;
+        font-size: 1.6vw !important;
         padding-right: ${pointSize24}!important;
       }
     `
@@ -599,3 +596,75 @@ export const svgWrap = css({
   height: pointSize80,
   display: 'block',
 });
+
+export const sidePanelWrap = (theme: ITheme): SerializedStyles =>
+  css({
+    textAlign: 'right',
+    paddingRight: pointSize24,
+    borderRight: `1px solid ${theme.base.baseColor800}`,
+  });
+
+export const themeSideWrap = (theme: ITheme): SerializedStyles =>
+  css(
+    {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      marginTop: pointSize48,
+    },
+    theme.text.textColor800,
+    helveticaRegular,
+    font32
+  );
+
+export const subMenuLinkBox = (theme: ITheme): SerializedStyles =>
+  css(theme.background.backgroundColor100, {
+    border: `1px solid ${theme.base.baseColor800}`,
+    display: 'block',
+  });
+
+export const subMenuLinkWrap = css(
+  {
+    position: 'relative',
+    height: '100%',
+    marginRight: pointSize40,
+  },
+  css`
+    &:hover {
+      .css-${subMenuLinkBox.name} {
+        display: block;
+      }
+    }
+  `
+);
+
+export const subMenu = css({
+  // display: 'none',
+  position: 'absolute',
+  right: '50%',
+  transform: 'translateX(50%)',
+  paddingTop: pointSize24,
+  width: 'auto',
+});
+
+export const subMenuBigCat = (theme: ITheme): SerializedStyles =>
+  css(helveticaMedium, theme.text.textColor800, font32, {
+    marginBottom: pointSize8,
+    whiteSpace: 'nowrap',
+  });
+
+export const subMenuMainCat = (theme: ITheme): SerializedStyles =>
+  css(
+    {
+      padding: pointSize16,
+    },
+    css`
+      span {
+        ${helveticaLight};
+        ${theme.text.textColor800};
+        ${textLineHeight};
+      }
+    `
+  );
+
+export const navMenuSubLink = css({ width: '5rem', display: 'block' });

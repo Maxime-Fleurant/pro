@@ -24,10 +24,7 @@ const ComputeSide: FunctionComponent = () => {
           nonActiveCss={bigSideLink(theme)}
           activeCss={bigActiveSideLink(theme)}
         >
-          <a>
-            Node&nbsp;
-            <span className="icon-nodejs-icon" />
-          </a>
+          <a>Node</a>
         </CLink>
 
         <CLink
@@ -35,10 +32,7 @@ const ComputeSide: FunctionComponent = () => {
           nonActiveCss={sideLink(theme)}
           activeCss={activeSideLink(theme)}
         >
-          <a>
-            Express&nbsp;
-            <span className="icon-expressjs-icon" />
-          </a>
+          <a>Express</a>
         </CLink>
 
         <CLink
@@ -46,10 +40,7 @@ const ComputeSide: FunctionComponent = () => {
           nonActiveCss={sideLink(theme)}
           activeCss={activeSideLink(theme)}
         >
-          <a>
-            Nest&nbsp;
-            <span className="icon-nestjs" />
-          </a>
+          <a>Nest</a>
         </CLink>
       </div>
 
@@ -59,10 +50,7 @@ const ComputeSide: FunctionComponent = () => {
           nonActiveCss={bigSideLink(theme)}
           activeCss={bigActiveSideLink(theme)}
         >
-          <a>
-            Graphql&nbsp;
-            <span className="icon-graphql" />
-          </a>
+          <a>Graphql</a>
         </CLink>
 
         <CLink
@@ -70,10 +58,7 @@ const ComputeSide: FunctionComponent = () => {
           nonActiveCss={sideLink(theme)}
           activeCss={activeSideLink(theme)}
         >
-          <a>
-            Apollo&nbsp;
-            <span className="icon-a" />
-          </a>
+          <a>Apollo</a>
         </CLink>
 
         <CLink
@@ -81,10 +66,7 @@ const ComputeSide: FunctionComponent = () => {
           nonActiveCss={sideLink(theme)}
           activeCss={activeSideLink(theme)}
         >
-          <a>
-            TypeGraphql&nbsp;
-            <TypegraphqlIcon />
-          </a>
+          <a>TypeGraphql</a>
         </CLink>
 
         <CLink
@@ -92,10 +74,7 @@ const ComputeSide: FunctionComponent = () => {
           nonActiveCss={sideLink(theme)}
           activeCss={activeSideLink(theme)}
         >
-          <a>
-            Dataloader&nbsp;
-            <span>🧩</span>
-          </a>
+          <a>Dataloader</a>
         </CLink>
 
         <CLink
@@ -103,10 +82,7 @@ const ComputeSide: FunctionComponent = () => {
           nonActiveCss={sideLink(theme)}
           activeCss={activeSideLink(theme)}
         >
-          <a>
-            Complexity&nbsp;
-            <span>🔰</span>
-          </a>
+          <a>Complexity</a>
         </CLink>
       </div>
 
@@ -116,10 +92,7 @@ const ComputeSide: FunctionComponent = () => {
           nonActiveCss={bigSideLink(theme)}
           activeCss={bigActiveSideLink(theme)}
         >
-          <a>
-            DI&nbsp;
-            <span>🧱</span>
-          </a>
+          <a>DI</a>
         </CLink>
 
         <CLink
@@ -127,10 +100,7 @@ const ComputeSide: FunctionComponent = () => {
           nonActiveCss={sideLink(theme)}
           activeCss={activeSideLink(theme)}
         >
-          <a>
-            TypeDI&nbsp;
-            <span>⚙️</span>
-          </a>
+          <a>TypeDI</a>
         </CLink>
       </div>
 
@@ -140,10 +110,7 @@ const ComputeSide: FunctionComponent = () => {
           nonActiveCss={bigSideLink(theme)}
           activeCss={bigActiveSideLink(theme)}
         >
-          <a>
-            Auth&nbsp;
-            <span>🔐</span>
-          </a>
+          <a>Auth</a>
         </CLink>
 
         <CLink
@@ -151,10 +118,7 @@ const ComputeSide: FunctionComponent = () => {
           nonActiveCss={sideLink(theme)}
           activeCss={activeSideLink(theme)}
         >
-          <a>
-            PassportJS&nbsp;
-            <PassportIcon />
-          </a>
+          <a>PassportJS</a>
         </CLink>
 
         <CLink
@@ -162,10 +126,7 @@ const ComputeSide: FunctionComponent = () => {
           nonActiveCss={sideLink(theme)}
           activeCss={activeSideLink(theme)}
         >
-          <a>
-            JWT&nbsp;
-            <JWTIcon />
-          </a>
+          <a>JWT</a>
         </CLink>
       </div>
 
@@ -175,10 +136,7 @@ const ComputeSide: FunctionComponent = () => {
           nonActiveCss={bigSideLink(theme)}
           activeCss={bigActiveSideLink(theme)}
         >
-          <a>
-            Testing&nbsp;
-            <span>🧪</span>
-          </a>
+          <a>Testing</a>
         </CLink>
       </div>
     </>

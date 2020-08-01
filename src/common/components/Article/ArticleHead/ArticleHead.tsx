@@ -1,4 +1,5 @@
 import { FunctionComponent } from 'react';
+import { useTheme } from 'emotion-theming';
 import {
   titlewrap,
   upTitleWrap,
@@ -13,7 +14,6 @@ import {
   subLinkSpe,
 } from './articleHeaderStyle';
 import NpmIcon from '../../icons/Npm';
-import { useTheme } from 'emotion-theming';
 import { ITheme } from '../../Layout/Theme';
 
 // TYPE

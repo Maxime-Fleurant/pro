@@ -50,7 +50,7 @@ const Apollo: FunctionComponent = () => {
       />
 
       <Cell
-        deskPos={{ rowStart: 4, rowEnd: 8, columnStart: 5, columnEnd: 13 }}
+        deskPos={{ rowStart: 4, rowEnd: 8, columnStart: 4, columnEnd: 13 }}
         tabPos={{ rowStart: 6, rowEnd: 7, columnStart: 1, columnEnd: 25 }}
         mobilPos={{ rowStart: 1, rowEnd: 2, columnStart: 1, columnEnd: 25 }}
       >
@@ -68,7 +68,7 @@ const Apollo: FunctionComponent = () => {
       </Cell>
 
       <Cell
-        deskPos={{ rowStart: 8, rowEnd: 15, columnStart: 5, columnEnd: 13 }}
+        deskPos={{ rowStart: 8, rowEnd: 15, columnStart: 4, columnEnd: 13 }}
         tabPos={{ rowStart: 7, rowEnd: 8, columnStart: 1, columnEnd: 25 }}
         mobilPos={{ rowStart: 2, rowEnd: 3, columnStart: 1, columnEnd: 25 }}
       >
@@ -120,7 +120,7 @@ const Apollo: FunctionComponent = () => {
       </Cell>
 
       <Cell
-        deskPos={{ rowStart: 8, rowEnd: 14, columnStart: 13, columnEnd: 21 }}
+        deskPos={{ rowStart: 8, rowEnd: 14, columnStart: 13, columnEnd: 22 }}
         tabPos={{ rowStart: 8, rowEnd: 9, columnStart: 1, columnEnd: 25 }}
         mobilPos={{ rowStart: 3, rowEnd: 4, columnStart: 1, columnEnd: 25 }}
         ratio={0.625}
@@ -130,7 +130,7 @@ const Apollo: FunctionComponent = () => {
       </Cell>
 
       <Cell
-        deskPos={{ rowStart: 17, rowEnd: 23, columnStart: 13, columnEnd: 21 }}
+        deskPos={{ rowStart: 17, rowEnd: 23, columnStart: 13, columnEnd: 22 }}
         tabPos={{ rowStart: 8, rowEnd: 9, columnStart: 1, columnEnd: 25 }}
         mobilPos={{ rowStart: 3, rowEnd: 4, columnStart: 1, columnEnd: 25 }}
         ratio={0.625}
@@ -140,7 +140,7 @@ const Apollo: FunctionComponent = () => {
       </Cell>
 
       <Cell
-        deskPos={{ rowStart: 16, rowEnd: 17, columnStart: 5, columnEnd: 13 }}
+        deskPos={{ rowStart: 16, rowEnd: 17, columnStart: 4, columnEnd: 13 }}
         tabPos={{ rowStart: 11, rowEnd: 12, columnStart: 1, columnEnd: 25 }}
         mobilPos={{ rowStart: 7, rowEnd: 8, columnStart: 1, columnEnd: 25 }}
       >
@@ -154,7 +154,7 @@ const Apollo: FunctionComponent = () => {
       </Cell>
 
       <Cell
-        deskPos={{ rowStart: 17, rowEnd: 24, columnStart: 5, columnEnd: 13 }}
+        deskPos={{ rowStart: 17, rowEnd: 24, columnStart: 4, columnEnd: 13 }}
         tabPos={{ rowStart: 12, rowEnd: 13, columnStart: 1, columnEnd: 25 }}
         mobilPos={{ rowStart: 8, rowEnd: 9, columnStart: 1, columnEnd: 25 }}
       >
@@ -206,7 +206,7 @@ const Apollo: FunctionComponent = () => {
       </Cell>
 
       <Cell
-        deskPos={{ rowStart: 25, rowEnd: 26, columnStart: 5, columnEnd: 13 }}
+        deskPos={{ rowStart: 25, rowEnd: 26, columnStart: 4, columnEnd: 13 }}
         tabPos={{ rowStart: 15, rowEnd: 16, columnStart: 1, columnEnd: 25 }}
         extraCss={[subTitleCell]}
         mobilPos={{ rowStart: 13, rowEnd: 14, columnStart: 1, columnEnd: 25 }}
@@ -221,7 +221,7 @@ const Apollo: FunctionComponent = () => {
       </Cell>
 
       <Cell
-        deskPos={{ rowStart: 26, rowEnd: 33, columnStart: 5, columnEnd: 13 }}
+        deskPos={{ rowStart: 26, rowEnd: 33, columnStart: 4, columnEnd: 13 }}
         tabPos={{ rowStart: 16, rowEnd: 17, columnStart: 1, columnEnd: 25 }}
         mobilPos={{ rowStart: 14, rowEnd: 15, columnStart: 1, columnEnd: 25 }}
       >

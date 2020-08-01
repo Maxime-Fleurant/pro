@@ -1,9 +1,7 @@
-import { FunctionComponent, useState, useContext, useEffect } from 'react';
+import { FunctionComponent, useState, useContext } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-
 import { Global, css } from '@emotion/core';
-
 import { useTheme } from 'emotion-theming';
 import {
   gridCss,
@@ -31,8 +29,15 @@ import {
   switchButton,
   flexNavWrap,
   logoSideWrap,
-  logoPartSideWrap,
   logoAnimeHeader,
+  sidePanelWrap,
+  themeSideWrap,
+  subMenuLinkWrap,
+  subMenu,
+  subMenuLinkBox,
+  subMenuBigCat,
+  subMenuMainCat,
+  navMenuSubLink,
 } from './style';
 import { Cell } from '../Cell/cell';
 import { helveticaThin, helveticaMedium } from '../../globalStyle';
@@ -94,17 +99,14 @@ const Layout: FunctionComponent = ({ children }) => {
             css={backButton}
             onClick={router.back}
           />
-          <div css={[logo, centerLogo]}>
-            <span>
-              <span css={[logoPart, theme.text.textColor700, helveticaThin]}>
-                Design
-              </span>
-              <br />
-              <span css={[logoPart, theme.text.textColor900, helveticaMedium]}>
-                Compute
-              </span>
-            </span>
-          </div>
+          <Link href="/">
+            <div css={[logo, centerLogo]}>
+              <div css={logoAnimeHeader}>
+                <LogoAnime />
+              </div>
+            </div>
+          </Link>
+
           <span
             className="icon-menu-outlined"
             css={menuButton}
@@ -114,24 +116,32 @@ const Layout: FunctionComponent = ({ children }) => {
       </span>
       <span css={[sideBar(theme), menuPos]} onClick={menuHandler}>
         <div css={[logo, sideLogo(theme)]}>
-          <span css={logoSideWrap}>
-            <div css={logoPartSideWrap}>
-              <span css={[logoPart, theme.text.textColor700, helveticaThin]}>
-                Design,
-              </span>
-              <br />
-              <span css={[logoPart, theme.text.textColor900, helveticaMedium]}>
-                Compute.
-              </span>
-            </div>
-            <div>
-              <label css={switchButton(theme)}>
-                qsd
-                <input onChange={toggle} type="checkbox" />
-                <div />
-              </label>
-            </div>
-          </span>
+          <Link href="/">
+            <span css={logoSideWrap}>
+              <div css={logoAnimeHeader}>
+                <LogoAnime />
+              </div>
+              <div>
+                <span css={[logoPart, theme.text.textColor700, helveticaThin]}>
+                  Design,
+                </span>
+                <br />
+                <span
+                  css={[logoPart, theme.text.textColor900, helveticaMedium]}
+                >
+                  Compute.
+                </span>
+              </div>
+            </span>
+          </Link>
+        </div>
+        <div css={themeSideWrap}>
+          Theme{' '}
+          <label css={switchButton(theme)}>
+            {' '}
+            <input onChange={toggle} type="checkbox" />
+            <div />
+          </label>
         </div>
 
         <div css={mainSideLink}>
@@ -158,20 +168,25 @@ const Layout: FunctionComponent = ({ children }) => {
       <span css={css([openLayer, layer])} onClick={menuHandler} />
       <div css={[navWrap(theme), navCell]}>
         <div css={nav}>
-          <div css={logo}>
-            <div css={logoAnimeHeader}>
-              <LogoAnime />
+          <Link href="/">
+            <div css={logo}>
+              <div css={logoAnimeHeader}>
+                <LogoAnime />
+              </div>
+              <span>
+                <span css={[logoPart, theme.text.textColor700, helveticaThin]}>
+                  Design,
+                </span>
+                <br />
+                <span
+                  css={[logoPart, theme.text.textColor900, helveticaMedium]}
+                >
+                  Compute.
+                </span>
+              </span>
             </div>
-            <span>
-              <span css={[logoPart, theme.text.textColor700, helveticaThin]}>
-                Design,
-              </span>
-              <br />
-              <span css={[logoPart, theme.text.textColor900, helveticaMedium]}>
-                Compute.
-              </span>
-            </span>
-          </div>
+          </Link>
+
           <div css={flexNavWrap}>
             <span
               className="icon-menu-outlined"
@@ -179,26 +194,50 @@ const Layout: FunctionComponent = ({ children }) => {
               onClick={menuHandler}
             />
             <div css={navLinkWrapper}>
-              <CLink
-                href="/design"
-                main
-                nonActiveCss={navLink(theme)}
-                activeCss={activeLink(theme)}
-              >
-                <a>Design</a>
-              </CLink>
+              <div css={subMenuLinkWrap}>
+                <CLink
+                  href="/design"
+                  main
+                  nonActiveCss={navLink(theme)}
+                  activeCss={activeLink(theme)}
+                >
+                  <a>Design</a>
+                </CLink>
+              </div>
 
-              <CLink
-                href="/compute"
-                main
-                nonActiveCss={navLink(theme)}
-                activeCss={activeLink(theme)}
-              >
-                <a>Compute</a>
-              </CLink>
+              <div css={subMenuLinkWrap}>
+                <CLink
+                  href="/compute"
+                  main
+                  nonActiveCss={navLink(theme)}
+                  activeCss={activeLink(theme)}
+                >
+                  <a>Compute</a>
+                </CLink>
+                <div css={subMenu}>
+                  <div css={subMenuLinkBox}>
+                    <div css={subMenuMainCat}>
+                      <div css={subMenuBigCat}>Back End</div>
+                      <span css={navMenuSubLink}>
+                        <span>dflkdlf</span>
+                        <span>azeazf</span>
+                        <span>qsd</span>
+                        <span>dflkdlf</span>
+                        <span>wxcwcwx</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-              <span css={navLink(theme)}>Project</span>
-              <span css={navLink(theme)}>Life</span>
+              <div css={subMenuLinkWrap}>
+                <span css={navLink(theme)}>Project</span>
+              </div>
+
+              <div css={subMenuLinkWrap}>
+                <span css={navLink(theme)}>Life</span>
+              </div>
+
               <label css={switchButton(theme)}>
                 qsd
                 <input onChange={toggle} type="checkbox" />
@@ -211,11 +250,11 @@ const Layout: FunctionComponent = ({ children }) => {
 
       <div css={gridCss}>
         <Cell
-          deskPos={{ rowStart: 6, columnEnd: 5, columnStart: 1 }}
+          deskPos={{ rowStart: 6, columnEnd: 4, columnStart: 1 }}
           extraCss={[sideWrap]}
           autoRow
         >
-          {sidePanel}
+          <div css={sidePanelWrap}> {sidePanel}</div>
         </Cell>
 
         {children}
