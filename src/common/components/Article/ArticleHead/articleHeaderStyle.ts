@@ -10,7 +10,7 @@ import {
   font20,
   helveticaRegular,
   font32,
-  pointSize56,
+  pointSize48,
 } from '../../../globalStyle';
 import { ITheme } from '../../Layout/Theme';
 
@@ -29,12 +29,7 @@ export const titleDesc = (theme: ITheme): SerializedStyles =>
     theme.text.textColor700,
     helveticaThin,
     textLineHeight,
-    fontRegular,
-    css`
-      @media (max-width: 1023px) {
-        margin-bottom: ${pointSize56};
-      }
-    `
+    fontRegular
   );
 
 export const titleLink = (theme: ITheme): SerializedStyles =>
@@ -84,6 +79,8 @@ export const linkWrap = css({
   display: 'flex',
   justifyContent: 'space-between',
 });
+
+export const mainLinkWrap = css({ marginTop: pointSize48 });
 
 export const sideInfo = (theme: ITheme): SerializedStyles =>
   css(theme.text.textColor800, helveticaThin, font20);

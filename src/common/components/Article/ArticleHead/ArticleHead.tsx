@@ -12,12 +12,13 @@ import {
   subTitle,
   subTitleLink,
   subLinkSpe,
+  mainLinkWrap,
 } from './articleHeaderStyle';
 import NpmIcon from '../../icons/Npm';
 import { ITheme } from '../../Layout/Theme';
 
 // TYPE
-interface IArticleHeadContent {
+export interface IArticleHeadContent {
   titleContent: string;
   logo?: JSX.Element;
   desc?: string;
@@ -91,7 +92,7 @@ const ArticleHead: TArticleHead = ({
         <div css={titleDesc}>{desc}</div>
       </div>
 
-      <div css={linkWrap}>
+      <div css={[linkWrap, mainLinkWrap]}>
         <div css={titleLink}>
           {officialLink}
           {gitLink}

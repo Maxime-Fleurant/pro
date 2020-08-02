@@ -25,7 +25,10 @@
   "plugins": ["react", "@typescript-eslint", "prettier"],
   "rules": {
     "prettier/prettier": "error",
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+    "react/jsx-filename-extension": [
+      1,
+      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+    ],
     "react/react-in-jsx-scope": "off",
     "jsx-a11y/click-events-have-key-events": "off",
     "jsx-a11y/no-static-element-interactions": "off",
@@ -51,6 +54,7 @@
     "jsx-a11y/label-has-associated-control": "off",
     "@typescript-eslint/no-var-requires": "off",
     "react/no-unescaped-entities": "off",
-    "jsx-a11y/anchor-has-content": "off"
+    "jsx-a11y/anchor-has-content": "off",
+    "react/jsx-wrap-multilines": "off"
   }
 }

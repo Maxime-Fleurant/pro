@@ -204,7 +204,7 @@ const Layout: FunctionComponent = ({ children }) => {
           extraCss={[sideWrap]}
           autoRow
         >
-          <div css={sidePanelWrap}> {sidePanel}</div>
+          {/* <div css={sidePanelWrap}> {sidePanel}</div> */}
         </Cell>
 
         {children}

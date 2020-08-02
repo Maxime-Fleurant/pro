@@ -1,6 +1,8 @@
 import SimpleBar from 'simplebar-react';
 import prismjs from 'prismjs';
 import { useEffect, FunctionComponent } from 'react';
+import { useTheme } from 'emotion-theming';
+import { css } from '@emotion/core';
 import '../../../../../node_modules/prismjs/components/prism-jsx.js';
 import '../../../../../node_modules/prismjs/components/prism-tsx.js';
 import '../../../../../node_modules/prismjs/components/prism-typescript.js';
@@ -16,23 +18,33 @@ import {
   codeBox,
   cellWrap,
 } from '../../Layout/style';
+import { ITheme } from '../../Layout/Theme.jsx';
 
 // TYPE
-interface ICodeBrowser {
+export interface ICodeBrowser {
   language: string;
   code: string;
+  heightAuto?: boolean;
 }
 
 type TCodeBrowser = FunctionComponent<ICodeBrowser>;
 
-const CodeBrowser: TCodeBrowser = ({ language, code }) => {
+const CodeBrowser: TCodeBrowser = ({ language, code, heightAuto }) => {
   useEffect(() => {
     prismjs.highlightAll();
   }, []);
 
+  const theme = useTheme<ITheme>();
+
+  let auto = css();
+
+  if (heightAuto) {
+    auto = css({ height: 'auto' });
+  }
+
   return (
     <div css={cellWrap}>
-      <div css={browserWrap}>
+      <div css={[browserWrap(theme), auto]}>
         <div css={browserButtonWrap}>
           <span css={[roundButton, closeButton]} />
           <span css={[roundButton, reduceButton]} />
