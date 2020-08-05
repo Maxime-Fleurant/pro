@@ -1,21 +1,19 @@
 import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
-import { Cell } from '../../common/components/Cell/cell';
-import ArticleHead from '../../common/components/Article/ArticleHead/ArticleHead';
-import {
-  mainText,
-  insideLink,
-} from '../../common/components/Article/ArticleHead/articleHeaderStyle';
-import CodeBrowser from '../../common/components/Article/CodeBrowser/CodeBrowser';
+import { insideLink } from '../../common/components/Article/ArticleHead/articleHeaderStyle';
 import JavascriptIcon from '../../common/components/icons/Javascript';
 import TypescriptIcon from '../../common/components/icons/Typescript';
 import {
   nestMain,
   nestModule,
   nestController,
+  nestProvider,
+  nestDto,
+  nestGenericCrud,
+  nestAuth,
 } from '../../common/components/Article/CodeBrowser/codes/nest';
 import Article from '../../common/components/Article/Article';
 
-const Nest = () => {
+const Nest = (): JSX.Element => {
   return (
     <>
       {/* <ArticleNavigation
@@ -87,6 +85,8 @@ const Nest = () => {
             (yet still enables developers to code in pure JavaScript) and
             combines elements of OOP (Object Oriented Programming), FP
             (Functional Programming), and FRP (Functional Reactive Programming).
+            <br />
+            <br />
             Under the hood, Nest makes use of robust HTTP Server frameworks like
             <a css={insideLink}>
               {` Express `}
@@ -208,41 +208,106 @@ const Nest = () => {
               code: nestController,
             },
           },
+          {
+            header: {
+              titleContent: 'DTO',
+              logo: <span className="icon-nestjs" />,
+              official: 'https://docs.nestjs.com/controllers#request-payloads',
+            },
+            content: (
+              <span>
+                A DTO is an object that defines how the data will be sent over
+                the network. We could determine the DTO schema by using
+                TypeScript interfaces, or by simple classes.
+              </span>
+            ),
+            code: {
+              language: 'language-ts',
+              code: nestDto,
+            },
+            extraSpace: 10,
+          },
+          {
+            header: {
+              titleContent: 'Providers',
+              logo: <span className="icon-nestjs" />,
+              official: 'https://docs.nestjs.com/providers',
+            },
+            content: (
+              <span>
+                Providers are a fundamental concept in Nest. Many of the basic
+                Nest classes may be treated as a provider – services,
+                repositories, factories, helpers, and so on.
+                <br />
+                <br /> The main idea of a provider is that it can inject
+                dependencies; this means objects can create various
+                relationships with each other, and the function of "wiring up"
+                instances of objects can largely be delegated to the Nest
+                runtime system.
+                <br />
+                <br /> A provider is simply a class annotated with an
+                @Injectable() decorator.
+              </span>
+            ),
+            code: {
+              language: 'language-ts',
+              code: nestProvider,
+            },
+          },
+          {
+            header: {
+              titleContent: 'Generic Crud Operation',
+              logo: <span className="icon-nestjs" />,
+            },
+            content: (
+              <span>
+                To follow the DRY pattern, when the input of a request does not
+                require specific handling, it is easy to create a generic crud
+                service. <br />
+                <br />
+                By doing so we avoid repeating the logic that will require the
+                verification of a DTO and the sending of this payload to the
+                database service.
+                <br />
+                <br /> Using Typescript we can create a factory function which
+                will return a Typed class defining the basic crud actions, using
+                the generic arguments passed to the Typescript function. Then we
+                can use this class to extend the basic service provider.
+              </span>
+            ),
+            code: {
+              language: 'language-ts',
+              code: nestGenericCrud,
+            },
+          },
+          {
+            header: {
+              titleContent: 'Auth with Guards',
+              logo: <span className="icon-nestjs" />,
+              official: 'https://docs.nestjs.com/techniques/authentication',
+            },
+            content: (
+              <span>
+                A guard is a class annotated with the @Injectable() decorator.
+                Guards should implement the CanActivate interface. <br />
+                <br />
+                Guards have a single responsibility. They determine whether a
+                given request will be handled by the route handler or not,
+                depending on certain conditions (like permissions, roles, ACLs,
+                etc.) present at run-time. <br />
+                <br />
+                This is often referred to as authorization.Guards have access to
+                the ExecutionContext instance, and thus know exactly what's
+                going to be executed next.
+              </span>
+            ),
+            code: {
+              language: 'language-ts',
+              code: nestAuth,
+            },
+          },
         ]}
       />
-
-      {/* <Cell
-        deskPos={{ rowStart: 42, rowEnd: 43, columnStart: 4, columnEnd: 13 }}
-        tabPos={{ rowStart: 11, rowEnd: 12, columnStart: 1, columnEnd: 25 }}
-        mobilPos={{ rowStart: 7, rowEnd: 8, columnStart: 1, columnEnd: 25 }}
-      >
-        <ArticleHead
-          sub
-          logo={<span className="icon-nestjs" />}
-          titleContent="Providers"
-          official="https://docs.nestjs.com/providers"
-        />
-      </Cell> */}
-
-      {/* <Cell
-        deskPos={{ rowStart: 43, rowEnd: 53, columnStart: 4, columnEnd: 13 }}
-        tabPos={{ rowStart: 8, rowEnd: 9, columnStart: 1, columnEnd: 25 }}
-        mobilPos={{ rowStart: 3, rowEnd: 4, columnStart: 1, columnEnd: 25 }}
-      >
-        <div css={mainText}>
-          Providers are a fundamental concept in Nest. Many of the basic Nest
-          classes may be treated as a provider – services, repositories,
-          factories, helpers, and so on.
-          <br />
-          <br /> The main idea of a provider is that it can inject dependencies;
-          this means objects can create various relationships with each other,
-          and the function of "wiring up" instances of objects can largely be
-          delegated to the Nest runtime system.
-          <br />
-          <br /> A provider is simply a class annotated with an @Injectable()
-          decorator.
-        </div>
-      </Cell> */}
     </>
   );
 };

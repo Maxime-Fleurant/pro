@@ -7,6 +7,7 @@ import '../../../../../node_modules/prismjs/components/prism-jsx.js';
 import '../../../../../node_modules/prismjs/components/prism-tsx.js';
 import '../../../../../node_modules/prismjs/components/prism-typescript.js';
 import '../../../../../node_modules/prismjs/components/prism-javascript.js';
+import '../../../../../node_modules/prismjs/components/prism-yaml.js';
 import {
   browserWrap,
   browserButtonWrap,

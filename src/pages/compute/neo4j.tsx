@@ -3,8 +3,12 @@ import { insideLink } from '../../common/components/Article/ArticleHead/articleH
 import { mainLayer } from '../../common/components/Article/CodeBrowser/codes/3layer';
 import { drymain } from '../../common/components/Article/CodeBrowser/codes/dry';
 import { dimain } from '../../common/components/Article/CodeBrowser/codes/di';
+import MongoDbIcon from '../../common/components/icons/Mongodb';
+import { mongMain } from '../../common/components/Article/CodeBrowser/codes/mongo';
+import { neomain } from '../../common/components/Article/CodeBrowser/codes/neo4j';
+import NeoIcon from '../../common/components/icons/neo';
 
-const DI = (): JSX.Element => {
+const Neo = (): JSX.Element => {
   return (
     <>
       {/* <ArticleNavigation
@@ -51,43 +55,35 @@ const DI = (): JSX.Element => {
 
       <Article
         articleHeader={{
-          titleContent: 'Dependencies Injection',
-          logo: <span>🧱</span>,
-          desc: 'Inversion of Control Containers using  Dependencies Injection',
-          wiki: 'https://en.wikipedia.org/wiki/Dependency_injection',
-          detail: 'Pattern | Code',
+          titleContent: 'Neo4j',
+          logo: <NeoIcon />,
+          desc: 'The Native Graph Database for Today’s Connected Applications',
+          wiki: 'https://en.wikipedia.org/wiki/Neo4j',
+          npm: 'https://www.npmjs.com/package/neo4j-driver',
+          git: 'https://github.com/neo4j/neo4j',
+          official: 'https://neo4j.com/',
+          detail: 'Database | Graph',
         }}
         headerContent={
           <span>
-            In software engineering, dependency injection is a technique in
-            which an object receives other objects that it depends on. These
-            other objects are called dependencies. In the typical "using"
-            relationship the receiving object is called a client and the passed
-            (that is, "injected") object is called a service. The code that
-            passes the service to the client can be many kinds of things and is
-            called the injector. Instead of the client specifying which service
-            it will use, the injector tells the client what service to use. The
-            "injection" refers to the passing of a dependency (a service) into
-            the object (a client) that would use it.
+            Neo4j is a highly scalable native graph database, purpose-built to
+            leverage not only data but also data relationships.
             <br />
             <br />
-            The service is made part of the client's state. Passing the service
-            to the client, rather than allowing a client to build or find the
-            service, is the fundamental requirement of the pattern.
+            Using Neo4j, developers build intelligent applications that traverse
+            today's large, interconnected datasets in real time.
+            <br />
+            <br /> Powered by a native graph storage and processing engine,
+            Neo4j delivers an intuitive, flexible and secure database for
+            unique, actionable insights.
             <br />
             <br />
-            The intent behind dependency injection is to achieve separation of
-            concerns of construction and use of objects. This can increase
-            readability and code reuse.
-            <br />
-            <br />
-            You can find examples of my code using Dependencies Injection in the
-            Anime 👁 demo project Github repository and the nest-rest-api Github
-            repository.
+            You can find examples of my code using Neo4j in the
+            scrap-anime-neo4j Github repository.
           </span>
         }
         headerCode={{
-          code: dimain,
+          code: neomain,
           language: 'language-js',
         }}
         content={[]}
@@ -96,4 +92,4 @@ const DI = (): JSX.Element => {
   );
 };
 
-export default DI;
+export default Neo;

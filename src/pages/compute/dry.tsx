@@ -2,9 +2,8 @@ import Article from '../../common/components/Article/Article';
 import { insideLink } from '../../common/components/Article/ArticleHead/articleHeaderStyle';
 import { mainLayer } from '../../common/components/Article/CodeBrowser/codes/3layer';
 import { drymain } from '../../common/components/Article/CodeBrowser/codes/dry';
-import { dimain } from '../../common/components/Article/CodeBrowser/codes/di';
 
-const DI = (): JSX.Element => {
+const JWT = (): JSX.Element => {
   return (
     <>
       {/* <ArticleNavigation
@@ -51,43 +50,38 @@ const DI = (): JSX.Element => {
 
       <Article
         articleHeader={{
-          titleContent: 'Dependencies Injection',
-          logo: <span>🧱</span>,
-          desc: 'Inversion of Control Containers using  Dependencies Injection',
-          wiki: 'https://en.wikipedia.org/wiki/Dependency_injection',
+          titleContent: 'DRY',
+          logo: <span>🌵</span>,
+          desc:
+            "Don't repeat yourself (DRY, or sometimes do not repeat yourself) is a principle of software development aimed at reducing repetition of software patterns, replacing it with abstractions or using data normalization to avoid redundancy",
+          wiki: 'https://en.wikipedia.org/wiki/Don%27t_repeat_yourself',
           detail: 'Pattern | Code',
         }}
         headerContent={
           <span>
-            In software engineering, dependency injection is a technique in
-            which an object receives other objects that it depends on. These
-            other objects are called dependencies. In the typical "using"
-            relationship the receiving object is called a client and the passed
-            (that is, "injected") object is called a service. The code that
-            passes the service to the client can be many kinds of things and is
-            called the injector. Instead of the client specifying which service
-            it will use, the injector tells the client what service to use. The
-            "injection" refers to the passing of a dependency (a service) into
-            the object (a client) that would use it.
+            The DRY principle is stated as "Every piece of knowledge must have a
+            single, unambiguous, authoritative representation within a system".
             <br />
             <br />
-            The service is made part of the client's state. Passing the service
-            to the client, rather than allowing a client to build or find the
-            service, is the fundamental requirement of the pattern.
+            The principle has been formulated by Andy Hunt and Dave Thomas in
+            their book The Pragmatic Programmer. They apply it quite broadly to
+            include "database schemas, test plans, the build system, even
+            documentation".
+            <br />
+            <br /> When the DRY principle is applied successfully, a
+            modification of any single element of a system does not require a
+            change in other logically unrelated elements. Additionally, elements
+            that are logically related all change predictably and uniformly, and
+            are thus kept in sync.
             <br />
             <br />
-            The intent behind dependency injection is to achieve separation of
-            concerns of construction and use of objects. This can increase
-            readability and code reuse.
-            <br />
-            <br />
-            You can find examples of my code using Dependencies Injection in the
-            Anime 👁 demo project Github repository and the nest-rest-api Github
-            repository.
+            You can find examples of my code using the DRY pattern in the Anime
+            👁 demo project back end and front end Github repositories and also
+            in the nest-rest-api github repostitory
           </span>
         }
         headerCode={{
-          code: dimain,
+          code: drymain,
           language: 'language-js',
         }}
         content={[]}
@@ -96,4 +90,4 @@ const DI = (): JSX.Element => {
   );
 };
 
-export default DI;
+export default JWT;

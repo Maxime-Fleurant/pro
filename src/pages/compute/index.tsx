@@ -149,7 +149,7 @@ const Compute = () => {
       >
         <CategoryItem
           name="DI"
-          detail="Inversion of Control Containers and  Dependency Injection"
+          detail="Inversion of Control Containers using  Dependencies Injection"
           href="/compute/di"
           logo={<span>🧱</span>}
         />

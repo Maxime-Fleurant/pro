@@ -1,10 +1,160 @@
-import { FunctionComponent } from 'react';
-import { css } from '@emotion/core';
-import ArticleHead, { IArticleHeadContent } from './ArticleHead/ArticleHead';
-import { SimpleCell } from '../Cell/SimpleCell';
-import { mainText } from './ArticleHead/articleHeaderStyle';
-import CodeBrowser, { ICodeBrowser } from './CodeBrowser/CodeBrowser';
+export const reactMain = `
+// app.tsx
+function MyApp({ Component, pageProps }): JSX.Element {
+  return (
+    <CacheProvider value={cache}>
+      <Theme>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </Theme>
+    </CacheProvider>
+  );
+}
 
+export default MyApp;
+
+
+// component.tsx
+// TYPE
+export interface ICodeBrowser {
+  language: string;
+  code: string;
+  heightAuto?: boolean;
+}
+
+type TCodeBrowser = FunctionComponent<ICodeBrowser>;
+
+const CodeBrowser: TCodeBrowser = ({ language, code, heightAuto }) => {
+  useEffect(() => {
+    prismjs.highlightAll();
+  }, []);
+
+  const theme = useTheme<ITheme>();
+
+  let auto = css();
+
+  if (heightAuto) {
+    auto = css({ height: 'auto' });
+  }
+
+  return (
+    <div css={cellWrap}>
+      <div css={[browserWrap(theme), auto]}>
+        <div css={browserButtonWrap}>
+          <span css={[roundButton, closeButton]} />
+          <span css={[roundButton, reduceButton]} />
+          <span css={[roundButton, enlargeButton]} />
+        </div>
+        <div css={barWrap}>
+          <SimpleBar css={{ height: '100%' }}>
+            <pre css={codeBox}>
+              <code className={language}>
+                <div>{code}</div>
+              </code>
+            </pre>
+          </SimpleBar>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default CodeBrowser;
+
+`;
+
+export const reactContext = `
+// context.tsx
+export const ThemeContext = React.createContext(null);
+
+const Theme: FunctionComponent = ({ children }) => {
+  const [themeState, updateTheme] = useState(false);
+
+  const toggle = (): void => {
+    updateTheme(!themeState);
+  };
+
+  return (
+    <ThemeContext.Provider value={{ state: themeState, toggle }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+};
+
+export default Theme;
+
+
+// useContext.tsx
+const Layout: FunctionComponent = ({ children }) => {
+  const router = useRouter();
+  let sidePanel: JSX.Element;
+  let menuPos = closeSideBar;
+  let layer = css({ visibility: 'hidden', opacity: 0 });
+  const theme = useTheme<ITheme>();
+
+  const [menuOpen, updateMenuState] = useState(false);
+  const { toggle } = useContext(ThemeContext);
+
+  const menuHandler = (): void => {
+    updateMenuState(!menuOpen);
+  };
+
+  if (menuOpen) {
+    menuPos = openSideBar;
+    layer = css({ visibility: 'visible', opacity: 0.7 });
+  }
+
+  if (router.pathname.match(/^\\/compute?/g)) {
+    sidePanel = <ComputeSide />;
+  }
+
+  if (router.pathname.match(/^\\/design?/g)) {
+    sidePanel = <DesignSide />;
+  }
+
+  return (
+    <>
+      <div css={[navWrap(theme), navCell]}>
+        <div css={nav}>
+          <div css={flexNavWrap}>
+            <span
+              className="icon-menu-outlined"
+              css={menuButton}
+              onClick={menuHandler}
+            />
+            <div css={navLinkWrapper}>
+              <label css={switchButton(theme)}>
+                qsd
+                <input onChange={toggle} type="checkbox" />
+                <div />
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div css={gridCss}>
+        <Cell
+          deskPos={{ rowStart: 6, columnEnd: 4, columnStart: 1 }}
+          extraCss={[sideWrap]}
+          autoRow
+        >
+          {/* <div css={sidePanelWrap}> {sidePanel}</div> */}
+        </Cell>
+
+        {children}
+      </div>
+    </>
+  );
+};
+
+export default Layout;
+
+`;
+
+export const reactTs = `
+// typedComponent.tsx
 // TYPE
 interface Content {
   header: IArticleHeadContent;
@@ -36,19 +186,19 @@ const Article: TArticle = ({
   let tabRowStart = 10;
   let mobilRowStart = 6;
 
-  const mainExtraSpace = css`
+  const mainExtraSpace = css\`
     @media (min-width: 1023px) {
-      margin-bottom: ${headerContentHeightExtra}rem;
+      margin-bottom: \${headerContentHeightExtra}rem;
     }
-  `;
+  \`;
 
   if (content.length) {
     contentJsx = content.map((contentElem) => {
-      const extraSpace = css`
+      const extraSpace = css\`
         @media (min-width: 1023px) {
-          margin-bottom: ${contentElem.extraSpace}rem;
+          margin-bottom: \${contentElem.extraSpace}rem;
         }
-      `;
+      \`;
 
       const currentContentJSX = (
         <>
@@ -187,3 +337,5 @@ const Article: TArticle = ({
 };
 
 export default Article;
+
+`;

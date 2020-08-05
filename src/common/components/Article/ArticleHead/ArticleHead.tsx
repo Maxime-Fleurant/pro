@@ -46,11 +46,12 @@ const ArticleHead: TArticleHead = ({
 }) => {
   const theme = useTheme<ITheme>();
 
-  const officialLink = official ? (
+  const officialLink = (
     <a href={official} target="_blank" rel="noreferrer">
       {logo}
     </a>
-  ) : null;
+  );
+
   const npmLink = npm ? (
     <a href={npm} target="_blank" rel="noreferrer">
       <NpmIcon />

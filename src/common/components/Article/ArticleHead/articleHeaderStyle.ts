@@ -36,7 +36,7 @@ export const titleLink = (theme: ITheme): SerializedStyles =>
   css(
     fontRegular,
     theme.text.textColor600,
-    { marginBottom: pointSize8 },
+    { marginBottom: pointSize8, display: 'flex' },
     css`
       a {
         margin-right: ${[pointSize8]};
