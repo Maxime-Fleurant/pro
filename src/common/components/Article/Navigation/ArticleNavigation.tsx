@@ -72,8 +72,7 @@ const ArticleNavigation: TArticleNavigation = ({ content }) => {
 
   return (
     <Cell
-      deskPos={{ rowStart: 6, columnStart: 22, columnEnd: 25 }}
-      autoRow
+      deskPos={{ rowStart: 12, columnStart: 22, columnEnd: 25, rowEnd: 30 }}
       extraCss={[sideWrap]}
     >
       <div css={sideBorder}>{contentJSX}</div>

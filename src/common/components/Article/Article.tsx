@@ -32,7 +32,7 @@ const Article: TArticle = ({
   headerContentHeightExtra,
 }) => {
   let contentJsx: JSX.Element[];
-  let deskRowStart = 13;
+  let deskRowStart = 15;
   let tabRowStart = 10;
   let mobilRowStart = 6;
 
@@ -146,7 +146,7 @@ const Article: TArticle = ({
   return (
     <>
       <SimpleCell
-        deskPos={{ rowStart: 9, rowEnd: 10, columnStart: 4, columnEnd: 13 }}
+        deskPos={{ rowStart: 9, rowEnd: 12, columnStart: 4, columnEnd: 13 }}
         tabPos={{ rowStart: 6, rowEnd: 7, columnStart: 1, columnEnd: 25 }}
         mobilPos={{ rowStart: 1, rowEnd: 2, columnStart: 1, columnEnd: 25 }}
       >
@@ -163,7 +163,7 @@ const Article: TArticle = ({
       </SimpleCell>
 
       <SimpleCell
-        deskPos={{ rowStart: 10, rowEnd: 11, columnStart: 4, columnEnd: 13 }}
+        deskPos={{ rowStart: 12, rowEnd: 13, columnStart: 4, columnEnd: 13 }}
         tabPos={{ rowStart: 7, rowEnd: 8, columnStart: 1, columnEnd: 25 }}
         mobilPos={{ rowStart: 2, rowEnd: 3, columnStart: 1, columnEnd: 25 }}
         extraCss={[mainExtraSpace]}
@@ -172,13 +172,17 @@ const Article: TArticle = ({
       </SimpleCell>
 
       <SimpleCell
-        deskPos={{ rowStart: 10, rowEnd: 11, columnStart: 13, columnEnd: 22 }}
+        deskPos={{ rowStart: 12, rowEnd: 13, columnStart: 13, columnEnd: 22 }}
         tabPos={{ rowStart: 8, rowEnd: 9, columnStart: 1, columnEnd: 25 }}
         mobilPos={{ rowStart: 3, rowEnd: 4, columnStart: 1, columnEnd: 25 }}
         ratio={0.625}
         relative
       >
-        <CodeBrowser language={headerCode.language} code={headerCode.code} />
+        <CodeBrowser
+          language={headerCode.language}
+          code={headerCode.code}
+          heightAuto={headerCode.heightAuto}
+        />
       </SimpleCell>
 
       {contentJsx}

@@ -68,7 +68,12 @@ export const upTitleWrap = css({ flexGrow: 1 });
 
 export const mainText = (theme: ITheme): SerializedStyles =>
   css(
-    { textAlign: 'justify', wordBreak: 'break-word', hyphens: 'auto' },
+    {
+      textAlign: 'justify',
+      wordBreak: 'break-word',
+      hyphens: 'auto',
+      position: 'relative',
+    },
     theme.text.textColor800,
     helveticaLight,
     textLineHeight,

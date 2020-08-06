@@ -200,11 +200,10 @@ const Layout: FunctionComponent = ({ children }) => {
 
       <div css={gridCss}>
         <Cell
-          deskPos={{ rowStart: 6, columnEnd: 4, columnStart: 1 }}
+          deskPos={{ rowStart: 11, rowEnd: 30, columnEnd: 4, columnStart: 1 }}
           extraCss={[sideWrap]}
-          autoRow
         >
-          {/* <div css={sidePanelWrap}> {sidePanel}</div> */}
+          <div css={sidePanelWrap}> {sidePanel}</div>
         </Cell>
 
         {children}

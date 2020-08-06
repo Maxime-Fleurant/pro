@@ -19,13 +19,9 @@ const ComputeSide: FunctionComponent = () => {
   return (
     <>
       <div css={linkBlockWrapp}>
-        <CLink
-          href="/compute/node"
-          nonActiveCss={bigSideLink(theme)}
-          activeCss={bigActiveSideLink(theme)}
-        >
+        <div css={bigSideLink(theme)}>
           <a>Node</a>
-        </CLink>
+        </div>
 
         <CLink
           href="/compute/express"
@@ -45,22 +41,23 @@ const ComputeSide: FunctionComponent = () => {
       </div>
 
       <div css={linkBlockWrapp}>
-        <CLink
-          href="/compute/graphql"
-          nonActiveCss={bigSideLink(theme)}
-          activeCss={bigActiveSideLink(theme)}
-        >
-          <a>Graphql</a>
-        </CLink>
+        <div css={bigSideLink(theme)}>
+          <a>Env</a>
+        </div>
 
         <CLink
-          href="/compute/apollo"
+          href="/compute/typescript"
           nonActiveCss={sideLink(theme)}
           activeCss={activeSideLink(theme)}
         >
-          <a>Apollo</a>
+          <a>Typescript</a>
         </CLink>
+      </div>
 
+      <div css={linkBlockWrapp}>
+        <div css={bigSideLink(theme)}>
+          <a>GraphQL</a>
+        </div>
         <CLink
           href="/compute/typegraphql"
           nonActiveCss={sideLink(theme)}
@@ -78,22 +75,131 @@ const ComputeSide: FunctionComponent = () => {
         </CLink>
 
         <CLink
-          href="/compute/complexity"
+          href="/compute/apollo"
           nonActiveCss={sideLink(theme)}
           activeCss={activeSideLink(theme)}
         >
-          <a>Complexity</a>
+          <a>Apollo</a>
         </CLink>
       </div>
 
       <div css={linkBlockWrapp}>
+        <div css={bigSideLink(theme)}>
+          <a>Front</a>
+        </div>
+        <CLink
+          href="/compute/apolloclient"
+          nonActiveCss={sideLink(theme)}
+          activeCss={activeSideLink(theme)}
+        >
+          <a>Apollo Client</a>
+        </CLink>
+
+        <CLink
+          href="/compute/emotion"
+          nonActiveCss={sideLink(theme)}
+          activeCss={activeSideLink(theme)}
+        >
+          <a>Css In JS</a>
+        </CLink>
+
+        <CLink
+          href="/compute/redux"
+          nonActiveCss={sideLink(theme)}
+          activeCss={activeSideLink(theme)}
+        >
+          <a>Redux</a>
+        </CLink>
+
+        <CLink
+          href="/compute/react"
+          nonActiveCss={sideLink(theme)}
+          activeCss={activeSideLink(theme)}
+        >
+          <a>React</a>
+        </CLink>
+
+        <CLink
+          href="/compute/next"
+          nonActiveCss={sideLink(theme)}
+          activeCss={activeSideLink(theme)}
+        >
+          <a>Next</a>
+        </CLink>
+      </div>
+
+      <div css={linkBlockWrapp}>
+        <div css={bigSideLink(theme)}>
+          <a>Database</a>
+        </div>
+
+        <CLink
+          href="/compute/postgres"
+          nonActiveCss={sideLink(theme)}
+          activeCss={activeSideLink(theme)}
+        >
+          <a>PostgreSQL</a>
+        </CLink>
+
+        <CLink
+          href="/compute/mongodb"
+          nonActiveCss={sideLink(theme)}
+          activeCss={activeSideLink(theme)}
+        >
+          <a>MongoDB</a>
+        </CLink>
+
+        <CLink
+          href="/compute/neo4j"
+          nonActiveCss={sideLink(theme)}
+          activeCss={activeSideLink(theme)}
+        >
+          <a>Neo4j</a>
+        </CLink>
+      </div>
+
+      <div css={linkBlockWrapp}>
+        <div css={bigSideLink(theme)}>
+          <a>Design Pattern</a>
+        </div>
+
+        <CLink
+          href="/compute/dbnormalization"
+          nonActiveCss={sideLink(theme)}
+          activeCss={activeSideLink(theme)}
+        >
+          <a>Normalization</a>
+        </CLink>
+
+        <CLink
+          href="/compute/3layer"
+          nonActiveCss={sideLink(theme)}
+          activeCss={activeSideLink(theme)}
+        >
+          <a>3-Layer</a>
+        </CLink>
+
+        <CLink
+          href="/compute/dry"
+          nonActiveCss={sideLink(theme)}
+          activeCss={activeSideLink(theme)}
+        >
+          <a>DRY</a>
+        </CLink>
+
         <CLink
           href="/compute/di"
-          nonActiveCss={bigSideLink(theme)}
-          activeCss={bigActiveSideLink(theme)}
+          nonActiveCss={sideLink(theme)}
+          activeCss={activeSideLink(theme)}
         >
           <a>DI</a>
         </CLink>
+      </div>
+
+      <div css={linkBlockWrapp}>
+        <div css={bigSideLink(theme)}>
+          <a>DI</a>
+        </div>
 
         <CLink
           href="/compute/typedi"
@@ -105,13 +211,23 @@ const ComputeSide: FunctionComponent = () => {
       </div>
 
       <div css={linkBlockWrapp}>
+        <div css={bigSideLink(theme)}>
+          <a>Testing</a>
+        </div>
+
         <CLink
-          href="/compute/auth"
-          nonActiveCss={bigSideLink(theme)}
-          activeCss={bigActiveSideLink(theme)}
+          href="/compute/jest"
+          nonActiveCss={sideLink(theme)}
+          activeCss={activeSideLink(theme)}
         >
-          <a>Auth</a>
+          <a>Jest</a>
         </CLink>
+      </div>
+
+      <div css={linkBlockWrapp}>
+        <div css={bigSideLink(theme)}>
+          <a>Auth</a>
+        </div>
 
         <CLink
           href="/compute/passport"
@@ -127,16 +243,6 @@ const ComputeSide: FunctionComponent = () => {
           activeCss={activeSideLink(theme)}
         >
           <a>JWT</a>
-        </CLink>
-      </div>
-
-      <div css={linkBlockWrapp}>
-        <CLink
-          href="/compute/testing"
-          nonActiveCss={bigSideLink(theme)}
-          activeCss={bigActiveSideLink(theme)}
-        >
-          <a>Testing</a>
         </CLink>
       </div>
     </>

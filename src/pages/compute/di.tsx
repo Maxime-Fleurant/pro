@@ -3,11 +3,12 @@ import { insideLink } from '../../common/components/Article/ArticleHead/articleH
 import { mainLayer } from '../../common/components/Article/CodeBrowser/codes/3layer';
 import { drymain } from '../../common/components/Article/CodeBrowser/codes/dry';
 import { dimain } from '../../common/components/Article/CodeBrowser/codes/di';
+import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
 
 const DI = (): JSX.Element => {
   return (
     <>
-      {/* <ArticleNavigation
+      <ArticleNavigation
         content={[
           {
             name: 'Navigation',
@@ -47,7 +48,7 @@ const DI = (): JSX.Element => {
             ],
           },
         ]}
-      /> */}
+      />
 
       <Article
         articleHeader={{

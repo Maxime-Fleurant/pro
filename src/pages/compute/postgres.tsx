@@ -7,15 +7,17 @@ import {
   objectionMain,
   typeormMain,
 } from '../../common/components/Article/CodeBrowser/codes/postgres';
+import { anchorPos } from '../../common/components/Layout/style';
+import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
 
 const Postgres = (): JSX.Element => {
   return (
     <>
-      {/* <ArticleNavigation
+      <ArticleNavigation
         content={[
           {
             name: 'Navigation',
-            items: [{ name: 'Dataloader', href: '#test' }],
+            items: [{ name: 'Knex', href: '#knex' }],
           },
           {
             name: 'Ressources',
@@ -51,7 +53,7 @@ const Postgres = (): JSX.Element => {
             ],
           },
         ]}
-      /> */}
+      />
 
       <Article
         articleHeader={{
@@ -102,6 +104,7 @@ const Postgres = (): JSX.Element => {
             },
             content: (
               <span>
+                <a name="knex" css={anchorPos} />
                 Knex.js is a "batteries included" SQL query builder for
                 Postgres, MSSQL, MySQL, MariaDB, SQLite3, Oracle, and Amazon
                 Redshift designed to be flexible, portable, and fun to use. It

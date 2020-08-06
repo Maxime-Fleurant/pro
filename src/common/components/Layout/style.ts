@@ -158,7 +158,7 @@ export const bigSideLink = (theme: ITheme): SerializedStyles =>
     textLineHeight,
     theme.text.textColor800,
     fontRegular,
-    css({ cursor: 'pointer', display: 'block', marginBottom: pointSize8 }),
+    css({ display: 'block' }),
     css`
       span {
         opacity: 0;
@@ -232,7 +232,7 @@ export const bigActiveSideLink = (theme: ITheme): SerializedStyles =>
   ]);
 
 export const linkBlockWrapp = css({
-  marginBottom: pointSize32,
+  marginBottom: pointSize24,
 });
 
 export const sideWrap = css`
@@ -602,7 +602,7 @@ export const sidePanelWrap = (theme: ITheme): SerializedStyles =>
   css({
     textAlign: 'right',
     paddingRight: pointSize24,
-    borderRight: `1px solid ${theme.base.baseColor800}`,
+    borderRight: `1px solid ${theme.base.baseColor600}`,
   });
 
 export const themeSideWrap = (theme: ITheme): SerializedStyles =>
@@ -617,3 +617,22 @@ export const themeSideWrap = (theme: ITheme): SerializedStyles =>
     helveticaRegular,
     font32
   );
+
+export const leftSide = css({
+  position: 'fixed',
+  width: '8.2rem',
+  marginLeft: '2rem',
+  marginTop: '13.9rem',
+  top: 0,
+  height: '60vh',
+  textAlign: 'right',
+});
+
+export const anchorPos = css({
+  position: 'absolute',
+  top: '-15rem',
+});
+
+export const githubLinkCaption = css({
+  fontStyle: 'oblique',
+});

@@ -1,6 +1,5 @@
 import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
 import { insideLink } from '../../common/components/Article/ArticleHead/articleHeaderStyle';
-import JavascriptIcon from '../../common/components/icons/Javascript';
 import TypescriptIcon from '../../common/components/icons/Typescript';
 import {
   nestMain,
@@ -12,37 +11,58 @@ import {
   nestAuth,
 } from '../../common/components/Article/CodeBrowser/codes/nest';
 import Article from '../../common/components/Article/Article';
+import TextLink from '../../common/components/Article/textLink/TextLink';
+import PostgresIcon from '../../common/components/icons/Postgres';
+import {
+  githubLinkCaption,
+  anchorPos,
+} from '../../common/components/Layout/style';
+import JestIcon from '../../common/components/icons/Jest';
 
 const Nest = (): JSX.Element => {
   return (
     <>
-      {/* <ArticleNavigation
+      <ArticleNavigation
         content={[
           {
             name: 'Navigation',
-            items: [{ name: 'Dataloader', href: '#test' }],
+            items: [
+              { name: 'Intro', href: '#intro' },
+              { name: 'Modules', href: '#modules' },
+              { name: 'Controllers', href: '#controllers' },
+              { name: 'DTO', href: '#dto' },
+              { name: 'Providers', href: '#providers' },
+              { name: 'Generic Crud', href: '#Generic' },
+              { name: 'Guards', href: '#Guards' },
+            ],
+          },
+          {
+            name: 'My Code',
+            items: [
+              {
+                name: 'Nest-Rest',
+                href: 'https://github.com/Maxime-Fleurant/Nest-Rest-Anime-Api',
+                outside: true,
+              },
+            ],
           },
           {
             name: 'Ressources',
             items: [
               {
-                name: 'Github',
-                href: 'https://github.com/expressjs/express',
+                name: 'Official Website',
+                href: 'https://nestjs.com/',
                 outside: true,
               },
               {
-                name: 'Official Website',
-                href: 'https://expressjs.com/',
+                name: 'Github',
+                href: 'https://github.com/nestjs/nest',
                 outside: true,
               },
+
               {
                 name: 'NPM',
-                href: 'https://www.npmjs.com/package/express',
-                outside: true,
-              },
-              {
-                name: 'Wikipedia',
-                href: 'https://en.wikipedia.org/wiki/Express.js',
+                href: 'https://www.npmjs.com/package/@nestjs/core',
                 outside: true,
               },
             ],
@@ -50,13 +70,33 @@ const Nest = (): JSX.Element => {
           {
             name: 'Related',
             items: [
-              { name: 'Node', href: '/compute/node', domain: true },
+              { name: 'PostgreSQL', href: '/compute/postgres', domain: true },
+              { name: 'Typescript', href: '/compute/typescript', domain: true },
+              {
+                name: 'TypeOrm',
+                href: '/compute/postgres#typeorm',
+                domain: true,
+              },
+              { name: '3-Layer', href: '/compute/3layer', domain: true },
+              { name: 'Jest', href: '/compute/jest', domain: true },
+              { name: 'DRY', href: '/compute/dry', domain: true },
               { name: 'JWT', href: '/compute/jwt', domain: true },
-              { name: 'Knex', href: '/compute/knex', domain: true },
+              { name: 'DI', href: '/compute/typedi', domain: true },
+            ],
+          },
+          {
+            name: 'External',
+            items: [
+              {
+                name: 'MetaProgramming',
+                href:
+                  'http://blog.wolksoftware.com/decorators-metadata-reflection-in-typescript-from-novice-to-expert-part-4',
+                outside: true,
+              },
             ],
           },
         ]}
-      /> */}
+      />
 
       <Article
         articleHeader={{
@@ -71,57 +111,88 @@ const Nest = (): JSX.Element => {
         }}
         headerContent={
           <span>
+            <a name="intro" css={anchorPos} />
             Nest is a framework for building efficient, scalable Node.js
-            server-side applications. It uses progressive
-            <a css={insideLink}>
-              {` JavaScript `}
-              <JavascriptIcon />
-            </a>
-            , is built with and fully supports
-            <a css={insideLink}>
-              {` TypeScript `}
-              <TypescriptIcon />{' '}
-            </a>
+            server-side applications. It uses progressive Javascript, is built
+            with and fully supports
+            <TextLink
+              logo={<TypescriptIcon />}
+              text=" Typescript "
+              href="/compute/typescript"
+            />{' '}
             (yet still enables developers to code in pure JavaScript) and
             combines elements of OOP (Object Oriented Programming), FP
             (Functional Programming), and FRP (Functional Reactive Programming).
             <br />
             <br />
             Under the hood, Nest makes use of robust HTTP Server frameworks like
-            <a css={insideLink}>
-              {` Express `}
-              <span className="icon-expressjs-icon" />{' '}
-            </a>
+            <TextLink
+              logo={<span className="icon-expressjs-icon" />}
+              text=" Express "
+              href="/compute/express"
+            />{' '}
             (the default) and optionally can be configured to use Fastify. Nest
-            provides a level of abstraction above these common
-            <a css={insideLink}>
-              {` Node.js `} <span className="icon-nodejs-icon" />{' '}
-            </a>
+            provides a level of abstraction above these common Node.JS
             frameworks (Express/Fastify), but also exposes their APIs directly
             to the developer. This allows developers the freedom to use the
             myriad of third-party modules which are available for the underlying
             platform.
             <br />
             <br />I use
-            <a css={insideLink}>
-              {` Nest `} <span className="icon-nestjs" />{' '}
-            </a>{' '}
+            <TextLink
+              logo={<span className="icon-nestjs" />}
+              text=" Nest "
+              href="/compute/nest"
+            />{' '}
             for its ability to provide a toolkit allowing scalable API
             development following OOP development paradigms. While I use Express
             to quickly prototype an API, Nest allows me to develop a Production
-            grade API. The use of modules and
-            <a css={insideLink}>{` dependency injection `}🧱 </a> make it easier
-            to reuse logic and understand the whole system. To interact with a
+            grade API following
+            <TextLink
+              logo={<span>🌵</span>}
+              text=" DRY "
+              href="/compute/dry"
+            />{' '}
+            principles. The use of modules and
+            <TextLink
+              logo={<span>🧱</span>}
+              text=" dependency injection "
+              href="/compute/di"
+            />{' '}
+            make it easier to reuse logic and understand the whole system. To
+            interact with a{' '}
+            <TextLink
+              logo={<PostgresIcon />}
+              text=" PostgreSQL "
+              href="/compute/postgres"
+            />{' '}
             database I use the built in
-            <a css={insideLink}>{` TypeOrm `}⚙️ </a>
-            module with its repository pattern that Nest Provides.
+            <TextLink
+              logo={<span />}
+              text=" TypeOrm "
+              href="/compute/postgres#typeorm"
+            />{' '}
+            module with its repository pattern that Nest Provides. Tests are
+            handled by
+            <TextLink
+              logo={<JestIcon />}
+              text=" Jest "
+              href="/compute/jest"
+            />{' '}
+            which is included in the Nest package
             <br />
             <br />
-            You can find examples of my code using Nest in the nest-rest-api
-            <a css={insideLink}>
-              {` Github `} <span className="icon-github-filled" />{' '}
-            </a>
-            repository
+            <span css={githubLinkCaption}>
+              The following example is code I wrote. More detailed examples of
+              my code using Nest :
+              <TextLink
+                outside
+                logo={<span className="icon-github-filled" />}
+                text=" Nest-Rest-Anime-Api Github "
+                href="https://github.com/Maxime-Fleurant/Nest-Rest-Anime-Api"
+              />{' '}
+              repository
+            </span>
           </span>
         }
         headerCode={{ code: nestMain, language: 'language-ts' }}
@@ -134,16 +205,24 @@ const Nest = (): JSX.Element => {
             },
             content: (
               <span>
-                <a css={insideLink}>
-                  {`Nest `} <span className="icon-nestjs" />{' '}
-                </a>
-                is built around the strong design pattern commonly known as{' '}
-                <a css={insideLink}>{` dependency injection `}🧱</a>. In Nest,
-                thanks to
-                <a css={insideLink}>
-                  {` TypeScript `}
-                  <TypescriptIcon />{' '}
-                </a>
+                <a name="modules" css={anchorPos} />
+                <TextLink
+                  logo={<span className="icon-nestjs" />}
+                  text="Nest "
+                  href="/compute/nest"
+                />{' '}
+                is built around the strong design pattern commonly known as
+                <TextLink
+                  logo={<span>🧱</span>}
+                  text=" dependency injection "
+                  href="/compute/di"
+                />
+                . In Nest, thanks to
+                <TextLink
+                  logo={<TypescriptIcon />}
+                  text=" Typescript "
+                  href="/compute/typescript"
+                />{' '}
                 capabilities, it's extremely easy to manage dependencies because
                 they are resolved just by type.
                 <br />
@@ -156,6 +235,19 @@ const Nest = (): JSX.Element => {
                 root module is the starting point Nest uses to build the
                 application graph - the internal data structure Nest uses to
                 resolve module and provider relationships and dependencies.
+                <br />
+                <br />
+                <span css={githubLinkCaption}>
+                  The following example is code I wrote. More detailed examples
+                  of my code using Nest Modules :
+                  <TextLink
+                    outside
+                    logo={<span className="icon-github-filled" />}
+                    text=" Nest-Rest-Anime-Api Github "
+                    href="https://github.com/Maxime-Fleurant/Nest-Rest-Anime-Api"
+                  />{' '}
+                  repository
+                </span>
               </span>
             ),
             code: {
@@ -172,6 +264,7 @@ const Nest = (): JSX.Element => {
             },
             content: (
               <span>
+                <a name="controllers" css={anchorPos} />
                 Controllers are responsible for handling incoming requests and
                 returning responses to the client. <br />
                 <br />A controller's purpose is to receive specific requests for
@@ -182,8 +275,13 @@ const Nest = (): JSX.Element => {
                 <br />
                 <br />
                 In order to create a basic controller, we use classes and
-                decorators. Decorators associate classes with required metadata
-                and enable
+                decorators.
+                <TextLink
+                  logo={<TypescriptIcon />}
+                  text=" Decorators "
+                  href="/compute/typescript#decorators"
+                />{' '}
+                associate classes with required metadata and enable
                 <a css={insideLink}>
                   {` Nest `} <span className="icon-nestjs" />{' '}
                 </a>
@@ -201,11 +299,25 @@ const Nest = (): JSX.Element => {
                 headers, and body . In most cases, it's not necessary to grab
                 these properties manually. We can use dedicated decorators
                 instead, such as @Body() or @Query()
+                <br />
+                <br />
+                <span css={githubLinkCaption}>
+                  The following example is code I wrote. More detailed examples
+                  of my code using Nest Controllers and Decorators :
+                  <TextLink
+                    outside
+                    logo={<span className="icon-github-filled" />}
+                    text=" Nest-Rest-Anime-Api Github "
+                    href="https://github.com/Maxime-Fleurant/Nest-Rest-Anime-Api"
+                  />{' '}
+                  repository
+                </span>
               </span>
             ),
             code: {
               language: 'language-ts',
               code: nestController,
+              heightAuto: true,
             },
           },
           {
@@ -216,16 +328,35 @@ const Nest = (): JSX.Element => {
             },
             content: (
               <span>
+                <a name="dto" css={anchorPos} />
                 A DTO is an object that defines how the data will be sent over
                 the network. We could determine the DTO schema by using
-                TypeScript interfaces, or by simple classes.
+                <TextLink
+                  logo={<TypescriptIcon />}
+                  text=" TypeScript "
+                  href="/compute/typescript"
+                />{' '}
+                interfaces, or by simple classes.
+                <br />
+                <br />
+                <span css={githubLinkCaption}>
+                  The following example is code I wrote. More detailed examples
+                  of my code using Nest with DTOs :
+                  <TextLink
+                    outside
+                    logo={<span className="icon-github-filled" />}
+                    text=" Nest-Rest-Anime-Api Github "
+                    href="https://github.com/Maxime-Fleurant/Nest-Rest-Anime-Api"
+                  />{' '}
+                  repository
+                </span>
               </span>
             ),
             code: {
               language: 'language-ts',
               code: nestDto,
             },
-            extraSpace: 10,
+            extraSpace: 5,
           },
           {
             header: {
@@ -235,6 +366,7 @@ const Nest = (): JSX.Element => {
             },
             content: (
               <span>
+                <a name="providers" css={anchorPos} />
                 Providers are a fundamental concept in Nest. Many of the basic
                 Nest classes may be treated as a provider – services,
                 repositories, factories, helpers, and so on.
@@ -247,6 +379,19 @@ const Nest = (): JSX.Element => {
                 <br />
                 <br /> A provider is simply a class annotated with an
                 @Injectable() decorator.
+                <br />
+                <br />
+                <span css={githubLinkCaption}>
+                  The following example is code I wrote. More detailed examples
+                  of my code using Nest Providers :
+                  <TextLink
+                    outside
+                    logo={<span className="icon-github-filled" />}
+                    text=" Nest-Rest-Anime-Api Github "
+                    href="https://github.com/Maxime-Fleurant/Nest-Rest-Anime-Api"
+                  />{' '}
+                  repository
+                </span>
               </span>
             ),
             code: {
@@ -261,18 +406,43 @@ const Nest = (): JSX.Element => {
             },
             content: (
               <span>
-                To follow the DRY pattern, when the input of a request does not
-                require specific handling, it is easy to create a generic crud
-                service. <br />
+                <a name="Generic" css={anchorPos} />
+                To follow the{' '}
+                <TextLink
+                  logo={<span>🌵</span>}
+                  text=" DRY "
+                  href="/compute/dry"
+                />{' '}
+                pattern, when the input of a request does not require specific
+                handling, it is easy to create a generic crud service. <br />
                 <br />
                 By doing so we avoid repeating the logic that will require the
                 verification of a DTO and the sending of this payload to the
                 database service.
                 <br />
-                <br /> Using Typescript we can create a factory function which
-                will return a Typed class defining the basic crud actions, using
-                the generic arguments passed to the Typescript function. Then we
-                can use this class to extend the basic service provider.
+                <br /> Using
+                <TextLink
+                  logo={<TypescriptIcon />}
+                  text=" Typescript "
+                  href="/compute/typescript"
+                />{' '}
+                we can create a factory function which will return a Typed class
+                defining the basic crud actions, using the generic arguments
+                passed to the Typescript function. Then we can use this class to
+                extend the basic service provider.
+                <br />
+                <br />
+                <span css={githubLinkCaption}>
+                  The following example is code I wrote. More detailed examples
+                  of my code using Nest Generic Crud :
+                  <TextLink
+                    outside
+                    logo={<span className="icon-github-filled" />}
+                    text=" Nest-Rest-Anime-Api Github "
+                    href="https://github.com/Maxime-Fleurant/Nest-Rest-Anime-Api"
+                  />{' '}
+                  repository
+                </span>
               </span>
             ),
             code: {
@@ -288,6 +458,7 @@ const Nest = (): JSX.Element => {
             },
             content: (
               <span>
+                <a name="Guards" css={anchorPos} />
                 A guard is a class annotated with the @Injectable() decorator.
                 Guards should implement the CanActivate interface. <br />
                 <br />
@@ -296,9 +467,22 @@ const Nest = (): JSX.Element => {
                 depending on certain conditions (like permissions, roles, ACLs,
                 etc.) present at run-time. <br />
                 <br />
-                This is often referred to as authorization.Guards have access to
-                the ExecutionContext instance, and thus know exactly what's
+                This is often referred to as authorization. Guards have access
+                to the ExecutionContext instance, and thus know exactly what's
                 going to be executed next.
+                <br />
+                <br />
+                <span css={githubLinkCaption}>
+                  The following example is code I wrote. More detailed examples
+                  of my code using Nest Guards :
+                  <TextLink
+                    outside
+                    logo={<span className="icon-github-filled" />}
+                    text=" Nest-Rest-Anime-Api Github "
+                    href="https://github.com/Maxime-Fleurant/Nest-Rest-Anime-Api"
+                  />{' '}
+                  repository
+                </span>
               </span>
             ),
             code: {
