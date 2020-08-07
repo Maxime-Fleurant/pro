@@ -1,52 +1,53 @@
 import Article from '../../common/components/Article/Article';
-import { insideLink } from '../../common/components/Article/ArticleHead/articleHeaderStyle';
 import PassportIcon from '../../common/components/icons/Passport';
 import { mainpassport } from '../../common/components/Article/CodeBrowser/codes/passport';
+import { githubLinkCaption } from '../../common/components/Layout/style';
+import TextLink from '../../common/components/Article/textLink/TextLink';
+import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
 
 const Passport = () => {
   return (
     <>
-      {/* <ArticleNavigation
+      <ArticleNavigation
         content={[
           {
             name: 'Navigation',
-            items: [{ name: 'Dataloader', href: '#test' }],
+            items: [{ name: 'Intro', href: '#intro' }],
+          },
+
+          {
+            name: 'My Code',
+            items: [
+              {
+                name: 'Nest-Rest',
+                href: 'https://github.com/Maxime-Fleurant/Nest-Rest-Anime-Api',
+                outside: true,
+              },
+            ],
           },
           {
             name: 'Ressources',
             items: [
               {
-                name: 'Github',
-                href: 'https://github.com/expressjs/express',
+                name: 'Official Website',
+                href: 'http://www.passportjs.org/',
                 outside: true,
               },
               {
-                name: 'Official Website',
-                href: 'https://expressjs.com/',
+                name: 'Github',
+                href: 'https://github.com/jaredhanson/passport',
                 outside: true,
               },
+
               {
                 name: 'NPM',
-                href: 'https://www.npmjs.com/package/express',
+                href: 'https://www.npmjs.com/package/passport',
                 outside: true,
               },
-              {
-                name: 'Wikipedia',
-                href: 'https://en.wikipedia.org/wiki/Express.js',
-                outside: true,
-              },
-            ],
-          },
-          {
-            name: 'Related',
-            items: [
-              { name: 'Node', href: '/compute/node', domain: true },
-              { name: 'JWT', href: '/compute/jwt', domain: true },
-              { name: 'Knex', href: '/compute/knex', domain: true },
             ],
           },
         ]}
-      /> */}
+      />
 
       <Article
         articleHeader={{
@@ -67,12 +68,16 @@ const Passport = () => {
             Twitter, and more.
             <br />
             <br />
-            You can find examples of my code using PassportJS in the
-            nest-rest-api
-            <a css={insideLink}>
-              {` Github `} <span className="icon-github-filled" />{' '}
-            </a>
-            repository
+            <span css={githubLinkCaption}>
+              The following example is code I wrote. More detailed examples of
+              my code using Passport :
+              <TextLink
+                outside
+                logo={<span className="icon-github-filled" />}
+                text=" Nest-Rest-Anime-Api Github "
+                href="https://github.com/Maxime-Fleurant/Nest-Rest-Anime-Api"
+              />
+            </span>
           </span>
         }
         headerCode={{

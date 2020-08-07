@@ -32,4 +32,17 @@ export class CharacterLoader {
   };
 }
 
+// fieldResolver.ts
+@FieldResolver()
+async characters(
+  @Root() parent: Anime,
+  @Ctx() context: IContext
+): Promise<Character[]> {
+  const result = await context.loaders.characterLoaders.batchFindbyAnime.load(
+    parent.id
+  );
+
+  return result;
+}
+
 `;

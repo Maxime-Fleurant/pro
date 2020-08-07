@@ -2,51 +2,66 @@ import Article from '../../common/components/Article/Article';
 import { insideLink } from '../../common/components/Article/ArticleHead/articleHeaderStyle';
 import { mainLayer } from '../../common/components/Article/CodeBrowser/codes/3layer';
 import { drymain } from '../../common/components/Article/CodeBrowser/codes/dry';
+import TextLink from '../../common/components/Article/textLink/TextLink';
+import {
+  githubLinkCaption,
+  anchorPos,
+} from '../../common/components/Layout/style';
+import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
 
-const JWT = (): JSX.Element => {
+const Dry = (): JSX.Element => {
   return (
     <>
-      {/* <ArticleNavigation
+      <ArticleNavigation
         content={[
           {
             name: 'Navigation',
-            items: [{ name: 'Dataloader', href: '#test' }],
+            items: [{ name: 'Intro', href: '#intro' }],
+          },
+
+          {
+            name: 'My Code',
+            items: [
+              {
+                name: 'Nest-Rest',
+                href: 'https://github.com/Maxime-Fleurant/Nest-Rest-Anime-Api',
+                outside: true,
+              },
+              {
+                name: 'GraphQL-Api',
+                href: 'https://github.com/Maxime-Fleurant/GraphQL-Anime-Api',
+                outside: true,
+              },
+            ],
           },
           {
             name: 'Ressources',
             items: [
               {
-                name: 'Github',
-                href: 'https://github.com/expressjs/express',
-                outside: true,
-              },
-              {
-                name: 'Official Website',
-                href: 'https://expressjs.com/',
-                outside: true,
-              },
-              {
-                name: 'NPM',
-                href: 'https://www.npmjs.com/package/express',
-                outside: true,
-              },
-              {
-                name: 'Wikipedia',
-                href: 'https://en.wikipedia.org/wiki/Express.js',
+                name: 'Wiki',
+                href: 'https://en.wikipedia.org/wiki/Don%27t_repeat_yourself',
                 outside: true,
               },
             ],
           },
+
           {
             name: 'Related',
             items: [
-              { name: 'Node', href: '/compute/node', domain: true },
-              { name: 'JWT', href: '/compute/jwt', domain: true },
-              { name: 'Knex', href: '/compute/knex', domain: true },
+              {
+                name: 'Nest',
+                href: '/compute/nest',
+                domain: true,
+              },
+              {
+                name: 'TypeGraphQL',
+                href: '/compute/typegraphql',
+                domain: true,
+              },
             ],
           },
         ]}
-      /> */}
+      />
 
       <Article
         articleHeader={{
@@ -59,6 +74,7 @@ const JWT = (): JSX.Element => {
         }}
         headerContent={
           <span>
+            <a name="intro" css={anchorPos} />
             The DRY principle is stated as "Every piece of knowledge must have a
             single, unambiguous, authoritative representation within a system".
             <br />
@@ -75,9 +91,23 @@ const JWT = (): JSX.Element => {
             are thus kept in sync.
             <br />
             <br />
-            You can find examples of my code using the DRY pattern in the Anime
-            👁 demo project back end and front end Github repositories and also
-            in the nest-rest-api github repostitory
+            <span css={githubLinkCaption}>
+              The following example is code I wrote. More detailed examples of
+              my code using Dry Pattern :
+              <TextLink
+                outside
+                logo={<span className="icon-github-filled" />}
+                text=" Nest-Rest-Anime-Api "
+                href="https://github.com/Maxime-Fleurant/Nest-Rest-Anime-Api"
+              />{' '}
+              /
+              <TextLink
+                outside
+                logo={<span className="icon-github-filled" />}
+                text=" GraphQL-Anime-Api "
+                href="https://github.com/Maxime-Fleurant/GraphQL-Anime-Api"
+              />{' '}
+            </span>
           </span>
         }
         headerCode={{
@@ -90,4 +120,4 @@ const JWT = (): JSX.Element => {
   );
 };
 
-export default JWT;
+export default Dry;

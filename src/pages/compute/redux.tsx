@@ -5,37 +5,69 @@ import {
   reduxContainer,
 } from '../../common/components/Article/CodeBrowser/codes/redux';
 import TypescriptIcon from '../../common/components/icons/Typescript';
+import TextLink from '../../common/components/Article/textLink/TextLink';
+import {
+  githubLinkCaption,
+  anchorPos,
+} from '../../common/components/Layout/style';
+import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
 
 const Redux = (): JSX.Element => {
   return (
     <>
-      {/* <ArticleNavigation
+      <ArticleNavigation
         content={[
           {
             name: 'Navigation',
-            items: [{ name: 'Dataloader', href: '#test' }],
+            items: [
+              { name: 'Intro', href: '#intro' },
+              { name: 'Typescript', href: '#typescript' },
+              { name: 'Container', href: '#container' },
+            ],
           },
+          {
+            name: 'Live Demo',
+            items: [
+              {
+                name: 'Anime Search',
+                href: 'https://anime.maximefleurant.com/',
+                outside: true,
+              },
+            ],
+          },
+          {
+            name: 'My Code',
+            items: [
+              {
+                name: 'Next-Anime',
+                href: 'https://github.com/Maxime-Fleurant/Next-React-Anime-App',
+                outside: true,
+              },
+            ],
+          },
+
           {
             name: 'Ressources',
             items: [
               {
-                name: 'Github',
-                href: 'https://github.com/expressjs/express',
+                name: 'Official Website',
+                href: 'https://redux.js.org/',
                 outside: true,
               },
               {
-                name: 'Official Website',
-                href: 'https://expressjs.com/',
+                name: 'Github',
+                href: 'https://github.com/reduxjs/redux',
+                outside: true,
+              },
+              {
+                name: 'Wiki',
+                href:
+                  'https://en.wikipedia.org/wiki/Redux_(JavaScript_library)',
                 outside: true,
               },
               {
                 name: 'NPM',
-                href: 'https://www.npmjs.com/package/express',
-                outside: true,
-              },
-              {
-                name: 'Wikipedia',
-                href: 'https://en.wikipedia.org/wiki/Express.js',
+                href: 'https://www.npmjs.com/package/redux',
                 outside: true,
               },
             ],
@@ -43,13 +75,13 @@ const Redux = (): JSX.Element => {
           {
             name: 'Related',
             items: [
-              { name: 'Node', href: '/compute/node', domain: true },
-              { name: 'JWT', href: '/compute/jwt', domain: true },
-              { name: 'Knex', href: '/compute/knex', domain: true },
+              { name: 'Typescript', href: '/compute/typescript', domain: true },
+              { name: 'React', href: '/compute/react', domain: true },
+              { name: 'Next', href: '/compute/next', domain: true },
             ],
           },
         ]}
-      /> */}
+      />
 
       <Article
         articleHeader={{
@@ -64,7 +96,13 @@ const Redux = (): JSX.Element => {
         }}
         headerContent={
           <span>
-            Redux helps you write applications that behave consistently, run in
+            <a name="intro" css={anchorPos} />
+            <TextLink
+              logo={<span className="icon-redux" />}
+              text=" Redux "
+              href="/compute/redux"
+            />{' '}
+            helps you write applications that behave consistently, run in
             different environments (client, server, and native), and are easy to
             test.
             <br />
@@ -78,9 +116,50 @@ const Redux = (): JSX.Element => {
             changes, use "time-travel debugging", and even send complete error
             reports to a server.
             <br />
+            <br />I use Redux when I want a more complete state management
+            solution than Context API in my
+            <TextLink
+              logo={<span className="icon-react" />}
+              text=" React "
+              href="/compute/react"
+            />{' '}
+            /
+            <TextLink
+              logo={<span className="icon-next-js" />}
+              text=" Next "
+              href="/compute/next"
+            />{' '}
+            project. Redux adds a certain volume of boilerplate code but this
+            boilerplate is greatly reduced by the use of the redux-toolkit
+            package. Redux allows you to follow solid state management design
+            patterns and to use
+            <TextLink
+              logo={<TypescriptIcon />}
+              text=" Typescript "
+              href="/compute/typescript"
+            />
+            .
             <br />
-            You can find examples of my code using Redux in the Anime 👁 demo
-            project Github repository
+            <br />
+            Live Demo :{' '}
+            <TextLink
+              outside
+              logo={<span>👁</span>}
+              text=" Anime Search App "
+              href="https://anime.maximefleurant.com/"
+            />{' '}
+            <br />
+            <br />
+            <span css={githubLinkCaption}>
+              The following example is code I wrote. More detailed examples of
+              my code using Redux :
+              <TextLink
+                outside
+                logo={<span className="icon-github-filled" />}
+                text=" Next-React-Anime-App "
+                href="https://github.com/Maxime-Fleurant/Next-React-Anime-App"
+              />
+            </span>
           </span>
         }
         headerCode={{
@@ -97,6 +176,7 @@ const Redux = (): JSX.Element => {
             },
             content: (
               <span>
+                <a name="typescript" css={anchorPos} />
                 Redux Toolkit is written in TypeScript, and its API is designed
                 to enable great integration with TypeScript applications.
                 <br />
@@ -106,11 +186,22 @@ const Redux = (): JSX.Element => {
                 Dispatch type.
                 <br />
                 <br />
+                <span css={githubLinkCaption}>
+                  The following example is code I wrote. More detailed examples
+                  of my code using Redux With Typescript :
+                  <TextLink
+                    outside
+                    logo={<span className="icon-github-filled" />}
+                    text=" Next-React-Anime-App "
+                    href="https://github.com/Maxime-Fleurant/Next-React-Anime-App"
+                  />
+                </span>
               </span>
             ),
             code: {
               language: 'language-tsx',
               code: reduxTypescript,
+              heightAuto: true,
             },
           },
           {
@@ -122,6 +213,7 @@ const Redux = (): JSX.Element => {
             },
             content: (
               <span>
+                <a name="container" css={anchorPos} />
                 Container Pattern is commonly used to separate data
                 fetching/logic, events, and state from presentational components
                 (aka, dumb components).
@@ -131,6 +223,18 @@ const Redux = (): JSX.Element => {
                 presentational components in other use-cases, in your current
                 project/codebase or in other projects. Keeping your components
                 “dumb” makes it much easier to share and reuse them.
+                <br />
+                <br />
+                <span css={githubLinkCaption}>
+                  The following example is code I wrote. More detailed examples
+                  of my code using Redux Container Pattern :
+                  <TextLink
+                    outside
+                    logo={<span className="icon-github-filled" />}
+                    text=" Next-React-Anime-App "
+                    href="https://github.com/Maxime-Fleurant/Next-React-Anime-App"
+                  />
+                </span>
               </span>
             ),
             code: {

@@ -19,6 +19,9 @@ type TCell = FunctionComponent<{
   backgroundImg?: string | null;
   onClick?: MouseEventHandler;
   relative?: boolean;
+  allRatio?: number;
+  fit?: boolean;
+  contain?: boolean;
   endRowCallback?: (endRow: number) => void;
 }>;
 
@@ -33,11 +36,15 @@ export const SimpleCell: TCell = ({
   onClick,
   relative,
   mobilPos,
+  allRatio,
+  contain,
+  fit,
 }) => {
   let withRatioCss = css``;
   let withtabPos = css``;
   let withMobilPos = css``;
   let withBackground = css``;
+  let fitElem = css();
 
   const componentCss = css`
     grid-row-start: ${deskPos.rowStart};
@@ -76,10 +83,20 @@ export const SimpleCell: TCell = ({
     `;
   }
 
+  if (fit) {
+    fitElem = css({ backgroundPosition: 'fit' });
+  }
+
+  if (allRatio) {
+    withRatioCss = css`
+      padding-top: ${100 * allRatio}%;
+    `;
+  }
+
   if (backgroundImg) {
     withBackground = css({
       backgroundImage: `url("${backgroundImg}")`,
-      backgroundSize: 'cover',
+      backgroundSize: contain ? 'contain' : 'cover',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'center',
     });
@@ -96,6 +113,7 @@ export const SimpleCell: TCell = ({
           withtabPos,
           withBackground,
           withMobilPos,
+          fitElem,
           ...extraCss,
         ]}
       >
@@ -113,6 +131,7 @@ export const SimpleCell: TCell = ({
         withtabPos,
         withBackground,
         withMobilPos,
+        fitElem,
         ...extraCss,
       ]}
     >

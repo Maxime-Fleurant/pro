@@ -8,8 +8,6 @@ import {
   logoPart,
   logo,
   nav,
-  navLink,
-  activeLink,
   navCell,
   menuButton,
   sideBar,

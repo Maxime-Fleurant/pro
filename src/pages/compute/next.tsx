@@ -1,44 +1,78 @@
 import Article from '../../common/components/Article/Article';
 import TypescriptIcon from '../../common/components/icons/Typescript';
-import {
-  acmain,
-  acgcg,
-} from '../../common/components/Article/CodeBrowser/codes/apolloclient';
+
 import {
   nextMain,
   nextpage,
 } from '../../common/components/Article/CodeBrowser/codes/next';
+import TextLink from '../../common/components/Article/textLink/TextLink';
+import {
+  githubLinkCaption,
+  anchorPos,
+} from '../../common/components/Layout/style';
+import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
 
-const Redux = (): JSX.Element => {
+const Next = (): JSX.Element => {
   return (
     <>
-      {/* <ArticleNavigation
+      <ArticleNavigation
         content={[
           {
             name: 'Navigation',
-            items: [{ name: 'Dataloader', href: '#test' }],
+            items: [
+              { name: 'Intro', href: '#intro' },
+              { name: 'Fetching', href: '#fetching' },
+            ],
           },
+          {
+            name: 'Live Demo',
+            items: [
+              {
+                name: 'Anime Search',
+                href: 'https://anime.maximefleurant.com/',
+                outside: true,
+              },
+              {
+                name: 'Portfolio',
+                href: 'https://maximefleurant.com/',
+                outside: true,
+              },
+            ],
+          },
+          {
+            name: 'My Code',
+            items: [
+              {
+                name: 'Next-Anime',
+                href: 'https://github.com/Maxime-Fleurant/Next-React-Anime-App',
+                outside: true,
+              },
+              {
+                name: 'Next-Portfolio',
+                href:
+                  'https://github.com/Maxime-Fleurant/Next-React-Portefolio',
+                outside: true,
+              },
+            ],
+          },
+
           {
             name: 'Ressources',
             items: [
               {
-                name: 'Github',
-                href: 'https://github.com/expressjs/express',
+                name: 'Official Website',
+                href: 'https://nextjs.org/',
                 outside: true,
               },
               {
-                name: 'Official Website',
-                href: 'https://expressjs.com/',
+                name: 'Github',
+                href: 'https://github.com/vercel/next.js',
                 outside: true,
               },
+
               {
                 name: 'NPM',
-                href: 'https://www.npmjs.com/package/express',
-                outside: true,
-              },
-              {
-                name: 'Wikipedia',
-                href: 'https://en.wikipedia.org/wiki/Express.js',
+                href: 'https://www.npmjs.com/package/next',
                 outside: true,
               },
             ],
@@ -46,13 +80,19 @@ const Redux = (): JSX.Element => {
           {
             name: 'Related',
             items: [
-              { name: 'Node', href: '/compute/node', domain: true },
-              { name: 'JWT', href: '/compute/jwt', domain: true },
-              { name: 'Knex', href: '/compute/knex', domain: true },
+              {
+                name: 'Apollo Client',
+                href: '/compute/apolloclient',
+                domain: true,
+              },
+              { name: 'Typescript', href: '/compute/typescript', domain: true },
+              { name: 'Emotion', href: '/compute/emotion', domain: true },
+              { name: 'React', href: '/compute/react', domain: true },
+              { name: 'Redux', href: '/compute/redux', domain: true },
             ],
           },
         ]}
-      /> */}
+      />
 
       <Article
         articleHeader={{
@@ -66,6 +106,7 @@ const Redux = (): JSX.Element => {
         }}
         headerContent={
           <span>
+            <a name="intro" css={anchorPos} />
             Isomorphic JavaScript, also known as Universal JavaScript, describes
             JavaScript applications which run both on the client and the server.
             <br />
@@ -85,8 +126,74 @@ const Redux = (): JSX.Element => {
             the client. The client can then render the view immediately.
             <br />
             <br />
-            You can find examples of my code using Redux in the Anime 👁 demo
-            project Github repository
+            I use
+            <TextLink
+              logo={<span className="icon-react" />}
+              text=" React "
+              href="/compute/react"
+            />{' '}
+            with
+            <TextLink
+              logo={<span className="icon-next-js" />}
+              text=" Next "
+              href="/compute/next"
+            />{' '}
+            for its SSR capability. In my React projects the Internal state is
+            managed by
+            <TextLink
+              logo={<span className="icon-redux" />}
+              text=" Redux "
+              href="/compute/redux"
+            />{' '}
+            or the context API when the state requirements are simple. For
+            fetching external data I use
+            <TextLink
+              logo={<span className="icon-a" />}
+              text=" Apollo Client "
+              href="/compute/apolloclient"
+            />
+            . Styling is done using
+            <TextLink
+              logo={<span>👩‍🎤</span>}
+              text=" Emotion "
+              href="/compute/emotion"
+            />{' '}
+            css in js solution.
+            <br />
+            <br />
+            Live Demo :{' '}
+            <TextLink
+              outside
+              logo={<span>👁</span>}
+              text=" Anime Search App "
+              href="https://anime.maximefleurant.com/"
+            />{' '}
+            /
+            <TextLink
+              outside
+              logo={<span>🌎</span>}
+              text=" Portfolio "
+              href="https://maximefleurant.com/"
+            />
+            <br />
+            <br />
+            <span css={githubLinkCaption}>
+              The following example is code I wrote. More detailed examples of
+              my code using Next :
+              <TextLink
+                outside
+                logo={<span className="icon-github-filled" />}
+                text=" Next-React-Anime-App "
+                href="https://github.com/Maxime-Fleurant/Next-React-Anime-App"
+              />{' '}
+              /
+              <TextLink
+                outside
+                logo={<span className="icon-github-filled" />}
+                text=" Next-React-Portefolio "
+                href="https://github.com/Maxime-Fleurant/Next-React-Portefolio"
+              />{' '}
+            </span>
           </span>
         }
         headerCode={{
@@ -102,9 +209,16 @@ const Redux = (): JSX.Element => {
             },
             content: (
               <span>
-                In Next.js, a page is a React Component exported from a .js,
-                .jsx, .ts, or .tsx file in the pages directory. Each page is
-                associated with a route based on its file name.
+                <a name="fetching" css={anchorPos} />
+                In Next.js, a page is a
+                <TextLink
+                  logo={<span className="icon-react" />}
+                  text=" React "
+                  href="/compute/react"
+                />{' '}
+                Component exported from a .js, .jsx, .ts, or .tsx file in the
+                pages directory. Each page is associated with a route based on
+                its file name.
                 <br />
                 <br />
                 Next.js supports pages with dynamic routes. For example, if you
@@ -112,7 +226,12 @@ const Redux = (): JSX.Element => {
                 accessible at posts/1, posts/2, etc.
                 <br />
                 <br />
-                Next.js has two forms of pre-rendering: Static Generation and
+                <TextLink
+                  logo={<span className="icon-next-js" />}
+                  text=" Next.js "
+                  href="/compute/next"
+                />{' '}
+                has two forms of pre-rendering: Static Generation and
                 Server-side Rendering. The difference is in when it generates
                 the HTML for a page.
                 <br />
@@ -124,8 +243,13 @@ const Redux = (): JSX.Element => {
                 <br />
                 If you export an async function called getStaticProps from a
                 page, Next.js will pre-render this page at build time using the
-                props returned by getStaticProps. For TypeScript, you can use
-                the GetStaticProps type.
+                props returned by getStaticProps. For
+                <TextLink
+                  logo={<TypescriptIcon />}
+                  text=" TypeScript "
+                  href="/compute/typescript"
+                />
+                , you can use the GetStaticProps type.
                 <br />
                 <br />
                 If a page has dynamic routes and uses getStaticProps it needs to
@@ -137,6 +261,25 @@ const Redux = (): JSX.Element => {
                 page that uses dynamic routes, Next.js will statically
                 pre-render all the paths specified by getStaticPaths. For
                 TypeScript, you can use the GetStaticPaths type.
+                <br />
+                <br />
+                <span css={githubLinkCaption}>
+                  The following example is code I wrote. More detailed examples
+                  of my code using Next :
+                  <TextLink
+                    outside
+                    logo={<span className="icon-github-filled" />}
+                    text=" Next-React-Anime-App "
+                    href="https://github.com/Maxime-Fleurant/Next-React-Anime-App"
+                  />{' '}
+                  /
+                  <TextLink
+                    outside
+                    logo={<span className="icon-github-filled" />}
+                    text=" Next-React-Portefolio "
+                    href="https://github.com/Maxime-Fleurant/Next-React-Portefolio"
+                  />{' '}
+                </span>
               </span>
             ),
             code: {
@@ -151,4 +294,4 @@ const Redux = (): JSX.Element => {
   );
 };
 
-export default Redux;
+export default Next;

@@ -1,58 +1,95 @@
 import Article from '../../common/components/Article/Article';
-import { insideLink } from '../../common/components/Article/ArticleHead/articleHeaderStyle';
-import { mainLayer } from '../../common/components/Article/CodeBrowser/codes/3layer';
-import { drymain } from '../../common/components/Article/CodeBrowser/codes/dry';
-import { dimain } from '../../common/components/Article/CodeBrowser/codes/di';
-import MongoDbIcon from '../../common/components/icons/Mongodb';
-import { mongMain } from '../../common/components/Article/CodeBrowser/codes/mongo';
-import { neomain } from '../../common/components/Article/CodeBrowser/codes/neo4j';
-import NeoIcon from '../../common/components/icons/neo';
+
 import { dockerMain } from '../../common/components/Article/CodeBrowser/codes/docker';
+import { githubLinkCaption } from '../../common/components/Layout/style';
+import TextLink from '../../common/components/Article/textLink/TextLink';
+import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
 
 const Docker = (): JSX.Element => {
   return (
     <>
-      {/* <ArticleNavigation
+      <ArticleNavigation
         content={[
           {
             name: 'Navigation',
-            items: [{ name: 'Dataloader', href: '#test' }],
+            items: [{ name: 'Intro', href: '#intro' }],
           },
+          {
+            name: 'Live Demo',
+            items: [
+              {
+                name: 'Anime Search',
+                href: 'https://anime.maximefleurant.com/',
+                outside: true,
+              },
+            ],
+          },
+          {
+            name: 'My Code',
+            items: [
+              {
+                name: 'Nest-Rest',
+                href: 'https://github.com/Maxime-Fleurant/Nest-Rest-Anime-Api',
+                outside: true,
+              },
+              {
+                name: 'GraphQL-Api',
+                href: 'https://github.com/Maxime-Fleurant/GraphQL-Anime-Api',
+                outside: true,
+              },
+              {
+                name: 'Express-Rest',
+                href:
+                  'https://github.com/Maxime-Fleurant/Express-Rest-Anime-Api/tree/master/api_postgres',
+                outside: true,
+              },
+            ],
+          },
+
           {
             name: 'Ressources',
             items: [
               {
-                name: 'Github',
-                href: 'https://github.com/expressjs/express',
-                outside: true,
-              },
-              {
                 name: 'Official Website',
-                href: 'https://expressjs.com/',
+                href: 'https://www.docker.com/',
                 outside: true,
               },
               {
-                name: 'NPM',
-                href: 'https://www.npmjs.com/package/express',
+                name: 'Github',
+                href: 'https://github.com/docker',
                 outside: true,
               },
               {
-                name: 'Wikipedia',
-                href: 'https://en.wikipedia.org/wiki/Express.js',
+                name: 'Wiki',
+                href: 'https://en.wikipedia.org/wiki/Docker_(software)',
                 outside: true,
+              },
+            ],
+          },
+
+          {
+            name: 'Related',
+            items: [
+              {
+                name: 'PostgreSQL',
+                href: '/compute/postgres',
+                domain: true,
               },
             ],
           },
           {
-            name: 'Related',
+            name: 'External',
             items: [
-              { name: 'Node', href: '/compute/node', domain: true },
-              { name: 'JWT', href: '/compute/jwt', domain: true },
-              { name: 'Knex', href: '/compute/knex', domain: true },
+              {
+                name: 'Normalization',
+                href:
+                  'https://www.lucidchart.com/pages/database-diagram/database-design',
+                outside: true,
+              },
             ],
           },
         ]}
-      /> */}
+      />
 
       <Article
         articleHeader={{
@@ -78,10 +115,33 @@ const Docker = (): JSX.Element => {
             used for writing and testing the code.
             <br />
             <br />
-            You can find examples of my code using Neo4j in the
-            scrap-anime-neo4j Github repository.
+            <span css={githubLinkCaption}>
+              The following example is code I wrote. More detailed examples of
+              my code using Docker :
+              <TextLink
+                outside
+                logo={<span className="icon-github-filled" />}
+                text=" Nest-Rest-Anime-Api "
+                href="https://github.com/Maxime-Fleurant/Nest-Rest-Anime-Api"
+              />{' '}
+              /
+              <TextLink
+                outside
+                logo={<span className="icon-github-filled" />}
+                text=" GraphQL-Anime-Api "
+                href="https://github.com/Maxime-Fleurant/GraphQL-Anime-Api"
+              />{' '}
+              /
+              <TextLink
+                outside
+                logo={<span className="icon-github-filled" />}
+                text=" Express-Rest-Anime-Api "
+                href="https://github.com/Maxime-Fleurant/Express-Rest-Anime-Api/tree/master/api_postgres"
+              />
+            </span>
           </span>
         }
+        headerContentHeightExtra={10}
         headerCode={{
           code: dockerMain,
           language: 'language-yml',

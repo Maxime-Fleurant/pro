@@ -81,7 +81,7 @@ const Nest = (): JSX.Element => {
               { name: 'Jest', href: '/compute/jest', domain: true },
               { name: 'DRY', href: '/compute/dry', domain: true },
               { name: 'JWT', href: '/compute/jwt', domain: true },
-              { name: 'DI', href: '/compute/typedi', domain: true },
+              { name: 'DI', href: '/compute/di', domain: true },
             ],
           },
           {
@@ -191,7 +191,6 @@ const Nest = (): JSX.Element => {
                 text=" Nest-Rest-Anime-Api Github "
                 href="https://github.com/Maxime-Fleurant/Nest-Rest-Anime-Api"
               />{' '}
-              repository
             </span>
           </span>
         }
@@ -244,7 +243,7 @@ const Nest = (): JSX.Element => {
                     outside
                     logo={<span className="icon-github-filled" />}
                     text=" Nest-Rest-Anime-Api Github "
-                    href="https://github.com/Maxime-Fleurant/Nest-Rest-Anime-Api"
+                    href="https://github.com/Maxime-Fleurant/Nest-Rest-Anime-Api/blob/master/src/app.module.ts"
                   />{' '}
                   repository
                 </span>
@@ -308,7 +307,7 @@ const Nest = (): JSX.Element => {
                     outside
                     logo={<span className="icon-github-filled" />}
                     text=" Nest-Rest-Anime-Api Github "
-                    href="https://github.com/Maxime-Fleurant/Nest-Rest-Anime-Api"
+                    href="https://github.com/Maxime-Fleurant/Nest-Rest-Anime-Api/blob/master/src/animes/animes.controller.ts"
                   />{' '}
                   repository
                 </span>
@@ -346,7 +345,7 @@ const Nest = (): JSX.Element => {
                     outside
                     logo={<span className="icon-github-filled" />}
                     text=" Nest-Rest-Anime-Api Github "
-                    href="https://github.com/Maxime-Fleurant/Nest-Rest-Anime-Api"
+                    href="https://github.com/Maxime-Fleurant/Nest-Rest-Anime-Api/blob/master/src/animes/dto/create-anime.dto.ts"
                   />{' '}
                   repository
                 </span>
@@ -388,7 +387,7 @@ const Nest = (): JSX.Element => {
                     outside
                     logo={<span className="icon-github-filled" />}
                     text=" Nest-Rest-Anime-Api Github "
-                    href="https://github.com/Maxime-Fleurant/Nest-Rest-Anime-Api"
+                    href="https://github.com/Maxime-Fleurant/Nest-Rest-Anime-Api/blob/master/src/animes/animes.service.ts"
                   />{' '}
                   repository
                 </span>
@@ -439,7 +438,7 @@ const Nest = (): JSX.Element => {
                     outside
                     logo={<span className="icon-github-filled" />}
                     text=" Nest-Rest-Anime-Api Github "
-                    href="https://github.com/Maxime-Fleurant/Nest-Rest-Anime-Api"
+                    href="https://github.com/Maxime-Fleurant/Nest-Rest-Anime-Api/blob/master/src/shared/generic-service-orchestrator.ts"
                   />{' '}
                   repository
                 </span>
@@ -479,7 +478,7 @@ const Nest = (): JSX.Element => {
                     outside
                     logo={<span className="icon-github-filled" />}
                     text=" Nest-Rest-Anime-Api Github "
-                    href="https://github.com/Maxime-Fleurant/Nest-Rest-Anime-Api"
+                    href="https://github.com/Maxime-Fleurant/Nest-Rest-Anime-Api/tree/master/src/auth"
                   />{' '}
                   repository
                 </span>

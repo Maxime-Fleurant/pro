@@ -1,51 +1,78 @@
 import Article from '../../common/components/Article/Article';
 import { insideLink } from '../../common/components/Article/ArticleHead/articleHeaderStyle';
 import { mainLayer } from '../../common/components/Article/CodeBrowser/codes/3layer';
+import TextLink from '../../common/components/Article/textLink/TextLink';
+import {
+  githubLinkCaption,
+  anchorPos,
+} from '../../common/components/Layout/style';
+import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
 
 const JWT = (): JSX.Element => {
   return (
     <>
-      {/* <ArticleNavigation
+      <ArticleNavigation
         content={[
           {
             name: 'Navigation',
-            items: [{ name: 'Dataloader', href: '#test' }],
+            items: [{ name: 'Intro', href: '#intro' }],
+          },
+          {
+            name: 'My Code',
+            items: [
+              {
+                name: 'Nest-Rest',
+                href: 'https://github.com/Maxime-Fleurant/Nest-Rest-Anime-Api',
+                outside: true,
+              },
+              {
+                name: 'Express-Rest',
+                href:
+                  'https://github.com/Maxime-Fleurant/Express-Rest-Anime-Api/tree/master/api_postgres',
+                outside: true,
+              },
+            ],
           },
           {
             name: 'Ressources',
             items: [
               {
-                name: 'Github',
-                href: 'https://github.com/expressjs/express',
-                outside: true,
-              },
-              {
-                name: 'Official Website',
-                href: 'https://expressjs.com/',
-                outside: true,
-              },
-              {
-                name: 'NPM',
-                href: 'https://www.npmjs.com/package/express',
-                outside: true,
-              },
-              {
-                name: 'Wikipedia',
-                href: 'https://en.wikipedia.org/wiki/Express.js',
+                name: 'Wiki',
+                href: 'https://en.wikipedia.org/wiki/Multitier_architecture',
                 outside: true,
               },
             ],
           },
+
           {
             name: 'Related',
             items: [
-              { name: 'Node', href: '/compute/node', domain: true },
-              { name: 'JWT', href: '/compute/jwt', domain: true },
-              { name: 'Knex', href: '/compute/knex', domain: true },
+              {
+                name: 'Nest',
+                href: '/compute/nest',
+                domain: true,
+              },
+              {
+                name: 'Express',
+                href: '/compute/express',
+                domain: true,
+              },
+            ],
+          },
+
+          {
+            name: 'External',
+            items: [
+              {
+                name: 'BulletProof',
+                href:
+                  'https://softwareontheroad.com/ideal-nodejs-project-structure/',
+                outside: true,
+              },
             ],
           },
         ]}
-      /> */}
+      />
 
       <Article
         articleHeader={{
@@ -58,6 +85,7 @@ const JWT = (): JSX.Element => {
         }}
         headerContent={
           <span>
+            <a name="intro" css={anchorPos} />
             Each layer has a specific set of responsibilities that are clearly
             defined and easy to grasp. Each layer accesses the layer below it,
             never above it. Serving a request touches each layer starting from
@@ -95,17 +123,27 @@ const JWT = (): JSX.Element => {
             and making the call.
             <br />
             <br />
-            You can find examples of my code using the 3-layer pattern in the
-            nest-rest-api
-            <a css={insideLink}>
-              {` Github `} <span className="icon-github-filled" />{' '}
-            </a>
-            repository
+            <span css={githubLinkCaption}>
+              The following example is code I wrote. More detailed examples of
+              my code using 3-Layer architecture :
+              <TextLink
+                outside
+                logo={<span className="icon-github-filled" />}
+                text=" Nest-Rest-Anime-Api "
+                href="https://github.com/Maxime-Fleurant/Nest-Rest-Anime-Api"
+              />{' '}
+              <TextLink
+                outside
+                logo={<span className="icon-github-filled" />}
+                text=" Express-Rest-Anime-Api "
+                href="https://github.com/Maxime-Fleurant/Express-Rest-Anime-Api/tree/master/api_postgres"
+              />
+            </span>
           </span>
         }
         headerCode={{
           code: mainLayer,
-          language: 'language-js',
+          language: 'language-ts',
         }}
         content={[]}
       />

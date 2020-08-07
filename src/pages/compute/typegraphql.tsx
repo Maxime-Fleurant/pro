@@ -88,8 +88,10 @@ const TypeGraphql = () => {
                 href: '/compute/postgres#typeorm',
                 domain: true,
               },
+              { name: 'Apollo', href: '/compute/apollo', domain: true },
+              { name: 'TypeDI', href: '/compute/typedi', domain: true },
               { name: 'DRY', href: '/compute/dry', domain: true },
-              { name: 'DI', href: '/compute/typedi', domain: true },
+              { name: 'DI', href: '/compute/di', domain: true },
             ],
           },
           {

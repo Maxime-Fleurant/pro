@@ -2,51 +2,88 @@ import Article from '../../common/components/Article/Article';
 import { insideLink } from '../../common/components/Article/ArticleHead/articleHeaderStyle';
 import { mainLayer } from '../../common/components/Article/CodeBrowser/codes/3layer';
 import { drymain } from '../../common/components/Article/CodeBrowser/codes/dry';
+import {
+  githubLinkCaption,
+  anchorPos,
+} from '../../common/components/Layout/style';
+import TextLink from '../../common/components/Article/textLink/TextLink';
+import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
+import { normMain } from '../../common/components/Article/CodeBrowser/codes/norm';
 
 const JWT = (): JSX.Element => {
   return (
     <>
-      {/* <ArticleNavigation
+      <ArticleNavigation
         content={[
           {
             name: 'Navigation',
-            items: [{ name: 'Dataloader', href: '#test' }],
+            items: [{ name: 'Intro', href: '#intro' }],
+          },
+          {
+            name: 'Live Demo',
+            items: [
+              {
+                name: 'Anime Search',
+                href: 'https://anime.maximefleurant.com/',
+                outside: true,
+              },
+            ],
+          },
+          {
+            name: 'My Code',
+            items: [
+              {
+                name: 'Nest-Rest',
+                href: 'https://github.com/Maxime-Fleurant/Nest-Rest-Anime-Api',
+                outside: true,
+              },
+              {
+                name: 'GraphQL-Api',
+                href: 'https://github.com/Maxime-Fleurant/GraphQL-Anime-Api',
+                outside: true,
+              },
+              {
+                name: 'Express-Rest',
+                href:
+                  'https://github.com/Maxime-Fleurant/Express-Rest-Anime-Api/tree/master/api_postgres',
+                outside: true,
+              },
+            ],
           },
           {
             name: 'Ressources',
             items: [
               {
-                name: 'Github',
-                href: 'https://github.com/expressjs/express',
+                name: 'Wiki',
+                href: 'https://en.wikipedia.org/wiki/Database_normalization',
                 outside: true,
               },
+            ],
+          },
+
+          {
+            name: 'Related',
+            items: [
               {
-                name: 'Official Website',
-                href: 'https://expressjs.com/',
-                outside: true,
-              },
-              {
-                name: 'NPM',
-                href: 'https://www.npmjs.com/package/express',
-                outside: true,
-              },
-              {
-                name: 'Wikipedia',
-                href: 'https://en.wikipedia.org/wiki/Express.js',
-                outside: true,
+                name: 'PostgreSQL',
+                href: '/compute/postgres',
+                domain: true,
               },
             ],
           },
           {
-            name: 'Related',
+            name: 'External',
             items: [
-              { name: 'Node', href: '/compute/node', domain: true },
-              { name: 'JWT', href: '/compute/jwt', domain: true },
-              { name: 'Knex', href: '/compute/knex', domain: true },
+              {
+                name: 'Normalization',
+                href:
+                  'https://www.lucidchart.com/pages/database-diagram/database-design',
+                outside: true,
+              },
             ],
           },
         ]}
-      /> */}
+      />
 
       <Article
         articleHeader={{
@@ -59,6 +96,7 @@ const JWT = (): JSX.Element => {
         }}
         headerContent={
           <span>
+            <a name="intro" css={anchorPos} />
             Once you have a preliminary design for your database, you can apply
             normalization rules to make sure the tables are structured
             correctly. Think of these rules as the industry standards.
@@ -80,12 +118,43 @@ const JWT = (): JSX.Element => {
             change, that table does not meet the third normal form.
             <br />
             <br />
-            You can find examples of my code using Normalized Database in the
-            Anime 👁 demo project Github repository
+            Live Demo :{' '}
+            <TextLink
+              outside
+              logo={<span>👁</span>}
+              text=" Anime Search App "
+              href="https://anime.maximefleurant.com/"
+            />{' '}
+            <br />
+            <br />
+            <span css={githubLinkCaption}>
+              The following example is code I wrote. More detailed examples of
+              my code using Normalization :
+              <TextLink
+                outside
+                logo={<span className="icon-github-filled" />}
+                text=" Nest-Rest-Anime-Api "
+                href="https://github.com/Maxime-Fleurant/Nest-Rest-Anime-Api"
+              />{' '}
+              /
+              <TextLink
+                outside
+                logo={<span className="icon-github-filled" />}
+                text=" GraphQL-Anime-Api "
+                href="https://github.com/Maxime-Fleurant/GraphQL-Anime-Api"
+              />{' '}
+              /
+              <TextLink
+                outside
+                logo={<span className="icon-github-filled" />}
+                text=" Express-Rest-Anime-Api "
+                href="https://github.com/Maxime-Fleurant/Express-Rest-Anime-Api/tree/master/api_postgres"
+              />
+            </span>
           </span>
         }
         headerCode={{
-          code: drymain,
+          code: normMain,
           language: 'language-js',
         }}
         content={[]}

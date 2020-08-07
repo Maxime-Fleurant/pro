@@ -14,37 +14,80 @@ import {
   cssGrid,
 } from '../../common/components/Article/CodeBrowser/codes/emotion';
 import Jss from '../../common/components/icons/jss';
+import TextLink from '../../common/components/Article/textLink/TextLink';
+import {
+  githubLinkCaption,
+  anchorPos,
+} from '../../common/components/Layout/style';
+import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
 
 const Emotion = (): JSX.Element => {
   return (
     <>
-      {/* <ArticleNavigation
+      <ArticleNavigation
         content={[
           {
             name: 'Navigation',
-            items: [{ name: 'Dataloader', href: '#test' }],
+            items: [
+              { name: 'Intro', href: '#intro' },
+              { name: 'Theming', href: '#theming' },
+              { name: 'Grid', href: '#grid' },
+            ],
           },
+          {
+            name: 'Live Demo',
+            items: [
+              {
+                name: 'Anime Search',
+                href: 'https://anime.maximefleurant.com/',
+                outside: true,
+              },
+              {
+                name: 'Portfolio',
+                href: 'https://maximefleurant.com/',
+                outside: true,
+              },
+            ],
+          },
+          {
+            name: 'My Code',
+            items: [
+              {
+                name: 'Next-Anime',
+                href: 'https://github.com/Maxime-Fleurant/Next-React-Anime-App',
+                outside: true,
+              },
+              {
+                name: 'Next-Portfolio',
+                href:
+                  'https://github.com/Maxime-Fleurant/Next-React-Portefolio',
+                outside: true,
+              },
+            ],
+          },
+
           {
             name: 'Ressources',
             items: [
               {
-                name: 'Github',
-                href: 'https://github.com/expressjs/express',
+                name: 'Official Website',
+                href: 'https://emotion.sh/docs/introduction',
                 outside: true,
               },
               {
-                name: 'Official Website',
-                href: 'https://expressjs.com/',
+                name: 'Github',
+                href: 'https://github.com/emotion-js/emotion',
                 outside: true,
               },
+              {
+                name: 'Wiki',
+                href: 'https://en.wikipedia.org/wiki/CSS-in-JS',
+                outside: true,
+              },
+
               {
                 name: 'NPM',
-                href: 'https://www.npmjs.com/package/express',
-                outside: true,
-              },
-              {
-                name: 'Wikipedia',
-                href: 'https://en.wikipedia.org/wiki/Express.js',
+                href: 'https://www.npmjs.com/package/emotion',
                 outside: true,
               },
             ],
@@ -52,13 +95,28 @@ const Emotion = (): JSX.Element => {
           {
             name: 'Related',
             items: [
-              { name: 'Node', href: '/compute/node', domain: true },
-              { name: 'JWT', href: '/compute/jwt', domain: true },
-              { name: 'Knex', href: '/compute/knex', domain: true },
+              { name: 'React', href: '/compute/react', domain: true },
+              { name: 'Next', href: '/compute/next', domain: true },
+            ],
+          },
+          {
+            name: 'External',
+            items: [
+              {
+                name: 'Scale',
+                href: 'https://css-tricks.com/optimizing-large-scale-displays/',
+                outside: true,
+              },
+              {
+                name: 'Grid',
+                href:
+                  'https://css-tricks.com/snippets/css/complete-guide-grid/',
+                outside: true,
+              },
             ],
           },
         ]}
-      /> */}
+      />
 
       <Article
         articleHeader={{
@@ -74,8 +132,13 @@ const Emotion = (): JSX.Element => {
         }}
         headerContent={
           <span>
-            Emotion is a library designed for writing css styles with
-            JavaScript. <br />
+            <a name="intro" css={anchorPos} />
+            <TextLink
+              logo={<span>👩‍🎤</span>}
+              text=" Emotion "
+              href="/compute/emotion"
+            />{' '}
+            is a library designed for writing css styles with JavaScript. <br />
             <br />
             It provides powerful and predictable style composition in addition
             to a great developer experience with features such as source maps,
@@ -83,18 +146,62 @@ const Emotion = (): JSX.Element => {
             supported.
             <br />
             <br />
-            You can find examples of my code using Emotion in the
-            <a css={insideLink}>
-              {` Anime `} <span>👁</span>{' '}
-            </a>
-            demo project
-            <a css={insideLink}>
-              {` Github `} <span className="icon-github-filled" />{' '}
-            </a>
-            repository
+            J'utilise Emotion comme
+            <TextLink
+              logo={<Jss />}
+              text=" Css In Jss "
+              href="/compute/emotion"
+            />{' '}
+            solution dans la plupart de mes projets
+            <TextLink
+              logo={<span className="icon-react" />}
+              text=" React "
+              href="/compute/react"
+            />{' '}
+            /
+            <TextLink
+              logo={<span className="icon-next-js" />}
+              text=" Next "
+              href="/compute/next"
+            />
+            .
+            <br />
+            <br />
+            Live Demo :{' '}
+            <TextLink
+              outside
+              logo={<span>👁</span>}
+              text=" Anime Search App "
+              href="https://anime.maximefleurant.com/"
+            />{' '}
+            /
+            <TextLink
+              outside
+              logo={<span>🌎</span>}
+              text=" Portfolio "
+              href="https://maximefleurant.com/"
+            />
+            <br />
+            <br />
+            <span css={githubLinkCaption}>
+              The following example is code I wrote. More detailed examples of
+              my code using Emotion :
+              <TextLink
+                outside
+                logo={<span className="icon-github-filled" />}
+                text=" Next-React-Anime-App "
+                href="https://github.com/Maxime-Fleurant/Next-React-Anime-App"
+              />{' '}
+              /
+              <TextLink
+                outside
+                logo={<span className="icon-github-filled" />}
+                text=" Next-React-Portefolio "
+                href="https://github.com/Maxime-Fleurant/Next-React-Portefolio"
+              />{' '}
+            </span>
           </span>
         }
-        headerContentHeightExtra={5}
         headerCode={{
           code: emotionMain,
           language: 'language-tsx',
@@ -108,6 +215,7 @@ const Emotion = (): JSX.Element => {
             },
             content: (
               <span>
+                <a name="theming" css={anchorPos} />
                 Theming is provided by the library emotion-theming.
                 <br />
                 <br />
@@ -116,15 +224,23 @@ const Emotion = (): JSX.Element => {
                 function that accepts the theme as the css prop.
                 <br />
                 <br />
-                You can find examples of my code using Emotion Theming in the
-                <a css={insideLink}>
-                  {` Anime `} <span>👁</span>{' '}
-                </a>
-                demo project
-                <a css={insideLink}>
-                  {` Github `} <span className="icon-github-filled" />{' '}
-                </a>
-                repository
+                <span css={githubLinkCaption}>
+                  The following example is code I wrote. More detailed examples
+                  of my code using Emotion Theming :
+                  <TextLink
+                    outside
+                    logo={<span className="icon-github-filled" />}
+                    text=" Next-React-Anime-App "
+                    href="https://github.com/Maxime-Fleurant/Next-React-Anime-App"
+                  />{' '}
+                  /
+                  <TextLink
+                    outside
+                    logo={<span className="icon-github-filled" />}
+                    text=" Next-React-Portefolio "
+                    href="https://github.com/Maxime-Fleurant/Next-React-Portefolio"
+                  />{' '}
+                </span>
               </span>
             ),
             code: {
@@ -142,6 +258,7 @@ const Emotion = (): JSX.Element => {
             },
             content: (
               <span>
+                <a name="grid" css={anchorPos} />
                 CSS Grid Layout excels at dividing a page into major regions or
                 defining the relationship in terms of size, position, and layer,
                 between parts of a control built from HTML primitives.
@@ -155,15 +272,23 @@ const Emotion = (): JSX.Element => {
                 positioned elements.
                 <br />
                 <br />
-                You can find examples of my code using Css Grid in the
-                <a css={insideLink}>
-                  {` Anime `} <span>👁</span>{' '}
-                </a>
-                demo project
-                <a css={insideLink}>
-                  {` Github `} <span className="icon-github-filled" />{' '}
-                </a>
-                repository
+                <span css={githubLinkCaption}>
+                  The following example is code I wrote. More detailed examples
+                  of my code using Css Grid :
+                  <TextLink
+                    outside
+                    logo={<span className="icon-github-filled" />}
+                    text=" Next-React-Anime-App "
+                    href="https://github.com/Maxime-Fleurant/Next-React-Anime-App"
+                  />{' '}
+                  /
+                  <TextLink
+                    outside
+                    logo={<span className="icon-github-filled" />}
+                    text=" Next-React-Portefolio "
+                    href="https://github.com/Maxime-Fleurant/Next-React-Portefolio"
+                  />{' '}
+                </span>
               </span>
             ),
             code: {

@@ -598,6 +598,11 @@ export const svgWrap = css({
   display: 'block',
 });
 
+export const svgWrapFull = css({
+  width: '100%',
+  display: 'block',
+});
+
 export const sidePanelWrap = (theme: ITheme): SerializedStyles =>
   css({
     textAlign: 'right',
@@ -636,3 +641,173 @@ export const anchorPos = css({
 export const githubLinkCaption = css({
   fontStyle: 'oblique',
 });
+
+export const quote = css({
+  fontStyle: 'oblique',
+  width: '100%',
+
+  display: 'block',
+});
+
+export const colorAnime1 = (theme: ITheme): SerializedStyles =>
+  css(
+    css`
+      background: linear-gradient(
+        0deg,
+        #242724,
+        #6204ca,
+        #f203c1,
+        #e68a44,
+        #a9a9aa
+      );
+      background-size: 200% 200%;
+
+      -webkit-animation: AnimationName 10s ease-in-out infinite;
+      -moz-animation: AnimationName 10s ease-in-out infinite;
+      animation: AnimationName 10s ease-in-out infinite;
+
+      @-webkit-keyframes AnimationName {
+        0% {
+          background-position: 51% 0%;
+        }
+        50% {
+          background-position: 50% 100%;
+        }
+        100% {
+          background-position: 51% 0%;
+        }
+      }
+      @-moz-keyframes AnimationName {
+        0% {
+          background-position: 51% 0%;
+        }
+        50% {
+          background-position: 50% 100%;
+        }
+        100% {
+          background-position: 51% 0%;
+        }
+      }
+      @keyframes AnimationName {
+        0% {
+          background-position: 51% 0%;
+        }
+        50% {
+          background-position: 50% 100%;
+        }
+        100% {
+          background-position: 51% 0%;
+        }
+      }
+    `,
+    { border: `1px solid ${theme.base.baseColor600}` }
+  );
+
+export const colorAnime2 = (theme: ITheme): SerializedStyles =>
+  css(
+    css`
+      background: linear-gradient(
+        0deg,
+        #2b2f35,
+        #5318d4,
+        #03c3e1,
+        #00da01,
+        #a9c502,
+        #a9afb2
+      );
+      background-size: 200% 200%;
+
+      -webkit-animation: AnimationName 10s ease-in-out infinite;
+      -moz-animation: AnimationName 10s ease-in-out infinite;
+      animation: AnimationName 10s ease-in-out infinite;
+
+      @-webkit-keyframes AnimationName {
+        0% {
+          background-position: 51% 0%;
+        }
+        50% {
+          background-position: 50% 100%;
+        }
+        100% {
+          background-position: 51% 0%;
+        }
+      }
+      @-moz-keyframes AnimationName {
+        0% {
+          background-position: 51% 0%;
+        }
+        50% {
+          background-position: 50% 100%;
+        }
+        100% {
+          background-position: 51% 0%;
+        }
+      }
+      @keyframes AnimationName {
+        0% {
+          background-position: 51% 0%;
+        }
+        50% {
+          background-position: 50% 100%;
+        }
+        100% {
+          background-position: 51% 0%;
+        }
+      }
+    `,
+    { border: `1px solid ${theme.base.baseColor600}`, animationDelay: '-3s' }
+  );
+
+export const colorAnime3 = (theme: ITheme): SerializedStyles =>
+  css(
+    css`
+      background: linear-gradient(
+        0deg,
+        #2c312e,
+        #00473c,
+        #b50b31,
+        #00dc00,
+        #adb2b0
+      );
+      background-size: 200% 200%;
+
+      -webkit-animation: AnimationName 10s ease-in-out infinite;
+      -moz-animation: AnimationName 10s ease-in-out infinite;
+      animation: AnimationName 10s ease-in-out infinite;
+
+      @-webkit-keyframes AnimationName {
+        0% {
+          background-position: 51% 0%;
+        }
+        50% {
+          background-position: 50% 100%;
+        }
+        100% {
+          background-position: 51% 0%;
+        }
+      }
+      @-moz-keyframes AnimationName {
+        0% {
+          background-position: 51% 0%;
+        }
+        50% {
+          background-position: 50% 100%;
+        }
+        100% {
+          background-position: 51% 0%;
+        }
+      }
+      @keyframes AnimationName {
+        0% {
+          background-position: 51% 0%;
+        }
+        50% {
+          background-position: 50% 100%;
+        }
+        100% {
+          background-position: 51% 0%;
+        }
+      }
+    `,
+    { border: `1px solid ${theme.base.baseColor600}`, animationDelay: '-9s' }
+  );

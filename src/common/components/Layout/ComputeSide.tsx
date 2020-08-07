@@ -226,6 +226,20 @@ const ComputeSide: FunctionComponent = () => {
 
       <div css={linkBlockWrapp}>
         <div css={bigSideLink(theme)}>
+          <a>Ops</a>
+        </div>
+
+        <CLink
+          href="/compute/docker"
+          nonActiveCss={sideLink(theme)}
+          activeCss={activeSideLink(theme)}
+        >
+          <a>Docker</a>
+        </CLink>
+      </div>
+
+      <div css={linkBlockWrapp}>
+        <div css={bigSideLink(theme)}>
           <a>Auth</a>
         </div>
 

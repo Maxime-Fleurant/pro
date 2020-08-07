@@ -1,59 +1,87 @@
 import Article from '../../common/components/Article/Article';
-import { insideLink } from '../../common/components/Article/ArticleHead/articleHeaderStyle';
-import PassportIcon from '../../common/components/icons/Passport';
-import { mainpassport } from '../../common/components/Article/CodeBrowser/codes/passport';
-import JWTIcon from '../../common/components/icons/JWT';
-import { jwtmain } from '../../common/components/Article/CodeBrowser/codes/jwt';
 import JestIcon from '../../common/components/icons/Jest';
 import {
   jestmain,
   jestUnit,
 } from '../../common/components/Article/CodeBrowser/codes/jest';
+import {
+  githubLinkCaption,
+  anchorPos,
+} from '../../common/components/Layout/style';
+import TextLink from '../../common/components/Article/textLink/TextLink';
+import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
 
-const JWT = (): JSX.Element => {
+const Jest = (): JSX.Element => {
   return (
     <>
-      {/* <ArticleNavigation
+      <ArticleNavigation
         content={[
           {
             name: 'Navigation',
-            items: [{ name: 'Dataloader', href: '#test' }],
+            items: [
+              { name: 'Intro', href: '#intro' },
+              { name: 'Unit', href: '#unit' },
+            ],
           },
+
+          {
+            name: 'My Code',
+            items: [
+              {
+                name: 'Nest-Rest',
+                href: 'https://github.com/Maxime-Fleurant/Nest-Rest-Anime-Api',
+                outside: true,
+              },
+            ],
+          },
+
           {
             name: 'Ressources',
             items: [
               {
-                name: 'Github',
-                href: 'https://github.com/expressjs/express',
+                name: 'Official Website',
+                href: 'https://jestjs.io/en/',
                 outside: true,
               },
               {
-                name: 'Official Website',
-                href: 'https://expressjs.com/',
+                name: 'Github',
+                href: 'https://github.com/facebook/jest',
                 outside: true,
               },
+
+              {
+                name: 'Wiki',
+                href:
+                  'https://en.wikipedia.org/wiki/Jest_(JavaScript_framework)',
+                outside: true,
+              },
+
               {
                 name: 'NPM',
-                href: 'https://www.npmjs.com/package/express',
-                outside: true,
-              },
-              {
-                name: 'Wikipedia',
-                href: 'https://en.wikipedia.org/wiki/Express.js',
+                href: 'https://www.npmjs.com/package/jest',
                 outside: true,
               },
             ],
           },
+
           {
-            name: 'Related',
+            name: 'External',
             items: [
-              { name: 'Node', href: '/compute/node', domain: true },
-              { name: 'JWT', href: '/compute/jwt', domain: true },
-              { name: 'Knex', href: '/compute/knex', domain: true },
+              {
+                name: 'Mocks',
+                href: 'https://martinfowler.com/articles/mocksArentStubs.html',
+                outside: true,
+              },
+              {
+                name: 'Test Pyramide',
+                href:
+                  'https://martinfowler.com/articles/practical-test-pyramid.html',
+                outside: true,
+              },
             ],
           },
         ]}
-      /> */}
+      />
 
       <Article
         articleHeader={{
@@ -69,6 +97,7 @@ const JWT = (): JSX.Element => {
         }}
         headerContent={
           <span>
+            <a name="intro" css={anchorPos} />
             Jest aims to work out of the box, config free, on most JavaScript
             projects.
             <br />
@@ -85,8 +114,16 @@ const JWT = (): JSX.Element => {
             documented, well maintained, well good.
             <br />
             <br />
-            You can find examples of my code using Jest in the nest-rest-api
-            Github repository
+            <span css={githubLinkCaption}>
+              The following example is code I wrote. More detailed examples of
+              my code using Jest :
+              <TextLink
+                outside
+                logo={<span className="icon-github-filled" />}
+                text=" Nest-Rest-Anime-Api "
+                href="https://github.com/Maxime-Fleurant/Nest-Rest-Anime-Api"
+              />{' '}
+            </span>
           </span>
         }
         headerCode={{
@@ -101,6 +138,7 @@ const JWT = (): JSX.Element => {
             },
             content: (
               <span>
+                <a name="unit" css={anchorPos} />
                 For precision, speed, and coverage, we rely on unit tests. Unit
                 tests are the granddaddy of all automated tests. Developers
                 started writing these things have become a staple in modern
@@ -130,6 +168,18 @@ const JWT = (): JSX.Element => {
                 <br />
                 Mocks are objects pre-programmed with expectations which form a
                 specification of the calls they are expected to receive.
+                <br />
+                <br />
+                <span css={githubLinkCaption}>
+                  The following example is code I wrote. More detailed examples
+                  of my code using Jest :
+                  <TextLink
+                    outside
+                    logo={<span className="icon-github-filled" />}
+                    text=" Nest-Rest-Anime-Api "
+                    href="https://github.com/Maxime-Fleurant/Nest-Rest-Anime-Api"
+                  />{' '}
+                </span>
               </span>
             ),
             code: {
@@ -143,4 +193,4 @@ const JWT = (): JSX.Element => {
   );
 };
 
-export default JWT;
+export default Jest;

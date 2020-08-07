@@ -1,54 +1,70 @@
 import Article from '../../common/components/Article/Article';
-import { insideLink } from '../../common/components/Article/ArticleHead/articleHeaderStyle';
-import PassportIcon from '../../common/components/icons/Passport';
-import { mainpassport } from '../../common/components/Article/CodeBrowser/codes/passport';
 import JWTIcon from '../../common/components/icons/JWT';
 import { jwtmain } from '../../common/components/Article/CodeBrowser/codes/jwt';
+import { githubLinkCaption } from '../../common/components/Layout/style';
+import TextLink from '../../common/components/Article/textLink/TextLink';
+import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
 
 const JWT = (): JSX.Element => {
   return (
     <>
-      {/* <ArticleNavigation
+      <ArticleNavigation
         content={[
           {
             name: 'Navigation',
-            items: [{ name: 'Dataloader', href: '#test' }],
+            items: [{ name: 'Intro', href: '#intro' }],
+          },
+
+          {
+            name: 'My Code',
+            items: [
+              {
+                name: 'Nest-Rest',
+                href: 'https://github.com/Maxime-Fleurant/Nest-Rest-Anime-Api',
+                outside: true,
+              },
+              {
+                name: 'Graphql-Api',
+                href: 'https://github.com/Maxime-Fleurant/GraphQL-Anime-Api',
+                outside: true,
+              },
+              {
+                name: 'Express-Rest',
+                href:
+                  'https://github.com/Maxime-Fleurant/Express-Rest-Anime-Api',
+                outside: true,
+              },
+            ],
           },
           {
             name: 'Ressources',
             items: [
               {
-                name: 'Github',
-                href: 'https://github.com/expressjs/express',
+                name: 'Official Website',
+                href: 'https://jwt.io/introduction/',
                 outside: true,
               },
               {
-                name: 'Official Website',
-                href: 'https://expressjs.com/',
+                name: 'Github',
+                href: 'https://github.com/auth0/node-jsonwebtoken',
                 outside: true,
               },
+
+              {
+                name: 'Wiki',
+                href: 'https://en.wikipedia.org/wiki/JSON_Web_Token',
+                outside: true,
+              },
+
               {
                 name: 'NPM',
-                href: 'https://www.npmjs.com/package/express',
+                href: 'https://www.npmjs.com/package/jsonwebtoken',
                 outside: true,
               },
-              {
-                name: 'Wikipedia',
-                href: 'https://en.wikipedia.org/wiki/Express.js',
-                outside: true,
-              },
-            ],
-          },
-          {
-            name: 'Related',
-            items: [
-              { name: 'Node', href: '/compute/node', domain: true },
-              { name: 'JWT', href: '/compute/jwt', domain: true },
-              { name: 'Knex', href: '/compute/knex', domain: true },
             ],
           },
         ]}
-      /> */}
+      />
 
       <Article
         articleHeader={{
@@ -80,11 +96,33 @@ const JWT = (): JSX.Element => {
             private key is the one that signed it.
             <br />
             <br />
-            You can find examples of my code using JWT in the Anime Search
-            Github Repository project as well as in the nest-rest-api github
-            repository.
+            <span css={githubLinkCaption}>
+              The following example is code I wrote. More detailed examples of
+              my code using JWT :
+              <TextLink
+                outside
+                logo={<span className="icon-github-filled" />}
+                text=" Nest-Rest-Anime-Api Github "
+                href="https://github.com/Maxime-Fleurant/Nest-Rest-Anime-Api"
+              />{' '}
+              /
+              <TextLink
+                outside
+                logo={<span className="icon-github-filled" />}
+                text=" GraphQL-Anime-Api "
+                href="https://github.com/Maxime-Fleurant/GraphQL-Anime-Api"
+              />{' '}
+              /
+              <TextLink
+                outside
+                logo={<span className="icon-github-filled" />}
+                text=" Express-Rest-Anime-Api "
+                href="https://github.com/Maxime-Fleurant/Express-Rest-Anime-Api"
+              />
+            </span>
           </span>
         }
+        headerContentHeightExtra={10}
         headerCode={{
           code: jwtmain,
           language: 'language-js',

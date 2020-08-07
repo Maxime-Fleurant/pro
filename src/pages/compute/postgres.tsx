@@ -1,5 +1,4 @@
 import Article from '../../common/components/Article/Article';
-import { dimain } from '../../common/components/Article/CodeBrowser/codes/di';
 import PostgresIcon from '../../common/components/icons/Postgres';
 import {
   postgresMain,
@@ -7,8 +6,13 @@ import {
   objectionMain,
   typeormMain,
 } from '../../common/components/Article/CodeBrowser/codes/postgres';
-import { anchorPos } from '../../common/components/Layout/style';
+import {
+  anchorPos,
+  githubLinkCaption,
+} from '../../common/components/Layout/style';
 import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
+import TextLink from '../../common/components/Article/textLink/TextLink';
+import TypescriptIcon from '../../common/components/icons/Typescript';
 
 const Postgres = (): JSX.Element => {
   return (
@@ -17,29 +21,56 @@ const Postgres = (): JSX.Element => {
         content={[
           {
             name: 'Navigation',
-            items: [{ name: 'Knex', href: '#knex' }],
+            items: [
+              { name: 'Intro', href: '#intro' },
+              { name: 'Knex', href: '#knex' },
+              { name: 'Objection', href: '#objection' },
+              { name: 'TypeOrm', href: '#typeorm' },
+            ],
           },
+          {
+            name: 'Live Demo',
+            items: [
+              {
+                name: 'Anime Search',
+                href: 'https://anime.maximefleurant.com/',
+                outside: true,
+              },
+            ],
+          },
+          {
+            name: 'My Code',
+            items: [
+              {
+                name: 'Nest-Rest',
+                href: 'https://github.com/Maxime-Fleurant/Nest-Rest-Anime-Api',
+                outside: true,
+              },
+              {
+                name: 'GraphQL-Api',
+                href: 'https://github.com/Maxime-Fleurant/GraphQL-Anime-Api',
+                outside: true,
+              },
+              {
+                name: 'Express-Rest',
+                href:
+                  'https://github.com/Maxime-Fleurant/Express-Rest-Anime-Api/tree/master/api_postgres',
+                outside: true,
+              },
+            ],
+          },
+
           {
             name: 'Ressources',
             items: [
               {
-                name: 'Github',
-                href: 'https://github.com/expressjs/express',
-                outside: true,
-              },
-              {
                 name: 'Official Website',
-                href: 'https://expressjs.com/',
+                href: 'https://www.postgresql.org/',
                 outside: true,
               },
               {
-                name: 'NPM',
-                href: 'https://www.npmjs.com/package/express',
-                outside: true,
-              },
-              {
-                name: 'Wikipedia',
-                href: 'https://en.wikipedia.org/wiki/Express.js',
+                name: 'Wiki',
+                href: 'https://en.wikipedia.org/wiki/PostgreSQL',
                 outside: true,
               },
             ],
@@ -47,9 +78,23 @@ const Postgres = (): JSX.Element => {
           {
             name: 'Related',
             items: [
-              { name: 'Node', href: '/compute/node', domain: true },
-              { name: 'JWT', href: '/compute/jwt', domain: true },
-              { name: 'Knex', href: '/compute/knex', domain: true },
+              {
+                name: 'Normalization',
+                href: '/compute/dbnormalization',
+                domain: true,
+              },
+              { name: 'Typescript', href: '/compute/typescript', domain: true },
+            ],
+          },
+          {
+            name: 'External',
+            items: [
+              {
+                name: 'Normalization',
+                href:
+                  'https://www.lucidchart.com/pages/database-diagram/database-design',
+                outside: true,
+              },
             ],
           },
         ]}
@@ -66,14 +111,21 @@ const Postgres = (): JSX.Element => {
         }}
         headerContent={
           <span>
+            <a name="intro" css={anchorPos} />
             PostgreSQL, also known as Postgres, is a free and open-source
             relational database management system (RDBMS) emphasizing
             extensibility and SQL compliance. It was originally named POSTGRES,
             referring to its origins as a successor to the Ingres database
             developed at the University of California, Berkeley. In 1996, the
-            project was renamed to PostgreSQL to reflect its support for SQL.
-            After a review in 2007, the development team decided to keep the
-            name PostgreSQL and the alias Postgres.
+            project was renamed to
+            <TextLink
+              logo={<PostgresIcon />}
+              text=" PostgreSQL "
+              href="/compute/postgres"
+            />{' '}
+            to reflect its support for SQL. After a review in 2007, the
+            development team decided to keep the name PostgreSQL and the alias
+            Postgres.
             <br />
             <br />
             PostgreSQL features transactions with Atomicity, Consistency,
@@ -83,15 +135,81 @@ const Postgres = (): JSX.Element => {
             single machines to data warehouses or Web services with many
             concurrent users.
             <br />
+            <br />I use PostgreSQL database when I need a production grade
+            database. I am using
+            <TextLink
+              logo={<span>💾</span>}
+              text=" Normalization "
+              href="/compute/dbnormalization"
+            />{' '}
+            standards with my PostgresQL databases. Depending on the
+            environment, I chose between several Orms to interact with the
+            database,
+            <TextLink
+              logo={<span />}
+              text=" TypeOrm "
+              href="/compute/postgres#typeorm"
+            />{' '}
+            when I am in a
+            <TextLink
+              logo={<TypescriptIcon />}
+              text=" typescript "
+              href="/compute/typescript"
+            />{' '}
+            environment,
+            <TextLink
+              logo={<span className="icon-knex" />}
+              text=" Knex "
+              href="/compute/postgres#knex"
+            />{' '}
+            /
+            <TextLink
+              logo={<span />}
+              text=" Objection "
+              href="/compute/postgres#objection"
+            />{' '}
+            when I use Raw JavaScript.
             <br />
-            You can find examples of my code using PostgreSQL in the Anime 👁
-            demo project Github repository, the nest-rest-api Github repository
-            and the express-rest-api Github repository.
+            <br />
+            Live Demo :{' '}
+            <TextLink
+              outside
+              logo={<span>👁</span>}
+              text=" Anime Search App "
+              href="https://anime.maximefleurant.com/"
+            />{' '}
+            <br />
+            <br />
+            <span css={githubLinkCaption}>
+              The following example is code I wrote. More detailed examples of
+              my code using PostgreSQL :
+              <TextLink
+                outside
+                logo={<span className="icon-github-filled" />}
+                text=" Nest-Rest-Anime-Api "
+                href="https://github.com/Maxime-Fleurant/Nest-Rest-Anime-Api"
+              />{' '}
+              /
+              <TextLink
+                outside
+                logo={<span className="icon-github-filled" />}
+                text=" GraphQL-Anime-Api "
+                href="https://github.com/Maxime-Fleurant/GraphQL-Anime-Api"
+              />{' '}
+              /
+              <TextLink
+                outside
+                logo={<span className="icon-github-filled" />}
+                text=" Express-Rest-Anime-Api "
+                href="https://github.com/Maxime-Fleurant/Express-Rest-Anime-Api/tree/master/api_postgres"
+              />
+            </span>
           </span>
         }
         headerCode={{
           code: postgresMain,
           language: 'language-ts',
+          heightAuto: true,
         }}
         content={[
           {
@@ -105,22 +223,40 @@ const Postgres = (): JSX.Element => {
             content: (
               <span>
                 <a name="knex" css={anchorPos} />
-                Knex.js is a "batteries included" SQL query builder for
-                Postgres, MSSQL, MySQL, MariaDB, SQLite3, Oracle, and Amazon
-                Redshift designed to be flexible, portable, and fun to use. It
-                features both traditional node style callbacks as well as a
-                promise interface for cleaner async flow control, a stream
-                interface, full featured query and schema builders, transaction
-                support (with savepoints), connection pooling and standardized
-                responses between different query clients and dialects.
+                <TextLink
+                  logo={<span className="icon-knex" />}
+                  text=" Knex.js "
+                  href="/compute/postgres#knex"
+                />{' '}
+                is a "batteries included" SQL query builder for
+                <TextLink
+                  logo={<PostgresIcon />}
+                  text=" Postgres "
+                  href="/compute/postgres"
+                />{' '}
+                , MSSQL, MySQL, MariaDB, SQLite3, Oracle, and Amazon Redshift
+                designed to be flexible, portable, and fun to use. It features
+                both traditional node style callbacks as well as a promise
+                interface for cleaner async flow control, a stream interface,
+                full featured query and schema builders, transaction support
+                (with savepoints), connection pooling and standardized responses
+                between different query clients and dialects.
                 <br />
                 <br />
                 Migrations allow for you to define sets of schema changes so
                 upgrading a database is a breeze.
                 <br />
                 <br />
-                You can find examples of my code using Knex in the
-                express-rest-api Github repository.
+                <span css={githubLinkCaption}>
+                  The following example is code I wrote. More detailed examples
+                  of my code using Knex :
+                  <TextLink
+                    outside
+                    logo={<span className="icon-github-filled" />}
+                    text=" Express-Rest-Anime-Api "
+                    href="https://github.com/Maxime-Fleurant/Express-Rest-Anime-Api/tree/master/api_postgres"
+                  />
+                </span>
               </span>
             ),
             code: {
@@ -138,6 +274,7 @@ const Postgres = (): JSX.Element => {
             },
             content: (
               <span>
+                <a name="objection" css={anchorPos} />
                 Objection.js is an ORM for Node.js that aims to stay out of your
                 way and make it as easy as possible to use the full power of SQL
                 and the underlying database engine while still making the common
@@ -151,11 +288,25 @@ const Postgres = (): JSX.Element => {
                 relations.
                 <br />
                 <br />
-                Objection.js is built on an SQL query builder called knex.
+                Objection.js is built on an SQL query builder called
+                <TextLink
+                  logo={<span className="icon-knex" />}
+                  text=" Knex.js "
+                  href="/compute/postgres#knex"
+                />
+                .
                 <br />
                 <br />
-                You can find examples of my code using Objection in the
-                express-rest-api Github repository.
+                <span css={githubLinkCaption}>
+                  The following example is code I wrote. More detailed examples
+                  of my code using Objection :
+                  <TextLink
+                    outside
+                    logo={<span className="icon-github-filled" />}
+                    text=" Express-Rest-Anime-Api "
+                    href="https://github.com/Maxime-Fleurant/Express-Rest-Anime-Api/tree/master/api_postgres"
+                  />
+                </span>
               </span>
             ),
             code: {
@@ -173,25 +324,50 @@ const Postgres = (): JSX.Element => {
             },
             content: (
               <span>
+                <a name="typeorm" css={anchorPos} />
                 TypeORM is an ORM that can run in NodeJS, Browser, Cordova,
                 PhoneGap, Ionic, React Native, NativeScript, Expo, and Electron
-                platforms and can be used with TypeScript and JavaScript (ES5,
-                ES6, ES7, ES8). Its goal is to always support the latest
-                JavaScript features and provide additional features that help
-                you to develop any kind of application that uses databases -
-                from small applications with a few tables to large scale
-                enterprise applications with multiple databases.
+                platforms and can be used with
+                <TextLink
+                  logo={<TypescriptIcon />}
+                  text=" TypeScript "
+                  href="/compute/typescript"
+                />{' '}
+                and JavaScript (ES5, ES6, ES7, ES8). Its goal is to always
+                support the latest JavaScript features and provide additional
+                features that help you to develop any kind of application that
+                uses databases - from small applications with a few tables to
+                large scale enterprise applications with multiple databases.
                 <br />
                 <br />
-                TypeORM supports both Active Record and Data Mapper patterns,
-                unlike all other JavaScript ORMs currently in existence, which
-                means you can write high quality, loosely coupled, scalable,
-                maintainable applications the most productive way.
+                <TextLink
+                  logo={<span />}
+                  text=" TypeOrm "
+                  href="/compute/postgres#typeorm"
+                />{' '}
+                supports both Active Record and Data Mapper patterns, unlike all
+                other JavaScript ORMs currently in existence, which means you
+                can write high quality, loosely coupled, scalable, maintainable
+                applications the most productive way.
                 <br />
                 <br />
-                You can find examples of my code using TypeOrm in the Anime
-                Search Github Repository project as well as in the nest-rest-api
-                github repository.
+                <span css={githubLinkCaption}>
+                  The following example is code I wrote. More detailed examples
+                  of my code using TypeOrm :
+                  <TextLink
+                    outside
+                    logo={<span className="icon-github-filled" />}
+                    text=" Nest-Rest-Anime-Api "
+                    href="https://github.com/Maxime-Fleurant/Nest-Rest-Anime-Api"
+                  />{' '}
+                  /
+                  <TextLink
+                    outside
+                    logo={<span className="icon-github-filled" />}
+                    text=" GraphQL-Anime-Api "
+                    href="https://github.com/Maxime-Fleurant/GraphQL-Anime-Api"
+                  />{' '}
+                </span>
               </span>
             ),
             code: {

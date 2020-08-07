@@ -35,67 +35,24 @@ const Express = () => {
             name: 'Ressources',
             items: [
               {
-                name: 'Github',
-                href: 'https://github.com/expressjs/express',
-                outside: true,
-              },
-              {
                 name: 'Official Website',
                 href: 'https://expressjs.com/',
                 outside: true,
               },
+              {
+                name: 'Github',
+                href: 'https://github.com/expressjs/express',
+                outside: true,
+              },
+
               {
                 name: 'NPM',
                 href: 'https://www.npmjs.com/package/express',
                 outside: true,
               },
               {
-                name: 'Wikipedia',
+                name: 'Wiki',
                 href: 'https://en.wikipedia.org/wiki/Express.js',
-                outside: true,
-              },
-            ],
-          },
-
-          {
-            name: 'Related',
-            items: [
-              { name: 'MongoDB', href: '/compute/mongodb', domain: true },
-              { name: 'PostgreSQL', href: '/compute/postgres', domain: true },
-              { name: '3-Layer', href: '/compute/3layer', domain: true },
-              { name: 'Knex', href: '/compute/postgres#knex', domain: true },
-              {
-                name: 'Objection',
-                href: '/compute/postgres#objection',
-                domain: true,
-              },
-              { name: 'JWT', href: '/compute/jwt', domain: true },
-              {
-                name: 'Celebrate',
-                href: 'https://www.npmjs.com/package/celebrate',
-                outside: true,
-              },
-            ],
-          },
-
-          {
-            name: 'External',
-            items: [
-              {
-                name: 'BulletProof',
-                href:
-                  'https://softwareontheroad.com/ideal-nodejs-project-structure/',
-                outside: true,
-              },
-              {
-                name: '80/20',
-                href:
-                  'https://thecodebarbarian.com/80-20-guide-to-express-error-handling',
-                outside: true,
-              },
-              {
-                name: 'Async/Await',
-                href: 'https://zellwk.com/blog/async-await-express/',
                 outside: true,
               },
             ],
@@ -192,6 +149,7 @@ const Express = () => {
             </span>
           </span>
         }
+        headerContentHeightExtra={15}
         headerCode={{ code: expressMain, language: 'language-js' }}
         content={[]}
       />

@@ -1,14 +1,6 @@
 import Article from '../../common/components/Article/Article';
 import TypescriptIcon from '../../common/components/icons/Typescript';
 import {
-  acmain,
-  acgcg,
-} from '../../common/components/Article/CodeBrowser/codes/apolloclient';
-import {
-  nextMain,
-  nextpage,
-} from '../../common/components/Article/CodeBrowser/codes/next';
-import {
   typescriptMain,
   typeInterface,
   typeGeneric,
@@ -24,7 +16,7 @@ import {
 import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
 import PostgresIcon from '../../common/components/icons/Postgres';
 
-const Redux = (): JSX.Element => {
+const Typescript = (): JSX.Element => {
   return (
     <>
       <ArticleNavigation
@@ -109,15 +101,20 @@ const Redux = (): JSX.Element => {
           {
             name: 'Related',
             items: [
+              {
+                name: 'TypeGraphQL',
+                href: '/compute/typegraphql',
+                domain: true,
+              },
               { name: 'PostgreSQL', href: '/compute/postgres', domain: true },
-              { name: 'Typescript', href: '/compute/typescript', domain: true },
               {
                 name: 'TypeOrm',
                 href: '/compute/postgres#typeorm',
                 domain: true,
               },
               { name: 'TypeDI', href: '/compute/typedi', domain: true },
-              { name: 'Jest', href: '/compute/jest', domain: true },
+              { name: 'React', href: '/compute/react', domain: true },
+              { name: 'Nest', href: '/compute/nest', domain: true },
               { name: 'DRY', href: '/compute/dry', domain: true },
               { name: 'JWT', href: '/compute/jwt', domain: true },
               { name: 'DI', href: '/compute/di', domain: true },
@@ -169,10 +166,16 @@ const Redux = (): JSX.Element => {
             JavaScript programs are also valid TypeScript programs.
             <br />
             <br />
-            I'm using Typescript for its ability to follow SOLID design patters
-            which was impossible before using only JS. Typed Javascript allows a
-            better understanding of the system as well as making the code more
-            modular. Typescript is the perfect tool for using
+            I'm using Typescript for its ability to follow SOLID and
+            <TextLink
+              logo={<span>🌵</span>}
+              text=" DRY "
+              href="/compute/dry"
+            />{' '}
+            design patters which was impossible before using only JS. Typed
+            Javascript allows a better understanding of the system as well as
+            making the code more modular. Typescript is the perfect tool for
+            using
             <TextLink
               logo={<span>🧱</span>}
               text=" dependency injection "
@@ -467,4 +470,4 @@ const Redux = (): JSX.Element => {
   );
 };
 
-export default Redux;
+export default Typescript;
