@@ -11,6 +11,10 @@ import {
   helveticaRegular,
   font32,
   pointSize48,
+  font64,
+  helveticaBold,
+  font104,
+  font120,
 } from '../../../globalStyle';
 import { ITheme } from '../../Layout/Theme';
 
@@ -112,8 +116,25 @@ export const subTitleWrap = (theme: ITheme): SerializedStyles =>
     borderBottom: `1px solid ${theme.base.baseColor800}`,
   });
 
+export const filmSubWrap = (theme: ITheme): SerializedStyles =>
+  css({
+    height: '100%',
+    alignItems: 'baseline',
+    borderBottom: `1px solid ${theme.base.baseColor800}`,
+    paddingBottom: pointSize8,
+  });
+
+export const bigsubTitleWrap = (theme: ITheme): SerializedStyles =>
+  css({
+    height: '100%',
+    alignItems: 'baseline',
+  });
+
 export const subTitle = (theme: ITheme): SerializedStyles =>
   css(font32, helveticaRegular, theme.text.textColor900);
+
+export const bigSubTitle = (theme: ITheme): SerializedStyles =>
+  css(font120, helveticaBold, theme.text.textColor900);
 
 export const subTitleCell = css({});
 

@@ -811,3 +811,13 @@ export const colorAnime3 = (theme: ITheme): SerializedStyles =>
     `,
     { border: `1px solid ${theme.base.baseColor600}`, animationDelay: '-9s' }
   );
+
+export const videoWrap = css`
+  width: 100%;
+  height: 100%;
+
+  div:first-child {
+    width: 100%;
+    height: 100%;
+  }
+`;

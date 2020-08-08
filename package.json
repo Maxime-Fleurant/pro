@@ -22,6 +22,7 @@
     "react-burger-menu": "^2.7.0",
     "react-dom": "16.13.1",
     "react-embed-gist": "^1.0.10",
+    "react-youtube": "^7.11.3",
     "simplebar-react": "^2.2.1",
     "snapsvg": "^0.5.1",
     "snapsvg-cjs": "0.0.6"

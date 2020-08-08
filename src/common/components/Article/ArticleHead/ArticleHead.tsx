@@ -13,6 +13,8 @@ import {
   subTitleLink,
   subLinkSpe,
   mainLinkWrap,
+  bigSubTitle,
+  filmSubWrap,
 } from './articleHeaderStyle';
 import NpmIcon from '../../icons/Npm';
 import { ITheme } from '../../Layout/Theme';
@@ -28,6 +30,8 @@ export interface IArticleHeadContent {
   git?: string;
   detail?: string;
   sub?: boolean;
+  bigSub?: boolean;
+  film?: boolean;
 }
 
 type TArticleHead = FunctionComponent<IArticleHeadContent>;
@@ -43,6 +47,8 @@ const ArticleHead: TArticleHead = ({
   git,
   detail,
   sub,
+  bigSub,
+  film,
 }) => {
   const theme = useTheme<ITheme>();
 
@@ -68,9 +74,37 @@ const ArticleHead: TArticleHead = ({
     </a>
   ) : null;
 
+  if (bigSub) {
+    return (
+      <div css={[linkWrap, bigSubTitle(theme)]}>
+        <span css={bigSubTitle}>{titleContent}</span>
+        <div css={subTitleLink}>
+          {officialLink}
+          {gitLink}
+          {npmLink}
+          {wikiLink}
+        </div>
+      </div>
+    );
+  }
+
   if (sub) {
     return (
       <div css={[linkWrap, subTitleWrap(theme)]}>
+        <span css={subTitle}>{titleContent}</span>
+        <div css={subTitleLink}>
+          {officialLink}
+          {gitLink}
+          {npmLink}
+          {wikiLink}
+        </div>
+      </div>
+    );
+  }
+
+  if (film) {
+    return (
+      <div css={[linkWrap, filmSubWrap(theme)]}>
         <span css={subTitle}>{titleContent}</span>
         <div css={subTitleLink}>
           {officialLink}
