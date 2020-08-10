@@ -52,7 +52,7 @@ export const nav = (theme: ITheme): SerializedStyles =>
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    height: '5rem',
+    height: '4.2rem',
     margin: '0 2rem',
     borderBottom: `1px solid ${theme.base.baseColor800}`,
     zIndex: 18,
@@ -67,7 +67,7 @@ export const logo = css(
   { display: 'flex', alignItems: 'center', cursor: 'pointer' }
 );
 
-export const logoPart = css([helveticaMedium, font40, titleLineHeight]);
+export const logoPart = css([helveticaMedium, font32, titleLineHeight]);
 
 export const navLink = (theme: ITheme): SerializedStyles =>
   css([
@@ -821,3 +821,18 @@ export const videoWrap = css`
     height: 100%;
   }
 `;
+
+export const coverImage = css({
+  width: '100%',
+});
+
+export const coverImageWrap = css(
+  { display: 'flex', alignItems: 'flex-end' },
+  css`
+    @media (max-width: 1023px) {
+      align-items: flex-start;
+    }
+  `
+);
+
+export const bookImageWrap = css({ display: 'flex', alignItems: 'flex-start' });

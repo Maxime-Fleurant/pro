@@ -1,10 +1,15 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, Fragment } from 'react';
 import YouTube from 'react-youtube';
 import ArticleNavigation from '../Article/Navigation/ArticleNavigation';
 import { SimpleCell } from '../Cell/SimpleCell';
 import ArticleHead from '../Article/ArticleHead/ArticleHead';
 import { mainText } from '../Article/ArticleHead/articleHeaderStyle';
-import { videoWrap, anchorPos } from '../Layout/style';
+import {
+  videoWrap,
+  anchorPos,
+  coverImage,
+  coverImageWrap,
+} from '../Layout/style';
 
 // TYPE
 interface IFilm {
@@ -33,7 +38,7 @@ const FilmArticle: TFilmArticle = ({ director, directorWiki, films }) => {
 
   const filmList = films.map((film) => {
     const returnList = (
-      <>
+      <Fragment key={film.title}>
         <SimpleCell
           deskPos={{
             rowStart: deskStart,
@@ -102,11 +107,9 @@ const FilmArticle: TFilmArticle = ({ director, directorWiki, films }) => {
             columnStart: 1,
             columnEnd: 25,
           }}
-          // relative
-          // allRatio={film.coverRatio ? film.coverRatio : 1.5}
-          // backgroundImg={film.cover}
+          extraCss={[coverImageWrap]}
         >
-          <img src={film.cover} />
+          <img src={film.cover} alt="" css={coverImage} />
         </SimpleCell>
 
         <SimpleCell
@@ -117,8 +120,8 @@ const FilmArticle: TFilmArticle = ({ director, directorWiki, films }) => {
             columnEnd: 13,
           }}
           tabPos={{
-            rowStart: tabStart + 3,
-            rowEnd: tabStart + 4,
+            rowStart: tabStart + 2,
+            rowEnd: tabStart + 3,
             columnStart: 1,
             columnEnd: 25,
           }}
@@ -141,8 +144,8 @@ const FilmArticle: TFilmArticle = ({ director, directorWiki, films }) => {
             columnEnd: 22,
           }}
           tabPos={{
-            rowStart: tabStart + 4,
-            rowEnd: tabStart + 5,
+            rowStart: tabStart + 3,
+            rowEnd: tabStart + 4,
             columnStart: 1,
             columnEnd: 25,
           }}
@@ -165,8 +168,8 @@ const FilmArticle: TFilmArticle = ({ director, directorWiki, films }) => {
             columnEnd: 15,
           }}
           tabPos={{
-            rowStart: tabStart + 5,
-            rowEnd: tabStart + 6,
+            rowStart: tabStart + 4,
+            rowEnd: tabStart + 5,
             columnStart: 1,
             columnEnd: 25,
           }}
@@ -186,11 +189,11 @@ const FilmArticle: TFilmArticle = ({ director, directorWiki, films }) => {
             />
           </div>
         </SimpleCell>
-      </>
+      </Fragment>
     );
 
     deskStart += 7;
-    tabStart += 9;
+    tabStart += 8;
     mobilStart += 16;
 
     return returnList;

@@ -35,9 +35,11 @@ import { Cell } from '../Cell/cell';
 import { helveticaThin, helveticaMedium } from '../../globalStyle';
 import ComputeSide from './ComputeSide';
 import DesignSide from './DesignSide';
-import CLink from '../CLink';
 import { ThemeContext, ITheme } from './Theme';
 import LogoAnime from './logoAnime';
+import LifeSide from './LifeSide';
+import GameSide from './GameSide';
+import NovelSide from './novelsSide';
 
 const Layout: FunctionComponent = ({ children }) => {
   const router = useRouter();
@@ -64,6 +66,18 @@ const Layout: FunctionComponent = ({ children }) => {
 
   if (router.pathname.match(/^\/design?/g)) {
     sidePanel = <DesignSide />;
+  }
+
+  if (router.pathname.match(/^\/life\/cinema?/g)) {
+    sidePanel = <LifeSide />;
+  }
+
+  if (router.pathname.match(/^\/life\/novels?/g)) {
+    sidePanel = <NovelSide />;
+  }
+
+  if (router.pathname.match(/^\/life\/game?/g)) {
+    sidePanel = <GameSide />;
   }
 
   return (
