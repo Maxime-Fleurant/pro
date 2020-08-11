@@ -10,26 +10,18 @@ import {
   nav,
   navCell,
   menuButton,
-  sideBar,
-  openSideBar,
-  closeSideBar,
-  openLayer,
-  navLinkWrapper,
-  sideLogo,
   sideWrap,
-  sideLinkPage,
-  mainSideLink,
   mobileNavWrap,
   mobileNav,
   backButton,
   centerLogo,
   navWrap,
-  switchButton,
   flexNavWrap,
-  logoSideWrap,
   logoAnimeHeader,
   sidePanelWrap,
-  themeSideWrap,
+  menuButtonText,
+  themeButton,
+  themeButtonMobile,
 } from './style';
 import { Cell } from '../Cell/cell';
 import { helveticaThin, helveticaMedium } from '../../globalStyle';
@@ -40,25 +32,21 @@ import LogoAnime from './logoAnime';
 import LifeSide from './LifeSide';
 import GameSide from './GameSide';
 import NovelSide from './novelsSide';
+import Menu from './Menu';
 
 const Layout: FunctionComponent = ({ children }) => {
   const router = useRouter();
   let sidePanel: JSX.Element;
-  let menuPos = closeSideBar;
-  let layer = css({ visibility: 'hidden', opacity: 0 });
+
   const theme = useTheme<ITheme>();
 
   const [menuOpen, updateMenuState] = useState(false);
   const { toggle } = useContext(ThemeContext);
 
   const menuHandler = (): void => {
+    window.scrollTo(0, 0);
     updateMenuState(!menuOpen);
   };
-
-  if (menuOpen) {
-    menuPos = openSideBar;
-    layer = css({ visibility: 'visible', opacity: 0.7 });
-  }
 
   if (router.pathname.match(/^\/compute?/g)) {
     sidePanel = <ComputeSide />;
@@ -76,7 +64,7 @@ const Layout: FunctionComponent = ({ children }) => {
     sidePanel = <NovelSide />;
   }
 
-  if (router.pathname.match(/^\/life\/game?/g)) {
+  if (router.pathname.match(/^\/life\/games?/g)) {
     sidePanel = <GameSide />;
   }
 
@@ -98,7 +86,13 @@ const Layout: FunctionComponent = ({ children }) => {
           }
         `}
       />
-      <span css={mobileNavWrap}>
+      <Menu open={menuOpen} returnHandler={menuHandler} />
+      <span
+        css={[
+          mobileNavWrap(theme),
+          menuOpen ? css({ display: 'none' }) : css(),
+        ]}
+      >
         <div css={mobileNav}>
           <span
             className="icon-outline-arrow-back-ios"
@@ -114,65 +108,26 @@ const Layout: FunctionComponent = ({ children }) => {
           </Link>
 
           <span
+            className="icon-half"
+            css={themeButtonMobile}
+            onClick={toggle}
+          />
+
+          <span
             className="icon-menu-outlined"
             css={menuButton}
             onClick={menuHandler}
           />
         </div>
       </span>
-      <span css={[sideBar(theme), menuPos]} onClick={menuHandler}>
-        <div css={[logo, sideLogo(theme)]}>
-          <Link href="/">
-            <span css={logoSideWrap}>
-              <div css={logoAnimeHeader}>
-                <LogoAnime />
-              </div>
-              <div>
-                <span css={[logoPart, theme.text.textColor700, helveticaThin]}>
-                  Design,
-                </span>
-                <br />
-                <span
-                  css={[logoPart, theme.text.textColor900, helveticaMedium]}
-                >
-                  Compute.
-                </span>
-              </div>
-            </span>
-          </Link>
-        </div>
-        <div css={themeSideWrap}>
-          Theme{' '}
-          <label css={switchButton(theme)}>
-            {' '}
-            <input onChange={toggle} type="checkbox" />
-            <div />
-          </label>
-        </div>
 
-        <div css={mainSideLink}>
-          <Link href="/design">
-            <a>Design</a>
-          </Link>
-
-          <Link href="/compute">
-            <a>Compute</a>
-          </Link>
-
-          <Link href="/qsd">
-            <a>Project</a>
-          </Link>
-
-          <Link href="/qsd">
-            <a>Life</a>
-          </Link>
-        </div>
-        <div css={sideLinkPage}>
-          <ComputeSide />
-        </div>
-      </span>
-      <span css={css([openLayer, layer])} onClick={menuHandler} />
-      <div css={[navWrap(theme), navCell]}>
+      <div
+        css={[
+          navWrap(theme),
+          navCell,
+          menuOpen ? css({ display: 'none' }) : css(),
+        ]}
+      >
         <div css={nav}>
           <Link href="/">
             <div css={logo}>
@@ -194,23 +149,15 @@ const Layout: FunctionComponent = ({ children }) => {
           </Link>
 
           <div css={flexNavWrap}>
-            <span
-              className="icon-menu-outlined"
-              css={menuButton}
-              onClick={menuHandler}
-            />
-            <div css={navLinkWrapper}>
-              <label css={switchButton(theme)}>
-                qsd
-                <input onChange={toggle} type="checkbox" />
-                <div />
-              </label>
-            </div>
+            <span css={menuButtonText} onClick={menuHandler}>
+              Menu
+            </span>
+            <span className="icon-half" css={themeButton} onClick={toggle} />
           </div>
         </div>
       </div>
 
-      <div css={gridCss}>
+      <div css={[gridCss, menuOpen ? css({ display: 'none' }) : css()]}>
         <Cell
           deskPos={{ rowStart: 11, rowEnd: 30, columnEnd: 4, columnStart: 1 }}
           extraCss={[sideWrap]}

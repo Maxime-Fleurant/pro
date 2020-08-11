@@ -34,7 +34,7 @@ type TFilmArticle = FunctionComponent<IFilmArticle>;
 const FilmArticle: TFilmArticle = ({ director, directorWiki, films }) => {
   let deskStart = 16;
   let tabStart = 13;
-  let mobilStart = 13;
+  let mobilStart = 10;
 
   const filmList = films.map((film) => {
     const returnList = (
@@ -228,6 +228,7 @@ const FilmArticle: TFilmArticle = ({ director, directorWiki, films }) => {
       <SimpleCell
         deskPos={{ rowStart: 11, rowEnd: 12, columnStart: 4, columnEnd: 13 }}
         tabPos={{ rowStart: 9, rowEnd: 10, columnStart: 1, columnEnd: 25 }}
+        mobilPos={{ rowStart: 2, rowEnd: 2, columnStart: 1, columnEnd: 25 }}
       >
         <ArticleHead titleContent={director} bigSub />
       </SimpleCell>

@@ -24,6 +24,12 @@ import {
   pointSize12,
   pointSize4,
   pointSize80,
+  pointSize104,
+  pointSize64,
+  helveticaBold,
+  pointSize56,
+  pointSize20,
+  font56,
 } from '../../globalStyle';
 import { ITheme } from './Theme';
 
@@ -54,7 +60,7 @@ export const nav = (theme: ITheme): SerializedStyles =>
     justifyContent: 'space-between',
     height: '4.2rem',
     margin: '0 2rem',
-    borderBottom: `1px solid ${theme.base.baseColor800}`,
+    borderBottom: `1px solid ${theme.base.baseColor600}`,
     zIndex: 18,
   });
 
@@ -333,7 +339,7 @@ export const mobileNavWrap = (theme: ITheme): SerializedStyles =>
       position: 'fixed',
       bottom: 0,
       width: '100%',
-      borderTop: `1px solid ${theme.base.baseColor800}`,
+      borderTop: `1px solid ${theme.base.baseColor600}`,
       zIndex: 1,
     },
     css`
@@ -345,7 +351,7 @@ export const mobileNavWrap = (theme: ITheme): SerializedStyles =>
   );
 
 export const mobileNav = css({
-  margin: ` ${pointSize24} ${pointSize48}`,
+  margin: ` 0 ${pointSize48}`,
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
@@ -414,17 +420,30 @@ export const switchButton = (theme: ITheme): SerializedStyles => {
   `;
 };
 
-export const flexNavWrap = css({
-  display: 'flex',
-  height: '100%',
-  alignItems: 'center',
-});
+export const flexNavWrap = css(
+  {
+    display: 'flex',
+    height: '100%',
+    alignItems: 'center',
+  },
+  font32
+);
 
 export const flexA = css({
   display: 'flex',
   height: '100%',
   alignItems: 'center',
 });
+
+export const menuButtonText = (theme: ITheme): SerializedStyles =>
+  css(
+    { marginRight: pointSize16, cursor: 'pointer' },
+    theme.text.textColor900,
+    helveticaThin
+  );
+
+export const themeButton = (theme: ITheme): SerializedStyles =>
+  css(theme.text.textColor900, helveticaMedium, font32, { cursor: 'pointer' });
 
 export const codeBox = (theme: ITheme): SerializedStyles =>
   css(
@@ -550,13 +569,13 @@ export const circleAnimation5 = keyframes`
 export const circAnime1 = (theme: ITheme): SerializedStyles =>
   css({
     animation: `${circleAnimation3} 8s linear infinite`,
-    stroke: theme.base.baseColor800,
+    stroke: theme.base.baseColor600,
   });
 
 export const circAnime2 = (theme: ITheme): SerializedStyles =>
   css({
     animation: `${circleAnimation3} 8s linear infinite`,
-    stroke: theme.base.baseColor800,
+    stroke: theme.base.baseColor600,
   });
 
 export const circAnime3 = (theme: ITheme): SerializedStyles =>
@@ -591,12 +610,34 @@ export const gAnime2 = css({
 
 export const animeWrapp = css({ width: '50%' });
 
-export const logoAnimeHeader = css({ marginRight: pointSize16 });
+export const themeButtonMobile = (theme: ITheme): SerializedStyles =>
+  css(theme.text.textColor900, helveticaMedium, font56, { cursor: 'pointer' });
+
+export const logoAnimeHeader = css(
+  { marginRight: pointSize16 },
+  css`
+    @media (max-width: 767px) {
+      margin-right: ${pointSize24};
+    }
+  `
+);
 
 export const svgWrap = css({
   height: pointSize80,
   display: 'block',
 });
+
+export const gamesvgWrap = css(
+  {
+    height: pointSize104,
+    display: 'block',
+  },
+  css`
+    @media (max-width: 767px) {
+      height: ${pointSize120};
+    }
+  `
+);
 
 export const svgWrapFull = css({
   width: '100%',
@@ -836,3 +877,129 @@ export const coverImageWrap = css(
 );
 
 export const bookImageWrap = css({ display: 'flex', alignItems: 'flex-start' });
+
+export const gameMenuWrap = (theme: ITheme): SerializedStyles =>
+  css({
+    position: 'fixed',
+    display: 'none',
+    width: '100vw',
+    height: '100vh',
+    alignItems: 'center',
+    backgroundColor: theme.base.baseColor100,
+    justifyContent: 'center',
+    zIndex: 10,
+  });
+
+export const gameMenuLinkWrap = css({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+});
+
+export const gameCatMenu = (theme: ITheme): SerializedStyles =>
+  css(
+    theme.text.textColor800,
+    {
+      textAlign: 'center',
+      marginTop: pointSize32,
+      marginBottom: pointSize32,
+    },
+    helveticaThin,
+    font32,
+    css`
+      div {
+        padding: ${pointSize24} ${pointSize48};
+        border: 1px solid ${theme.base.baseColor600};
+        cursor: pointer;
+      }
+
+      div:hover {
+        border: 1px solid ${theme.base.baseColor100};
+        ${theme.text.textColor200};
+        ${theme.background.backgroundColor800};
+      }
+
+      div:not(:last-child) {
+        margin-bottom: ${pointSize24};
+      }
+
+      @media (max-width: 767px) {
+        font-size: ${pointSize48};
+
+        div {
+          padding: ${pointSize32} ${pointSize56};
+        }
+      }
+    `
+  );
+
+export const returnButton = (theme: ITheme): SerializedStyles =>
+  css(
+    theme.text.textColor800,
+    {
+      textAlign: 'center',
+      paddingTop: pointSize32,
+      paddingBottom: pointSize32,
+    },
+    helveticaThin,
+    font32,
+    css`
+      padding: ${pointSize16} ${pointSize32};
+      border: 1px solid ${theme.base.baseColor600};
+      cursor: pointer;
+
+      &:hover {
+        border: 1px solid ${theme.base.baseColor200};
+        ${theme.text.textColor200};
+        ${theme.background.backgroundColor800};
+      }
+
+      @media (max-width: 767px) {
+        font-size: ${pointSize48};
+        padding: ${pointSize20} ${pointSize40};
+      }
+    `
+  );
+
+export const withinButton = css({ display: 'flex', justifyContent: 'center' });
+export const withingButtonText = css({ marginRight: pointSize12 });
+
+export const returnGame = (theme: ITheme): SerializedStyles =>
+  css(
+    {
+      padding: pointSize16,
+      marginRight: pointSize16,
+    },
+    css`
+      span:before {
+        color: ${theme.base.baseColor600};
+      }
+
+      &:hover {
+        span:before {
+          color: ${theme.base.baseColor200};
+        }
+      }
+
+      @media (max-width: 767px) {
+        font-size: ${pointSize48};
+        margin-right: ${pointSize24};
+        padding: ${pointSize20};
+      }
+    `
+  );
+
+export const menuGameLogo = css(
+  font64,
+  css`
+    @media (max-width: 767px) {
+      font-size: ${pointSize80};
+    }
+  `
+);
+
+export const backGame = css({
+  marginTop: pointSize80,
+
+  display: 'flex',
+});

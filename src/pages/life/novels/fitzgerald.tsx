@@ -7,7 +7,7 @@ const King = () => {
       directorWiki="https://www.wikiwand.com/en/F._Scott_Fitzgerald"
       films={[
         {
-          title: 'The Corrections',
+          title: 'Tender Is the Night',
           desc: (
             <span>
               Tender Is the Night is the fourth and final novel completed by

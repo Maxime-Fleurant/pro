@@ -65,7 +65,7 @@ export const titlewrap = (theme: ITheme): SerializedStyles =>
     display: 'flex',
     height: '100%',
     flexFlow: 'column',
-    borderBottom: `1px solid ${theme.base.baseColor800}`,
+    borderBottom: `1px solid ${theme.base.baseColor600}`,
   });
 
 export const upTitleWrap = css({ flexGrow: 1 });
@@ -113,14 +113,14 @@ export const subTitleWrap = (theme: ITheme): SerializedStyles =>
   css({
     height: '100%',
     alignItems: 'baseline',
-    borderBottom: `1px solid ${theme.base.baseColor800}`,
+    borderBottom: `1px solid ${theme.base.baseColor600}`,
   });
 
 export const filmSubWrap = (theme: ITheme): SerializedStyles =>
   css({
     height: '100%',
     alignItems: 'baseline',
-    borderBottom: `1px solid ${theme.base.baseColor800}`,
+    borderBottom: `1px solid ${theme.base.baseColor600}`,
     paddingBottom: pointSize8,
   });
 
@@ -134,7 +134,7 @@ export const subTitle = (theme: ITheme): SerializedStyles =>
   css(font32, helveticaRegular, theme.text.textColor900);
 
 export const bigSubTitle = (theme: ITheme): SerializedStyles =>
-  css(font120, helveticaBold, theme.text.textColor900);
+  css(font104, helveticaBold, theme.text.textColor900);
 
 export const subTitleCell = css({});
 
