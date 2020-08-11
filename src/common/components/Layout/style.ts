@@ -1004,14 +1004,17 @@ export const backGame = css({
 });
 
 export const homeTitle = (theme: ITheme): SerializedStyles =>
-  css(theme.text.textColor700, helveticaThin, titleLineHeight);
+  css(theme.text.textColor700, helveticaThin, titleLineHeight, { opacity: 0 });
 
 export const homeTitle2 = (theme: ITheme): SerializedStyles =>
-  css(theme.text.textColor900, helveticaMedium, titleLineHeight);
+  css(theme.text.textColor900, helveticaMedium, titleLineHeight, {
+    opacity: 0,
+  });
 
 export const logoRowWrap = css({
   display: 'flex',
   justifyContent: 'space-between',
+  position: 'relative',
 });
 
 export const logoRow = (theme: ITheme): SerializedStyles =>
@@ -1040,3 +1043,92 @@ export const logoRow = (theme: ITheme): SerializedStyles =>
       }
     `
   );
+
+export const homeAnime = keyframes`
+  0%{
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+`;
+
+export const homeA1 = css({
+  animation: `${homeAnime} 2s ease-in-out`,
+  animationFillMode: 'forwards',
+});
+
+export const homeA2 = css({
+  animation: `${homeAnime} 2s ease-in-out`,
+  animationDelay: '1s',
+  animationFillMode: 'forwards',
+});
+
+export const homeA3 = css({
+  animation: `${homeAnime} 2s ease-in-out`,
+  animationDelay: '2s',
+  animationFillMode: 'forwards',
+});
+
+export const logoA1 = css({
+  opacity: 0,
+  animation: `${homeAnime} 2s ease-in-out`,
+  animationDelay: '2s',
+  animationFillMode: 'forwards',
+});
+
+export const logoA2 = css({
+  opacity: 0,
+  animation: `${homeAnime} 2s ease-in-out`,
+  animationDelay: '2.5s',
+  animationFillMode: 'forwards',
+});
+
+export const logo3A = css({
+  opacity: 0,
+  animation: `${homeAnime} 2s ease-in-out`,
+  animationDelay: '3s',
+  animationFillMode: 'forwards',
+});
+
+export const logo4A = css({
+  opacity: 0,
+  animation: `${homeAnime} 2s ease-in-out`,
+  animationDelay: '3s',
+  animationFillMode: 'forwards',
+});
+
+export const logo5A = css({
+  opacity: 0,
+  animation: `${homeAnime} 2s ease-in-out`,
+  animationDelay: '2.5s',
+  animationFillMode: 'forwards',
+});
+
+export const logo6A = css({
+  opacity: 0,
+  animation: `${homeAnime} 2s ease-in-out`,
+  animationDelay: '2s',
+  animationFillMode: 'forwards',
+});
+
+export const logoANimeWrap = css({
+  zIndex: 10,
+  position: 'absolute',
+  height: '100%',
+  width: '100%',
+  backgroundImage: `linear-gradient(125deg, rgba(0,0,0,1), rgba(0,0,0,0))`,
+});
+
+export const animeGradient = keyframes`
+0%{
+  background-image: linear-gradient(125deg, rgba(0,0,0,1), rgba(0,0,0,1))
+}
+
+100% {
+  background-image: linear-gradient(125deg, rgba(0,0,0,0), rgba(0,0,0,1))
+}
+`;
+
+export const actionGradient = css({ animation: `${animeGradient} 2s linear` });

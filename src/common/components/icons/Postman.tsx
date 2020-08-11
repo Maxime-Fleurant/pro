@@ -1,16 +1,16 @@
 const PostIcon = () => {
   return (
-    <span class="icon-postman">
-      <span class="path1"></span>
-      <span class="path2"></span>
-      <span class="path3"></span>
-      <span class="path4"></span>
-      <span class="path5"></span>
-      <span class="path6"></span>
-      <span class="path7"></span>
-      <span class="path8"></span>
-      <span class="path9"></span>
-      <span class="path10"></span>
+    <span className="icon-postman">
+      <span className="path1"></span>
+      <span className="path2"></span>
+      <span className="path3"></span>
+      <span className="path4"></span>
+      <span className="path5"></span>
+      <span className="path6"></span>
+      <span className="path7"></span>
+      <span className="path8"></span>
+      <span className="path9"></span>
+      <span className="path10"></span>
     </span>
   );
 };

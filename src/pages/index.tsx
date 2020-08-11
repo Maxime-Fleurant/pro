@@ -1,4 +1,5 @@
 import { FunctionComponent } from 'react';
+import { useTheme } from 'emotion-theming';
 import { SimpleCell } from '../common/components/Cell/SimpleCell';
 import ArticleHead from '../common/components/Article/ArticleHead/ArticleHead';
 import {
@@ -6,6 +7,15 @@ import {
   homeTitle2,
   logoRow,
   logoRowWrap,
+  homeA1,
+  homeA2,
+  homeA3,
+  logoA1,
+  logoA2,
+  logo3A,
+  logo4A,
+  logo5A,
+  logo6A,
 } from '../common/components/Layout/style';
 import { mainText } from '../common/components/Article/ArticleHead/articleHeaderStyle';
 import NpmIcon from '../common/components/icons/Npm';
@@ -16,7 +26,6 @@ import TypescriptIcon from '../common/components/icons/Typescript';
 import PostgresIcon from '../common/components/icons/Postgres';
 import PassportIcon from '../common/components/icons/Passport';
 import NeoIcon from '../common/components/icons/neo';
-import Jss from '../common/components/icons/jss';
 import JestIcon from '../common/components/icons/Jest';
 import MongoDbIcon from '../common/components/icons/Mongodb';
 import PrettierIcon from '../common/components/icons/Prettier';
@@ -24,10 +33,8 @@ import JsIcon from '../common/components/icons/Js';
 import LintIcon from '../common/components/icons/EsLint';
 import CssIcon from '../common/components/icons/Css';
 import Ec2Icon from '../common/components/icons/Ec2';
-import LambdaIcon from '../common/components/icons/Lambda';
 import RdsIcon from '../common/components/icons/Rds';
 import RouteIcon from '../common/components/icons/Route';
-import AwsIcon from '../common/components/icons/Aws';
 import AndroidIcon from '../common/components/icons/Android';
 import HtmlIcon from '../common/components/icons/Html';
 import TermIcon from '../common/components/icons/Terminal';
@@ -38,7 +45,6 @@ import VsIcon from '../common/components/icons/VsCode';
 import WebIcon from '../common/components/icons/Web';
 import BabelIcon from '../common/components/icons/Babel';
 import LinuxIcon from '../common/components/icons/Linux';
-import { useTheme } from 'emotion-theming';
 import { ITheme } from '../common/components/Layout/Theme';
 import TextLink from '../common/components/Article/textLink/TextLink';
 
@@ -55,9 +61,9 @@ const Index: FunctionComponent = () => {
         <ArticleHead
           titleContent={
             <span>
-              <span css={homeTitle}>Design,</span>
+              <span css={[homeTitle(theme), homeA1]}>Design,</span>
               <br />
-              <span css={homeTitle2}>Compute.</span>
+              <span css={[homeTitle2(theme), homeA2]}>Compute.</span>
             </span>
           }
           bigSub
@@ -69,7 +75,7 @@ const Index: FunctionComponent = () => {
         tabPos={{ rowStart: 9, rowEnd: 10, columnStart: 1, columnEnd: 25 }}
         mobilPos={{ rowStart: 5, rowEnd: 6, columnStart: 1, columnEnd: 25 }}
       >
-        <div css={mainText}>
+        <div css={[mainText(theme), { opacity: 0 }, homeA3]}>
           This app is intended to be a presentation of the technology and design
           techniques that I use. The app is divided into four segments: Design -
           Compute - Project - Life. In the compute segment you will find
@@ -103,7 +109,13 @@ const Index: FunctionComponent = () => {
             text=" React "
             href="/compute/react"
           />{' '}
-          and Next.
+          and
+          <TextLink
+            logo={<span className="icon-next-js" />}
+            text=" Next "
+            href="/compute/next"
+          />
+          .
         </div>
       </SimpleCell>
 
@@ -112,8 +124,8 @@ const Index: FunctionComponent = () => {
         tabPos={{ rowStart: 11, rowEnd: 12, columnStart: 1, columnEnd: 25 }}
         mobilPos={{ rowStart: 8, rowEnd: 9, columnStart: 1, columnEnd: 25 }}
       >
-        <div css={logoRowWrap}>
-          <div css={[logoRow(theme), { marginTop: '0rem' }]}>
+        <div css={[logoRowWrap, logoA1]}>
+          <div css={[logoRow(theme)]}>
             <JsIcon />
             <span className="icon-react" />
             <NpmIcon />
@@ -126,7 +138,7 @@ const Index: FunctionComponent = () => {
             <UbIcon />
           </div>
 
-          <div css={logoRow}>
+          <div css={[logoRow(theme)]}>
             <span className="icon-graphql" />
             <span className=" icon-next-js" />
             <MongoDbIcon />
@@ -139,7 +151,7 @@ const Index: FunctionComponent = () => {
             <BabelIcon />
           </div>
 
-          <div css={logoRow}>
+          <div css={[logoRow(theme)]}>
             <TypescriptIcon />
             <span>👩‍🎤</span>
             <JWTIcon />
@@ -152,7 +164,7 @@ const Index: FunctionComponent = () => {
             <Ec2Icon />
           </div>
 
-          <div css={logoRow}>
+          <div css={[logoRow(theme)]}>
             <span className="icon-nestjs" />
             <span>📱</span>
             <TypegraphqlIcon />
@@ -165,7 +177,7 @@ const Index: FunctionComponent = () => {
             <span>💠</span>
           </div>
 
-          <div css={logoRow}>
+          <div css={[logoRow(theme)]}>
             <PostgresIcon />
             <span className="icon-redux" />
             <NeoIcon />
@@ -178,7 +190,7 @@ const Index: FunctionComponent = () => {
             <TermIcon />
           </div>
 
-          <div css={logoRow}>
+          <div css={[logoRow(theme)]}>
             <span className="icon-nodejs-icon" />
             <JestIcon />
             <span className="icon-docker-icon" />

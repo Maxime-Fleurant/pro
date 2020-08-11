@@ -1,11 +1,11 @@
 const AndroidIcon = () => {
   return (
-    <span class="icon-android-icon">
-      <span class="path1"></span>
-      <span class="path2"></span>
-      <span class="path3"></span>
-      <span class="path4"></span>
-      <span class="path5"></span>
+    <span className="icon-android-icon">
+      <span className="path1"></span>
+      <span className="path2"></span>
+      <span className="path3"></span>
+      <span className="path4"></span>
+      <span className="path5"></span>
     </span>
   );
 };
