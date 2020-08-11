@@ -21,7 +21,7 @@ import { ITheme } from '../../Layout/Theme';
 
 // TYPE
 export interface IArticleHeadContent {
-  titleContent: string;
+  titleContent: string | JSX.Element;
   logo?: JSX.Element;
   desc?: string;
   wiki?: string;

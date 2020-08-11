@@ -33,6 +33,8 @@ import LifeSide from './LifeSide';
 import GameSide from './GameSide';
 import NovelSide from './novelsSide';
 import Menu from './Menu';
+import HomeSide from './HomeSide';
+import { SimpleCell } from '../Cell/SimpleCell';
 
 const Layout: FunctionComponent = ({ children }) => {
   const router = useRouter();
@@ -49,23 +51,68 @@ const Layout: FunctionComponent = ({ children }) => {
   };
 
   if (router.pathname.match(/^\/compute?/g)) {
-    sidePanel = <ComputeSide />;
+    sidePanel = (
+      <SimpleCell
+        deskPos={{ rowStart: 11, rowEnd: 30, columnEnd: 4, columnStart: 1 }}
+        extraCss={[sideWrap]}
+      >
+        <div css={sidePanelWrap}>
+          <ComputeSide />
+        </div>
+      </SimpleCell>
+    );
   }
 
   if (router.pathname.match(/^\/design?/g)) {
-    sidePanel = <DesignSide />;
+    sidePanel = (
+      <SimpleCell
+        deskPos={{ rowStart: 11, rowEnd: 30, columnEnd: 4, columnStart: 1 }}
+        extraCss={[sideWrap]}
+      >
+        <div css={sidePanelWrap}>
+          <DesignSide />
+        </div>
+      </SimpleCell>
+    );
   }
 
   if (router.pathname.match(/^\/life\/cinema?/g)) {
-    sidePanel = <LifeSide />;
+    sidePanel = (
+      <SimpleCell
+        deskPos={{ rowStart: 11, rowEnd: 30, columnEnd: 4, columnStart: 1 }}
+        extraCss={[sideWrap]}
+      >
+        <div css={sidePanelWrap}>
+          <LifeSide />
+        </div>
+      </SimpleCell>
+    );
   }
 
   if (router.pathname.match(/^\/life\/novels?/g)) {
-    sidePanel = <NovelSide />;
+    sidePanel = (
+      <SimpleCell
+        deskPos={{ rowStart: 11, rowEnd: 30, columnEnd: 4, columnStart: 1 }}
+        extraCss={[sideWrap]}
+      >
+        <div css={sidePanelWrap}>
+          <NovelSide />
+        </div>
+      </SimpleCell>
+    );
   }
 
   if (router.pathname.match(/^\/life\/games?/g)) {
-    sidePanel = <GameSide />;
+    sidePanel = (
+      <SimpleCell
+        deskPos={{ rowStart: 11, rowEnd: 30, columnEnd: 4, columnStart: 1 }}
+        extraCss={[sideWrap]}
+      >
+        <div css={sidePanelWrap}>
+          <GameSide />
+        </div>
+      </SimpleCell>
+    );
   }
 
   return (
@@ -158,12 +205,7 @@ const Layout: FunctionComponent = ({ children }) => {
       </div>
 
       <div css={[gridCss, menuOpen ? css({ display: 'none' }) : css()]}>
-        <Cell
-          deskPos={{ rowStart: 11, rowEnd: 30, columnEnd: 4, columnStart: 1 }}
-          extraCss={[sideWrap]}
-        >
-          <div css={sidePanelWrap}> {sidePanel}</div>
-        </Cell>
+        {sidePanel}
 
         {children}
       </div>

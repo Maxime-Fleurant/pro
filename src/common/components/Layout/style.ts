@@ -901,7 +901,7 @@ export const gameCatMenu = (theme: ITheme): SerializedStyles =>
     theme.text.textColor800,
     {
       textAlign: 'center',
-      marginTop: pointSize32,
+      marginTop: pointSize24,
       marginBottom: pointSize32,
     },
     helveticaThin,
@@ -938,13 +938,12 @@ export const returnButton = (theme: ITheme): SerializedStyles =>
     theme.text.textColor800,
     {
       textAlign: 'center',
-      paddingTop: pointSize32,
-      paddingBottom: pointSize32,
+      flexGrow: 1,
     },
     helveticaThin,
     font32,
     css`
-      padding: ${pointSize16} ${pointSize32};
+      padding: ${pointSize24} ${pointSize48};
       border: 1px solid ${theme.base.baseColor600};
       cursor: pointer;
 
@@ -956,7 +955,7 @@ export const returnButton = (theme: ITheme): SerializedStyles =>
 
       @media (max-width: 767px) {
         font-size: ${pointSize48};
-        padding: ${pointSize20} ${pointSize40};
+        padding: ${pointSize32} ${pointSize56};
       }
     `
   );
@@ -967,8 +966,8 @@ export const withingButtonText = css({ marginRight: pointSize12 });
 export const returnGame = (theme: ITheme): SerializedStyles =>
   css(
     {
-      padding: pointSize16,
-      marginRight: pointSize16,
+      padding: pointSize24,
+      marginRight: pointSize24,
     },
     css`
       span:before {
@@ -984,7 +983,7 @@ export const returnGame = (theme: ITheme): SerializedStyles =>
       @media (max-width: 767px) {
         font-size: ${pointSize48};
         margin-right: ${pointSize24};
-        padding: ${pointSize20};
+        padding: ${pointSize32};
       }
     `
   );
@@ -999,7 +998,45 @@ export const menuGameLogo = css(
 );
 
 export const backGame = css({
-  marginTop: pointSize80,
+  marginTop: pointSize48,
 
   display: 'flex',
 });
+
+export const homeTitle = (theme: ITheme): SerializedStyles =>
+  css(theme.text.textColor700, helveticaThin, titleLineHeight);
+
+export const homeTitle2 = (theme: ITheme): SerializedStyles =>
+  css(theme.text.textColor900, helveticaMedium, titleLineHeight);
+
+export const logoRowWrap = css({
+  display: 'flex',
+  justifyContent: 'space-between',
+});
+
+export const logoRow = (theme: ITheme): SerializedStyles =>
+  css(
+    {
+      display: 'flex',
+      alignItems: 'center',
+      flexDirection: 'column',
+    },
+    font48,
+    css`
+      span {
+        ${theme.text.textColor800};
+      }
+
+      span:not(:first-child) {
+        margin-top: 1rem;
+      }
+
+      @media (max-width: 1023px) {
+        font-size: 8vw;
+
+        span:not(:first-child) {
+          margin-top: 8vw;
+        }
+      }
+    `
+  );

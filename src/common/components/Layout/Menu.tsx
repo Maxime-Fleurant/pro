@@ -810,7 +810,13 @@ const Menu: TMenu = ({ open, returnHandler }) => {
   }
 
   return (
-    <div css={[gridCss, !open ? css({ display: 'none' }) : css()]}>
+    <div
+      css={[
+        gridCss,
+        !open ? css({ display: 'none' }) : css(),
+        { paddingBottom: 0 },
+      ]}
+    >
       <SimpleCell
         deskPos={{ rowStart: 3, rowEnd: 4, columnStart: 4, columnEnd: 22 }}
       >
@@ -843,25 +849,27 @@ const Menu: TMenu = ({ open, returnHandler }) => {
               </span>
             </span>
           </div>
-          <div css={backGame}>
-            <span
-              onClick={(): void => menuHandler(back)}
-              css={[
-                returnButton(theme),
-                returnGame(theme),
-                css({
-                  display: !back ? 'none' : 'initial',
-                }),
-              ]}
-            >
-              <span className="icon-outline-arrow-back-ios" />
-            </span>
-            <span css={returnButton} onClick={returnHandlerInside}>
-              Home
-            </span>
-          </div>
+          <div>
+            <div css={backGame}>
+              <span
+                onClick={(): void => menuHandler(back)}
+                css={[
+                  returnButton(theme),
+                  returnGame(theme),
+                  css({
+                    display: !back ? 'none' : 'initial',
+                  }),
+                ]}
+              >
+                <span className="icon-outline-arrow-back-ios" />
+              </span>
+              <span css={returnButton} onClick={returnHandlerInside}>
+                Home
+              </span>
+            </div>
 
-          <div css={gameCatMenu}>{catMenu}</div>
+            <div css={gameCatMenu}>{catMenu}</div>
+          </div>
         </div>
       </SimpleCell>
     </div>
