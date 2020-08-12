@@ -152,7 +152,7 @@ const Typescript = (): JSX.Element => {
         }}
         headerContent={
           <span>
-            <a name="intro" css={anchorPos} />
+            <a id="intro" css={anchorPos} />
             TypeScript is an open-source programming language developed and
             maintained by Microsoft. It is a strict syntactical superset of
             JavaScript and adds optional static typing to the language.
@@ -292,7 +292,7 @@ const Typescript = (): JSX.Element => {
             },
             content: (
               <span>
-                <a name="interfaces" css={anchorPos} />
+                <a id="interfaces" css={anchorPos} />
                 One of TypeScript’s core principles is that type checking
                 focuses on the shape that values have. This is sometimes called
                 “duck typing” or “structural subtyping”. In
@@ -367,7 +367,7 @@ const Typescript = (): JSX.Element => {
             },
             content: (
               <span>
-                <a name="generics" css={anchorPos} />
+                <a id="generics" css={anchorPos} />
                 A major part of software engineering is building components that
                 not only have well-defined and consistent APIs, but are also
                 reusable. Components that are capable of working on the data of
@@ -429,7 +429,7 @@ const Typescript = (): JSX.Element => {
             },
             content: (
               <span>
-                <a name="decorators" css={anchorPos} />
+                <a id="decorators" css={anchorPos} />
                 With the introduction of Classes in TypeScript and ES6, there
                 now exist certain scenarios that require additional features to
                 support annotating or modifying classes and class members.

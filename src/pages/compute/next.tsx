@@ -110,7 +110,7 @@ const Next = (): JSX.Element => {
         }}
         headerContent={
           <span>
-            <a name="intro" css={anchorPos} />
+            <a id="intro" css={anchorPos} />
             Isomorphic JavaScript, also known as Universal JavaScript, describes
             JavaScript applications which run both on the client and the server.
             <br />
@@ -213,7 +213,7 @@ const Next = (): JSX.Element => {
             },
             content: (
               <span>
-                <a name="fetching" css={anchorPos} />
+                <a id="fetching" css={anchorPos} />
                 In Next.js, a page is a
                 <TextLink
                   logo={<span className="icon-react" />}

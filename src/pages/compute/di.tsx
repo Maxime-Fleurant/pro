@@ -86,7 +86,7 @@ const DI = (): JSX.Element => {
         }}
         headerContent={
           <span>
-            <a name="intro" css={anchorPos} />
+            <a id="intro" css={anchorPos} />
             In software engineering,{' '}
             <TextLink
               logo={<span>🧱</span>}

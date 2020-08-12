@@ -119,7 +119,7 @@ const ReactPage = (): JSX.Element => {
         }}
         headerContent={
           <span>
-            <a name="intro" css={anchorPos} />
+            <a id="intro" css={anchorPos} />
             <TextLink
               logo={<span className="icon-react" />}
               text=" React "
@@ -219,7 +219,7 @@ const ReactPage = (): JSX.Element => {
             },
             content: (
               <span>
-                <a name="context" css={anchorPos} />
+                <a id="context" css={anchorPos} />
                 Context provides a way to pass data through the component tree
                 without having to pass props down manually at every level.
                 <br />
@@ -260,7 +260,7 @@ const ReactPage = (): JSX.Element => {
             },
             content: (
               <span>
-                <a name="typescript" css={anchorPos} />
+                <a id="typescript" css={anchorPos} />
                 TypeScript is an open-source programming language developed and
                 maintained by Microsoft. It is a strict syntactical superset of
                 JavaScript and adds optional static typing to the language.

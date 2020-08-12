@@ -100,7 +100,7 @@ const JWT = (): JSX.Element => {
         }}
         headerContent={
           <span>
-            <a name="intro" css={anchorPos} />
+            <a id="intro" css={anchorPos} />
             Once you have a preliminary design for your database, you can apply
             normalization rules to make sure the tables are structured
             correctly. Think of these rules as the industry standards.

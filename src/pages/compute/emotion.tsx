@@ -136,7 +136,7 @@ const Emotion = (): JSX.Element => {
         }}
         headerContent={
           <span>
-            <a name="intro" css={anchorPos} />
+            <a id="intro" css={anchorPos} />
             <TextLink
               logo={<span>👩‍🎤</span>}
               text=" Emotion "
@@ -219,7 +219,7 @@ const Emotion = (): JSX.Element => {
             },
             content: (
               <span>
-                <a name="theming" css={anchorPos} />
+                <a id="theming" css={anchorPos} />
                 Theming is provided by the library emotion-theming.
                 <br />
                 <br />
@@ -262,7 +262,7 @@ const Emotion = (): JSX.Element => {
             },
             content: (
               <span>
-                <a name="grid" css={anchorPos} />
+                <a id="grid" css={anchorPos} />
                 CSS Grid Layout excels at dividing a page into major regions or
                 defining the relationship in terms of size, position, and layer,
                 between parts of a control built from HTML primitives.

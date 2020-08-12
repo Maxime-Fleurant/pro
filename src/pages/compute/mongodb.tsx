@@ -74,7 +74,7 @@ const Mongodb = (): JSX.Element => {
         }}
         headerContent={
           <span>
-            <a name="intro" css={anchorPos} />
+            <a id="intro" css={anchorPos} />
             MongoDB’s document model is simple for developers to learn and use,
             while still providing all the capabilities needed to meet the most
             complex requirements at any scale.

@@ -101,7 +101,7 @@ const Jest = (): JSX.Element => {
         }}
         headerContent={
           <span>
-            <a name="intro" css={anchorPos} />
+            <a id="intro" css={anchorPos} />
             Jest aims to work out of the box, config free, on most JavaScript
             projects.
             <br />
@@ -142,7 +142,7 @@ const Jest = (): JSX.Element => {
             },
             content: (
               <span>
-                <a name="unit" css={anchorPos} />
+                <a id="unit" css={anchorPos} />
                 For precision, speed, and coverage, we rely on unit tests. Unit
                 tests are the granddaddy of all automated tests. Developers
                 started writing these things have become a staple in modern

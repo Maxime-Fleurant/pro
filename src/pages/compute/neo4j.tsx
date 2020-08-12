@@ -74,7 +74,7 @@ const Neo = (): JSX.Element => {
         }}
         headerContent={
           <span>
-            <a name="intro" css={anchorPos} />
+            <a id="intro" css={anchorPos} />
             Neo4j is a highly scalable native graph database, purpose-built to
             leverage not only data but also data relationships.
             <br />

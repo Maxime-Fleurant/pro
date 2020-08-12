@@ -192,7 +192,7 @@ const Redux = (): JSX.Element => {
             },
             content: (
               <span>
-                <a name="codeGen" css={anchorPos} />
+                <a id="codeGen" css={anchorPos} />
                 GraphQL Code Generator is a CLI tool that can generate
                 <TextLink
                   logo={<TypescriptIcon />}

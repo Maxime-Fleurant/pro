@@ -115,7 +115,7 @@ const Postgres = (): JSX.Element => {
         }}
         headerContent={
           <span>
-            <a name="intro" css={anchorPos} />
+            <a id="intro" css={anchorPos} />
             PostgreSQL, also known as Postgres, is a free and open-source
             relational database management system (RDBMS) emphasizing
             extensibility and SQL compliance. It was originally named POSTGRES,
@@ -226,7 +226,7 @@ const Postgres = (): JSX.Element => {
             },
             content: (
               <span>
-                <a name="knex" css={anchorPos} />
+                <a id="knex" css={anchorPos} />
                 <TextLink
                   logo={<span className="icon-knex" />}
                   text=" Knex.js "
@@ -278,7 +278,7 @@ const Postgres = (): JSX.Element => {
             },
             content: (
               <span>
-                <a name="objection" css={anchorPos} />
+                <a id="objection" css={anchorPos} />
                 Objection.js is an ORM for Node.js that aims to stay out of your
                 way and make it as easy as possible to use the full power of SQL
                 and the underlying database engine while still making the common
@@ -328,7 +328,7 @@ const Postgres = (): JSX.Element => {
             },
             content: (
               <span>
-                <a name="typeorm" css={anchorPos} />
+                <a id="typeorm" css={anchorPos} />
                 TypeORM is an ORM that can run in NodeJS, Browser, Cordova,
                 PhoneGap, Ionic, React Native, NativeScript, Expo, and Electron
                 platforms and can be used with

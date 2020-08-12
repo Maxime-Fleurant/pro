@@ -125,7 +125,7 @@ const TypeGraphql = () => {
         }}
         headerContent={
           <span>
-            <a name="intro" css={anchorPos} />
+            <a id="intro" css={anchorPos} />
             TypeGraphQL is a library that makes the process of developing
             GraphQL API using
             <TextLink
@@ -222,7 +222,7 @@ const TypeGraphql = () => {
             },
             content: (
               <span>
-                <a name="schema" css={anchorPos} />
+                <a id="schema" css={anchorPos} />
                 TypeGraphQL is a framework for building GraphQL APIs with
                 Node.js and
                 <TextLink
@@ -280,7 +280,7 @@ const TypeGraphql = () => {
             },
             content: (
               <span>
-                <a name="resolvers" css={anchorPos} />
+                <a id="resolvers" css={anchorPos} />
                 Besides declaring GraphQL's object types, TypeGraphQL allows us
                 to easily create queries, mutations and field resolvers - like
                 normal class methods, similar to REST controllers in frameworks
@@ -341,7 +341,7 @@ const TypeGraphql = () => {
             },
             content: (
               <span>
-                <a name="generic" css={anchorPos} />
+                <a id="generic" css={anchorPos} />
                 A special kind of inheritance in
                 <TextLink
                   logo={<TypegraphqlIcon />}
@@ -392,7 +392,7 @@ const TypeGraphql = () => {
             },
             content: (
               <span>
-                <a name="auth" css={anchorPos} />
+                <a id="auth" css={anchorPos} />
                 Authorization is a core feature used in almost all APIs.
                 Sometimes we want to restrict data access or actions for a
                 specific group of users.
@@ -444,7 +444,7 @@ const TypeGraphql = () => {
             },
             content: (
               <span>
-                <a name="validation" css={anchorPos} />
+                <a id="validation" css={anchorPos} />
                 The standard way to ensure that inputs and arguments are
                 correct, such as an email field that really contains a proper
                 e-mail address, is to use custom scalars e.g. GraphQLEmail from
@@ -497,7 +497,7 @@ const TypeGraphql = () => {
             },
             content: (
               <span>
-                <a name="complexity" css={anchorPos} />
+                <a id="complexity" css={anchorPos} />
                 A single GraphQL query can potentially generate a huge workload
                 for a server, like thousands of database operations which can be
                 used to cause DDoS attacks. In order to limit and keep track of

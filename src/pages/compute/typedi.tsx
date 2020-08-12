@@ -95,7 +95,7 @@ const TypeDI = () => {
         }}
         headerContent={
           <span>
-            <a name="intro" css={anchorPos} />
+            <a id="intro" css={anchorPos} />
             In software engineering, dependency injection is a technique in
             which an object receives other objects that it depends on. These
             other objects are called dependencies. In the typical "using"

@@ -115,7 +115,7 @@ const Nest = (): JSX.Element => {
         }}
         headerContent={
           <span>
-            <a name="intro" css={anchorPos} />
+            <a id="intro" css={anchorPos} />
             Nest is a framework for building efficient, scalable Node.js
             server-side applications. It uses progressive Javascript, is built
             with and fully supports
@@ -208,7 +208,7 @@ const Nest = (): JSX.Element => {
             },
             content: (
               <span>
-                <a name="modules" css={anchorPos} />
+                <a id="modules" css={anchorPos} />
                 <TextLink
                   logo={<span className="icon-nestjs" />}
                   text="Nest "
@@ -267,7 +267,7 @@ const Nest = (): JSX.Element => {
             },
             content: (
               <span>
-                <a name="controllers" css={anchorPos} />
+                <a id="controllers" css={anchorPos} />
                 Controllers are responsible for handling incoming requests and
                 returning responses to the client. <br />
                 <br />A controller's purpose is to receive specific requests for
@@ -331,7 +331,7 @@ const Nest = (): JSX.Element => {
             },
             content: (
               <span>
-                <a name="dto" css={anchorPos} />
+                <a id="dto" css={anchorPos} />
                 A DTO is an object that defines how the data will be sent over
                 the network. We could determine the DTO schema by using
                 <TextLink
@@ -369,7 +369,7 @@ const Nest = (): JSX.Element => {
             },
             content: (
               <span>
-                <a name="providers" css={anchorPos} />
+                <a id="providers" css={anchorPos} />
                 Providers are a fundamental concept in Nest. Many of the basic
                 Nest classes may be treated as a provider – services,
                 repositories, factories, helpers, and so on.
@@ -409,7 +409,7 @@ const Nest = (): JSX.Element => {
             },
             content: (
               <span>
-                <a name="Generic" css={anchorPos} />
+                <a id="Generic" css={anchorPos} />
                 To follow the{' '}
                 <TextLink
                   logo={<span>🌵</span>}
@@ -461,7 +461,7 @@ const Nest = (): JSX.Element => {
             },
             content: (
               <span>
-                <a name="Guards" css={anchorPos} />
+                <a id="Guards" css={anchorPos} />
                 A guard is a class annotated with the @Injectable() decorator.
                 Guards should implement the CanActivate interface. <br />
                 <br />

@@ -78,7 +78,7 @@ const Dry = (): JSX.Element => {
         }}
         headerContent={
           <span>
-            <a name="intro" css={anchorPos} />
+            <a id="intro" css={anchorPos} />
             The DRY principle is stated as "Every piece of knowledge must have a
             single, unambiguous, authoritative representation within a system".
             <br />

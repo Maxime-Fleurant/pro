@@ -100,7 +100,7 @@ const Redux = (): JSX.Element => {
         }}
         headerContent={
           <span>
-            <a name="intro" css={anchorPos} />
+            <a id="intro" css={anchorPos} />
             <TextLink
               logo={<span className="icon-redux" />}
               text=" Redux "
@@ -180,7 +180,7 @@ const Redux = (): JSX.Element => {
             },
             content: (
               <span>
-                <a name="typescript" css={anchorPos} />
+                <a id="typescript" css={anchorPos} />
                 Redux Toolkit is written in TypeScript, and its API is designed
                 to enable great integration with TypeScript applications.
                 <br />
@@ -217,7 +217,7 @@ const Redux = (): JSX.Element => {
             },
             content: (
               <span>
-                <a name="container" css={anchorPos} />
+                <a id="container" css={anchorPos} />
                 Container Pattern is commonly used to separate data
                 fetching/logic, events, and state from presentational components
                 (aka, dumb components).

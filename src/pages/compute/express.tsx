@@ -77,7 +77,7 @@ const Express = () => {
         }}
         headerContent={
           <span>
-            <a name="intro" css={anchorPos} />
+            <a id="intro" css={anchorPos} />
             Express is a minimal and flexible Node.js web application framework
             that provides a robust set of features for web and mobile
             applications. With a myriad of HTTP utility methods and middleware

@@ -88,7 +88,7 @@ const JWT = (): JSX.Element => {
         }}
         headerContent={
           <span>
-            <a name="intro" css={anchorPos} />
+            <a id="intro" css={anchorPos} />
             Each layer has a specific set of responsibilities that are clearly
             defined and easy to grasp. Each layer accesses the layer below it,
             never above it. Serving a request touches each layer starting from

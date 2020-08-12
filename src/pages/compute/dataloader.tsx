@@ -107,7 +107,7 @@ const DataLoader = () => {
         }}
         headerContent={
           <span>
-            <a name="intro" css={anchorPos} />
+            <a id="intro" css={anchorPos} />
             DataLoader is a generic utility to be used as part of your
             application's data fetching layer to provide a simplified and
             consistent API over various remote data sources such as databases or

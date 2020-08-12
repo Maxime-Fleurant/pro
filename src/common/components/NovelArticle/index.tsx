@@ -76,7 +76,7 @@ const NovelArticle: TFilmArticle = ({ director, directorWiki, films }) => {
           }}
         >
           <div css={mainText}>
-            <a name={film.title.split(' ').join('')} css={anchorPos} />
+            <a id={film.title.split(' ').join('')} css={anchorPos} />
             {film.desc}
           </div>
         </SimpleCell>

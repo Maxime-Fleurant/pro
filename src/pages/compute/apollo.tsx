@@ -116,7 +116,7 @@ const Apollo: FunctionComponent = () => {
         }}
         headerContent={
           <span>
-            <a name="intro" css={anchorPos} />
+            <a id="intro" css={anchorPos} />
             Apollo Server is an open-source, spec compliant GraphQL server
             that's compatible with any GraphQL client, including Apollo Client.
             It's the best way to build a production ready, self-documenting
