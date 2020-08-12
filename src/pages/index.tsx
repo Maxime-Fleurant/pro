@@ -132,16 +132,6 @@ const Index: FunctionComponent = () => {
             href="/compute/next"
           />
           .
-          <br />
-          <br />
-          You can also install this app as a{' '}
-          <span
-            css={promptState ? helveticaMedium : helveticaRegular}
-            onClick={promptState ? promptt : null}
-          >
-            PWA
-          </span>
-          .
         </div>
       </SimpleCell>
 
