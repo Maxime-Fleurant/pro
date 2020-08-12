@@ -7,10 +7,14 @@ import {
   anchorPos,
 } from '../../common/components/Layout/style';
 import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
+import Head from 'next/head';
 
 const Mongodb = (): JSX.Element => {
   return (
     <>
+      <Head>
+        <title>MongoDB</title>
+      </Head>
       <ArticleNavigation
         content={[
           {
@@ -98,7 +102,7 @@ const Mongodb = (): JSX.Element => {
             </span>
           </span>
         }
-        headerContentHeightExtra={15}
+        headerContentHeightExtra={5}
         headerCode={{
           code: mongMain,
           language: 'language-js',

@@ -10,10 +10,14 @@ import {
 } from '../../common/components/Layout/style';
 import TextLink from '../../common/components/Article/textLink/TextLink';
 import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
+import Head from 'next/head';
 
 const Jest = (): JSX.Element => {
   return (
     <>
+      <Head>
+        <title>Jest</title>
+      </Head>
       <ArticleNavigation
         content={[
           {

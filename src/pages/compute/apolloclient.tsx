@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Article from '../../common/components/Article/Article';
 import {
   reduxMain,
@@ -22,6 +23,9 @@ import ArticleNavigation from '../../common/components/Article/Navigation/Articl
 const Redux = (): JSX.Element => {
   return (
     <>
+      <Head>
+        <title>Apollo Client</title>
+      </Head>
       <ArticleNavigation
         content={[
           {

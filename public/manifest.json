@@ -1,6 +1,7 @@
 {
   "name": "Design Compute",
   "short_name": "DC",
+  "description": "Weather forecast information",
   "theme_color": "#F0F2F4",
   "background_color": "#F0F2F4",
   "display": "standalone",

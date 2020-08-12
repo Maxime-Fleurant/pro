@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, Fragment } from 'react';
 import { css } from '@emotion/core';
 import ArticleHead, { IArticleHeadContent } from './ArticleHead/ArticleHead';
 import { SimpleCell } from '../Cell/SimpleCell';
@@ -51,7 +51,7 @@ const Article: TArticle = ({
       `;
 
       const currentContentJSX = (
-        <>
+        <Fragment key={contentElem.header.titleContent as string}>
           <SimpleCell
             deskPos={{
               rowStart: deskRowStart,
@@ -132,7 +132,7 @@ const Article: TArticle = ({
               heightAuto={contentElem.code.heightAuto}
             />
           </SimpleCell>
-        </>
+        </Fragment>
       );
 
       deskRowStart += 4;
@@ -146,7 +146,7 @@ const Article: TArticle = ({
   return (
     <>
       <SimpleCell
-        deskPos={{ rowStart: 9, rowEnd: 12, columnStart: 4, columnEnd: 13 }}
+        deskPos={{ rowStart: 8, rowEnd: 12, columnStart: 4, columnEnd: 13 }}
         tabPos={{ rowStart: 6, rowEnd: 7, columnStart: 1, columnEnd: 25 }}
         mobilPos={{ rowStart: 1, rowEnd: 2, columnStart: 1, columnEnd: 25 }}
       >

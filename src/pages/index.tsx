@@ -1,4 +1,5 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, useEffect, useState } from 'react';
+import Head from 'next/head';
 import { useTheme } from 'emotion-theming';
 import { SimpleCell } from '../common/components/Cell/SimpleCell';
 import ArticleHead from '../common/components/Article/ArticleHead/ArticleHead';
@@ -11,11 +12,6 @@ import {
   homeA2,
   homeA3,
   logoA1,
-  logoA2,
-  logo3A,
-  logo4A,
-  logo5A,
-  logo6A,
 } from '../common/components/Layout/style';
 import { mainText } from '../common/components/Article/ArticleHead/articleHeaderStyle';
 import NpmIcon from '../common/components/icons/Npm';
@@ -47,12 +43,29 @@ import BabelIcon from '../common/components/icons/Babel';
 import LinuxIcon from '../common/components/icons/Linux';
 import { ITheme } from '../common/components/Layout/Theme';
 import TextLink from '../common/components/Article/textLink/TextLink';
+import { helveticaMedium, helveticaRegular } from '../common/globalStyle';
 
 const Index: FunctionComponent = () => {
   const theme = useTheme<ITheme>();
+  let deferredPrompt: { prompt: () => void };
+  const [promptState, updatePrompt] = useState(null);
+
+  const promptt = () => {
+    promptState.prompt();
+  };
+
+  useEffect(() => {
+    window.addEventListener('beforeinstallprompt', (e) => {
+      deferredPrompt = (e as unknown) as { prompt: () => void };
+      updatePrompt(deferredPrompt);
+    });
+  }, []);
 
   return (
     <>
+      <Head>
+        <title>Maxime Fleurant Full Stack Developement Paris</title>
+      </Head>
       <SimpleCell
         deskPos={{ rowStart: 9, rowEnd: 11, columnStart: 4, columnEnd: 13 }}
         tabPos={{ rowStart: 7, rowEnd: 8, columnStart: 1, columnEnd: 25 }}
@@ -76,12 +89,14 @@ const Index: FunctionComponent = () => {
         mobilPos={{ rowStart: 5, rowEnd: 6, columnStart: 1, columnEnd: 25 }}
       >
         <div css={[mainText(theme), { opacity: 0 }, homeA3]}>
-          This app is intended to be a presentation of the technology and design
-          techniques that I use. The app is divided into four segments: Design -
-          Compute - Project - Life. In the compute segment you will find
-          descriptions of the technologies used in different projects, in
-          combinations of what other technologies they are used as well as code
-          snippets I wrote. For more detailed code examples links to the
+          Hi, my name is Maxime Fleurant and i'm a Full-Stack web developer
+          based in Paris. This app is intended to be a presentation of the
+          technology and design techniques that I use. The app is divided into
+          four segments: Design - Compute - Project - Life. In the compute
+          segment you will find descriptions of the technologies used in
+          different projects, in combinations of what other technologies they
+          are used as well as code snippets I wrote. For more detailed code
+          examples links to the
           <TextLink
             outside
             logo={<span className="icon-github-filled" />}
@@ -101,9 +116,10 @@ const Index: FunctionComponent = () => {
           like.
           <br />
           <br />
-          This app is built without using any CSS framework. All the CSS is hand
-          crafted with Emotion Css In JS solution. The layout is based on a Grid
-          system Using css-grid. The app is statically rendered by
+          This app is built without using any CSS framework. All the CSS /
+          Layout is hand crafted with Emotion Css In JS solution. The layout is
+          based on a Grid system that I built Using css-grid and Flexbox. The
+          app is statically rendered by
           <TextLink
             logo={<span className="icon-react" />}
             text=" React "
@@ -115,6 +131,16 @@ const Index: FunctionComponent = () => {
             text=" Next "
             href="/compute/next"
           />
+          .
+          <br />
+          <br />
+          You can also install this app as a{' '}
+          <span
+            css={promptState ? helveticaMedium : helveticaRegular}
+            onClick={promptState ? promptt : null}
+          >
+            PWA
+          </span>
           .
         </div>
       </SimpleCell>

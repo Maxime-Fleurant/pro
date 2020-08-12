@@ -11,10 +11,14 @@ import {
   anchorPos,
 } from '../../common/components/Layout/style';
 import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
+import Head from 'next/head';
 
 const Redux = (): JSX.Element => {
   return (
     <>
+      <Head>
+        <title>Redux</title>
+      </Head>
       <ArticleNavigation
         content={[
           {

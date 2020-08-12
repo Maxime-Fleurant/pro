@@ -1,4 +1,5 @@
 import { FunctionComponent } from 'react';
+import Head from 'next/head';
 import NpmIcon from '../../common/components/icons/Npm';
 import TypegraphqlIcon from '../../common/components/icons/Typegraphql';
 import TypescriptIcon from '../../common/components/icons/Typescript';
@@ -15,6 +16,9 @@ import ArticleNavigation from '../../common/components/Article/Navigation/Articl
 const Apollo: FunctionComponent = () => {
   return (
     <>
+      <Head>
+        <title>Apollo</title>
+      </Head>
       <ArticleNavigation
         content={[
           {
@@ -186,7 +190,6 @@ const Apollo: FunctionComponent = () => {
             </span>
           </span>
         }
-        headerContentHeightExtra={10}
         headerCode={{ code: main, language: 'language-ts' }}
         content={[]}
       />

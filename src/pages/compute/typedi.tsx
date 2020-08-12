@@ -8,10 +8,14 @@ import {
   anchorPos,
 } from '../../common/components/Layout/style';
 import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
+import Head from 'next/head';
 
 const TypeDI = () => {
   return (
     <>
+      <Head>
+        <title>TypeDI</title>
+      </Head>
       <ArticleNavigation
         content={[
           {

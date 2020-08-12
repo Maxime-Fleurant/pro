@@ -1,5 +1,5 @@
+import Head from 'next/head';
 import Article from '../../common/components/Article/Article';
-import { insideLink } from '../../common/components/Article/ArticleHead/articleHeaderStyle';
 import { mainLayer } from '../../common/components/Article/CodeBrowser/codes/3layer';
 import TextLink from '../../common/components/Article/textLink/TextLink';
 import {
@@ -11,6 +11,9 @@ import ArticleNavigation from '../../common/components/Article/Navigation/Articl
 const JWT = (): JSX.Element => {
   return (
     <>
+      <Head>
+        <title>3-Layer</title>
+      </Head>
       <ArticleNavigation
         content={[
           {

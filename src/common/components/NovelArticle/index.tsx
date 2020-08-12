@@ -1,16 +1,10 @@
+import Head from 'next/head';
 import { FunctionComponent, Fragment } from 'react';
-import YouTube from 'react-youtube';
 import ArticleNavigation from '../Article/Navigation/ArticleNavigation';
 import { SimpleCell } from '../Cell/SimpleCell';
 import ArticleHead from '../Article/ArticleHead/ArticleHead';
 import { mainText } from '../Article/ArticleHead/articleHeaderStyle';
-import {
-  videoWrap,
-  anchorPos,
-  coverImage,
-  coverImageWrap,
-  bookImageWrap,
-} from '../Layout/style';
+import { anchorPos, coverImage, bookImageWrap } from '../Layout/style';
 
 // TYPE
 interface IFilm {
@@ -122,6 +116,10 @@ const NovelArticle: TFilmArticle = ({ director, directorWiki, films }) => {
 
   return (
     <>
+      <Head>
+        <title>{director}</title>
+      </Head>
+      ;
       <ArticleNavigation
         content={[
           {
@@ -147,13 +145,12 @@ const NovelArticle: TFilmArticle = ({ director, directorWiki, films }) => {
         ]}
       />
       <SimpleCell
-        deskPos={{ rowStart: 11, rowEnd: 12, columnStart: 4, columnEnd: 13 }}
+        deskPos={{ rowStart: 9, rowEnd: 12, columnStart: 4, columnEnd: 13 }}
         tabPos={{ rowStart: 9, rowEnd: 10, columnStart: 1, columnEnd: 25 }}
         mobilPos={{ rowStart: 2, rowEnd: 2, columnStart: 1, columnEnd: 25 }}
       >
         <ArticleHead titleContent={director} bigSub />
       </SimpleCell>
-
       {filmList}
     </>
   );

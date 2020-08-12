@@ -15,10 +15,14 @@ import {
 } from '../../common/components/Layout/style';
 import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
 import PostgresIcon from '../../common/components/icons/Postgres';
+import Head from 'next/head';
 
 const Typescript = (): JSX.Element => {
   return (
     <>
+      <Head>
+        <title>Typescript</title>
+      </Head>
       <ArticleNavigation
         content={[
           {

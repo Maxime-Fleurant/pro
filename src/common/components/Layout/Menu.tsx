@@ -16,6 +16,7 @@ import {
   returnGame,
   menuGameLogo,
   backGame,
+  aMenuLink,
 } from './style';
 
 import { helveticaThin, helveticaMedium } from '../../globalStyle';
@@ -144,7 +145,13 @@ const Menu: TMenu = ({ open, returnHandler }) => {
         <div onClick={(): void => menuHandler('compute')}>Compute</div>
         <div onClick={(): void => menuHandler('project')}>Project</div>
         <div onClick={(): void => menuHandler('life')}>Life</div>
-        <div onClick={(): void => menuHandler('contact')}>Contact</div>
+        <Link href="/contact">
+          <div onClick={returnHandlerInside}>
+            <a css={withinButton} href="/contact">
+              <span css={withingButtonText}>Contact</span>
+            </a>
+          </div>
+        </Link>
       </>
     );
   }
@@ -481,25 +488,27 @@ const Menu: TMenu = ({ open, returnHandler }) => {
   if (currentPage === 'project') {
     catMenu = (
       <>
-        <div onClick={returnHandlerInside}>
-          <a
-            href="https://anime.maximefleurant.com/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Anime <span>👁</span>
-          </a>
-        </div>
+        {/* <div onClick={returnHandlerInside}> */}
+        <a
+          css={aMenuLink}
+          href="https://anime.maximefleurant.com/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Anime <span>👁</span>
+        </a>
+        {/* </div> */}
 
-        <div onClick={returnHandlerInside}>
-          <a
-            href="https://maximefleurant.com/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Portfolio <span>🌎</span>
-          </a>
-        </div>
+        {/* <div onClick={returnHandlerInside}> */}
+        <a
+          href="https://maximefleurant.com/"
+          target="_blank"
+          rel="noreferrer"
+          css={aMenuLink}
+        >
+          Portfolio <span>🌎</span>
+        </a>
+        {/* </div> */}
       </>
     );
   }

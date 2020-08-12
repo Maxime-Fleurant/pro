@@ -10,10 +10,14 @@ import {
   anchorPos,
   githubLinkCaption,
 } from '../../common/components/Layout/style';
+import Head from 'next/head';
 
 const Express = () => {
   return (
     <>
+      <Head>
+        <title>Express</title>
+      </Head>
       <ArticleNavigation
         content={[
           {
@@ -149,7 +153,6 @@ const Express = () => {
             </span>
           </span>
         }
-        headerContentHeightExtra={15}
         headerCode={{ code: expressMain, language: 'language-js' }}
         content={[]}
       />

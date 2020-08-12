@@ -9,10 +9,14 @@ import {
 import TextLink from '../../common/components/Article/textLink/TextLink';
 import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
 import { normMain } from '../../common/components/Article/CodeBrowser/codes/norm';
+import Head from 'next/head';
 
 const JWT = (): JSX.Element => {
   return (
     <>
+      <Head>
+        <title>Normalization</title>
+      </Head>
       <ArticleNavigation
         content={[
           {

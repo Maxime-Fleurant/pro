@@ -4,10 +4,14 @@ import { jwtmain } from '../../common/components/Article/CodeBrowser/codes/jwt';
 import { githubLinkCaption } from '../../common/components/Layout/style';
 import TextLink from '../../common/components/Article/textLink/TextLink';
 import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
+import Head from 'next/head';
 
 const JWT = (): JSX.Element => {
   return (
     <>
+      <Head>
+        <title>JWT</title>
+      </Head>
       <ArticleNavigation
         content={[
           {
@@ -122,7 +126,6 @@ const JWT = (): JSX.Element => {
             </span>
           </span>
         }
-        headerContentHeightExtra={10}
         headerCode={{
           code: jwtmain,
           language: 'language-js',

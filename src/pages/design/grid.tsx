@@ -11,12 +11,16 @@ import { SimpleCell } from '../../common/components/Cell/SimpleCell';
 import ArticleHead from '../../common/components/Article/ArticleHead/ArticleHead';
 import { mainText } from '../../common/components/Article/ArticleHead/articleHeaderStyle';
 import { ITheme } from '../../common/components/Layout/Theme';
+import Head from 'next/head';
 
 const Apollo: FunctionComponent = () => {
   const theme = useTheme<ITheme>();
 
   return (
     <>
+      <Head>
+        <title>Grid</title>
+      </Head>
       <ArticleNavigation
         content={[
           {
@@ -37,7 +41,7 @@ const Apollo: FunctionComponent = () => {
       />
 
       <SimpleCell
-        deskPos={{ rowStart: 9, rowEnd: 12, columnStart: 4, columnEnd: 13 }}
+        deskPos={{ rowStart: 8, rowEnd: 12, columnStart: 4, columnEnd: 13 }}
         tabPos={{ rowStart: 6, rowEnd: 7, columnStart: 1, columnEnd: 25 }}
         mobilPos={{ rowStart: 1, rowEnd: 2, columnStart: 1, columnEnd: 25 }}
       >

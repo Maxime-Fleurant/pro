@@ -1,5 +1,5 @@
 import Article from '../../common/components/Article/Article';
-
+import Head from 'next/head';
 import { dockerMain } from '../../common/components/Article/CodeBrowser/codes/docker';
 import { githubLinkCaption } from '../../common/components/Layout/style';
 import TextLink from '../../common/components/Article/textLink/TextLink';
@@ -8,6 +8,9 @@ import ArticleNavigation from '../../common/components/Article/Navigation/Articl
 const Docker = (): JSX.Element => {
   return (
     <>
+      <Head>
+        <title>Docker</title>
+      </Head>
       <ArticleNavigation
         content={[
           {

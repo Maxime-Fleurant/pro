@@ -19,10 +19,14 @@ import {
 } from '../../common/components/Layout/style';
 import PassportIcon from '../../common/components/icons/Passport';
 import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
+import Head from 'next/head';
 
 const TypeGraphql = () => {
   return (
     <>
+      <Head>
+        <title>TypeGraphQL</title>
+      </Head>
       <ArticleNavigation
         content={[
           {

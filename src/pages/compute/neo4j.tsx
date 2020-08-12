@@ -8,10 +8,14 @@ import {
 } from '../../common/components/Layout/style';
 import TextLink from '../../common/components/Article/textLink/TextLink';
 import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
+import Head from 'next/head';
 
 const Neo = (): JSX.Element => {
   return (
     <>
+      <Head>
+        <title>Neo4j</title>
+      </Head>
       <ArticleNavigation
         content={[
           {
@@ -95,7 +99,7 @@ const Neo = (): JSX.Element => {
             </span>
           </span>
         }
-        headerContentHeightExtra={15}
+        headerContentHeightExtra={5}
         headerCode={{
           code: neomain,
           language: 'language-js',

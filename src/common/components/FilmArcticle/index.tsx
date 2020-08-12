@@ -10,6 +10,7 @@ import {
   coverImage,
   coverImageWrap,
 } from '../Layout/style';
+import Head from 'next/head';
 
 // TYPE
 interface IFilm {
@@ -201,6 +202,10 @@ const FilmArticle: TFilmArticle = ({ director, directorWiki, films }) => {
 
   return (
     <>
+      <Head>
+        <title>{director}</title>
+      </Head>
+      ;
       <ArticleNavigation
         content={[
           {
@@ -226,13 +231,12 @@ const FilmArticle: TFilmArticle = ({ director, directorWiki, films }) => {
         ]}
       />
       <SimpleCell
-        deskPos={{ rowStart: 11, rowEnd: 12, columnStart: 4, columnEnd: 13 }}
+        deskPos={{ rowStart: 9, rowEnd: 12, columnStart: 4, columnEnd: 13 }}
         tabPos={{ rowStart: 9, rowEnd: 10, columnStart: 1, columnEnd: 25 }}
         mobilPos={{ rowStart: 2, rowEnd: 2, columnStart: 1, columnEnd: 25 }}
       >
         <ArticleHead titleContent={director} bigSub />
       </SimpleCell>
-
       {filmList}
     </>
   );

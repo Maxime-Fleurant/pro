@@ -9,10 +9,14 @@ import TextLink from '../../common/components/Article/textLink/TextLink';
 import TypegraphqlIcon from '../../common/components/icons/Typegraphql';
 import TypescriptIcon from '../../common/components/icons/Typescript';
 import NpmIcon from '../../common/components/icons/Npm';
+import Head from 'next/head';
 
 const DI = (): JSX.Element => {
   return (
     <>
+      <Head>
+        <title>Dependencies Injection</title>
+      </Head>
       <ArticleNavigation
         content={[
           {

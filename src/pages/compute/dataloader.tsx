@@ -1,4 +1,5 @@
 import { mainDataload } from '../../common/components/Article/CodeBrowser/codes/dataloader';
+import Head from 'next/head';
 import Article from '../../common/components/Article/Article';
 import { insideLink } from '../../common/components/Article/ArticleHead/articleHeaderStyle';
 import TypegraphqlIcon from '../../common/components/icons/Typegraphql';
@@ -12,6 +13,9 @@ import ArticleNavigation from '../../common/components/Article/Navigation/Articl
 const DataLoader = () => {
   return (
     <>
+      <Head>
+        <title>DataLoader</title>
+      </Head>
       <ArticleNavigation
         content={[
           {

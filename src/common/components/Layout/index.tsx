@@ -23,7 +23,6 @@ import {
   themeButton,
   themeButtonMobile,
 } from './style';
-import { Cell } from '../Cell/cell';
 import { helveticaThin, helveticaMedium } from '../../globalStyle';
 import ComputeSide from './ComputeSide';
 import DesignSide from './DesignSide';
@@ -33,7 +32,6 @@ import LifeSide from './LifeSide';
 import GameSide from './GameSide';
 import NovelSide from './novelsSide';
 import Menu from './Menu';
-import HomeSide from './HomeSide';
 import { SimpleCell } from '../Cell/SimpleCell';
 
 const Layout: FunctionComponent = ({ children }) => {
@@ -79,7 +77,7 @@ const Layout: FunctionComponent = ({ children }) => {
   if (router.pathname.match(/^\/life\/cinema?/g)) {
     sidePanel = (
       <SimpleCell
-        deskPos={{ rowStart: 11, rowEnd: 30, columnEnd: 4, columnStart: 1 }}
+        deskPos={{ rowStart: 9, rowEnd: 30, columnEnd: 4, columnStart: 1 }}
         extraCss={[sideWrap]}
       >
         <div css={sidePanelWrap}>
@@ -92,7 +90,7 @@ const Layout: FunctionComponent = ({ children }) => {
   if (router.pathname.match(/^\/life\/novels?/g)) {
     sidePanel = (
       <SimpleCell
-        deskPos={{ rowStart: 11, rowEnd: 30, columnEnd: 4, columnStart: 1 }}
+        deskPos={{ rowStart: 9, rowEnd: 30, columnEnd: 4, columnStart: 1 }}
         extraCss={[sideWrap]}
       >
         <div css={sidePanelWrap}>
@@ -105,7 +103,7 @@ const Layout: FunctionComponent = ({ children }) => {
   if (router.pathname.match(/^\/life\/games?/g)) {
     sidePanel = (
       <SimpleCell
-        deskPos={{ rowStart: 11, rowEnd: 30, columnEnd: 4, columnStart: 1 }}
+        deskPos={{ rowStart: 9, rowEnd: 30, columnEnd: 4, columnStart: 1 }}
         extraCss={[sideWrap]}
       >
         <div css={sidePanelWrap}>

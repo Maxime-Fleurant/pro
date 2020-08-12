@@ -8,12 +8,16 @@ import { mainText } from '../../common/components/Article/ArticleHead/articleHea
 import { ITheme } from '../../common/components/Layout/Theme';
 import LogoAnime from '../../common/components/Layout/logoAnime';
 import LogoAnimeFull from '../../common/components/Layout/logoAnimeFull';
+import Head from 'next/head';
 
 const Apollo: FunctionComponent = () => {
   const theme = useTheme<ITheme>();
 
   return (
     <>
+      <Head>
+        <title>Motion</title>
+      </Head>
       <ArticleNavigation
         content={[
           {
@@ -34,7 +38,7 @@ const Apollo: FunctionComponent = () => {
       />
 
       <SimpleCell
-        deskPos={{ rowStart: 9, rowEnd: 12, columnStart: 4, columnEnd: 13 }}
+        deskPos={{ rowStart: 8, rowEnd: 12, columnStart: 4, columnEnd: 13 }}
         tabPos={{ rowStart: 6, rowEnd: 7, columnStart: 1, columnEnd: 25 }}
         mobilPos={{ rowStart: 1, rowEnd: 2, columnStart: 1, columnEnd: 25 }}
       >
@@ -74,9 +78,9 @@ const Apollo: FunctionComponent = () => {
       </SimpleCell>
 
       <SimpleCell
-        deskPos={{ rowStart: 12, rowEnd: 13, columnStart: 13, columnEnd: 22 }}
-        tabPos={{ rowStart: 8, rowEnd: 9, columnStart: 1, columnEnd: 25 }}
-        mobilPos={{ rowStart: 3, rowEnd: 4, columnStart: 1, columnEnd: 25 }}
+        deskPos={{ rowStart: 12, rowEnd: 13, columnStart: 14, columnEnd: 21 }}
+        tabPos={{ rowStart: 8, rowEnd: 9, columnStart: 4, columnEnd: 22 }}
+        mobilPos={{ rowStart: 3, rowEnd: 4, columnStart: 4, columnEnd: 22 }}
         relative
         ratio={1}
       >

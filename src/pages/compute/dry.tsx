@@ -7,11 +7,15 @@ import {
   githubLinkCaption,
   anchorPos,
 } from '../../common/components/Layout/style';
+import Head from 'next/head';
 import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
 
 const Dry = (): JSX.Element => {
   return (
     <>
+      <Head>
+        <title>DRY</title>
+      </Head>
       <ArticleNavigation
         content={[
           {

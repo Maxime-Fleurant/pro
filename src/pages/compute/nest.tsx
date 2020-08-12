@@ -18,10 +18,14 @@ import {
   anchorPos,
 } from '../../common/components/Layout/style';
 import JestIcon from '../../common/components/icons/Jest';
+import Head from 'next/head';
 
 const Nest = (): JSX.Element => {
   return (
     <>
+      <Head>
+        <title>Nest</title>
+      </Head>
       <ArticleNavigation
         content={[
           {

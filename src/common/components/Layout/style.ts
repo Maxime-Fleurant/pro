@@ -1,6 +1,5 @@
 import { css, SerializedStyles, keyframes } from '@emotion/core';
 import {
-  font40,
   titleLineHeight,
   helveticaMedium,
   pointSize40,
@@ -25,10 +24,7 @@ import {
   pointSize4,
   pointSize80,
   pointSize104,
-  pointSize64,
-  helveticaBold,
   pointSize56,
-  pointSize20,
   font56,
 } from '../../globalStyle';
 import { ITheme } from './Theme';
@@ -933,6 +929,29 @@ export const gameCatMenu = (theme: ITheme): SerializedStyles =>
     `
   );
 
+export const aMenuLink = (theme: ITheme): SerializedStyles => css`
+  padding: ${pointSize24} ${pointSize48};
+  border: 1px solid ${theme.base.baseColor600};
+  cursor: pointer;
+  display: block;
+
+  &:hover {
+    border: 1px solid ${theme.base.baseColor100};
+    ${theme.text.textColor200};
+    ${theme.background.backgroundColor800};
+  }
+
+  &:not(:last-child) {
+    margin-bottom: ${pointSize24};
+  }
+
+  @media (max-width: 767px) {
+    font-size: ${pointSize48};
+
+    padding: ${pointSize32} ${pointSize56};
+  }
+`;
+
 export const returnButton = (theme: ITheme): SerializedStyles =>
   css(
     theme.text.textColor800,
@@ -1132,3 +1151,8 @@ export const animeGradient = keyframes`
 `;
 
 export const actionGradient = css({ animation: `${animeGradient} 2s linear` });
+
+export const contactWrap = css({
+  width: '100%',
+  textAlign: 'center',
+});

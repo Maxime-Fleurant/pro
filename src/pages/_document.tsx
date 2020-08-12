@@ -47,6 +47,7 @@ export default class MyDocument extends Document {
           <meta name="Description" content="Design Compute Tech Demo" />
           <meta name="theme-color" content="#F0F2F4" />
           <link rel="apple-touch-icon" href="/icons/90icon-.png" />
+          <link rel="shortcut icon" href="/fav.ico" />
         </Head>
         <body>
           <Global
