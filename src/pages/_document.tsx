@@ -26,6 +26,7 @@ export default class MyDocument extends Document {
     return (
       <html
         lang="en"
+        translate="no"
         css={[
           css`
              {

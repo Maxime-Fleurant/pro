@@ -347,7 +347,7 @@ export const mobileNavWrap = (theme: ITheme): SerializedStyles =>
   );
 
 export const mobileNav = css({
-  margin: ` 0 ${pointSize48}`,
+  margin: ` ${pointSize24} ${pointSize48}`,
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
