@@ -910,7 +910,7 @@ export const gameCatMenu = (theme: ITheme): SerializedStyles =>
       }
 
       @media (hover: hover) {
-        div {
+        div:hover {
           border: 1px solid ${theme.base.baseColor100};
           ${theme.text.textColor200};
           ${theme.background.backgroundColor800};
@@ -938,7 +938,7 @@ export const aMenuLink = (theme: ITheme): SerializedStyles => css`
   display: block;
 
   @media (hover: hover) {
-    & {
+    &:hover {
       border: 1px solid ${theme.base.baseColor100};
       ${theme.text.textColor200};
       ${theme.background.backgroundColor800};
@@ -971,7 +971,7 @@ export const returnButton = (theme: ITheme): SerializedStyles =>
       cursor: pointer;
 
       @media (hover: hover) {
-        & {
+        &:hover {
           border: 1px solid ${theme.base.baseColor200};
           ${theme.text.textColor200};
           ${theme.background.backgroundColor800};
@@ -1000,7 +1000,7 @@ export const returnGame = (theme: ITheme): SerializedStyles =>
       }
 
       @media (hover: hover) {
-        & {
+        &:hover {
           span:before {
             color: ${theme.base.baseColor200};
           }
