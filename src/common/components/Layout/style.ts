@@ -1156,3 +1156,7 @@ export const contactWrap = css({
   width: '100%',
   textAlign: 'center',
 });
+
+export const animeMobileH = css`
+  margin: 0 !important;
+`;

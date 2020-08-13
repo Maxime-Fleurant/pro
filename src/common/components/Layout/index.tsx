@@ -22,6 +22,7 @@ import {
   menuButtonText,
   themeButton,
   themeButtonMobile,
+  animeMobileH,
 } from './style';
 import { helveticaThin, helveticaMedium } from '../../globalStyle';
 import ComputeSide from './ComputeSide';
@@ -140,23 +141,18 @@ const Layout: FunctionComponent = ({ children }) => {
       >
         <div css={mobileNav}>
           <span
-            className="icon-outline-arrow-back-ios"
-            css={backButton}
-            onClick={router.back}
-          />
-          <Link href="/">
-            <div css={[logo, centerLogo]}>
-              <div css={logoAnimeHeader}>
-                <LogoAnime />
-              </div>
-            </div>
-          </Link>
-
-          <span
             className="icon-half"
             css={themeButtonMobile}
             onClick={toggle}
           />
+
+          <Link href="/">
+            <div css={[logo, centerLogo]}>
+              <div css={[logoAnimeHeader, animeMobileH]}>
+                <LogoAnime />
+              </div>
+            </div>
+          </Link>
 
           <span
             className="icon-menu-outlined"
