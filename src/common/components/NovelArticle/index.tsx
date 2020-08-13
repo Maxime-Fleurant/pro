@@ -119,7 +119,7 @@ const NovelArticle: TFilmArticle = ({ director, directorWiki, films }) => {
       <Head>
         <title>{director}</title>
       </Head>
-      ;
+
       <ArticleNavigation
         content={[
           {

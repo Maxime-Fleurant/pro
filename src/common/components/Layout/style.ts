@@ -909,10 +909,12 @@ export const gameCatMenu = (theme: ITheme): SerializedStyles =>
         cursor: pointer;
       }
 
-      div:hover {
-        border: 1px solid ${theme.base.baseColor100};
-        ${theme.text.textColor200};
-        ${theme.background.backgroundColor800};
+      @media (hover: hover) {
+        div {
+          border: 1px solid ${theme.base.baseColor100};
+          ${theme.text.textColor200};
+          ${theme.background.backgroundColor800};
+        }
       }
 
       div:not(:last-child) {
@@ -935,10 +937,12 @@ export const aMenuLink = (theme: ITheme): SerializedStyles => css`
   cursor: pointer;
   display: block;
 
-  &:hover {
-    border: 1px solid ${theme.base.baseColor100};
-    ${theme.text.textColor200};
-    ${theme.background.backgroundColor800};
+  @media (hover: hover) {
+    & {
+      border: 1px solid ${theme.base.baseColor100};
+      ${theme.text.textColor200};
+      ${theme.background.backgroundColor800};
+    }
   }
 
   &:not(:last-child) {
@@ -966,10 +970,12 @@ export const returnButton = (theme: ITheme): SerializedStyles =>
       border: 1px solid ${theme.base.baseColor600};
       cursor: pointer;
 
-      &:hover {
-        border: 1px solid ${theme.base.baseColor200};
-        ${theme.text.textColor200};
-        ${theme.background.backgroundColor800};
+      @media (hover: hover) {
+        & {
+          border: 1px solid ${theme.base.baseColor200};
+          ${theme.text.textColor200};
+          ${theme.background.backgroundColor800};
+        }
       }
 
       @media (max-width: 767px) {
@@ -993,9 +999,11 @@ export const returnGame = (theme: ITheme): SerializedStyles =>
         color: ${theme.base.baseColor600};
       }
 
-      &:hover {
-        span:before {
-          color: ${theme.base.baseColor200};
+      @media (hover: hover) {
+        & {
+          span:before {
+            color: ${theme.base.baseColor200};
+          }
         }
       }
 
