@@ -55,6 +55,10 @@ export default class MyDocument extends Document {
           <meta httpEquiv="ScreenOrientation" content="autoRotate:disabled" />
           <meta name="google" content="notranslate" />
           <meta property="og:image" content="/share.png" />
+          <meta
+            name="google-site-verification"
+            content="KSOtmxhmLcwTriwuv5XovUrysyIFXePGewXxq4kGGu8"
+          />
         </Head>
         <body>
           <Global
