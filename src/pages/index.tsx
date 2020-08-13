@@ -112,14 +112,24 @@ const Index: FunctionComponent = () => {
             href="https://anime.maximefleurant.com/"
           />{' '}
           which aims to present code examples from Back to Front using different
-          technologies. The Life segment is a presentation of various things I
-          like.
+          technologies. The{' '}
+          <TextLink
+            logo={<span></span>}
+            text=" Life."
+            href="/life/cinema/dreyer"
+          />
           <br />
           <br />
           This app is built without using any CSS framework. All the CSS /
           Layout is hand crafted with Emotion Css In JS solution. The layout is
-          based on a Grid system that I built Using css-grid and Flexbox. The
-          app is statically rendered by
+          based on a
+          <TextLink
+            logo={<span></span>}
+            text=" Grid "
+            href="/design/grid"
+          />{' '}
+          system that I built Using css-grid and Flexbox. The app is statically
+          rendered by
           <TextLink
             logo={<span className="icon-react" />}
             text=" React "
