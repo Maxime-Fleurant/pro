@@ -31,7 +31,7 @@ export const titleDesc = (theme: ITheme): SerializedStyles =>
   css(
     { textAlign: 'justify' },
     theme.text.textColor700,
-    helveticaThin,
+    helveticaLight,
     textLineHeight,
     fontRegular
   );
