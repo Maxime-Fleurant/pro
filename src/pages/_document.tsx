@@ -54,6 +54,7 @@ export default class MyDocument extends Document {
           <link rel="shortcut icon" href="/fav.ico" />
           <meta httpEquiv="ScreenOrientation" content="autoRotate:disabled" />
           <meta name="google" content="notranslate" />
+          <meta property="og:image" content="/share.png" />
         </Head>
         <body>
           <Global

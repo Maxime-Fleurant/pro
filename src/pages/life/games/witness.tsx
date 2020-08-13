@@ -6,7 +6,7 @@ const Carax: FunctionComponent = () => {
   return (
     <FilmArticle
       director="The Witness"
-      directorWiki="wikiwand.com/en/The_Witness_(2016_video_game)"
+      directorWiki="https://wikiwand.com/en/The_Witness_(2016_video_game)"
       films={[
         {
           title: 'Thekla, Inc.',
