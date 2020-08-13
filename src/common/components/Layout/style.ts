@@ -908,12 +908,13 @@ export const gameCatMenu = (theme: ITheme): SerializedStyles =>
         border: 1px solid ${theme.base.baseColor600};
         cursor: pointer;
       }
-
-      @media (hover: hover) {
-        div:hover {
-          border: 1px solid ${theme.base.baseColor100};
-          ${theme.text.textColor200};
-          ${theme.background.backgroundColor800};
+      div {
+        @media (hover: hover) {
+          &:hover {
+            border: 1px solid ${theme.base.baseColor100};
+            ${theme.text.textColor200};
+            ${theme.background.backgroundColor800};
+          }
         }
       }
 
