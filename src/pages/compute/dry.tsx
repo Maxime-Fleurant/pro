@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Article from '../../common/components/Article/Article';
 import { insideLink } from '../../common/components/Article/ArticleHead/articleHeaderStyle';
 import { mainLayer } from '../../common/components/Article/CodeBrowser/codes/3layer';
@@ -7,7 +8,6 @@ import {
   githubLinkCaption,
   anchorPos,
 } from '../../common/components/Layout/style';
-import Head from 'next/head';
 import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
 
 const Dry = (): JSX.Element => {
