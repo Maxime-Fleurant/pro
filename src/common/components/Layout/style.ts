@@ -900,7 +900,7 @@ export const gameCatMenu = (theme: ITheme): SerializedStyles =>
       marginTop: pointSize24,
       marginBottom: pointSize32,
     },
-    helveticaThin,
+    helveticaLight,
     font32,
     css`
       div {
@@ -959,7 +959,7 @@ export const returnButton = (theme: ITheme): SerializedStyles =>
       textAlign: 'center',
       flexGrow: 1,
     },
-    helveticaThin,
+    helveticaLight,
     font32,
     css`
       padding: ${pointSize24} ${pointSize48};
