@@ -47,18 +47,9 @@ import { helveticaMedium, helveticaRegular } from '../common/globalStyle';
 
 const Index: FunctionComponent = () => {
   const theme = useTheme<ITheme>();
-  let deferredPrompt: { prompt: () => void };
-  const [promptState, updatePrompt] = useState(null);
-
-  const promptt = () => {
-    promptState.prompt();
-  };
 
   useEffect(() => {
-    window.addEventListener('beforeinstallprompt', (e) => {
-      deferredPrompt = (e as unknown) as { prompt: () => void };
-      updatePrompt(deferredPrompt);
-    });
+    window.scrollTo(0, 0);
   }, []);
 
   return (
@@ -112,12 +103,13 @@ const Index: FunctionComponent = () => {
             href="https://anime.maximefleurant.com/"
           />{' '}
           which aims to present code examples from Back to Front using different
-          technologies. The{' '}
+          technologies. The
           <TextLink
             logo={<span></span>}
-            text=" Life."
+            text=" Life "
             href="/life/cinema/dreyer"
           />
+          segment is a presentation of various things i like.
           <br />
           <br />
           This app is built without using any CSS framework. All the CSS /
