@@ -35,11 +35,6 @@ export const gridCss = css([
     grid-template-columns: repeat(24, 1fr);
     grid-gap: 1.4rem;
 
-    -webkit-text-size-adjust: none;
-    -ms-text-size-adjust: none;
-    -moz-text-size-adjust: none;
-    text-size-adjust: none;
-
     padding-bottom: 10rem;
 
     margin: 0 2rem;

@@ -42,7 +42,10 @@ export default class MyDocument extends Document {
         ]}
       >
         <Head>
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+          />
           <link rel="manifest" href="/manifest.json" />
           <meta name="Description" content="Design Compute Tech Demo" />
           <meta name="theme-color" content="#F0F2F4" />
