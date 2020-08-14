@@ -5,11 +5,11 @@ const imageminMozjpeg = require('imagemin-mozjpeg');
 
 (async () => {
   const files = await imagemin(
-    ['./cinema/**/**/*.{jpg,png,jpeg}'],
+    ['./books/**/**/*.{jpg,png,jpeg}'],
 
     {
       replaceOutputDir: (output) => {
-        return output.replace(/cinema\//, 'build/');
+        return output.replace(/books\//, 'build/');
       },
       plugins: [
         imageminMozjpeg({ quality: 50 }),
