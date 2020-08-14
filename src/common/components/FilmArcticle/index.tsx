@@ -11,7 +11,6 @@ import {
   coverImageWrap,
 } from '../Layout/style';
 import Head from 'next/head';
-import ArticleImage from './ArticleImage';
 
 // TYPE
 interface IFilm {
@@ -111,7 +110,7 @@ const FilmArticle: TFilmArticle = ({ director, directorWiki, films }) => {
           }}
           extraCss={[coverImageWrap]}
         >
-          <ArticleImage image={film.cover} />
+          <img src={film.cover} alt="" css={coverImage} />
         </SimpleCell>
 
         <SimpleCell
