@@ -81,7 +81,7 @@ const Index: FunctionComponent = () => {
       >
         <div css={[mainText(theme), { opacity: 0 }, homeA3]}>
           Hi, my name is Maxime Fleurant and i'm a Full-Stack web developer
-          based in Paris. This app is intended to be a presentation of the
+          based in Paris. This App is intended to be a presentation of the
           technology and design techniques that I use. The app is divided into
           four segments: Design - Compute - Project - Life. In the compute
           segment you will find descriptions of the technologies used in
