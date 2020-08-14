@@ -500,14 +500,7 @@ const Menu: TMenu = ({ open, returnHandler }) => {
         {/* </div> */}
 
         {/* <div onClick={returnHandlerInside}> */}
-        <a
-          href="https://maximefleurant.com/"
-          target="_blank"
-          rel="noreferrer"
-          css={aMenuLink}
-        >
-          Portfolio <span>🌎</span>
-        </a>
+
         {/* </div> */}
       </>
     );
