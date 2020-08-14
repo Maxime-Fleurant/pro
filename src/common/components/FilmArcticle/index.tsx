@@ -1,4 +1,4 @@
-import { FunctionComponent, Fragment } from 'react';
+import { FunctionComponent, Fragment, useEffect } from 'react';
 import YouTube from 'react-youtube';
 import ArticleNavigation from '../Article/Navigation/ArticleNavigation';
 import { SimpleCell } from '../Cell/SimpleCell';
@@ -11,6 +11,7 @@ import {
   coverImageWrap,
 } from '../Layout/style';
 import Head from 'next/head';
+import ArticleImage from './ArticleImage';
 
 // TYPE
 interface IFilm {
@@ -110,7 +111,7 @@ const FilmArticle: TFilmArticle = ({ director, directorWiki, films }) => {
           }}
           extraCss={[coverImageWrap]}
         >
-          <img src={film.cover} alt="" css={coverImage} />
+          <ArticleImage image={film.cover} />
         </SimpleCell>
 
         <SimpleCell
