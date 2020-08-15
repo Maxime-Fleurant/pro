@@ -64,11 +64,13 @@ const Index: FunctionComponent = () => {
       >
         <ArticleHead
           titleContent={
-            <span>
-              <span css={[homeTitle(theme), homeA1]}>Design,</span>
-              <br />
-              <span css={[homeTitle2(theme), homeA2]}>Compute.</span>
-            </span>
+            <div css={homeA1}>
+              <span>
+                <span css={[homeTitle(theme)]}>Design,</span>
+                <br />
+                <span css={[homeTitle2(theme)]}>Compute.</span>
+              </span>
+            </div>
           }
           bigSub
         />

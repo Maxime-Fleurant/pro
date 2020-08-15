@@ -1032,12 +1032,10 @@ export const backGame = css({
 });
 
 export const homeTitle = (theme: ITheme): SerializedStyles =>
-  css(theme.text.textColor700, helveticaThin, titleLineHeight, { opacity: 0 });
+  css(theme.text.textColor700, helveticaThin, titleLineHeight);
 
 export const homeTitle2 = (theme: ITheme): SerializedStyles =>
-  css(theme.text.textColor900, helveticaMedium, titleLineHeight, {
-    opacity: 0,
-  });
+  css(theme.text.textColor900, helveticaMedium, titleLineHeight);
 
 export const logoRowWrap = css({
   display: 'flex',
@@ -1095,7 +1093,7 @@ export const homeA2 = css({
 
 export const homeA3 = css({
   animation: `${homeAnime} 2s ease-in-out`,
-  animationDelay: '2s',
+  animationDelay: '1s',
   animationFillMode: 'forwards',
 });
 
