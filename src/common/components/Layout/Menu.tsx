@@ -32,7 +32,6 @@ import PassportIcon from '../icons/Passport';
 import JWTIcon from '../icons/JWT';
 import GameLogoAnime from './gameLogoAnime';
 import { ITheme } from './Theme';
-import { copyFile } from 'fs/promises';
 
 // TYPE
 type TMenu = FunctionComponent<{ open: boolean; returnHandler: () => void }>;
@@ -43,21 +42,11 @@ const Menu: TMenu = ({ open, returnHandler }) => {
 
   const [currentPage, updatePage] = useState('menu');
   const [back, updateBack] = useState('');
-  const [audioSound, updateAudio] = useState(null);
 
   let catMenu: JSX.Element;
 
-  useEffect(() => {
-    updateAudio(new Audio('/click.m4a'));
-  }, []);
-
-  const soundPlay = (): void => {
-    audioSound.play();
-  };
-
   const menuHandler = (page: string): void => {
     window.scrollTo(0, 0);
-
     updatePage(page);
   };
 
@@ -157,12 +146,7 @@ const Menu: TMenu = ({ open, returnHandler }) => {
         <div onClick={(): void => menuHandler('project')}>Project</div>
         <div onClick={(): void => menuHandler('life')}>Life</div>
         <Link href="/contact">
-          <div
-            onClick={() => {
-              returnHandlerInside();
-              soundPlay();
-            }}
-          >
+          <div onClick={returnHandlerInside}>
             <a css={withinButton} href="/contact">
               <span css={withingButtonText}>Contact</span>
             </a>
@@ -176,48 +160,28 @@ const Menu: TMenu = ({ open, returnHandler }) => {
     catMenu = (
       <>
         <Link href="/design/color">
-          <div
-            onClick={() => {
-              returnHandlerInside();
-              soundPlay();
-            }}
-          >
+          <div onClick={returnHandlerInside}>
             <a css={withinButton} href="/design/color">
               <span css={withingButtonText}>Colors</span> <span>🎨</span>
             </a>
           </div>
         </Link>
         <Link href="/design/typography">
-          <div
-            onClick={() => {
-              returnHandlerInside();
-              soundPlay();
-            }}
-          >
+          <div onClick={returnHandlerInside}>
             <a css={withinButton} href="/design/typography">
               <span css={withingButtonText}>Typography</span> <span>🖋</span>
             </a>
           </div>
         </Link>
         <Link href="/design/grid">
-          <div
-            onClick={() => {
-              returnHandlerInside();
-              soundPlay();
-            }}
-          >
+          <div onClick={returnHandlerInside}>
             <a css={withinButton} href="/design/grid">
               <span css={withingButtonText}>Grid</span> <span>📐</span>
             </a>
           </div>
         </Link>
         <Link href="/design/motion">
-          <div
-            onClick={() => {
-              returnHandlerInside();
-              soundPlay();
-            }}
-          >
+          <div onClick={returnHandlerInside}>
             <a css={withinButton} href="/design/motion">
               <span css={withingButtonText}>Motion</span> <span>💠</span>
             </a>
@@ -250,12 +214,7 @@ const Menu: TMenu = ({ open, returnHandler }) => {
     catMenu = (
       <>
         <Link href="/compute/express">
-          <div
-            onClick={() => {
-              returnHandlerInside();
-              soundPlay();
-            }}
-          >
+          <div onClick={returnHandlerInside}>
             <a css={withinButton} href="/compute/express">
               <span css={withingButtonText}>Express</span>
               <span className="icon-expressjs-icon" />
@@ -263,12 +222,7 @@ const Menu: TMenu = ({ open, returnHandler }) => {
           </div>
         </Link>
         <Link href="/compute/nest">
-          <div
-            onClick={() => {
-              returnHandlerInside();
-              soundPlay();
-            }}
-          >
+          <div onClick={returnHandlerInside}>
             <a css={withinButton} href="/compute/nest">
               <span css={withingButtonText}>Nest</span>{' '}
               <span className="icon-nestjs" />
@@ -283,12 +237,7 @@ const Menu: TMenu = ({ open, returnHandler }) => {
     catMenu = (
       <>
         <Link href="/compute/typescript">
-          <div
-            onClick={() => {
-              returnHandlerInside();
-              soundPlay();
-            }}
-          >
+          <div onClick={returnHandlerInside}>
             <a css={withinButton} href="/compute/typescript">
               <span css={withingButtonText}>Typescript</span> <TypescriptIcon />
             </a>
@@ -302,12 +251,7 @@ const Menu: TMenu = ({ open, returnHandler }) => {
     catMenu = (
       <>
         <Link href="/compute/typegraphql">
-          <div
-            onClick={() => {
-              returnHandlerInside();
-              soundPlay();
-            }}
-          >
+          <div onClick={returnHandlerInside}>
             <a css={withinButton} href="/compute/typegraphql">
               <span css={withingButtonText}>TypeGraphQL</span>
               <TypegraphqlIcon />
@@ -316,12 +260,7 @@ const Menu: TMenu = ({ open, returnHandler }) => {
         </Link>
 
         <Link href="/compute/dataloader">
-          <div
-            onClick={() => {
-              returnHandlerInside();
-              soundPlay();
-            }}
-          >
+          <div onClick={returnHandlerInside}>
             <a css={withinButton} href="/compute/dataloader">
               <span css={withingButtonText}>DataLoader</span> <span>🧩</span>
             </a>
@@ -329,12 +268,7 @@ const Menu: TMenu = ({ open, returnHandler }) => {
         </Link>
 
         <Link href="/compute/apollo">
-          <div
-            onClick={() => {
-              returnHandlerInside();
-              soundPlay();
-            }}
-          >
+          <div onClick={returnHandlerInside}>
             <a css={withinButton} href="/compute/apollo">
               <span css={withingButtonText}>Apollo</span>
               <span className="icon-a" />
@@ -349,12 +283,7 @@ const Menu: TMenu = ({ open, returnHandler }) => {
     catMenu = (
       <>
         <Link href="/compute/apolloclient">
-          <div
-            onClick={() => {
-              returnHandlerInside();
-              soundPlay();
-            }}
-          >
+          <div onClick={returnHandlerInside}>
             <a css={withinButton} href="/compute/apolloclient">
               <span css={withingButtonText}>Apollo Client</span>
               <span className="icon-a" />
@@ -363,12 +292,7 @@ const Menu: TMenu = ({ open, returnHandler }) => {
         </Link>
 
         <Link href="/compute/emotion">
-          <div
-            onClick={() => {
-              returnHandlerInside();
-              soundPlay();
-            }}
-          >
+          <div onClick={returnHandlerInside}>
             <a css={withinButton} href="/compute/emotion">
               <span css={withingButtonText}>Css In JS</span>
               <span>👩‍🎤</span>
@@ -377,12 +301,7 @@ const Menu: TMenu = ({ open, returnHandler }) => {
         </Link>
 
         <Link href="/compute/redux">
-          <div
-            onClick={() => {
-              returnHandlerInside();
-              soundPlay();
-            }}
-          >
+          <div onClick={returnHandlerInside}>
             <a css={withinButton} href="/compute/redux">
               <span css={withingButtonText}>Redux</span>
               <span className="icon-redux" />
@@ -391,12 +310,7 @@ const Menu: TMenu = ({ open, returnHandler }) => {
         </Link>
 
         <Link href="/compute/react">
-          <div
-            onClick={() => {
-              returnHandlerInside();
-              soundPlay();
-            }}
-          >
+          <div onClick={returnHandlerInside}>
             <a css={withinButton} href="/compute/react">
               <span css={withingButtonText}>React</span>
               <span className="icon-react" />
@@ -405,12 +319,7 @@ const Menu: TMenu = ({ open, returnHandler }) => {
         </Link>
 
         <Link href="/compute/next">
-          <div
-            onClick={() => {
-              returnHandlerInside();
-              soundPlay();
-            }}
-          >
+          <div onClick={returnHandlerInside}>
             <a css={withinButton} href="/compute/next">
               <span css={withingButtonText}>Next</span>
               <span className="icon-next-js" />
@@ -425,12 +334,7 @@ const Menu: TMenu = ({ open, returnHandler }) => {
     catMenu = (
       <>
         <Link href="/compute/postgres">
-          <div
-            onClick={() => {
-              returnHandlerInside();
-              soundPlay();
-            }}
-          >
+          <div onClick={returnHandlerInside}>
             <a css={withinButton} href="/compute/postgres">
               <span css={withingButtonText}>PostgreSQL</span> <PostgresIcon />
             </a>
@@ -438,12 +342,7 @@ const Menu: TMenu = ({ open, returnHandler }) => {
         </Link>
 
         <Link href="/compute/mongodb">
-          <div
-            onClick={() => {
-              returnHandlerInside();
-              soundPlay();
-            }}
-          >
+          <div onClick={returnHandlerInside}>
             <a css={withinButton} href="/compute/mongodb">
               <span css={withingButtonText}>MongoDB</span> <MongoDbIcon />
             </a>
@@ -451,12 +350,7 @@ const Menu: TMenu = ({ open, returnHandler }) => {
         </Link>
 
         <Link href="/compute/neo4j">
-          <div
-            onClick={() => {
-              returnHandlerInside();
-              soundPlay();
-            }}
-          >
+          <div onClick={returnHandlerInside}>
             <a css={withinButton} href="/compute/neo4j">
               <span css={withingButtonText}>Neo4j</span> <NeoIcon />
             </a>
@@ -470,12 +364,7 @@ const Menu: TMenu = ({ open, returnHandler }) => {
     catMenu = (
       <>
         <Link href="/compute/dbnormalization">
-          <div
-            onClick={() => {
-              returnHandlerInside();
-              soundPlay();
-            }}
-          >
+          <div onClick={returnHandlerInside}>
             <a css={withinButton} href="/compute/dbnormalization">
               <span css={withingButtonText}>Normalization</span> <span>💾</span>
             </a>
@@ -483,12 +372,7 @@ const Menu: TMenu = ({ open, returnHandler }) => {
         </Link>
 
         <Link href="/compute/3layer">
-          <div
-            onClick={() => {
-              returnHandlerInside();
-              soundPlay();
-            }}
-          >
+          <div onClick={returnHandlerInside}>
             <a css={withinButton} href="/compute/3layer">
               <span css={withingButtonText}>3-Layer</span> <span>🥪</span>
             </a>
@@ -496,12 +380,7 @@ const Menu: TMenu = ({ open, returnHandler }) => {
         </Link>
 
         <Link href="/compute/dry">
-          <div
-            onClick={() => {
-              returnHandlerInside();
-              soundPlay();
-            }}
-          >
+          <div onClick={returnHandlerInside}>
             <a css={withinButton} href="/compute/dry">
               <span css={withingButtonText}>DRY</span> <span>🌵</span>
             </a>
@@ -509,12 +388,7 @@ const Menu: TMenu = ({ open, returnHandler }) => {
         </Link>
 
         <Link href="/compute/di">
-          <div
-            onClick={() => {
-              returnHandlerInside();
-              soundPlay();
-            }}
-          >
+          <div onClick={returnHandlerInside}>
             <a css={withinButton} href="/compute/di">
               <span css={withingButtonText}>DI</span> <span>🧱</span>
             </a>
@@ -528,12 +402,7 @@ const Menu: TMenu = ({ open, returnHandler }) => {
     catMenu = (
       <>
         <Link href="/compute/typedi">
-          <div
-            onClick={() => {
-              returnHandlerInside();
-              soundPlay();
-            }}
-          >
+          <div onClick={returnHandlerInside}>
             <a css={withinButton} href="/compute/typedi">
               <span css={withingButtonText}>TypeDI</span> <span>⚙️</span>
             </a>
@@ -547,12 +416,7 @@ const Menu: TMenu = ({ open, returnHandler }) => {
     catMenu = (
       <>
         <Link href="/compute/jest">
-          <div
-            onClick={() => {
-              returnHandlerInside();
-              soundPlay();
-            }}
-          >
+          <div onClick={returnHandlerInside}>
             <a css={withinButton} href="/compute/jest">
               <span css={withingButtonText}>Jest</span> <JestIcon />
             </a>
@@ -566,12 +430,7 @@ const Menu: TMenu = ({ open, returnHandler }) => {
     catMenu = (
       <>
         <Link href="/compute/docker">
-          <div
-            onClick={() => {
-              returnHandlerInside();
-              soundPlay();
-            }}
-          >
+          <div onClick={returnHandlerInside}>
             <a css={withinButton} href="/compute/docker">
               <span css={withingButtonText}>Docker</span>
               <span className="icon-docker-icon" />
@@ -586,12 +445,7 @@ const Menu: TMenu = ({ open, returnHandler }) => {
     catMenu = (
       <>
         <Link href="/compute/passport">
-          <div
-            onClick={() => {
-              returnHandlerInside();
-              soundPlay();
-            }}
-          >
+          <div onClick={returnHandlerInside}>
             <a css={withinButton} href="/compute/passport">
               <span css={withingButtonText}>PassportJS</span> <PassportIcon />
             </a>
@@ -599,12 +453,7 @@ const Menu: TMenu = ({ open, returnHandler }) => {
         </Link>
 
         <Link href="/compute/jwt">
-          <div
-            onClick={() => {
-              returnHandlerInside();
-              soundPlay();
-            }}
-          >
+          <div onClick={returnHandlerInside}>
             <a css={withinButton} href="/compute/jwt">
               <span css={withingButtonText}>JWT</span> <JWTIcon />
             </a>
@@ -618,12 +467,7 @@ const Menu: TMenu = ({ open, returnHandler }) => {
     catMenu = (
       <>
         <Link href="/compute/passport">
-          <div
-            onClick={() => {
-              returnHandlerInside();
-              soundPlay();
-            }}
-          >
+          <div onClick={returnHandlerInside}>
             <a href="/compute/passport">
               PassportJS <PassportIcon />
             </a>
@@ -631,12 +475,7 @@ const Menu: TMenu = ({ open, returnHandler }) => {
         </Link>
 
         <Link href="/compute/jwt">
-          <div
-            onClick={() => {
-              returnHandlerInside();
-              soundPlay();
-            }}
-          >
+          <div onClick={returnHandlerInside}>
             <a href="/compute/jwt">
               JWT <JWTIcon />
             </a>
@@ -649,6 +488,7 @@ const Menu: TMenu = ({ open, returnHandler }) => {
   if (currentPage === 'project') {
     catMenu = (
       <>
+        {/* <div onClick={returnHandlerInside}> */}
         <a
           css={aMenuLink}
           href="https://anime.maximefleurant.com/"
@@ -657,6 +497,11 @@ const Menu: TMenu = ({ open, returnHandler }) => {
         >
           Anime <span>👁</span>
         </a>
+        {/* </div> */}
+
+        {/* <div onClick={returnHandlerInside}> */}
+
+        {/* </div> */}
       </>
     );
   }
