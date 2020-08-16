@@ -1,5 +1,5 @@
 import { FunctionComponent, Fragment } from 'react';
-import ScrollAnimation from 'react-animate-on-scroll';
+import Fade from 'react-reveal/Fade';
 import { css } from '@emotion/core';
 import ArticleHead, { IArticleHeadContent } from './ArticleHead/ArticleHead';
 import { SimpleCell } from '../Cell/SimpleCell';
@@ -78,18 +78,14 @@ const Article: TArticle = ({
               columnEnd: 25,
             }}
           >
-            <ScrollAnimation
-              animateIn="animate__fadeInUp"
-              animateOnce
-              duration={1.5}
-            >
+            <Fade bottom duration={1500}>
               <ArticleHead
                 sub
                 logo={contentElem.header.logo}
                 titleContent={contentElem.header.titleContent}
                 official={contentElem.header.official}
               />
-            </ScrollAnimation>
+            </Fade>
           </SimpleCell>
 
           <SimpleCell
@@ -113,13 +109,9 @@ const Article: TArticle = ({
             }}
             extraCss={[extraSpace]}
           >
-            <ScrollAnimation
-              animateIn="animate__fadeInUp"
-              animateOnce
-              duration={1.5}
-            >
+            <Fade bottom duration={1500}>
               <div css={mainText}>{contentElem.content}</div>
-            </ScrollAnimation>
+            </Fade>
           </SimpleCell>
 
           <SimpleCell

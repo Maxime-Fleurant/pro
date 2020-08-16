@@ -1,6 +1,5 @@
 import { FunctionComponent } from 'react';
 import Head from 'next/head';
-import ScrollAnimation from 'react-animate-on-scroll';
 import { useTheme } from 'emotion-theming';
 import {
   quote,

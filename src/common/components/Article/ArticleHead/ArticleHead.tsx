@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
 import Typist from 'react-typist';
-import ScrollAnimation from 'react-animate-on-scroll';
+
 import { useTheme } from 'emotion-theming';
 import {
   titlewrap,
