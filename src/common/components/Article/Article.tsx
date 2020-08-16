@@ -82,7 +82,7 @@ const Article: TArticle = ({
               animateIn="animate__fadeInUp"
               animateOnce
               duration={1.5}
-              offset={15}
+              offset={50}
             >
               <ArticleHead
                 sub
@@ -118,7 +118,7 @@ const Article: TArticle = ({
               animateIn="animate__fadeInUp"
               animateOnce
               duration={1.5}
-              offset={15}
+              offset={50}
             >
               <div css={mainText}>{contentElem.content}</div>
             </ScrollAnimation>

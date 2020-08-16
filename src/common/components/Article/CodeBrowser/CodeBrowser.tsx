@@ -58,7 +58,7 @@ const CodeBrowser: TCodeBrowser = ({ language, code, heightAuto }) => {
               animateIn="animate__fadeInUp"
               animateOnce
               duration={1.5}
-              offset={15}
+              offset={50}
             >
               <pre css={codeBox}>
                 <code className={language}>
