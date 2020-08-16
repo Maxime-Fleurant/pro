@@ -7,6 +7,7 @@ import {
   colorAnime1,
   colorAnime2,
   colorAnime3,
+  animeMainTextHeader,
 } from '../../common/components/Layout/style';
 import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
 import { SimpleCell } from '../../common/components/Cell/SimpleCell';
@@ -61,36 +62,33 @@ const Apollo: FunctionComponent = () => {
         tabPos={{ rowStart: 7, rowEnd: 8, columnStart: 1, columnEnd: 25 }}
         mobilPos={{ rowStart: 2, rowEnd: 3, columnStart: 1, columnEnd: 25 }}
       >
-        <ScrollAnimation
-          animateIn="animate__fadeInUp"
-          animateOnce
-          duration={1.5}
+        <div
+          css={[mainText(theme), animeMainTextHeader]}
+          className="animate__fadeInUp"
         >
-          <div css={mainText}>
-            "Color directly influences the soul. Color is the keyboard, the eyes
-            are the hammers, the soul is the piano with many strings. The artist
-            is the hand that plays, touching one key or another purposively, to
-            cause vibrations in the soul."
-            <br />
-            <span css={quote}>-Kandinsky</span>
-            <br />
-            <br />
-            "As basic rules of a language must be practiced continually, and
-            therefore are never fixed, so exercises toward distinct color
-            effects never are done or over. New and different cases will be
-            discovered time and again."
-            <br />
-            <span css={quote}>-Joseph Albers</span>
-            <br />
-            <br />
-            "Colors are primordial ideas, children of the aboriginal colorless
-            light and its counterpart, colorless darkness Light, that first
-            phenomenon of the world, reveals to us the spirit and the living
-            soul of the world through colors."
-            <br />
-            <span css={quote}>-Johannes Itten</span>
-          </div>
-        </ScrollAnimation>
+          "Color directly influences the soul. Color is the keyboard, the eyes
+          are the hammers, the soul is the piano with many strings. The artist
+          is the hand that plays, touching one key or another purposively, to
+          cause vibrations in the soul."
+          <br />
+          <span css={quote}>-Kandinsky</span>
+          <br />
+          <br />
+          "As basic rules of a language must be practiced continually, and
+          therefore are never fixed, so exercises toward distinct color effects
+          never are done or over. New and different cases will be discovered
+          time and again."
+          <br />
+          <span css={quote}>-Joseph Albers</span>
+          <br />
+          <br />
+          "Colors are primordial ideas, children of the aboriginal colorless
+          light and its counterpart, colorless darkness Light, that first
+          phenomenon of the world, reveals to us the spirit and the living soul
+          of the world through colors."
+          <br />
+          <span css={quote}>-Johannes Itten</span>
+        </div>
       </SimpleCell>
 
       <SimpleCell

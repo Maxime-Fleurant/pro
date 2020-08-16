@@ -7,6 +7,7 @@ import {
   colorAnime1,
   colorAnime2,
   colorAnime3,
+  animeMainTextHeader,
 } from '../../common/components/Layout/style';
 import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
 import { SimpleCell } from '../../common/components/Cell/SimpleCell';
@@ -60,39 +61,36 @@ const Apollo: FunctionComponent = () => {
         tabPos={{ rowStart: 7, rowEnd: 8, columnStart: 1, columnEnd: 25 }}
         mobilPos={{ rowStart: 2, rowEnd: 3, columnStart: 1, columnEnd: 25 }}
       >
-        <ScrollAnimation
-          animateIn="animate__fadeInUp"
-          animateOnce
-          duration={1.5}
+        <div
+          css={[mainText(theme), animeMainTextHeader]}
+          className="animate__fadeInUp"
         >
-          <div css={mainText}>
-            "The grid system is an aid, not a guarantee. It permits a number of
-            possible uses and each designer can look for a solution appropriate
-            to his personal style. But one must learn how to use the grid; it is
-            an art that requires practice."
-            <br />
-            <br />
-            Just as in nature systems of order govern the growth and structure
-            of animate and inanimate matter, so human activity itself has, since
-            the earliest times, been distinguished by the quest for order.
-            <br />
-            <br />
-            The use of the grid implies
-            <br />
-            the will to systematize, to clarify
-            <br />
-            the will to penetrate to the essentials, to concentrate
-            <br />
-            the will to cultivate objectivity instead of subjectivity
-            <br />
-            the will to integrate elements of colour, form and material
-            <br />
-            the will to adopt a positive, forward-thinking attitude
-            <br />
-            <br />
-            <span css={quote}>-Josef Müller-Brockmann</span>
-          </div>
-        </ScrollAnimation>
+          "The grid system is an aid, not a guarantee. It permits a number of
+          possible uses and each designer can look for a solution appropriate to
+          his personal style. But one must learn how to use the grid; it is an
+          art that requires practice."
+          <br />
+          <br />
+          Just as in nature systems of order govern the growth and structure of
+          animate and inanimate matter, so human activity itself has, since the
+          earliest times, been distinguished by the quest for order.
+          <br />
+          <br />
+          The use of the grid implies
+          <br />
+          the will to systematize, to clarify
+          <br />
+          the will to penetrate to the essentials, to concentrate
+          <br />
+          the will to cultivate objectivity instead of subjectivity
+          <br />
+          the will to integrate elements of colour, form and material
+          <br />
+          the will to adopt a positive, forward-thinking attitude
+          <br />
+          <br />
+          <span css={quote}>-Josef Müller-Brockmann</span>
+        </div>
       </SimpleCell>
 
       <SimpleCell
