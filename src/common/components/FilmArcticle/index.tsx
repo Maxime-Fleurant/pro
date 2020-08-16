@@ -1,4 +1,7 @@
-import { FunctionComponent, Fragment, useEffect } from 'react';
+import { FunctionComponent, Fragment } from 'react';
+import Flip from 'react-reveal/Flip';
+import Head from 'next/head';
+import Fade from 'react-reveal/Fade';
 import YouTube from 'react-youtube';
 import ArticleNavigation from '../Article/Navigation/ArticleNavigation';
 import { SimpleCell } from '../Cell/SimpleCell';
@@ -9,8 +12,9 @@ import {
   anchorPos,
   coverImage,
   coverImageWrap,
+  screenImage,
+  reactRevail,
 } from '../Layout/style';
-import Head from 'next/head';
 
 // TYPE
 interface IFilm {
@@ -60,7 +64,9 @@ const FilmArticle: TFilmArticle = ({ director, directorWiki, films }) => {
             columnEnd: 25,
           }}
         >
-          <ArticleHead titleContent={film.title} film />
+          <Flip top duration={1500}>
+            <ArticleHead titleContent={film.title} film />
+          </Flip>
         </SimpleCell>
 
         <SimpleCell
@@ -83,10 +89,12 @@ const FilmArticle: TFilmArticle = ({ director, directorWiki, films }) => {
             columnEnd: 25,
           }}
         >
-          <div css={mainText}>
-            <a id={film.title.split(' ').join('')} css={anchorPos} />
-            {film.desc}
-          </div>
+          <Fade bottom duration={1500}>
+            <div css={mainText}>
+              <a id={film.title.split(' ').join('')} css={anchorPos} />
+              {film.desc}
+            </div>
+          </Fade>
         </SimpleCell>
 
         <SimpleCell
@@ -110,7 +118,9 @@ const FilmArticle: TFilmArticle = ({ director, directorWiki, films }) => {
           }}
           extraCss={[coverImageWrap]}
         >
-          <img src={film.cover} alt="" css={coverImage} />
+          <Fade bottom duration={1500}>
+            <img src={film.cover} alt="" css={coverImage} />
+          </Fade>
         </SimpleCell>
 
         <SimpleCell
@@ -134,8 +144,14 @@ const FilmArticle: TFilmArticle = ({ director, directorWiki, films }) => {
           }}
           relative
           allRatio={0.6}
-          backgroundImg={film.screen1}
-        />
+          extraCss={[reactRevail]}
+        >
+          <Fade bottom duration={1500}>
+            <div
+              css={[screenImage, { backgroundImage: `url(${film.screen1})` }]}
+            />
+          </Fade>
+        </SimpleCell>
 
         <SimpleCell
           deskPos={{
@@ -158,8 +174,14 @@ const FilmArticle: TFilmArticle = ({ director, directorWiki, films }) => {
           }}
           relative
           allRatio={0.6}
-          backgroundImg={film.screen2}
-        />
+          extraCss={[reactRevail]}
+        >
+          <Fade bottom duration={1500}>
+            <div
+              css={[screenImage, { backgroundImage: `url(${film.screen2})` }]}
+            />
+          </Fade>
+        </SimpleCell>
 
         <SimpleCell
           deskPos={{
@@ -184,10 +206,12 @@ const FilmArticle: TFilmArticle = ({ director, directorWiki, films }) => {
           allRatio={0.6}
         >
           <div css={videoWrap}>
-            <YouTube
-              videoId={film.videoId}
-              opts={{ height: '100%', width: '100%' }}
-            />
+            <Fade bottom duration={1500}>
+              <YouTube
+                videoId={film.videoId}
+                opts={{ height: '100%', width: '100%' }}
+              />
+            </Fade>
           </div>
         </SimpleCell>
       </Fragment>
@@ -235,7 +259,9 @@ const FilmArticle: TFilmArticle = ({ director, directorWiki, films }) => {
         tabPos={{ rowStart: 9, rowEnd: 10, columnStart: 1, columnEnd: 25 }}
         mobilPos={{ rowStart: 2, rowEnd: 2, columnStart: 1, columnEnd: 25 }}
       >
-        <ArticleHead titleContent={director} bigSub />
+        <Fade right duration={1500}>
+          <ArticleHead titleContent={director} bigSub />
+        </Fade>
       </SimpleCell>
       {filmList}
     </>

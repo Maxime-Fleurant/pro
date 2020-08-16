@@ -1,4 +1,5 @@
 import { FunctionComponent, Fragment } from 'react';
+import { useTheme } from 'emotion-theming';
 import Flip from 'react-reveal/Flip';
 import Fade from 'react-reveal/Fade';
 import { css } from '@emotion/core';
@@ -7,7 +8,6 @@ import { SimpleCell } from '../Cell/SimpleCell';
 import { mainText } from './ArticleHead/articleHeaderStyle';
 import CodeBrowser, { ICodeBrowser } from './CodeBrowser/CodeBrowser';
 import { animeMainTextHeader } from '../Layout/style';
-import { useTheme } from 'emotion-theming';
 import { ITheme } from '../Layout/Theme';
 
 // TYPE

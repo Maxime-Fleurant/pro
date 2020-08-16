@@ -1,4 +1,6 @@
 import Head from 'next/head';
+import Flip from 'react-reveal/Flip';
+import Fade from 'react-reveal/Fade';
 import { FunctionComponent, Fragment } from 'react';
 import ArticleNavigation from '../Article/Navigation/ArticleNavigation';
 import { SimpleCell } from '../Cell/SimpleCell';
@@ -52,7 +54,9 @@ const NovelArticle: TFilmArticle = ({ director, directorWiki, films }) => {
             columnEnd: 25,
           }}
         >
-          <ArticleHead titleContent={film.title} film />
+          <Flip top duration={1500}>
+            <ArticleHead titleContent={film.title} film />
+          </Flip>
         </SimpleCell>
 
         <SimpleCell
@@ -75,10 +79,12 @@ const NovelArticle: TFilmArticle = ({ director, directorWiki, films }) => {
             columnEnd: 25,
           }}
         >
-          <div css={mainText}>
-            <a id={film.title.split(' ').join('')} css={anchorPos} />
-            {film.desc}
-          </div>
+          <Fade bottom duration={1500}>
+            <div css={mainText}>
+              <a id={film.title.split(' ').join('')} css={anchorPos} />
+              {film.desc}
+            </div>
+          </Fade>
         </SimpleCell>
 
         <SimpleCell
@@ -102,7 +108,9 @@ const NovelArticle: TFilmArticle = ({ director, directorWiki, films }) => {
           }}
           extraCss={[bookImageWrap]}
         >
-          <img src={film.cover} alt="" css={coverImage} />
+          <Fade bottom duration={1500}>
+            <img src={film.cover} alt="" css={coverImage} />
+          </Fade>
         </SimpleCell>
       </Fragment>
     );
@@ -149,7 +157,9 @@ const NovelArticle: TFilmArticle = ({ director, directorWiki, films }) => {
         tabPos={{ rowStart: 9, rowEnd: 10, columnStart: 1, columnEnd: 25 }}
         mobilPos={{ rowStart: 2, rowEnd: 2, columnStart: 1, columnEnd: 25 }}
       >
-        <ArticleHead titleContent={director} bigSub />
+        <Fade right duration={1500}>
+          <ArticleHead titleContent={director} bigSub />
+        </Fade>
       </SimpleCell>
       {filmList}
     </>
