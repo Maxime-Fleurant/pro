@@ -336,7 +336,7 @@ export const mobileNavWrap = (theme: ITheme): SerializedStyles =>
       bottom: 0,
       width: '100%',
       borderTop: `1px solid ${theme.base.baseColor600}`,
-      zIndex: 1,
+      zIndex: 50,
     },
     css`
       @media (min-width: 767px) {
