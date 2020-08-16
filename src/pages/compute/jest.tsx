@@ -126,7 +126,7 @@ const Jest = (): JSX.Element => {
                 logo={<span className="icon-github-filled" />}
                 text=" Nest-Rest-Anime-Api "
                 href="https://github.com/Maxime-Fleurant/Nest-Rest-Anime-Api"
-              />{' '}
+              />
             </span>
           </span>
         }
