@@ -1171,3 +1171,5 @@ export const contactWrap = css({
 export const animeMobileH = css`
   margin: 0 !important;
 `;
+
+export const animeMainTextHeader = css({ animationDuration: '1.5s' });

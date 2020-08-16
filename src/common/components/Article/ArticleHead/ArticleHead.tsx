@@ -132,13 +132,9 @@ const ArticleHead: TArticleHead = ({
           &nbsp;{logo}
         </div>
 
-        <ScrollAnimation
-          animateIn="animate__fadeInUp"
-          animateOnce
-          duration={1.5}
-        >
-          <div css={titleDesc}>{desc}</div>
-        </ScrollAnimation>
+        <div css={titleDesc} className="animate__fadeInUp">
+          {desc}
+        </div>
       </div>
 
       <div css={[linkWrap, mainLinkWrap]}>

@@ -29,7 +29,7 @@ export const title = (theme: ITheme): SerializedStyles =>
 
 export const titleDesc = (theme: ITheme): SerializedStyles =>
   css(
-    { textAlign: 'justify' },
+    { textAlign: 'justify', animationDuration: '1.5s' },
     theme.text.textColor700,
     helveticaLight,
     textLineHeight,

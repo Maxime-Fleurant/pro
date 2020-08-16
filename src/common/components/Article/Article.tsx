@@ -5,6 +5,9 @@ import ArticleHead, { IArticleHeadContent } from './ArticleHead/ArticleHead';
 import { SimpleCell } from '../Cell/SimpleCell';
 import { mainText } from './ArticleHead/articleHeaderStyle';
 import CodeBrowser, { ICodeBrowser } from './CodeBrowser/CodeBrowser';
+import { animeMainTextHeader } from '../Layout/style';
+import { useTheme } from 'emotion-theming';
+import { ITheme } from '../Layout/Theme';
 
 // TYPE
 interface Content {
@@ -32,6 +35,8 @@ const Article: TArticle = ({
   content,
   headerContentHeightExtra,
 }) => {
+  const theme = useTheme<ITheme>();
+
   let contentJsx: JSX.Element[];
   let deskRowStart = 15;
   let tabRowStart = 10;
@@ -181,13 +186,12 @@ const Article: TArticle = ({
         mobilPos={{ rowStart: 2, rowEnd: 3, columnStart: 1, columnEnd: 25 }}
         extraCss={[mainExtraSpace]}
       >
-        <ScrollAnimation
-          animateIn="animate__fadeInUp"
-          animateOnce
-          duration={1.5}
+        <div
+          css={[mainText(theme), animeMainTextHeader]}
+          className="animate__fadeInUp"
         >
-          <div css={mainText}>{headerContent}</div>
-        </ScrollAnimation>
+          {headerContent}
+        </div>
       </SimpleCell>
 
       <SimpleCell
