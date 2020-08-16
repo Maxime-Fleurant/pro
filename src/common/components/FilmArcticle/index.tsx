@@ -259,7 +259,7 @@ const FilmArticle: TFilmArticle = ({ director, directorWiki, films }) => {
         tabPos={{ rowStart: 9, rowEnd: 10, columnStart: 1, columnEnd: 25 }}
         mobilPos={{ rowStart: 2, rowEnd: 2, columnStart: 1, columnEnd: 25 }}
       >
-        <Fade right duration={1500}>
+        <Fade bottom duration={1500}>
           <ArticleHead titleContent={director} bigSub />
         </Fade>
       </SimpleCell>
