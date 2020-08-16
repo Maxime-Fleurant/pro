@@ -1093,14 +1093,14 @@ export const homeA2 = css({
 
 export const homeA3 = css({
   animation: `${homeAnime} 2s ease-in-out`,
-  animationDelay: '1s',
+  animationDelay: '2s',
   animationFillMode: 'forwards',
 });
 
 export const logoA1 = css({
   opacity: 0,
   animation: `${homeAnime} 2s ease-in-out`,
-  animationDelay: '2s',
+  animationDelay: '3s',
   animationFillMode: 'forwards',
 });
 

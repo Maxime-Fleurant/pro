@@ -1,4 +1,5 @@
 import { FunctionComponent } from 'react';
+import Typist from 'react-typist';
 import { useTheme } from 'emotion-theming';
 import {
   titlewrap,
@@ -120,8 +121,14 @@ const ArticleHead: TArticleHead = ({
     <div css={titlewrap}>
       <div css={upTitleWrap}>
         <div css={title}>
-          {titleContent}&nbsp;
-          {logo}
+          <Typist
+            cursor={{ hideWhenDone: true, hideWhenDoneDelay: 1, show: false }}
+            startDelay={200}
+            avgTypingDelay={100}
+          >
+            {titleContent}
+          </Typist>
+          &nbsp;{logo}
         </div>
 
         <div css={titleDesc}>{desc}</div>

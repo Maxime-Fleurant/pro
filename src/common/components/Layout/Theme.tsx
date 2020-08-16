@@ -151,7 +151,7 @@ const Theme: FunctionComponent = ({ children }) => {
     };
   }
 
-  if (themeState === 2) {
+  if (themeState === 4) {
     theme = {
       test: true,
       text: {
@@ -193,7 +193,7 @@ const Theme: FunctionComponent = ({ children }) => {
     };
   }
 
-  if (themeState === 3) {
+  if (themeState === 5) {
     theme = {
       test: true,
       text: {
@@ -235,7 +235,7 @@ const Theme: FunctionComponent = ({ children }) => {
     };
   }
 
-  if (themeState === 4) {
+  if (themeState === 2) {
     theme = {
       test: true,
       text: {
@@ -277,7 +277,7 @@ const Theme: FunctionComponent = ({ children }) => {
     };
   }
 
-  if (themeState === 5) {
+  if (themeState === 3) {
     theme = {
       test: true,
       text: {

@@ -1,4 +1,5 @@
 import { FunctionComponent, useEffect, useState } from 'react';
+import Typist from 'react-typist';
 import Head from 'next/head';
 import { useTheme } from 'emotion-theming';
 import { SimpleCell } from '../common/components/Cell/SimpleCell';
@@ -64,13 +65,15 @@ const Index: FunctionComponent = () => {
       >
         <ArticleHead
           titleContent={
-            <div css={homeA1}>
-              <span>
-                <span css={[homeTitle(theme)]}>Design,</span>
-                <br />
-                <span css={[homeTitle2(theme)]}>Compute.</span>
-              </span>
-            </div>
+            <Typist
+              cursor={{ hideWhenDone: true, hideWhenDoneDelay: 1 }}
+              startDelay={300}
+              avgTypingDelay={100}
+            >
+              <span css={homeTitle}>Design,</span>
+              <br />
+              <span css={homeTitle2}>Compute.</span>
+            </Typist>
           }
           bigSub
         />
