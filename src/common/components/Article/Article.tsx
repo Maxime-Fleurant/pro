@@ -1,4 +1,5 @@
 import { FunctionComponent, Fragment } from 'react';
+import Flip from 'react-reveal/Flip';
 import Fade from 'react-reveal/Fade';
 import { css } from '@emotion/core';
 import ArticleHead, { IArticleHeadContent } from './ArticleHead/ArticleHead';
@@ -78,14 +79,14 @@ const Article: TArticle = ({
               columnEnd: 25,
             }}
           >
-            <Fade bottom duration={1500}>
+            <Flip top duration={1500}>
               <ArticleHead
                 sub
                 logo={contentElem.header.logo}
                 titleContent={contentElem.header.titleContent}
                 official={contentElem.header.official}
               />
-            </Fade>
+            </Flip>
           </SimpleCell>
 
           <SimpleCell

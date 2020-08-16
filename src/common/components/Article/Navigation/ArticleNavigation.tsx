@@ -9,6 +9,7 @@ import {
   sideLink,
   linkBlockWrapp,
   sidePanelWrap,
+  animeMainTextHeader,
 } from '../../Layout/style';
 import { rightSideLink, sideBorder } from './ArticleNavigationStyle';
 import { ITheme } from '../../Layout/Theme';
@@ -76,9 +77,12 @@ const ArticleNavigation: TArticleNavigation = ({ content }) => {
       deskPos={{ rowStart: 12, columnStart: 22, columnEnd: 25, rowEnd: 30 }}
       extraCss={[sideWrap]}
     >
-      <Fade right duration={1500}>
-        <div css={sideBorder}>{contentJSX}</div>
-      </Fade>
+      <div
+        css={[sideBorder(theme), animeMainTextHeader]}
+        className="animate__fadeInRight"
+      >
+        {contentJSX}
+      </div>
     </Cell>
   );
 };
