@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import ScrollAnimation from 'react-animate-on-scroll';
 import { FunctionComponent } from 'react';
 import { useTheme } from 'emotion-theming';
 import { Cell } from '../../Cell/cell';
@@ -75,7 +76,13 @@ const ArticleNavigation: TArticleNavigation = ({ content }) => {
       deskPos={{ rowStart: 12, columnStart: 22, columnEnd: 25, rowEnd: 30 }}
       extraCss={[sideWrap]}
     >
-      <div css={sideBorder}>{contentJSX}</div>
+      <ScrollAnimation
+        animateIn="animate__fadeInRight"
+        animateOnce
+        duration={1.5}
+      >
+        <div css={sideBorder}>{contentJSX}</div>
+      </ScrollAnimation>
     </Cell>
   );
 };

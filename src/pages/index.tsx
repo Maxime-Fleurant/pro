@@ -9,8 +9,6 @@ import {
   homeTitle2,
   logoRow,
   logoRowWrap,
-  homeA1,
-  homeA2,
   homeA3,
   logoA1,
 } from '../common/components/Layout/style';
@@ -45,6 +43,7 @@ import LinuxIcon from '../common/components/icons/Linux';
 import { ITheme } from '../common/components/Layout/Theme';
 import TextLink from '../common/components/Article/textLink/TextLink';
 import { helveticaMedium, helveticaRegular } from '../common/globalStyle';
+import Link from 'next/link';
 
 const Index: FunctionComponent = () => {
   const theme = useTheme<ITheme>();
@@ -149,81 +148,496 @@ const Index: FunctionComponent = () => {
       >
         <div css={[logoRowWrap, logoA1]}>
           <div css={[logoRow(theme)]}>
-            <JsIcon />
-            <span className="icon-react" />
-            <NpmIcon />
-            <span className="icon-a" />
-            <span>🎨</span>
-            <ElasticIcon />
-            <span className=" icon-logo-pwa" />
-            <span className="icon-microsoft-windows" />
-            <RedIcon />
-            <UbIcon />
+            <span>
+              <a
+                href="https://javascript.info/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <JsIcon />
+              </a>
+            </span>
+
+            <span>
+              <Link href="/compute/react">
+                <a href="/compute/react">
+                  <span className="icon-react" />
+                </a>
+              </Link>
+            </span>
+
+            <span>
+              <a href="https://www.npmjs.com/" target="_blank" rel="noreferrer">
+                <NpmIcon />
+              </a>
+            </span>
+
+            <span>
+              <Link href="/compute/apollo">
+                <a href="/compute/apollo">
+                  <span className="icon-a" />
+                </a>
+              </Link>
+            </span>
+
+            <span>
+              <Link href="/design/color">
+                <a href="/design/color">
+                  <span>🎨</span>
+                </a>
+              </Link>
+            </span>
+
+            <span>
+              <a
+                href="https://www.elastic.co/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <ElasticIcon />
+              </a>
+            </span>
+
+            <span>
+              <a
+                href="https://www.pwabuilder.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span className=" icon-logo-pwa" />
+              </a>
+            </span>
+
+            <span>
+              <a
+                href="https://www.microsoft.com/en-us/windows"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span className="icon-microsoft-windows" />
+              </a>
+            </span>
+
+            <span>
+              <a
+                href="https://www.microsoft.com/en-us/windows"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <RedIcon />
+              </a>
+            </span>
+
+            <span>
+              <a
+                href="https://www.microsoft.com/en-us/windows"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <UbIcon />
+              </a>
+            </span>
           </div>
 
           <div css={[logoRow(theme)]}>
-            <span className="icon-graphql" />
-            <span className=" icon-next-js" />
-            <MongoDbIcon />
-            <span className="icon-expressjs-icon" />
-            <WebIcon />
-            <PassportIcon />
-            <RouteIcon />
-            <span className="icon-git-icon" />
-            <LintIcon />
-            <BabelIcon />
+            <span>
+              <Link href="/design/color">
+                <a href="/design/color">
+                  <span className="icon-graphql" />
+                </a>
+              </Link>
+            </span>
+
+            <span>
+              <Link href="/compute/next">
+                <a href="/compute/next">
+                  <span className=" icon-next-js" />
+                </a>
+              </Link>
+            </span>
+
+            <span>
+              <Link href="/compute/mongodb">
+                <a href="/compute/mongodb">
+                  <MongoDbIcon />
+                </a>
+              </Link>
+            </span>
+
+            <span>
+              <Link href="/compute/express">
+                <a href="/compute/express">
+                  <span className="icon-expressjs-icon" />
+                </a>
+              </Link>
+            </span>
+
+            <span>
+              <a
+                href="https://webpack.js.org/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <WebIcon />
+              </a>
+            </span>
+
+            <span>
+              <Link href="/compute/passport">
+                <a href="/compute/passport">
+                  <PassportIcon />
+                </a>
+              </Link>
+            </span>
+
+            <span>
+              <a
+                href="https://aws.amazon.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <RouteIcon />
+              </a>
+            </span>
+
+            <span>
+              <a href="https://git-scm.com/" target="_blank" rel="noreferrer">
+                <span className="icon-git-icon" />
+              </a>
+            </span>
+
+            <span>
+              <a href="https://eslint.org/" target="_blank" rel="noreferrer">
+                <LintIcon />
+              </a>
+            </span>
+
+            <span>
+              <a href="https://babeljs.io/" target="_blank" rel="noreferrer">
+                <BabelIcon />
+              </a>
+            </span>
           </div>
 
           <div css={[logoRow(theme)]}>
-            <TypescriptIcon />
-            <span>👩‍🎤</span>
-            <JWTIcon />
-            <PrettierIcon />
-            <span>🖥</span>
-            <span className="icon-knex" />
-            <span className="icon-github-filled" />
-            <span>🌵</span>
-            <LinuxIcon />
-            <Ec2Icon />
+            <span>
+              <Link href="/compute/typescript">
+                <a href="/compute/typescript">
+                  <TypescriptIcon />
+                </a>
+              </Link>
+            </span>
+
+            <span>
+              <Link href="/compute/emotion">
+                <a href="/compute/emotion">
+                  <span>👩‍🎤</span>
+                </a>
+              </Link>
+            </span>
+
+            <span>
+              <Link href="/compute/jwt">
+                <a href="/compute/jwt">
+                  <JWTIcon />
+                </a>
+              </Link>
+            </span>
+
+            <span>
+              <a href="https://prettier.io/" target="_blank" rel="noreferrer">
+                <PrettierIcon />
+              </a>
+            </span>
+
+            <span>
+              <a
+                href="https://www.apple.com/macos/catalina/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>🖥</span>
+              </a>
+            </span>
+
+            <span>
+              <Link href="/compute/postgres#knex">
+                <a href="/compute/postgres#knex">
+                  <span className="icon-knex" />
+                </a>
+              </Link>
+            </span>
+
+            <span>
+              <a href="https://github.com/" target="_blank" rel="noreferrer">
+                <span className="icon-github-filled" />
+              </a>
+            </span>
+
+            <span>
+              <Link href="/compute/dry">
+                <a href="/compute/dry">
+                  <span>🌵</span>
+                </a>
+              </Link>
+            </span>
+
+            <span>
+              <a href="https://www.linux.org/" target="_blank" rel="noreferrer">
+                <LinuxIcon />
+              </a>
+            </span>
+
+            <span>
+              <a
+                href="https://aws.amazon.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Ec2Icon />
+              </a>
+            </span>
           </div>
 
           <div css={[logoRow(theme)]}>
-            <span className="icon-nestjs" />
-            <span>📱</span>
-            <TypegraphqlIcon />
-            <span className="icon-aws-logo" />
-            <CssIcon />
-            <span>🖋</span>
-            <span>🧩</span>
-            <RdsIcon />
-            <span>📐</span>
-            <span>💠</span>
+            <span>
+              <Link href="/compute/nest">
+                <a href="/compute/nest">
+                  <span className="icon-nestjs" />
+                </a>
+              </Link>
+            </span>
+            <span>
+              <a
+                href="https://www.apple.com/ios/ios-13/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>📱</span>
+              </a>
+            </span>
+            <span>
+              <Link href="/compute/typegraphql">
+                <a href="/compute/typegraphql">
+                  <TypegraphqlIcon />
+                </a>
+              </Link>
+            </span>
+            <span>
+              <Link href="/design/grid">
+                <a href="/design/grid">
+                  <span>📐</span>
+                </a>
+              </Link>
+            </span>
+            <span>
+              <a
+                href="https://aws.amazon.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span className="icon-aws-logo" />
+              </a>
+            </span>
+            <span>
+              <Link href="/design/motion">
+                <a href="/design/motion">
+                  <span>💠</span>
+                </a>
+              </Link>
+            </span>
+            <span>
+              <Link href="/design/typography">
+                <a href="/design/typography">
+                  <span>🖋</span>
+                </a>
+              </Link>
+            </span>
+            <span>
+              <Link href="/compute/dataloader">
+                <a href="/compute/dataloader">
+                  <span>🧩</span>
+                </a>
+              </Link>
+            </span>
+            <span>
+              <a
+                href="https://aws.amazon.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <RdsIcon />
+              </a>
+            </span>
+            <span>
+              <Link href="/compute/emotion">
+                <a href="/compute/emotion">
+                  <CssIcon />
+                </a>
+              </Link>
+            </span>
           </div>
 
           <div css={[logoRow(theme)]}>
-            <PostgresIcon />
-            <span className="icon-redux" />
-            <NeoIcon />
-            <span>💾</span>
-            <span>🧱</span>
-            <span>⚙️</span>
-            <span>⌚️</span>
-            <span>🔐</span>
-            <HtmlIcon />
-            <TermIcon />
+            <span>
+              <Link href="/compute/postgres">
+                <a href="/compute/postgres">
+                  <PostgresIcon />
+                </a>
+              </Link>
+            </span>
+            <span>
+              <Link href="/compute/redux">
+                <a href="/compute/redux">
+                  <span className="icon-redux" />
+                </a>
+              </Link>
+            </span>
+            <span>
+              <Link href="/compute/neo4j">
+                <a href="/compute/neo4j">
+                  <NeoIcon />
+                </a>
+              </Link>
+            </span>
+            <span>
+              <Link href="/compute/dbnormalization">
+                <a href="/compute/dbnormalization">
+                  <span>💾</span>
+                </a>
+              </Link>
+            </span>
+            <span>
+              <Link href="/compute/di">
+                <a href="/compute/di">
+                  <span>🧱</span>
+                </a>
+              </Link>
+            </span>
+            <span>
+              <Link href="/compute/typedi">
+                <a href="/compute/typedi">
+                  <span>⚙️</span>
+                </a>
+              </Link>
+            </span>
+            <span>
+              <a
+                href="https://www.apple.com/watchos/watchos-preview/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>⌚️</span>
+              </a>
+            </span>
+            <span>
+              <a href="https://oauth.net/" target="_blank" rel="noreferrer">
+                <span>🔐</span>
+              </a>
+            </span>
+            <span>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/HTML"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <HtmlIcon />
+              </a>
+            </span>
+            <span>
+              <a
+                href="https://www.iterm2.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <TermIcon />
+              </a>
+            </span>
           </div>
 
           <div css={[logoRow(theme)]}>
-            <span className="icon-nodejs-icon" />
-            <JestIcon />
-            <span className="icon-docker-icon" />
-            <VsIcon />
-            <AndroidIcon />
-            <span>👁</span>
-            <span className="icon-gitkraken" />
-            <PostIcon />
-            <span className="icon-mac-os" />
-            <span>🌎</span>
+            <span>
+              <span>
+                <a
+                  href="https://nodejs.org/en/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <span className="icon-nodejs-icon" />
+                </a>
+              </span>
+            </span>
+            <span>
+              <Link href="/compute/jest">
+                <a href="/compute/jest">
+                  <JestIcon />
+                </a>
+              </Link>
+            </span>
+            <span>
+              <Link href="/compute/docker">
+                <a href="/compute/docker">
+                  <span className="icon-docker-icon" />
+                </a>
+              </Link>
+            </span>
+            <span>
+              <a
+                href="https://code.visualstudio.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <VsIcon />
+              </a>
+            </span>
+            <span>
+              <a
+                href="https://www.android.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <AndroidIcon />
+              </a>
+            </span>
+            <span>
+              <a
+                href="https://anime.maximefleurant.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>👁</span>
+              </a>
+            </span>
+            <span>
+              <a
+                href="https://www.gitkraken.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span className="icon-gitkraken" />
+              </a>
+            </span>
+            <span>
+              <a
+                href="https://www.postman.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <PostIcon />
+              </a>
+            </span>
+            <span>
+              <a href="https://www.apple.com/" target="_blank" rel="noreferrer">
+                <span className="icon-mac-os" />
+              </a>
+            </span>
+            <span>
+              <Link href="/">
+                <a href="/">
+                  <span>🌎</span>
+                </a>
+              </Link>
+            </span>
           </div>
         </div>
       </SimpleCell>

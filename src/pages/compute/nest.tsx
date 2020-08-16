@@ -256,7 +256,6 @@ const Nest = (): JSX.Element => {
             code: {
               language: 'language-ts',
               code: nestModule,
-              heightAuto: true,
             },
           },
           {
@@ -320,7 +319,6 @@ const Nest = (): JSX.Element => {
             code: {
               language: 'language-ts',
               code: nestController,
-              heightAuto: true,
             },
           },
           {

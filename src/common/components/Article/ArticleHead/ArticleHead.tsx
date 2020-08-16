@@ -1,5 +1,6 @@
 import { FunctionComponent } from 'react';
 import Typist from 'react-typist';
+import ScrollAnimation from 'react-animate-on-scroll';
 import { useTheme } from 'emotion-theming';
 import {
   titlewrap,
@@ -131,7 +132,13 @@ const ArticleHead: TArticleHead = ({
           &nbsp;{logo}
         </div>
 
-        <div css={titleDesc}>{desc}</div>
+        <ScrollAnimation
+          animateIn="animate__fadeInUp"
+          animateOnce
+          duration={1.5}
+        >
+          <div css={titleDesc}>{desc}</div>
+        </ScrollAnimation>
       </div>
 
       <div css={[linkWrap, mainLinkWrap]}>

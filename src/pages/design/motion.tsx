@@ -1,4 +1,6 @@
 import { FunctionComponent } from 'react';
+import Head from 'next/head';
+import ScrollAnimation from 'react-animate-on-scroll';
 import { useTheme } from 'emotion-theming';
 import { quote } from '../../common/components/Layout/style';
 import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
@@ -8,7 +10,6 @@ import { mainText } from '../../common/components/Article/ArticleHead/articleHea
 import { ITheme } from '../../common/components/Layout/Theme';
 import LogoAnime from '../../common/components/Layout/logoAnime';
 import LogoAnimeFull from '../../common/components/Layout/logoAnimeFull';
-import Head from 'next/head';
 
 const Apollo: FunctionComponent = () => {
   const theme = useTheme<ITheme>();
@@ -57,24 +58,30 @@ const Apollo: FunctionComponent = () => {
         tabPos={{ rowStart: 7, rowEnd: 8, columnStart: 1, columnEnd: 25 }}
         mobilPos={{ rowStart: 2, rowEnd: 3, columnStart: 1, columnEnd: 25 }}
       >
-        <div css={mainText}>
-          Time and motion are closely related principles. Any word or image that
-          moves functions both spatially and temporally. Motion is a kind of
-          change, and change takes place in time. Motion can be implied as well
-          as literal, however. Artists have long sought ways to represent the
-          movement of bodies and the passage of time within the realm of static,
-          two-dimensional space.
-          <br />
-          <br /> Time and motion are considerations for all design work, from a
-          multipage printed book, whose pages follow each other in time, to
-          animations for film and television, which have literal duration. Any
-          still image has implied motion (or implied stasis), while motion
-          graphics share compositional principles with print.
-          <br />
-          <br /> Designers today routinely work in time-based media as well as
-          print, and a design campaign often must function across multiple media
-          simultaneously.
-        </div>
+        <ScrollAnimation
+          animateIn="animate__fadeInUp"
+          animateOnce
+          duration={1.5}
+        >
+          <div css={mainText}>
+            Time and motion are closely related principles. Any word or image
+            that moves functions both spatially and temporally. Motion is a kind
+            of change, and change takes place in time. Motion can be implied as
+            well as literal, however. Artists have long sought ways to represent
+            the movement of bodies and the passage of time within the realm of
+            static, two-dimensional space.
+            <br />
+            <br /> Time and motion are considerations for all design work, from
+            a multipage printed book, whose pages follow each other in time, to
+            animations for film and television, which have literal duration. Any
+            still image has implied motion (or implied stasis), while motion
+            graphics share compositional principles with print.
+            <br />
+            <br /> Designers today routinely work in time-based media as well as
+            print, and a design campaign often must function across multiple
+            media simultaneously.
+          </div>
+        </ScrollAnimation>
       </SimpleCell>
 
       <SimpleCell

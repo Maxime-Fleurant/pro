@@ -173,7 +173,6 @@ const DI = (): JSX.Element => {
         headerCode={{
           code: dimain,
           language: 'language-js',
-          heightAuto: true,
         }}
         content={[]}
       />

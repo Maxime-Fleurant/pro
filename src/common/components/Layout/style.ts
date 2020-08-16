@@ -1056,6 +1056,10 @@ export const logoRow = (theme: ITheme): SerializedStyles =>
         ${theme.text.textColor800};
       }
 
+      a {
+        display: flex;
+      }
+
       span:not(:first-child) {
         margin-top: 1rem;
       }
@@ -1100,7 +1104,7 @@ export const homeA3 = css({
 export const logoA1 = css({
   opacity: 0,
   animation: `${homeAnime} 2s ease-in-out`,
-  animationDelay: '3s',
+  animationDelay: '2s',
   animationFillMode: 'forwards',
 });
 

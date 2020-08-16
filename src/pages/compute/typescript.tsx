@@ -280,7 +280,6 @@ const Typescript = (): JSX.Element => {
         headerCode={{
           code: typescriptMain,
           language: 'language-ts',
-          heightAuto: true,
         }}
         content={[
           {
@@ -355,7 +354,6 @@ const Typescript = (): JSX.Element => {
             code: {
               language: 'language-ts',
               code: typeInterface,
-              heightAuto: true,
             },
           },
           {

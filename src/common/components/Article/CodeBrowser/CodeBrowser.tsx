@@ -1,4 +1,5 @@
 import SimpleBar from 'simplebar-react';
+import ScrollAnimation from 'react-animate-on-scroll';
 import prismjs from 'prismjs';
 import { useEffect, FunctionComponent } from 'react';
 import { useTheme } from 'emotion-theming';
@@ -53,11 +54,17 @@ const CodeBrowser: TCodeBrowser = ({ language, code, heightAuto }) => {
         </div>
         <div css={barWrap}>
           <SimpleBar css={{ height: '100%' }}>
-            <pre css={codeBox}>
-              <code className={language}>
-                <div>{code}</div>
-              </code>
-            </pre>
+            <ScrollAnimation
+              animateIn="animate__fadeInUp"
+              animateOnce
+              duration={1.5}
+            >
+              <pre css={codeBox}>
+                <code className={language}>
+                  <div>{code}</div>
+                </code>
+              </pre>{' '}
+            </ScrollAnimation>
           </SimpleBar>
         </div>
       </div>

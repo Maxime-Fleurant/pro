@@ -205,7 +205,6 @@ const Redux = (): JSX.Element => {
             code: {
               language: 'language-tsx',
               code: reduxTypescript,
-              heightAuto: true,
             },
           },
           {

@@ -213,7 +213,6 @@ const Postgres = (): JSX.Element => {
         headerCode={{
           code: postgresMain,
           language: 'language-ts',
-          heightAuto: true,
         }}
         content={[
           {

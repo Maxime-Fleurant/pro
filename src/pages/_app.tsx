@@ -3,6 +3,7 @@ import { cache } from 'emotion';
 import '../../public/iconStyle.css';
 import '../../public/prism.css';
 import 'simplebar/dist/simplebar.min.css';
+import 'animate.css/animate.min.css';
 import Layout from '../common/components/Layout';
 import Theme from '../common/components/Layout/Theme';
 

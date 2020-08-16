@@ -1,4 +1,5 @@
 import { FunctionComponent, Fragment } from 'react';
+import ScrollAnimation from 'react-animate-on-scroll';
 import { css } from '@emotion/core';
 import ArticleHead, { IArticleHeadContent } from './ArticleHead/ArticleHead';
 import { SimpleCell } from '../Cell/SimpleCell';
@@ -72,12 +73,18 @@ const Article: TArticle = ({
               columnEnd: 25,
             }}
           >
-            <ArticleHead
-              sub
-              logo={contentElem.header.logo}
-              titleContent={contentElem.header.titleContent}
-              official={contentElem.header.official}
-            />
+            <ScrollAnimation
+              animateIn="animate__fadeInLeft"
+              animateOnce
+              duration={1.5}
+            >
+              <ArticleHead
+                sub
+                logo={contentElem.header.logo}
+                titleContent={contentElem.header.titleContent}
+                official={contentElem.header.official}
+              />
+            </ScrollAnimation>
           </SimpleCell>
 
           <SimpleCell
@@ -101,7 +108,13 @@ const Article: TArticle = ({
             }}
             extraCss={[extraSpace]}
           >
-            <div css={mainText}>{contentElem.content}</div>
+            <ScrollAnimation
+              animateIn="animate__fadeInLeft"
+              animateOnce
+              duration={1.5}
+            >
+              <div css={mainText}>{contentElem.content}</div>
+            </ScrollAnimation>
           </SimpleCell>
 
           <SimpleCell
@@ -168,7 +181,13 @@ const Article: TArticle = ({
         mobilPos={{ rowStart: 2, rowEnd: 3, columnStart: 1, columnEnd: 25 }}
         extraCss={[mainExtraSpace]}
       >
-        <div css={mainText}>{headerContent}</div>
+        <ScrollAnimation
+          animateIn="animate__fadeInUp"
+          animateOnce
+          duration={1.5}
+        >
+          <div css={mainText}>{headerContent}</div>
+        </ScrollAnimation>
       </SimpleCell>
 
       <SimpleCell

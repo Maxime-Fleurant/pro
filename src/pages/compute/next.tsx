@@ -289,7 +289,6 @@ const Next = (): JSX.Element => {
             code: {
               language: 'language-ts',
               code: nextpage,
-              heightAuto: true,
             },
           },
         ]}

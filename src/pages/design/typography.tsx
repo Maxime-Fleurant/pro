@@ -1,4 +1,6 @@
 import { FunctionComponent } from 'react';
+import Head from 'next/head';
+import ScrollAnimation from 'react-animate-on-scroll';
 import { useTheme } from 'emotion-theming';
 import { quote } from '../../common/components/Layout/style';
 import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
@@ -6,7 +8,6 @@ import { SimpleCell } from '../../common/components/Cell/SimpleCell';
 import ArticleHead from '../../common/components/Article/ArticleHead/ArticleHead';
 import { mainText } from '../../common/components/Article/ArticleHead/articleHeaderStyle';
 import { ITheme } from '../../common/components/Layout/Theme';
-import Head from 'next/head';
 
 const Apollo: FunctionComponent = () => {
   const theme = useTheme<ITheme>();
@@ -55,30 +56,36 @@ const Apollo: FunctionComponent = () => {
         tabPos={{ rowStart: 7, rowEnd: 8, columnStart: 1, columnEnd: 25 }}
         mobilPos={{ rowStart: 2, rowEnd: 3, columnStart: 1, columnEnd: 25 }}
       >
-        <div css={mainText}>
-          "Typography has one plain duty before it and that is to convey
-          information in writing. No argument or consideration can absolve
-          typography from this duty. A printed work which cannot be read becomes
-          a product without purpose."
-          <br />
-          <span css={quote}>-Emil Ruder</span>
-          <br />
-          <br />
-          "The material of typography is the black, and it is the designer’s
-          task with the help of this black to capture space, to create
-          harmonious whites inside the letters as well as between them."
-          <br />
-          <span css={quote}>-Adrian Frutiger</span>
-          <br />
-          <br />
-          "There are people who think that the type should be expressive—they
-          have a different point of view from mine. I don’t think type should be
-          expressive at all. I can write the word ‘dog’ with any typeface, and
-          it doesn’t have to look like a dog. But there are people who, when
-          they write ‘dog’ think it should bark."
-          <br />
-          <span css={quote}>-Massimo Vignelli</span>
-        </div>
+        <ScrollAnimation
+          animateIn="animate__fadeInUp"
+          animateOnce
+          duration={1.5}
+        >
+          <div css={mainText}>
+            "Typography has one plain duty before it and that is to convey
+            information in writing. No argument or consideration can absolve
+            typography from this duty. A printed work which cannot be read
+            becomes a product without purpose."
+            <br />
+            <span css={quote}>-Emil Ruder</span>
+            <br />
+            <br />
+            "The material of typography is the black, and it is the designer’s
+            task with the help of this black to capture space, to create
+            harmonious whites inside the letters as well as between them."
+            <br />
+            <span css={quote}>-Adrian Frutiger</span>
+            <br />
+            <br />
+            "There are people who think that the type should be expressive—they
+            have a different point of view from mine. I don’t think type should
+            be expressive at all. I can write the word ‘dog’ with any typeface,
+            and it doesn’t have to look like a dog. But there are people who,
+            when they write ‘dog’ think it should bark."
+            <br />
+            <span css={quote}>-Massimo Vignelli</span>
+          </div>
+        </ScrollAnimation>
       </SimpleCell>
 
       <SimpleCell
