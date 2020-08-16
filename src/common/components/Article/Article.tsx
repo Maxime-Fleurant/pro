@@ -79,7 +79,7 @@ const Article: TArticle = ({
             }}
           >
             <ScrollAnimation
-              animateIn="animate__fadeInLeft"
+              animateIn="animate__fadeInUp"
               animateOnce
               duration={1.5}
               offset={15}
@@ -115,7 +115,7 @@ const Article: TArticle = ({
             extraCss={[extraSpace]}
           >
             <ScrollAnimation
-              animateIn="animate__fadeInLeft"
+              animateIn="animate__fadeInUp"
               animateOnce
               duration={1.5}
               offset={15}
