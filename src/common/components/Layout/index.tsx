@@ -132,12 +132,7 @@ const Layout: FunctionComponent = ({ children }) => {
         `}
       />
       <Menu open={menuOpen} returnHandler={menuHandler} />
-      <span
-        css={[
-          mobileNavWrap(theme),
-          menuOpen ? css({ display: 'none' }) : css(),
-        ]}
-      >
+      <span css={[mobileNavWrap(theme)]}>
         <div css={mobileNav}>
           <span
             className="icon-half"
@@ -161,13 +156,7 @@ const Layout: FunctionComponent = ({ children }) => {
         </div>
       </span>
 
-      <div
-        css={[
-          navWrap(theme),
-          navCell,
-          menuOpen ? css({ display: 'none' }) : css(),
-        ]}
-      >
+      <div css={[navWrap(theme), navCell]}>
         <div css={nav}>
           <Link href="/">
             <div css={logo}>

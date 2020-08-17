@@ -1,4 +1,6 @@
 import { css } from '@emotion/core';
+import Fade from 'react-reveal/Fade';
+import Flip from 'react-reveal/Flip';
 import { FunctionComponent, useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -18,6 +20,9 @@ import {
   backGame,
   aMenuLink,
   homeButton,
+  menuIndex,
+  returnClick,
+  animeMainTextHeader,
 } from './style';
 
 import { helveticaThin, helveticaMedium } from '../../globalStyle';
@@ -53,6 +58,10 @@ const Menu: TMenu = ({ open, returnHandler }) => {
 
   const returnHandlerInside = (): void => {
     returnHandler();
+  };
+
+  const returnHome = (): void => {
+    updatePage('menu');
   };
 
   useEffect(() => {
@@ -863,38 +872,41 @@ const Menu: TMenu = ({ open, returnHandler }) => {
       ]}
     >
       <SimpleCell
-        deskPos={{ rowStart: 3, rowEnd: 4, columnStart: 4, columnEnd: 22 }}
+        deskPos={{ rowStart: 8, rowEnd: 9, columnStart: 1, columnEnd: 25 }}
       >
         <div css={gameMenuLinkWrap}>
-          <div css={logo} onClick={returnHandlerInside}>
-            <div css={logoAnimeHeader}>
-              <GameLogoAnime />
+          <Link href="/">
+            <div css={logo} onClick={returnHandlerInside}>
+              <div css={logoAnimeHeader}>
+                <GameLogoAnime />
+              </div>
+              <span>
+                <span
+                  css={[
+                    logoPart,
+                    theme.text.textColor700,
+                    helveticaThin,
+                    menuGameLogo,
+                  ]}
+                >
+                  Design,
+                </span>
+                <br />
+                <span
+                  css={[
+                    logoPart,
+                    theme.text.textColor900,
+                    helveticaMedium,
+                    menuGameLogo,
+                  ]}
+                >
+                  Compute.
+                </span>
+              </span>
             </div>
-            <span>
-              <span
-                css={[
-                  logoPart,
-                  theme.text.textColor700,
-                  helveticaThin,
-                  menuGameLogo,
-                ]}
-              >
-                Design,
-              </span>
-              <br />
-              <span
-                css={[
-                  logoPart,
-                  theme.text.textColor900,
-                  helveticaMedium,
-                  menuGameLogo,
-                ]}
-              >
-                Compute.
-              </span>
-            </span>
-          </div>
-          <div>
+          </Link>
+
+          <div css={menuIndex}>
             <div css={backGame}>
               <span
                 onClick={(): void => menuHandler(back)}
@@ -908,13 +920,16 @@ const Menu: TMenu = ({ open, returnHandler }) => {
               >
                 <span className="icon-outline-arrow-back-ios" />
               </span>
-              <span css={returnButton(theme)} onClick={returnHandlerInside}>
+              <span css={returnButton(theme)} onClick={returnHome}>
                 <span className="icon-home-filled" css={homeButton} />
               </span>
             </div>
 
-            <div css={gameCatMenu}>{catMenu}</div>
+            <Fade left spy={currentPage} duration={1000}>
+              <div css={gameCatMenu}>{catMenu}</div>
+            </Fade>
           </div>
+          <div css={returnClick} onClick={returnHandlerInside} />
         </div>
       </SimpleCell>
     </div>

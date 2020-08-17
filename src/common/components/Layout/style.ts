@@ -62,6 +62,7 @@ export const nav = (theme: ITheme): SerializedStyles =>
 
 export const logo = css(
   css`
+    z-index: 1;
     @media (max-width: 1023px) {
       padding: 0.85rem 0;
     }
@@ -370,7 +371,7 @@ export const centerLogo = css({ textAlign: 'center' });
 
 export const navWrap = (theme: ITheme): SerializedStyles =>
   css(
-    { position: 'fixed', width: '100%', zIndex: 1 },
+    { position: 'fixed', width: '100%', zIndex: 1, top: 0 },
     theme.background.backgroundColor100
   );
 
@@ -693,6 +694,10 @@ export const quote = css({
 export const colorAnime1 = (theme: ITheme): SerializedStyles =>
   css(
     css`
+      height: 100%;
+      width: 100%;
+      box-sizing: border-box;
+
       background: linear-gradient(
         0deg,
         #242724,
@@ -747,6 +752,10 @@ export const colorAnime1 = (theme: ITheme): SerializedStyles =>
 export const colorAnime2 = (theme: ITheme): SerializedStyles =>
   css(
     css`
+      height: 100%;
+      width: 100%;
+      box-sizing: border-box;
+
       background: linear-gradient(
         0deg,
         #2b2f35,
@@ -802,6 +811,10 @@ export const colorAnime2 = (theme: ITheme): SerializedStyles =>
 export const colorAnime3 = (theme: ITheme): SerializedStyles =>
   css(
     css`
+      height: 100%;
+      width: 100%;
+      box-sizing: border-box;
+
       background: linear-gradient(
         0deg,
         #2c312e,
@@ -891,6 +904,8 @@ export const gameMenuWrap = (theme: ITheme): SerializedStyles =>
   });
 
 export const gameMenuLinkWrap = css({
+  overflow: 'hidden',
+  position: 'relative',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
@@ -912,6 +927,7 @@ export const gameCatMenu = (theme: ITheme): SerializedStyles =>
         border: 1px solid ${theme.base.baseColor600};
         cursor: pointer;
       }
+
       div {
         @media (hover: hover) and (pointer: fine) {
           &:hover {
@@ -971,12 +987,12 @@ export const returnButton = (theme: ITheme): SerializedStyles =>
     helveticaLight,
     font32,
     css`
-      padding: ${pointSize24} ${pointSize48};
+      padding: ${pointSize24} ${pointSize24};
       border: 1px solid ${theme.base.baseColor600};
       cursor: pointer;
 
       span:before {
-        ${theme.text.textColor600};
+        ${theme.text.textColor800};
       }
 
       @media (hover: hover) and (pointer: fine) {
@@ -993,7 +1009,7 @@ export const returnButton = (theme: ITheme): SerializedStyles =>
 
       @media (max-width: 767px) {
         font-size: ${pointSize48};
-        padding: ${pointSize32} ${pointSize56};
+        padding: ${pointSize32} ${pointSize32};
       }
     `
   );
@@ -1004,12 +1020,13 @@ export const withingButtonText = css({ marginRight: pointSize12 });
 export const returnGame = (theme: ITheme): SerializedStyles =>
   css(
     {
+      flexGrow: 1,
       padding: pointSize24,
       marginRight: pointSize24,
     },
     css`
       span:before {
-        color: ${theme.base.baseColor600};
+        color: ${theme.text.textColor800};
       }
 
       @media (hover: hover) and (pointer: fine) {
@@ -1201,3 +1218,34 @@ export const reactRevail = css`
 
 export const homeButton = (theme: ITheme): SerializedStyles =>
   css(theme.text.textColor900);
+
+export const menuIndex = css({ zIndex: 1 });
+
+export const returnClick = css({
+  position: 'absolute',
+  width: '100%',
+  height: '100%',
+});
+
+export const gridDemo = css({
+  height: '100%',
+  width: '100%',
+  display: 'grid',
+  gridTemplateColumns: 'repeat(12, 1fr)',
+  gridTemplateRows: 'repeat(12, 1fr)',
+  gridGap: pointSize16,
+});
+
+export const gridDemoCell = (theme: ITheme): SerializedStyles =>
+  css(theme.background.backgroundColor200, {
+    border: `1px solid ${theme.base.baseColor600}`,
+  });
+
+export const withinCell = css({ height: '100%', width: '100%' });
+
+export const wrapperCell = css`
+  .react-reveal {
+    width: 100%;
+    height: 100%;
+  }
+`;

@@ -1,13 +1,15 @@
 import { FunctionComponent } from 'react';
 import Head from 'next/head';
+import Zoom from 'react-reveal/Zoom';
 
 import { useTheme } from 'emotion-theming';
 import {
   quote,
-  colorAnime1,
-  colorAnime2,
-  colorAnime3,
   animeMainTextHeader,
+  gridDemo,
+  gridDemoCell,
+  withinCell,
+  wrapperCell,
 } from '../../common/components/Layout/style';
 import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
 import { SimpleCell } from '../../common/components/Cell/SimpleCell';
@@ -97,10 +99,206 @@ const Apollo: FunctionComponent = () => {
         deskPos={{ rowStart: 12, rowEnd: 13, columnStart: 13, columnEnd: 22 }}
         tabPos={{ rowStart: 8, rowEnd: 9, columnStart: 1, columnEnd: 25 }}
         mobilPos={{ rowStart: 3, rowEnd: 4, columnStart: 1, columnEnd: 25 }}
-        backgroundImg="/img/grid.png"
-        contain
+        relative
         ratio={1}
-      />
+      >
+        <div css={gridDemo}>
+          <SimpleCell
+            deskPos={{
+              rowStart: 1,
+              rowEnd: 5,
+              columnStart: 1,
+              columnEnd: 5,
+            }}
+            relative
+            extraCss={[wrapperCell]}
+          >
+            <Zoom duration={1500}>
+              <div css={[gridDemoCell(theme), withinCell]} />
+            </Zoom>
+          </SimpleCell>
+
+          <SimpleCell
+            deskPos={{
+              rowStart: 1,
+              rowEnd: 3,
+              columnStart: 5,
+              columnEnd: 13,
+            }}
+            relative
+            extraCss={[wrapperCell]}
+          >
+            <Zoom duration={1500}>
+              <div css={[gridDemoCell(theme), withinCell]} />
+            </Zoom>
+          </SimpleCell>
+
+          <SimpleCell
+            deskPos={{
+              rowStart: 3,
+              rowEnd: 7,
+              columnStart: 5,
+              columnEnd: 9,
+            }}
+            relative
+            extraCss={[wrapperCell]}
+          >
+            <Zoom duration={1500}>
+              <div css={[gridDemoCell(theme), withinCell]} />
+            </Zoom>
+          </SimpleCell>
+
+          <SimpleCell
+            deskPos={{
+              rowStart: 5,
+              rowEnd: 7,
+              columnStart: 1,
+              columnEnd: 5,
+            }}
+            relative
+            extraCss={[wrapperCell]}
+          >
+            <Zoom duration={1500}>
+              <div css={[gridDemoCell(theme), withinCell]} />
+            </Zoom>
+          </SimpleCell>
+
+          <SimpleCell
+            deskPos={{
+              rowStart: 3,
+              rowEnd: 5,
+              columnStart: 9,
+              columnEnd: 11,
+            }}
+            relative
+            extraCss={[wrapperCell]}
+          >
+            <Zoom duration={1500}>
+              <div css={[gridDemoCell(theme), withinCell]} />
+            </Zoom>
+          </SimpleCell>
+
+          <SimpleCell
+            deskPos={{
+              rowStart: 3,
+              rowEnd: 5,
+              columnStart: 11,
+              columnEnd: 13,
+            }}
+            relative
+            extraCss={[wrapperCell]}
+          >
+            <Zoom duration={1500}>
+              <div css={[gridDemoCell(theme), withinCell]} />
+            </Zoom>
+          </SimpleCell>
+
+          <SimpleCell
+            deskPos={{
+              rowStart: 5,
+              rowEnd: 9,
+              columnStart: 9,
+              columnEnd: 13,
+            }}
+            relative
+            extraCss={[wrapperCell]}
+          >
+            <Zoom duration={1500}>
+              <div css={[gridDemoCell(theme), withinCell]} />
+            </Zoom>
+          </SimpleCell>
+
+          <SimpleCell
+            deskPos={{
+              rowStart: 7,
+              rowEnd: 11,
+              columnStart: 5,
+              columnEnd: 9,
+            }}
+            relative
+            extraCss={[wrapperCell]}
+          >
+            <Zoom duration={1500}>
+              <div css={[gridDemoCell(theme), withinCell]} />
+            </Zoom>
+          </SimpleCell>
+
+          <SimpleCell
+            deskPos={{
+              rowStart: 9,
+              rowEnd: 13,
+              columnStart: 1,
+              columnEnd: 5,
+            }}
+            relative
+            extraCss={[wrapperCell]}
+          >
+            <Zoom duration={1500}>
+              <div css={[gridDemoCell(theme), withinCell]} />
+            </Zoom>
+          </SimpleCell>
+
+          <SimpleCell
+            deskPos={{
+              rowStart: 7,
+              rowEnd: 9,
+              columnStart: 1,
+              columnEnd: 3,
+            }}
+            relative
+            extraCss={[wrapperCell]}
+          >
+            <Zoom duration={1500}>
+              <div css={[gridDemoCell(theme), withinCell]} />
+            </Zoom>
+          </SimpleCell>
+
+          <SimpleCell
+            deskPos={{
+              rowStart: 7,
+              rowEnd: 9,
+              columnStart: 3,
+              columnEnd: 5,
+            }}
+            relative
+            extraCss={[wrapperCell]}
+          >
+            <Zoom duration={1500}>
+              <div css={[gridDemoCell(theme), withinCell]} />
+            </Zoom>
+          </SimpleCell>
+
+          <SimpleCell
+            deskPos={{
+              rowStart: 11,
+              rowEnd: 13,
+              columnStart: 5,
+              columnEnd: 13,
+            }}
+            relative
+            extraCss={[wrapperCell]}
+          >
+            <Zoom duration={1500}>
+              <div css={[gridDemoCell(theme), withinCell]} />
+            </Zoom>
+          </SimpleCell>
+
+          <SimpleCell
+            deskPos={{
+              rowStart: 9,
+              rowEnd: 11,
+              columnStart: 9,
+              columnEnd: 13,
+            }}
+            relative
+            extraCss={[wrapperCell]}
+          >
+            <Zoom duration={1500}>
+              <div css={[gridDemoCell(theme), withinCell]} />
+            </Zoom>
+          </SimpleCell>
+        </div>
+      </SimpleCell>
     </>
   );
 };

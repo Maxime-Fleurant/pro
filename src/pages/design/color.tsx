@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
 import Head from 'next/head';
-
+import Zoom from 'react-reveal/Zoom';
 import { useTheme } from 'emotion-theming';
 import {
   quote,
@@ -8,6 +8,7 @@ import {
   colorAnime2,
   colorAnime3,
   animeMainTextHeader,
+  wrapperCell,
 } from '../../common/components/Layout/style';
 import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
 import { SimpleCell } from '../../common/components/Cell/SimpleCell';
@@ -95,25 +96,40 @@ const Apollo: FunctionComponent = () => {
         deskPos={{ rowStart: 12, rowEnd: 13, columnStart: 13, columnEnd: 16 }}
         tabPos={{ rowStart: 8, rowEnd: 9, columnStart: 1, columnEnd: 9 }}
         mobilPos={{ rowStart: 3, rowEnd: 4, columnStart: 1, columnEnd: 9 }}
-        extraCss={[colorAnime1(theme)]}
+        extraCss={[wrapperCell]}
+        relative
         ratio={3}
-      />
+      >
+        <Zoom duration={1000}>
+          <div css={colorAnime1(theme)} />
+        </Zoom>
+      </SimpleCell>
 
       <SimpleCell
         deskPos={{ rowStart: 12, rowEnd: 13, columnStart: 16, columnEnd: 19 }}
         tabPos={{ rowStart: 8, rowEnd: 9, columnStart: 9, columnEnd: 17 }}
         mobilPos={{ rowStart: 3, rowEnd: 4, columnStart: 9, columnEnd: 17 }}
-        extraCss={[colorAnime2(theme)]}
+        extraCss={[wrapperCell]}
+        relative
         ratio={3}
-      />
+      >
+        <Zoom duration={1500} delay={250}>
+          <div css={colorAnime2(theme)} />
+        </Zoom>
+      </SimpleCell>
 
       <SimpleCell
         deskPos={{ rowStart: 12, rowEnd: 13, columnStart: 19, columnEnd: 22 }}
         tabPos={{ rowStart: 8, rowEnd: 9, columnStart: 17, columnEnd: 25 }}
         mobilPos={{ rowStart: 3, rowEnd: 4, columnStart: 17, columnEnd: 25 }}
-        extraCss={[colorAnime3(theme)]}
+        extraCss={[wrapperCell]}
+        relative
         ratio={3}
-      />
+      >
+        <Zoom duration={1500} delay={500}>
+          <div css={colorAnime3(theme)} />
+        </Zoom>
+      </SimpleCell>
     </>
   );
 };
