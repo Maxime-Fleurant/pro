@@ -17,6 +17,7 @@ import {
   menuGameLogo,
   backGame,
   aMenuLink,
+  homeButton,
 } from './style';
 
 import { helveticaThin, helveticaMedium } from '../../globalStyle';
@@ -77,6 +78,50 @@ const Menu: TMenu = ({ open, returnHandler }) => {
 
     if (router.pathname.match(/^\/life\/games?/g)) {
       updatePage('games');
+    }
+
+    if (router.pathname.match(/^\/compute\/express|nest/g)) {
+      updatePage('node');
+    }
+
+    if (router.pathname.match(/^\/compute\/typescript/g)) {
+      updatePage('env');
+    }
+
+    if (router.pathname.match(/^\/compute\/typegraphql|dataloader|apollo/g)) {
+      updatePage('graphql');
+    }
+
+    if (
+      router.pathname.match(
+        /^\/compute\/apolloclient|emotion|react|redux|next/g
+      )
+    ) {
+      updatePage('front');
+    }
+
+    if (router.pathname.match(/^\/compute\/postgres|mongodb|neo4j/g)) {
+      updatePage('database');
+    }
+
+    if (router.pathname.match(/^\/compute\/dbnormalization|3layer|dry|di/g)) {
+      updatePage('designpattern');
+    }
+
+    if (router.pathname.match(/^\/compute\/typedi/g)) {
+      updatePage('di');
+    }
+
+    if (router.pathname.match(/^\/compute\/jest/g)) {
+      updatePage('testing');
+    }
+
+    if (router.pathname.match(/^\/compute\/docker/g)) {
+      updatePage('ops');
+    }
+
+    if (router.pathname.match(/^\/compute\/jwt|passport/g)) {
+      updatePage('auth');
     }
   }, [router]);
 
@@ -865,8 +910,8 @@ const Menu: TMenu = ({ open, returnHandler }) => {
               >
                 <span className="icon-outline-arrow-back-ios" />
               </span>
-              <span css={returnButton} onClick={returnHandlerInside}>
-                Home
+              <span css={returnButton(theme)} onClick={returnHandlerInside}>
+                <span className="icon-home-filled" css={homeButton} />
               </span>
             </div>
 

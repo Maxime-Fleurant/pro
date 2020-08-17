@@ -17,6 +17,7 @@
     "emotion": "^10.0.27",
     "emotion-server": "^10.0.27",
     "emotion-theming": "^10.0.27",
+    "grained": "0.0.2",
     "image-trace-loader": "^1.0.2",
     "imagemin": "^7.0.1",
     "imagemin-gifsicle": "^7.0.0",

@@ -336,7 +336,7 @@ export const mobileNavWrap = (theme: ITheme): SerializedStyles =>
       top: 0,
       width: '100%',
       borderBottom: `1px solid ${theme.base.baseColor600}`,
-      zIndex: 50,
+      zIndex: 1,
     },
     css`
       @media (min-width: 767px) {
@@ -482,25 +482,28 @@ export const browserWrap = (theme: ITheme): SerializedStyles =>
     `
   );
 
-export const barWrap = css(
-  {
-    overflow: 'hidden',
-    zIndex: 0,
-    paddingLeft: pointSize16,
-    height: '100%',
-  },
-  css`
-    @media (max-width: 1023px) {
-      padding-top: 0;
-    }
-  `
-);
+export const barWrap = (theme: ITheme): SerializedStyles =>
+  css(
+    {
+      overflow: 'hidden',
+      zIndex: 0,
+      paddingLeft: pointSize16,
+      height: '100%',
+    },
+    css`
+      @media (max-width: 1023px) {
+        padding-top: 0;
+      }
+    `,
+    theme.background.backgroundColor100
+  );
 
 export const browserButtonWrap = (theme: ITheme): SerializedStyles =>
   css(
     {
-      padding: `${pointSize4} ${pointSize16}`,
       borderBottom: `1px solid ${theme.base.baseColor400}`,
+      display: 'flex',
+      padding: `${pointSize8} ${pointSize16}`,
     },
     theme.background.backgroundColor200
   );
@@ -971,11 +974,19 @@ export const returnButton = (theme: ITheme): SerializedStyles =>
       border: 1px solid ${theme.base.baseColor600};
       cursor: pointer;
 
+      span:before {
+        ${theme.text.textColor600};
+      }
+
       @media (hover: hover) and (pointer: fine) {
         &:hover {
           border: 1px solid ${theme.base.baseColor200};
           ${theme.text.textColor200};
           ${theme.background.backgroundColor800};
+        }
+
+        &:hover span:before {
+          ${theme.text.textColor200};
         }
       }
 
@@ -1186,3 +1197,6 @@ export const reactRevail = css`
     height: 100%;
   }
 `;
+
+export const homeButton = (theme: ITheme): SerializedStyles =>
+  css(theme.text.textColor900);

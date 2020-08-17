@@ -13,7 +13,6 @@ import {
   sideWrap,
   mobileNavWrap,
   mobileNav,
-  backButton,
   centerLogo,
   navWrap,
   flexNavWrap,
@@ -197,11 +196,14 @@ const Layout: FunctionComponent = ({ children }) => {
           </div>
         </div>
       </div>
+      <div>
+        <div>
+          <div css={[gridCss, menuOpen ? css({ display: 'none' }) : css()]}>
+            {sidePanel}
 
-      <div css={[gridCss, menuOpen ? css({ display: 'none' }) : css()]}>
-        {sidePanel}
-
-        {children}
+            {children}
+          </div>
+        </div>
       </div>
     </>
   );
