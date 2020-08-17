@@ -238,6 +238,7 @@ export const linkBlockWrapp = css({
 });
 
 export const sideWrap = css`
+  overflow: hidden;
   @media (max-width: 1023px) {
     display: none;
   }

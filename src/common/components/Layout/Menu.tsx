@@ -56,71 +56,69 @@ const Menu: TMenu = ({ open, returnHandler }) => {
   };
 
   useEffect(() => {
-    if (router.pathname.match(/^\//g)) {
+    if (router.pathname.match(/\//g)) {
       updatePage('menu');
     }
 
-    if (router.pathname.match(/^\/compute?/g)) {
+    if (router.pathname.match(/\/compute?/g)) {
       updatePage('compute');
     }
 
-    if (router.pathname.match(/^\/design?/g)) {
+    if (router.pathname.match(/\/design?/g)) {
       updatePage('design');
     }
 
-    if (router.pathname.match(/^\/life\/cinema?/g)) {
+    if (router.pathname.match(/\/life\/cinema?/g)) {
       updatePage('cinema');
     }
 
-    if (router.pathname.match(/^\/life\/novels?/g)) {
+    if (router.pathname.match(/\/life\/novels?/g)) {
       updatePage('novels');
     }
 
-    if (router.pathname.match(/^\/life\/games?/g)) {
+    if (router.pathname.match(/\/life\/games?/g)) {
       updatePage('games');
     }
 
-    if (router.pathname.match(/^\/compute\/express|nest/g)) {
+    if (router.pathname.match(/\/compute\/express|nest/g)) {
       updatePage('node');
     }
 
-    if (router.pathname.match(/^\/compute\/typescript/g)) {
+    if (router.pathname.match(/\/compute\/typescript/g)) {
       updatePage('env');
     }
 
-    if (router.pathname.match(/^\/compute\/typegraphql|dataloader|apollo/g)) {
+    if (router.pathname.match(/\/compute\/typegraphql|dataloader|apollo/g)) {
       updatePage('graphql');
     }
 
     if (
-      router.pathname.match(
-        /^\/compute\/apolloclient|emotion|react|redux|next/g
-      )
+      router.pathname.match(/\/compute\/apolloclient|emotion|react|redux|next/g)
     ) {
       updatePage('front');
     }
 
-    if (router.pathname.match(/^\/compute\/postgres|mongodb|neo4j/g)) {
+    if (router.pathname.match(/\/compute\/postgres|mongodb|neo4j/g)) {
       updatePage('database');
     }
 
-    if (router.pathname.match(/^\/compute\/dbnormalization|3layer|dry|di/g)) {
+    if (router.pathname.match(/\/compute\/di|dbnormalization|3layer|dry/g)) {
       updatePage('designpattern');
     }
 
-    if (router.pathname.match(/^\/compute\/typedi/g)) {
+    if (router.pathname.match(/\/compute\/typedi/g)) {
       updatePage('di');
     }
 
-    if (router.pathname.match(/^\/compute\/jest/g)) {
+    if (router.pathname.match(/\/compute\/jest/g)) {
       updatePage('testing');
     }
 
-    if (router.pathname.match(/^\/compute\/docker/g)) {
+    if (router.pathname.match(/\/compute\/docker/g)) {
       updatePage('ops');
     }
 
-    if (router.pathname.match(/^\/compute\/jwt|passport/g)) {
+    if (router.pathname.match(/\/compute\/jwt|passport/g)) {
       updatePage('auth');
     }
   }, [router]);

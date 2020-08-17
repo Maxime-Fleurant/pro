@@ -72,7 +72,7 @@ const TypeDI = () => {
             name: 'External',
             items: [
               {
-                name: 'MetaProgramming',
+                name: 'MetaProg',
                 href:
                   'http://blog.wolksoftware.com/decorators-metadata-reflection-in-typescript-from-novice-to-expert-part-4',
                 outside: true,
