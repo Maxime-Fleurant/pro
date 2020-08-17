@@ -54,7 +54,7 @@ const CodeBrowser: TCodeBrowser = ({ language, code, heightAuto }) => {
         </div>
         <div css={barWrap}>
           <SimpleBar css={{ height: '100%' }}>
-            <Fade duration={1500} fraction={0.05}>
+            <Fade duration={1500} fraction={0}>
               <pre css={codeBox}>
                 <code className={language}>
                   <div>{code}</div>
