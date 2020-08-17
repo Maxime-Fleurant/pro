@@ -1,7 +1,5 @@
 import SimpleBar from 'simplebar-react';
 import Fade from 'react-reveal/Fade';
-import Reveal from 'react-reveal/Reveal';
-import Slide from 'react-reveal/Slide';
 import prismjs from 'prismjs';
 import { useEffect, FunctionComponent } from 'react';
 import { useTheme } from 'emotion-theming';
@@ -56,18 +54,13 @@ const CodeBrowser: TCodeBrowser = ({ language, code, heightAuto }) => {
         </div>
         <div css={barWrap}>
           <SimpleBar css={{ height: '100%' }}>
-            <Reveal
-              effect="animate__fadeInUp"
-              // bottom
-              duration={1500}
-              fraction={0.1}
-            >
+            <Fade bottom duration={1500} fraction={0}>
               <pre css={codeBox}>
                 <code className={language}>
                   <div>{code}</div>
                 </code>
               </pre>
-            </Reveal>
+            </Fade>
           </SimpleBar>
         </div>
       </div>

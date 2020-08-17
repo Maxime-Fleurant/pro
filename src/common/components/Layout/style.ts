@@ -43,7 +43,7 @@ export const gridCss = css([
       grid-auto-rows: auto;
     }
     @media (max-width: 767px) {
-      padding-top: 1rem;
+      padding-top: 10rem;
       grid-gap: 0.7rem;
     }
   `,
@@ -333,9 +333,9 @@ export const mobileNavWrap = (theme: ITheme): SerializedStyles =>
   css(
     {
       position: 'fixed',
-      bottom: 0,
+      top: 0,
       width: '100%',
-      borderTop: `1px solid ${theme.base.baseColor600}`,
+      borderBottom: `1px solid ${theme.base.baseColor600}`,
       zIndex: 50,
     },
     css`
