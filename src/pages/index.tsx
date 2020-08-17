@@ -15,6 +15,7 @@ import {
   homeA3,
   logoA1,
 } from '../common/components/Layout/style';
+import { helveticaMedium, helveticaRegular } from '../common/globalStyle';
 import { mainText } from '../common/components/Article/ArticleHead/articleHeaderStyle';
 import NpmIcon from '../common/components/icons/Npm';
 import JWTIcon from '../common/components/icons/JWT';
@@ -49,6 +50,20 @@ import Link from 'next/link';
 
 const Index: FunctionComponent = () => {
   const theme = useTheme<ITheme>();
+
+  let deferredPrompt: { prompt: () => void };
+  const [promptState, updatePrompt] = useState(null);
+
+  const promptt = () => {
+    promptState.prompt();
+  };
+
+  useEffect(() => {
+    window.addEventListener('beforeinstallprompt', (e) => {
+      deferredPrompt = (e as unknown) as { prompt: () => void };
+      updatePrompt(deferredPrompt);
+    });
+  }, []);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -140,6 +155,16 @@ const Index: FunctionComponent = () => {
               text=" Next "
               href="/compute/next"
             />
+            .
+            <br />
+            <br />
+            You can also install this app as a{' '}
+            <span
+              css={promptState ? helveticaMedium : helveticaRegular}
+              onClick={promptState ? promptt : null}
+            >
+              PWA
+            </span>
             .
           </div>
         </Fade>
