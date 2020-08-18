@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Article from '../../common/components/Article/Article';
 import {
   reduxMain,
@@ -11,7 +12,6 @@ import {
   anchorPos,
 } from '../../common/components/Layout/style';
 import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
-import Head from 'next/head';
 
 const Redux = (): JSX.Element => {
   return (

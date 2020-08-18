@@ -1,4 +1,4 @@
-import { FunctionComponent, useRef, MouseEventHandler } from 'react';
+import { FunctionComponent, MouseEventHandler } from 'react';
 import { css, SerializedStyles } from '@emotion/core';
 import { relativeCell, relativeChildren } from './cellStyle';
 

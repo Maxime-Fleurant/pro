@@ -179,9 +179,9 @@ const Layout: FunctionComponent = ({ children }) => {
 
           <div css={flexNavWrap}>
             <span css={menuButtonText} onClick={menuHandler}>
-              Menu
+              <div>Menu</div>
             </span>
-            <span className="icon-half" css={themeButton} onClick={toggle} />
+            <span className="icon-half " css={themeButton} onClick={toggle} />
           </div>
         </div>
       </div>

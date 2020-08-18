@@ -1,7 +1,6 @@
 import { FunctionComponent } from 'react';
 import Head from 'next/head';
 import Zoom from 'react-reveal/Zoom';
-
 import { useTheme } from 'emotion-theming';
 import {
   quote,

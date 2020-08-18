@@ -1,15 +1,29 @@
 import { FunctionComponent } from 'react';
 import Head from 'next/head';
+import Zoom from 'react-reveal/Zoom';
 import { useTheme } from 'emotion-theming';
 import {
   quote,
   animeMainTextHeader,
+  twrapf,
+  typoPostWrap,
+  wrapTypoWrap,
 } from '../../common/components/Layout/style';
 import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
 import { SimpleCell } from '../../common/components/Cell/SimpleCell';
 import ArticleHead from '../../common/components/Article/ArticleHead/ArticleHead';
 import { mainText } from '../../common/components/Article/ArticleHead/articleHeaderStyle';
 import { ITheme } from '../../common/components/Layout/Theme';
+import {
+  helveticaCondensedBold,
+  textLineHeight,
+  helveticaBold,
+  helveticaMedium,
+  helveticaRegular,
+  helveticaLight,
+  helveticaThin,
+  font64,
+} from '../../common/globalStyle';
 
 const Apollo: FunctionComponent = () => {
   const theme = useTheme<ITheme>();
@@ -91,10 +105,35 @@ const Apollo: FunctionComponent = () => {
         deskPos={{ rowStart: 12, rowEnd: 13, columnStart: 13, columnEnd: 22 }}
         tabPos={{ rowStart: 8, rowEnd: 9, columnStart: 1, columnEnd: 25 }}
         mobilPos={{ rowStart: 3, rowEnd: 4, columnStart: 1, columnEnd: 25 }}
-        backgroundImg="/img/type.gif"
-        contain
-        ratio={1}
-      />
+        extraCss={[twrapf(theme)]}
+      >
+        <Zoom cascade duraction={1500}>
+          <div css={wrapTypoWrap}>
+            <div css={typoPostWrap}>
+              <div css={[helveticaCondensedBold, textLineHeight, font64]}>
+                Design
+              </div>
+              <div css={[helveticaBold, textLineHeight, font64]}>Design</div>
+              <div css={[helveticaMedium, textLineHeight, font64]}>Design</div>
+              <div css={[helveticaRegular, textLineHeight, font64]}>Design</div>
+              <div css={[helveticaLight, textLineHeight, font64]}>Design</div>
+              <div css={[helveticaThin, textLineHeight, font64]}>Design</div>
+            </div>
+            <div css={typoPostWrap}>
+              <div css={[helveticaThin, textLineHeight, font64]}>Compute</div>
+              <div css={[helveticaLight, textLineHeight, font64]}>Compute</div>
+              <div css={[helveticaRegular, textLineHeight, font64]}>
+                Compute
+              </div>
+              <div css={[helveticaMedium, textLineHeight, font64]}>Compute</div>
+              <div css={[helveticaBold, textLineHeight, font64]}>Compute</div>
+              <div css={[helveticaCondensedBold, textLineHeight, font64]}>
+                Compute
+              </div>
+            </div>
+          </div>
+        </Zoom>
+      </SimpleCell>
     </>
   );
 };

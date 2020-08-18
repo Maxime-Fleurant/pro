@@ -26,6 +26,8 @@ import {
   pointSize104,
   pointSize56,
   font56,
+  pointSize1,
+  pointSize2,
 } from '../../globalStyle';
 import { ITheme } from './Theme';
 
@@ -126,7 +128,7 @@ export const navCell = css(
 
 export const sideLink = (theme: ITheme): SerializedStyles =>
   css([
-    helveticaThin,
+    helveticaLight,
     textLineHeight,
     theme.text.textColor600,
     fontRegular,
@@ -138,7 +140,7 @@ export const sideLink = (theme: ITheme): SerializedStyles =>
       }
 
       &:hover {
-        ${theme.text.textColor800}
+        ${theme.text.textColor900}!important
         span {
           opacity: 1;
         }
@@ -194,7 +196,7 @@ export const activeSideLink = (theme: ITheme): SerializedStyles =>
     fontRegular,
     css({ cursor: 'pointer', display: 'block' }),
     css`
-      color: ${theme.base.baseColor800}!important;
+      color: ${theme.base.baseColor900}!important;
 
       span {
         ${font20};
@@ -437,11 +439,62 @@ export const menuButtonText = (theme: ITheme): SerializedStyles =>
   css(
     { marginRight: pointSize16, cursor: 'pointer' },
     theme.text.textColor900,
-    helveticaThin
+    helveticaThin,
+    css`
+      -webkit-transform: perspective(1px) translateZ(0);
+      transform: perspective(1px) translateZ(0);
+      box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+      -webkit-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+      -webkit-transition-property: transform;
+      transition-property: transform;
+      @media (hover: hover) and (pointer: fine) {
+        &:hover,
+        &:focus,
+        &:active {
+          -webkit-transform: translateX(-${pointSize8});
+          transform: translateX(-${pointSize8});
+        }
+      }
+    `
   );
 
 export const themeButton = (theme: ITheme): SerializedStyles =>
-  css(theme.text.textColor900, helveticaMedium, font32, { cursor: 'pointer' });
+  css(
+    theme.text.textColor900,
+    helveticaMedium,
+    font32,
+    { cursor: 'pointer' },
+    css`
+      @-webkit-keyframes hvr-pop {
+        50% {
+          -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+        }
+      }
+      @keyframes hvr-pop {
+        50% {
+          -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+        }
+      }
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover,
+        &:focus,
+        &:active {
+          -webkit-animation-name: hvr-pop;
+          animation-name: hvr-pop;
+          -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
+          -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+          -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+        }
+      }
+    `
+  );
 
 export const codeBox = (theme: ITheme): SerializedStyles =>
   css(
@@ -926,14 +979,43 @@ export const gameCatMenu = (theme: ITheme): SerializedStyles =>
         padding: ${pointSize24} ${pointSize48};
         border: 1px solid ${theme.base.baseColor600};
         cursor: pointer;
+
+        position: relative;
+        -webkit-transition-property: color;
+        transition-property: color;
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+
+        &:before {
+          content: '';
+          position: absolute;
+          z-index: -1;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          ${theme.background.backgroundColor800};
+          -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+          -webkit-transform-origin: 50%;
+          transform-origin: 50%;
+          -webkit-transition-property: transform;
+          transition-property: transform;
+          -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+          -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+        }
       }
 
       div {
         @media (hover: hover) and (pointer: fine) {
           &:hover {
-            border: 1px solid ${theme.base.baseColor100};
             ${theme.text.textColor200};
-            ${theme.background.backgroundColor800};
+            &:hover:before {
+              -webkit-transform: scaleX(1);
+              transform: scaleX(1);
+            }
           }
         }
       }
@@ -958,11 +1040,40 @@ export const aMenuLink = (theme: ITheme): SerializedStyles => css`
   cursor: pointer;
   display: block;
 
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    ${theme.background.backgroundColor800};
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: 50%;
+    transform-origin: 50%;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+  }
+
   @media (hover: hover) and (pointer: fine) {
     &:hover {
-      border: 1px solid ${theme.base.baseColor100};
       ${theme.text.textColor200};
-      ${theme.background.backgroundColor800};
+      &:hover:before {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+      }
     }
   }
 
@@ -991,15 +1102,41 @@ export const returnButton = (theme: ITheme): SerializedStyles =>
       border: 1px solid ${theme.base.baseColor600};
       cursor: pointer;
 
+      position: relative;
+      -webkit-transition-property: color;
+      transition-property: color;
+      -webkit-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+
+      &:before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        ${theme.background.backgroundColor800};
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+        -webkit-transform-origin: 50%;
+        transform-origin: 50%;
+        -webkit-transition-property: transform;
+        transition-property: transform;
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        -webkit-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+      }
+
       span:before {
         ${theme.text.textColor800};
       }
 
       @media (hover: hover) and (pointer: fine) {
-        &:hover {
-          border: 1px solid ${theme.base.baseColor200};
-          ${theme.text.textColor200};
-          ${theme.background.backgroundColor800};
+        &:hover:before {
+          -webkit-transform: scaleX(1);
+          transform: scaleX(1);
         }
 
         &:hover span:before {
@@ -1029,11 +1166,45 @@ export const returnGame = (theme: ITheme): SerializedStyles =>
         color: ${theme.text.textColor800};
       }
 
+      position: relative;
+      -webkit-transition-property: color;
+      transition-property: color;
+      -webkit-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+
+      &:before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        ${theme.background.backgroundColor800};
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+        -webkit-transform-origin: 50%;
+        transform-origin: 50%;
+        -webkit-transition-property: transform;
+        transition-property: transform;
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        -webkit-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+      }
+
+      span:before {
+        ${theme.text.textColor800};
+      }
+
       @media (hover: hover) and (pointer: fine) {
-        &:hover {
-          span:before {
-            color: ${theme.base.baseColor200};
-          }
+        &:hover:before {
+          -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+        }
+
+        &:hover span:before {
+          ${theme.text.textColor200};
         }
       }
 
@@ -1081,12 +1252,40 @@ export const logoRow = (theme: ITheme): SerializedStyles =>
     },
     font48,
     css`
+      @-webkit-keyframes hvr-pop {
+        50% {
+          -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+        }
+      }
+      @keyframes hvr-pop {
+        50% {
+          -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+        }
+      }
+
       span {
         ${theme.text.textColor800};
       }
 
       a {
         display: flex;
+      }
+
+      @media (hover: hover) and (pointer: fine) {
+        a:hover,
+        a:focus,
+        a:active {
+          webkit-animation-name: hvr-pop;
+          animation-name: hvr-pop;
+          -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
+          -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+          -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+        }
       }
 
       span:not(:first-child) {
@@ -1249,3 +1448,22 @@ export const wrapperCell = css`
     height: 100%;
   }
 `;
+
+export const wrapCell2 = css({ height: '100%', width: '100%' });
+
+export const splashTitle = (theme: ITheme): SerializedStyles =>
+  css(helveticaMedium, font64, theme.text.textColor800);
+
+export const twrapf = (theme: ITheme): SerializedStyles =>
+  css(theme.text.textColor900);
+
+export const typoPostWrap = css({
+  display: 'flex',
+  flexDirection: 'column',
+  textAlign: 'center',
+});
+
+export const wrapTypoWrap = css({
+  display: 'flex',
+  justifyContent: 'space-evenly',
+});

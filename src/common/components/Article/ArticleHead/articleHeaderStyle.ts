@@ -11,10 +11,8 @@ import {
   helveticaRegular,
   font32,
   pointSize48,
-  font64,
   helveticaBold,
   font104,
-  font120,
 } from '../../../globalStyle';
 import { ITheme } from '../../Layout/Theme';
 

@@ -97,6 +97,21 @@ export const helveticaThin = css({
     'HelveticaNeueThin, HelveticaNeue-Thin, Helvetica Neue Thin, HelveticaNeue, Helvetica Neue, TeXGyreHerosRegular, Arial, sans-serif; font-weight:200; font-stretch:normal',
 });
 
+export const helveticaBlack = css({
+  fontFamily:
+    'HelveticaNeueBlack, HelveticaNeue-Black, Helvetica Neue Black, HelveticaNeue, Helvetica Neue, TeXGyreHerosBold, Arial Black, sans-serif; font-weight:800; font-stretch:normal',
+});
+
+export const helveticaHeavy = css({
+  fontFamily:
+    'HelveticaNeueHeavy, HelveticaNeue-Heavy, Helvetica Neue Heavy, HelveticaNeue, Helvetica Neue, TeXGyreHerosBold, Arial Black, sans-serif; font-weight:700; font-stretch:normal',
+});
+
+export const helveticaUltraLight = css({
+  fontFamily:
+    'HelveticaNeueUltraLight, HelveticaNeue-Ultra-Light, Helvetica Neue Ultra Light, HelveticaNeue, Helvetica Neue, TeXGyreHerosRegular, Arial, sans-serif; font-weight:100; font-stretch:normal',
+});
+
 export const helveticaRegular = css({
   fontFamily: baseHelveticaRegular,
 });

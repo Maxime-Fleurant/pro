@@ -9,11 +9,10 @@ import {
   circAnime1,
   circAnime2,
   gAnime2,
-  svgWrap,
   gamesvgWrap,
 } from './style';
 
-const GameLogoAnime = () => {
+const GameLogoAnime = (): JSX.Element => {
   const theme = useTheme<ITheme>();
 
   return (

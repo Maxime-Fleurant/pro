@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Article from '../../common/components/Article/Article';
 import TypescriptIcon from '../../common/components/icons/Typescript';
 import {
@@ -15,7 +16,6 @@ import {
 } from '../../common/components/Layout/style';
 import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
 import PostgresIcon from '../../common/components/icons/Postgres';
-import Head from 'next/head';
 
 const Typescript = (): JSX.Element => {
   return (

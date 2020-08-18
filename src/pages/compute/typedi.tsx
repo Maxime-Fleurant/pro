@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Article from '../../common/components/Article/Article';
 import { typeDi } from '../../common/components/Article/CodeBrowser/codes/typedi';
 import TextLink from '../../common/components/Article/textLink/TextLink';
@@ -8,7 +9,6 @@ import {
   anchorPos,
 } from '../../common/components/Layout/style';
 import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
-import Head from 'next/head';
 
 const TypeDI = () => {
   return (

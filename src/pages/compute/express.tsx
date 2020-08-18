@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
 import NpmIcon from '../../common/components/icons/Npm';
 import PostgresIcon from '../../common/components/icons/Postgres';
@@ -10,9 +11,8 @@ import {
   anchorPos,
   githubLinkCaption,
 } from '../../common/components/Layout/style';
-import Head from 'next/head';
 
-const Express = () => {
+const Express = (): JSX.Element => {
   return (
     <>
       <Head>

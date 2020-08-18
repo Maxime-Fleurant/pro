@@ -1,6 +1,6 @@
+import Link from 'next/link';
 import { FunctionComponent, useEffect, useState } from 'react';
 import Typist from 'react-typist';
-import Flip from 'react-reveal/Flip';
 import Fade from 'react-reveal/Fade';
 import Zoom from 'react-reveal/Zoom';
 import Head from 'next/head';
@@ -12,8 +12,8 @@ import {
   homeTitle2,
   logoRow,
   logoRowWrap,
-  homeA3,
   logoA1,
+  splashTitle,
 } from '../common/components/Layout/style';
 import { helveticaMedium, helveticaRegular } from '../common/globalStyle';
 import { mainText } from '../common/components/Article/ArticleHead/articleHeaderStyle';
@@ -46,7 +46,12 @@ import BabelIcon from '../common/components/icons/Babel';
 import LinuxIcon from '../common/components/icons/Linux';
 import { ITheme } from '../common/components/Layout/Theme';
 import TextLink from '../common/components/Article/textLink/TextLink';
-import Link from 'next/link';
+import {
+  detailButton,
+  detailButtonText,
+  detailButtonLogo,
+} from '../common/components/Category/categoryStyle';
+import CategoryItem from '../common/components/Category/CategoryItem';
 
 const Index: FunctionComponent = () => {
   const theme = useTheme<ITheme>();
@@ -100,7 +105,7 @@ const Index: FunctionComponent = () => {
         tabPos={{ rowStart: 9, rowEnd: 10, columnStart: 1, columnEnd: 25 }}
         mobilPos={{ rowStart: 5, rowEnd: 6, columnStart: 1, columnEnd: 25 }}
       >
-        <Fade left duration={1500} delay={2000}>
+        <Fade left duration={1500} delay={1500}>
           <div css={[mainText(theme)]}>
             Hi, my name is Maxime Fleurant and i'm a Full-Stack web developer
             based in Paris. This App is intended to be a presentation of the
@@ -175,7 +180,7 @@ const Index: FunctionComponent = () => {
         tabPos={{ rowStart: 11, rowEnd: 12, columnStart: 1, columnEnd: 25 }}
         mobilPos={{ rowStart: 8, rowEnd: 9, columnStart: 1, columnEnd: 25 }}
       >
-        <Zoom duration={1500} delay={2500}>
+        <Zoom duration={1500} delay={2000}>
           <div css={[logoRowWrap, logoA1]}>
             <div css={[logoRow(theme)]}>
               <span>
@@ -683,6 +688,412 @@ const Index: FunctionComponent = () => {
             </div>
           </div>
         </Zoom>
+      </SimpleCell>
+
+      <SimpleCell
+        deskPos={{ rowStart: 16, rowEnd: 17, columnStart: 4, columnEnd: 10 }}
+        tabPos={{ rowStart: 14, rowEnd: 15, columnStart: 1, columnEnd: 13 }}
+        mobilPos={{ rowStart: 11, rowEnd: 12, columnStart: 1, columnEnd: 25 }}
+        allRatio={0.6}
+        relative
+      >
+        <CategoryItem
+          name="Express"
+          href="/compute/express"
+          detail="Fast, unopinionated, minimalist web framework for Node.js"
+          logo={<span className="icon-expressjs-icon" />}
+        />
+      </SimpleCell>
+
+      <SimpleCell
+        deskPos={{ rowStart: 16, rowEnd: 17, columnStart: 10, columnEnd: 16 }}
+        tabPos={{ rowStart: 14, rowEnd: 15, columnStart: 13, columnEnd: 25 }}
+        mobilPos={{ rowStart: 12, rowEnd: 13, columnStart: 1, columnEnd: 25 }}
+        allRatio={0.6}
+        relative
+      >
+        <CategoryItem
+          name="Nest"
+          logo={<span className="icon-nestjs" />}
+          detail="A progressive Node.js framework for building efficient, reliable and scalable server-side applications."
+          href="/compute/nest"
+        />
+      </SimpleCell>
+
+      <SimpleCell
+        deskPos={{ rowStart: 16, rowEnd: 17, columnStart: 16, columnEnd: 22 }}
+        tabPos={{ rowStart: 15, rowEnd: 16, columnStart: 1, columnEnd: 13 }}
+        mobilPos={{ rowStart: 13, rowEnd: 14, columnStart: 1, columnEnd: 25 }}
+        allRatio={0.6}
+        relative
+      >
+        <CategoryItem
+          name="Typescript"
+          logo={<TypescriptIcon />}
+          detail="TypeScript is a superset of JavaScript that compiles to clean JavaScript output"
+          href="/compute/typescript"
+        />
+      </SimpleCell>
+
+      <SimpleCell
+        deskPos={{ rowStart: 17, rowEnd: 18, columnStart: 4, columnEnd: 10 }}
+        tabPos={{ rowStart: 15, rowEnd: 16, columnStart: 13, columnEnd: 25 }}
+        mobilPos={{ rowStart: 14, rowEnd: 15, columnStart: 1, columnEnd: 25 }}
+        allRatio={0.6}
+        relative
+      >
+        <CategoryItem
+          name="TypeGraphQL"
+          logo={<TypegraphqlIcon />}
+          detail="Create GraphQL schema and resolvers with TypeScript, using classes and decorators"
+          href="/compute/typegraphql"
+        />
+      </SimpleCell>
+
+      <SimpleCell
+        deskPos={{ rowStart: 17, rowEnd: 18, columnStart: 10, columnEnd: 16 }}
+        tabPos={{ rowStart: 16, rowEnd: 17, columnStart: 1, columnEnd: 13 }}
+        mobilPos={{ rowStart: 15, rowEnd: 16, columnStart: 1, columnEnd: 25 }}
+        allRatio={0.6}
+        relative
+      >
+        <CategoryItem
+          name="DataLoader"
+          logo={<span>🧩</span>}
+          detail="Simplified and consistent API over various remote data sources such as databases or web services via batching and caching"
+          href="/compute/dataloader"
+        />
+      </SimpleCell>
+
+      <SimpleCell
+        deskPos={{ rowStart: 17, rowEnd: 18, columnStart: 16, columnEnd: 22 }}
+        tabPos={{ rowStart: 16, rowEnd: 17, columnStart: 13, columnEnd: 25 }}
+        mobilPos={{ rowStart: 16, rowEnd: 17, columnStart: 1, columnEnd: 25 }}
+        allRatio={0.6}
+        relative
+      >
+        <CategoryItem
+          name="Apollo"
+          logo={<span className="icon-a" />}
+          detail="Simplify app development by combining APIs, databases, and microservices into a single data graph that you can query with GraphQL"
+          href="/compute/apollo"
+        />
+      </SimpleCell>
+
+      <SimpleCell
+        deskPos={{ rowStart: 18, rowEnd: 19, columnStart: 4, columnEnd: 10 }}
+        tabPos={{ rowStart: 17, rowEnd: 18, columnStart: 1, columnEnd: 13 }}
+        mobilPos={{ rowStart: 17, rowEnd: 18, columnStart: 1, columnEnd: 25 }}
+        allRatio={0.6}
+        relative
+      >
+        <CategoryItem
+          name="Apollo Client"
+          logo={<span className="icon-a" />}
+          detail="Manage the entirety of your React app's state and seamlessly execute GraphQL operations"
+          href="/compute/apolloclient"
+        />
+      </SimpleCell>
+
+      <SimpleCell
+        deskPos={{ rowStart: 18, rowEnd: 19, columnStart: 10, columnEnd: 16 }}
+        tabPos={{ rowStart: 17, rowEnd: 18, columnStart: 13, columnEnd: 25 }}
+        mobilPos={{ rowStart: 18, rowEnd: 19, columnStart: 1, columnEnd: 25 }}
+        allRatio={0.6}
+        relative
+      >
+        <CategoryItem
+          name="Emotion"
+          logo={<span>👩‍🎤</span>}
+          detail="CSS-in-JS library designed for high performance style composition"
+          href="/compute/emotion"
+        />
+      </SimpleCell>
+
+      <SimpleCell
+        deskPos={{ rowStart: 18, rowEnd: 19, columnStart: 16, columnEnd: 22 }}
+        tabPos={{ rowStart: 18, rowEnd: 19, columnStart: 1, columnEnd: 13 }}
+        mobilPos={{ rowStart: 19, rowEnd: 20, columnStart: 1, columnEnd: 25 }}
+        allRatio={0.6}
+        relative
+      >
+        <CategoryItem
+          name="Redux"
+          logo={<span className="icon-redux" />}
+          detail="A Predictable State Container for JS Apps"
+          href="/compute/redux"
+        />
+      </SimpleCell>
+
+      <SimpleCell
+        deskPos={{ rowStart: 19, rowEnd: 20, columnStart: 4, columnEnd: 10 }}
+        tabPos={{ rowStart: 18, rowEnd: 19, columnStart: 13, columnEnd: 25 }}
+        mobilPos={{ rowStart: 20, rowEnd: 21, columnStart: 1, columnEnd: 25 }}
+        allRatio={0.6}
+        relative
+      >
+        <CategoryItem
+          name="React"
+          logo={<span className="icon-react" />}
+          detail="A JavaScript library for building user interfaces"
+          href="/compute/react"
+        />
+      </SimpleCell>
+
+      <SimpleCell
+        deskPos={{ rowStart: 19, rowEnd: 20, columnStart: 10, columnEnd: 16 }}
+        tabPos={{ rowStart: 19, rowEnd: 20, columnStart: 1, columnEnd: 13 }}
+        mobilPos={{ rowStart: 21, rowEnd: 22, columnStart: 1, columnEnd: 25 }}
+        allRatio={0.6}
+        relative
+      >
+        <CategoryItem
+          name="Next"
+          logo={<span className="icon-next-js" />}
+          detail="Server Side Rendering for react App"
+          href="/compute/emotion"
+        />
+      </SimpleCell>
+
+      <SimpleCell
+        deskPos={{ rowStart: 19, rowEnd: 20, columnStart: 16, columnEnd: 22 }}
+        tabPos={{ rowStart: 19, rowEnd: 20, columnStart: 13, columnEnd: 25 }}
+        mobilPos={{ rowStart: 22, rowEnd: 23, columnStart: 1, columnEnd: 25 }}
+        allRatio={0.6}
+        relative
+      >
+        <CategoryItem
+          name="PostgreSQL"
+          logo={<PostgresIcon />}
+          detail="The World's Most Advanced Open Source Relational Database"
+          href="/compute/postgres"
+        />
+      </SimpleCell>
+
+      <SimpleCell
+        deskPos={{ rowStart: 20, rowEnd: 21, columnStart: 4, columnEnd: 10 }}
+        tabPos={{ rowStart: 20, rowEnd: 21, columnStart: 1, columnEnd: 13 }}
+        mobilPos={{ rowStart: 23, rowEnd: 24, columnStart: 1, columnEnd: 25 }}
+        allRatio={0.6}
+        relative
+      >
+        <CategoryItem
+          name="MongoDB"
+          logo={<MongoDbIcon />}
+          detail="MongoDB is a document database with the scalability and flexibility that you want with the querying and indexing that you need"
+          href="/compute/mongodb"
+        />
+      </SimpleCell>
+
+      <SimpleCell
+        deskPos={{ rowStart: 20, rowEnd: 21, columnStart: 10, columnEnd: 16 }}
+        tabPos={{ rowStart: 20, rowEnd: 21, columnStart: 13, columnEnd: 25 }}
+        mobilPos={{ rowStart: 24, rowEnd: 25, columnStart: 1, columnEnd: 25 }}
+        allRatio={0.6}
+        relative
+      >
+        <CategoryItem
+          name="Neo4j"
+          logo={<NeoIcon />}
+          detail="The Native Graph Database for Today’s Connected Applications"
+          href="/compute/neo4j"
+        />
+      </SimpleCell>
+
+      <SimpleCell
+        deskPos={{ rowStart: 20, rowEnd: 21, columnStart: 16, columnEnd: 22 }}
+        tabPos={{ rowStart: 21, rowEnd: 22, columnStart: 1, columnEnd: 13 }}
+        mobilPos={{ rowStart: 25, rowEnd: 26, columnStart: 1, columnEnd: 25 }}
+        allRatio={0.6}
+        relative
+      >
+        <CategoryItem
+          name="Database Normalization"
+          logo={<span>💾</span>}
+          detail="Database normalization is the process of structuring a relational database"
+          href="/compute/dbnormalization"
+        />
+      </SimpleCell>
+
+      <SimpleCell
+        deskPos={{ rowStart: 21, rowEnd: 22, columnStart: 4, columnEnd: 10 }}
+        tabPos={{ rowStart: 21, rowEnd: 22, columnStart: 13, columnEnd: 25 }}
+        mobilPos={{ rowStart: 26, rowEnd: 27, columnStart: 1, columnEnd: 25 }}
+        allRatio={0.6}
+        relative
+      >
+        <CategoryItem
+          name="3-layer"
+          logo={<span>🥪</span>}
+          detail="The idea is to use the principle of separation of concerns to move the business logic away from the node.js API Routes"
+          href="/compute/3layer"
+        />
+      </SimpleCell>
+
+      <SimpleCell
+        deskPos={{ rowStart: 21, rowEnd: 22, columnStart: 10, columnEnd: 16 }}
+        tabPos={{ rowStart: 22, rowEnd: 23, columnStart: 1, columnEnd: 13 }}
+        mobilPos={{ rowStart: 27, rowEnd: 28, columnStart: 1, columnEnd: 25 }}
+        allRatio={0.6}
+        relative
+      >
+        <CategoryItem
+          name="DRY"
+          logo={<span>🌵</span>}
+          detail="Don't repeat yourself (DRY, or sometimes do not repeat yourself)"
+          href="/compute/neo4j"
+        />
+      </SimpleCell>
+
+      <SimpleCell
+        deskPos={{ rowStart: 21, rowEnd: 22, columnStart: 16, columnEnd: 22 }}
+        tabPos={{ rowStart: 22, rowEnd: 23, columnStart: 13, columnEnd: 25 }}
+        mobilPos={{ rowStart: 28, rowEnd: 29, columnStart: 1, columnEnd: 25 }}
+        allRatio={0.6}
+        relative
+      >
+        <CategoryItem
+          name="Dependencies Injection"
+          logo={<span>🧱</span>}
+          detail="Inversion of Control Containers using  Dependencies Injection"
+          href="/compute/dbnormalization"
+        />
+      </SimpleCell>
+
+      <SimpleCell
+        deskPos={{ rowStart: 22, rowEnd: 23, columnStart: 4, columnEnd: 10 }}
+        tabPos={{ rowStart: 23, rowEnd: 24, columnStart: 1, columnEnd: 13 }}
+        mobilPos={{ rowStart: 29, rowEnd: 30, columnStart: 1, columnEnd: 25 }}
+        allRatio={0.6}
+        relative
+      >
+        <CategoryItem
+          name="TypeDI"
+          logo={<span>⚙️</span>}
+          detail="Simple yet powerful dependency injection tool for JavaScript and TypeScript"
+          href="/compute/3layer"
+        />
+      </SimpleCell>
+
+      <SimpleCell
+        deskPos={{ rowStart: 22, rowEnd: 23, columnStart: 10, columnEnd: 16 }}
+        tabPos={{ rowStart: 23, rowEnd: 24, columnStart: 13, columnEnd: 25 }}
+        mobilPos={{ rowStart: 30, rowEnd: 31, columnStart: 1, columnEnd: 25 }}
+        allRatio={0.6}
+        relative
+      >
+        <CategoryItem
+          name="Jest"
+          logo={<JestIcon />}
+          detail="Jest is a delightful JavaScript Testing Framework with a focus on simplicity"
+          href="/compute/neo4j"
+        />
+      </SimpleCell>
+
+      <SimpleCell
+        deskPos={{ rowStart: 22, rowEnd: 23, columnStart: 16, columnEnd: 22 }}
+        tabPos={{ rowStart: 24, rowEnd: 25, columnStart: 1, columnEnd: 13 }}
+        mobilPos={{ rowStart: 31, rowEnd: 32, columnStart: 1, columnEnd: 25 }}
+        allRatio={0.6}
+        relative
+      >
+        <CategoryItem
+          name="Docker"
+          logo={<span className="icon-docker-icon" />}
+          detail="Define and run multi-container applications with Docker"
+          href="/compute/dbnormalization"
+        />
+      </SimpleCell>
+
+      <SimpleCell
+        deskPos={{ rowStart: 23, rowEnd: 24, columnStart: 4, columnEnd: 10 }}
+        tabPos={{ rowStart: 24, rowEnd: 25, columnStart: 13, columnEnd: 25 }}
+        mobilPos={{ rowStart: 32, rowEnd: 33, columnStart: 1, columnEnd: 25 }}
+        allRatio={0.6}
+        relative
+      >
+        <CategoryItem
+          name="PassportJS"
+          logo={<PassportIcon />}
+          detail="Simple, unobtrusive authentication for Node.js"
+          href="/compute/neo4j"
+        />
+      </SimpleCell>
+
+      <SimpleCell
+        deskPos={{ rowStart: 23, rowEnd: 24, columnStart: 10, columnEnd: 16 }}
+        tabPos={{ rowStart: 25, rowEnd: 26, columnStart: 1, columnEnd: 13 }}
+        mobilPos={{ rowStart: 33, rowEnd: 34, columnStart: 1, columnEnd: 25 }}
+        allRatio={0.6}
+        relative
+      >
+        <CategoryItem
+          name="JWT"
+          logo={<JWTIcon />}
+          detail="JSON Web Tokens are an open, industry standard RFC 7519 method for representing claims securely between two parties"
+          href="/compute/dbnormalization"
+        />
+      </SimpleCell>
+
+      <SimpleCell
+        deskPos={{ rowStart: 23, rowEnd: 24, columnStart: 16, columnEnd: 22 }}
+        tabPos={{ rowStart: 25, rowEnd: 26, columnStart: 13, columnEnd: 25 }}
+        mobilPos={{ rowStart: 34, rowEnd: 35, columnStart: 1, columnEnd: 25 }}
+        allRatio={0.6}
+        relative
+      >
+        <CategoryItem
+          name="Color"
+          logo={<span>🎨</span>}
+          detail="Any ground subtracts its own hue from the colors which it carries and therefore influences"
+          href="/compute/dbnormalization"
+        />
+      </SimpleCell>
+
+      <SimpleCell
+        deskPos={{ rowStart: 24, rowEnd: 25, columnStart: 4, columnEnd: 10 }}
+        tabPos={{ rowStart: 26, rowEnd: 27, columnStart: 13, columnEnd: 25 }}
+        mobilPos={{ rowStart: 35, rowEnd: 36, columnStart: 1, columnEnd: 25 }}
+        allRatio={0.6}
+        relative
+      >
+        <CategoryItem
+          name="Grid"
+          logo={<span>📐</span>}
+          detail="The use of the grid implies the will to cultivate objectivity instead of subjectivity"
+          href="/compute/neo4j"
+        />
+      </SimpleCell>
+
+      <SimpleCell
+        deskPos={{ rowStart: 24, rowEnd: 25, columnStart: 10, columnEnd: 16 }}
+        tabPos={{ rowStart: 26, rowEnd: 27, columnStart: 1, columnEnd: 13 }}
+        mobilPos={{ rowStart: 36, rowEnd: 37, columnStart: 1, columnEnd: 25 }}
+        allRatio={0.6}
+        relative
+      >
+        <CategoryItem
+          name="Motion"
+          logo={<span>💠</span>}
+          detail="Every drawing can be understood as a motion study since it is a path
+          of motion recorded by graphic means"
+          href="/compute/dbnormalization"
+        />
+      </SimpleCell>
+
+      <SimpleCell
+        deskPos={{ rowStart: 24, rowEnd: 25, columnStart: 16, columnEnd: 22 }}
+        tabPos={{ rowStart: 27, rowEnd: 28, columnStart: 1, columnEnd: 13 }}
+        mobilPos={{ rowStart: 37, rowEnd: 38, columnStart: 1, columnEnd: 25 }}
+        allRatio={0.6}
+        relative
+      >
+        <CategoryItem
+          name="Typography"
+          logo={<span>🖋</span>}
+          detail="The whole point with type is for you not to be aware it is there. If you remember the shape of a spoon with which you just ate some soup, then the spoon had a poor shape"
+          href="/compute/dbnormalization"
+        />
       </SimpleCell>
     </>
   );

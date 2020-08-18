@@ -1,5 +1,5 @@
+import Head from 'next/head';
 import Article from '../../common/components/Article/Article';
-
 import { neomain } from '../../common/components/Article/CodeBrowser/codes/neo4j';
 import NeoIcon from '../../common/components/icons/neo';
 import {
@@ -8,7 +8,6 @@ import {
 } from '../../common/components/Layout/style';
 import TextLink from '../../common/components/Article/textLink/TextLink';
 import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
-import Head from 'next/head';
 
 const Neo = (): JSX.Element => {
   return (

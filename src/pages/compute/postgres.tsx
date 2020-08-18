@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Article from '../../common/components/Article/Article';
 import PostgresIcon from '../../common/components/icons/Postgres';
 import {
@@ -13,7 +14,6 @@ import {
 import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
 import TextLink from '../../common/components/Article/textLink/TextLink';
 import TypescriptIcon from '../../common/components/icons/Typescript';
-import Head from 'next/head';
 
 const Postgres = (): JSX.Element => {
   return (

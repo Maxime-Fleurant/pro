@@ -1,7 +1,6 @@
-import { mainDataload } from '../../common/components/Article/CodeBrowser/codes/dataloader';
 import Head from 'next/head';
+import { mainDataload } from '../../common/components/Article/CodeBrowser/codes/dataloader';
 import Article from '../../common/components/Article/Article';
-import { insideLink } from '../../common/components/Article/ArticleHead/articleHeaderStyle';
 import TypegraphqlIcon from '../../common/components/icons/Typegraphql';
 import TextLink from '../../common/components/Article/textLink/TextLink';
 import {
@@ -10,7 +9,7 @@ import {
 } from '../../common/components/Layout/style';
 import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
 
-const DataLoader = () => {
+const DataLoader = (): JSX.Element => {
   return (
     <>
       <Head>

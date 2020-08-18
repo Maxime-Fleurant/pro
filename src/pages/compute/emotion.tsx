@@ -1,13 +1,5 @@
+import Head from 'next/head';
 import Article from '../../common/components/Article/Article';
-import { insideLink } from '../../common/components/Article/ArticleHead/articleHeaderStyle';
-import { mainLayer } from '../../common/components/Article/CodeBrowser/codes/3layer';
-import { drymain } from '../../common/components/Article/CodeBrowser/codes/dry';
-import { dimain } from '../../common/components/Article/CodeBrowser/codes/di';
-import MongoDbIcon from '../../common/components/icons/Mongodb';
-import { mongMain } from '../../common/components/Article/CodeBrowser/codes/mongo';
-import { neomain } from '../../common/components/Article/CodeBrowser/codes/neo4j';
-import NeoIcon from '../../common/components/icons/neo';
-import { dockerMain } from '../../common/components/Article/CodeBrowser/codes/docker';
 import {
   emotionMain,
   emotionTheme,
@@ -20,7 +12,6 @@ import {
   anchorPos,
 } from '../../common/components/Layout/style';
 import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
-import Head from 'next/head';
 
 const Emotion = (): JSX.Element => {
   return (

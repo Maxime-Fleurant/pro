@@ -1,10 +1,6 @@
 import Head from 'next/head';
 import Article from '../../common/components/Article/Article';
-import {
-  reduxMain,
-  reduxTypescript,
-  reduxContainer,
-} from '../../common/components/Article/CodeBrowser/codes/redux';
+
 import TypescriptIcon from '../../common/components/icons/Typescript';
 import {
   acmain,

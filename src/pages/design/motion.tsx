@@ -1,16 +1,13 @@
 import { FunctionComponent } from 'react';
 import Head from 'next/head';
+import Zoom from 'react-reveal/Zoom';
 import { useTheme } from 'emotion-theming';
-import {
-  quote,
-  animeMainTextHeader,
-} from '../../common/components/Layout/style';
+import { animeMainTextHeader } from '../../common/components/Layout/style';
 import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
 import { SimpleCell } from '../../common/components/Cell/SimpleCell';
 import ArticleHead from '../../common/components/Article/ArticleHead/ArticleHead';
 import { mainText } from '../../common/components/Article/ArticleHead/articleHeaderStyle';
 import { ITheme } from '../../common/components/Layout/Theme';
-import LogoAnime from '../../common/components/Layout/logoAnime';
 import LogoAnimeFull from '../../common/components/Layout/logoAnimeFull';
 
 const Apollo: FunctionComponent = () => {
@@ -90,7 +87,9 @@ const Apollo: FunctionComponent = () => {
         relative
         ratio={1}
       >
-        <LogoAnimeFull />
+        <Zoom duration={1500}>
+          <LogoAnimeFull />
+        </Zoom>
       </SimpleCell>
     </>
   );

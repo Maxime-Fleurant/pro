@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Article from '../../common/components/Article/Article';
 import MongoDbIcon from '../../common/components/icons/Mongodb';
 import { mongMain } from '../../common/components/Article/CodeBrowser/codes/mongo';
@@ -7,7 +8,6 @@ import {
   anchorPos,
 } from '../../common/components/Layout/style';
 import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
-import Head from 'next/head';
 
 const Mongodb = (): JSX.Element => {
   return (

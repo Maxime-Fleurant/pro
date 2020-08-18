@@ -12,7 +12,7 @@ import {
   svgWrap,
 } from './style';
 
-const LogoAnime = () => {
+const LogoAnime = (): JSX.Element => {
   const theme = useTheme<ITheme>();
 
   return (

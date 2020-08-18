@@ -3,13 +3,11 @@ import {
   font104,
   helveticaBold,
   titleLineHeight,
-  pointSize1,
   font20,
   textLineHeight,
   fontRegular,
   helveticaLight,
   helveticaMedium,
-  textColor200,
   pointSize24,
   pointSize64,
 } from '../../globalStyle';
@@ -36,13 +34,41 @@ export const detailButton = (theme: ITheme): SerializedStyles =>
     },
     theme.text.textColor800,
     css`
-      @media (max-width: 767px) {
-        padding: ${pointSize64};
+      position: relative;
+      -webkit-transition-property: color;
+      transition-property: color;
+      -webkit-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+
+      &:before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        ${theme.background.backgroundColor800};
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+        -webkit-transform-origin: 50%;
+        transform-origin: 50%;
+        -webkit-transition-property: transform;
+        transition-property: transform;
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        -webkit-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
       }
 
-      &:hover {
-        ${theme.text.textColor200};
-        ${theme.background.backgroundColor900}
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          ${theme.text.textColor200};
+          &:hover:before {
+            -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+          }
+        }
       }
     `
   );
@@ -54,7 +80,7 @@ export const detailButtonText = css(
   helveticaLight,
   css`
     @media (max-width: 767px) {
-      font-size: 6vw;
+      font-size: 4vw;
     }
   `
 );
@@ -66,7 +92,7 @@ export const detailButtonLogo = css(
   helveticaMedium,
   css`
     @media (max-width: 767px) {
-      font-size: 8vw;
+      font-size: 6vw;
     }
   `
 );

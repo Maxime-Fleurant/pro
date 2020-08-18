@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Article from '../../common/components/Article/Article';
 import JestIcon from '../../common/components/icons/Jest';
 import {
@@ -10,7 +11,6 @@ import {
 } from '../../common/components/Layout/style';
 import TextLink from '../../common/components/Article/textLink/TextLink';
 import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
-import Head from 'next/head';
 
 const Jest = (): JSX.Element => {
   return (

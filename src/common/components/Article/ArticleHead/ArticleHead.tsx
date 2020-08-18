@@ -1,6 +1,5 @@
 import { FunctionComponent } from 'react';
 import Typist from 'react-typist';
-
 import { useTheme } from 'emotion-theming';
 import {
   titlewrap,

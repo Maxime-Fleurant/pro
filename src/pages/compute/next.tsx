@@ -1,6 +1,6 @@
+import Head from 'next/head';
 import Article from '../../common/components/Article/Article';
 import TypescriptIcon from '../../common/components/icons/Typescript';
-
 import {
   nextMain,
   nextpage,
@@ -11,7 +11,6 @@ import {
   anchorPos,
 } from '../../common/components/Layout/style';
 import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
-import Head from 'next/head';
 
 const Next = (): JSX.Element => {
   return (

@@ -1,7 +1,6 @@
+import Head from 'next/head';
 import Article from '../../common/components/Article/Article';
-import { insideLink } from '../../common/components/Article/ArticleHead/articleHeaderStyle';
-import { mainLayer } from '../../common/components/Article/CodeBrowser/codes/3layer';
-import { drymain } from '../../common/components/Article/CodeBrowser/codes/dry';
+
 import {
   githubLinkCaption,
   anchorPos,
@@ -9,7 +8,6 @@ import {
 import TextLink from '../../common/components/Article/textLink/TextLink';
 import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
 import { normMain } from '../../common/components/Article/CodeBrowser/codes/norm';
-import Head from 'next/head';
 
 const JWT = (): JSX.Element => {
   return (
@@ -94,7 +92,7 @@ const JWT = (): JSX.Element => {
           titleContent: 'Database Normalization',
           logo: <span>💾</span>,
           desc:
-            'Database normalization is the process of structuring a relational databasein accordance with a series of so-called normal forms in order to reduce data redundancy and improve data integrity',
+            'Database normalization is the process of structuring a relational database in accordance with a series of so-called normal forms in order to reduce data redundancy and improve data integrity',
           wiki: 'https://en.wikipedia.org/wiki/Database_normalization',
           detail: 'Pattern | Database',
         }}

@@ -1,6 +1,6 @@
 import { css } from '@emotion/core';
 import Fade from 'react-reveal/Fade';
-import Flip from 'react-reveal/Flip';
+
 import { FunctionComponent, useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -22,7 +22,6 @@ import {
   homeButton,
   menuIndex,
   returnClick,
-  animeMainTextHeader,
 } from './style';
 
 import { helveticaThin, helveticaMedium } from '../../globalStyle';
@@ -46,7 +45,7 @@ const Menu: TMenu = ({ open, returnHandler }) => {
   const theme = useTheme<ITheme>();
   const router = useRouter();
 
-  const [currentPage, updatePage] = useState('menu');
+  const [currentPage, updatePage] = useState('');
   const [back, updateBack] = useState('');
 
   let catMenu: JSX.Element;
@@ -925,7 +924,7 @@ const Menu: TMenu = ({ open, returnHandler }) => {
               </span>
             </div>
 
-            <Fade left spy={currentPage} duration={1000}>
+            <Fade left spy={currentPage} duration={500}>
               <div css={gameCatMenu}>{catMenu}</div>
             </Fade>
           </div>

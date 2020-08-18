@@ -1,10 +1,10 @@
+import Head from 'next/head';
 import Article from '../../common/components/Article/Article';
 import JWTIcon from '../../common/components/icons/JWT';
 import { jwtmain } from '../../common/components/Article/CodeBrowser/codes/jwt';
 import { githubLinkCaption } from '../../common/components/Layout/style';
 import TextLink from '../../common/components/Article/textLink/TextLink';
 import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
-import Head from 'next/head';
 
 const JWT = (): JSX.Element => {
   return (

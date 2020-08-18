@@ -1,8 +1,6 @@
 import { FunctionComponent } from 'react';
 import { useTheme } from 'emotion-theming';
-import { activeSideLink, sideLink, linkBlockWrapp, bigSideLink } from './style';
 
-import CLink from '../CLink';
 import { ITheme } from './Theme';
 
 const HomeSide: FunctionComponent = () => {

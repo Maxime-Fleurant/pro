@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Article from '../../common/components/Article/Article';
 import { dimain } from '../../common/components/Article/CodeBrowser/codes/di';
 import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
@@ -9,7 +10,6 @@ import TextLink from '../../common/components/Article/textLink/TextLink';
 import TypegraphqlIcon from '../../common/components/icons/Typegraphql';
 import TypescriptIcon from '../../common/components/icons/Typescript';
 import NpmIcon from '../../common/components/icons/Npm';
-import Head from 'next/head';
 
 const DI = (): JSX.Element => {
   return (

@@ -1,12 +1,12 @@
+import Head from 'next/head';
 import Article from '../../common/components/Article/Article';
 import PassportIcon from '../../common/components/icons/Passport';
 import { mainpassport } from '../../common/components/Article/CodeBrowser/codes/passport';
 import { githubLinkCaption } from '../../common/components/Layout/style';
 import TextLink from '../../common/components/Article/textLink/TextLink';
 import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
-import Head from 'next/head';
 
-const Passport = () => {
+const Passport = (): JSX.Element => {
   return (
     <>
       <Head>

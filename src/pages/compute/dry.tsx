@@ -1,7 +1,5 @@
 import Head from 'next/head';
 import Article from '../../common/components/Article/Article';
-import { insideLink } from '../../common/components/Article/ArticleHead/articleHeaderStyle';
-import { mainLayer } from '../../common/components/Article/CodeBrowser/codes/3layer';
 import { drymain } from '../../common/components/Article/CodeBrowser/codes/dry';
 import TextLink from '../../common/components/Article/textLink/TextLink';
 import {

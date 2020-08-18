@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
 import { insideLink } from '../../common/components/Article/ArticleHead/articleHeaderStyle';
 import TypescriptIcon from '../../common/components/icons/Typescript';
@@ -18,7 +19,6 @@ import {
   anchorPos,
 } from '../../common/components/Layout/style';
 import JestIcon from '../../common/components/icons/Jest';
-import Head from 'next/head';
 
 const Nest = (): JSX.Element => {
   return (

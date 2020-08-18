@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Fade from 'react-reveal/Fade';
 import { FunctionComponent } from 'react';
 import { useTheme } from 'emotion-theming';
 import { Cell } from '../../Cell/cell';
@@ -8,10 +7,9 @@ import {
   sideWrap,
   sideLink,
   linkBlockWrapp,
-  sidePanelWrap,
   animeMainTextHeader,
 } from '../../Layout/style';
-import { rightSideLink, sideBorder } from './ArticleNavigationStyle';
+import { sideBorder } from './ArticleNavigationStyle';
 import { ITheme } from '../../Layout/Theme';
 
 // Type

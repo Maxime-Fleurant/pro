@@ -1,15 +1,9 @@
-import NovelArticle from '../common/components/NovelArticle';
 import Head from 'next/head';
 import { SimpleCell } from '../common/components/Cell/SimpleCell';
-import ArticleHead from '../common/components/Article/ArticleHead/ArticleHead';
-import { main } from '../common/components/Article/CodeBrowser/codes/apollo';
-import {
-  mainText,
-  bigSubTitle,
-} from '../common/components/Article/ArticleHead/articleHeaderStyle';
+import { bigSubTitle } from '../common/components/Article/ArticleHead/articleHeaderStyle';
 import { contactWrap } from '../common/components/Layout/style';
 
-const King = () => {
+const King = (): JSX.Element => {
   return (
     <>
       <Head>
