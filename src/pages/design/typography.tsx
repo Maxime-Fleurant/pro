@@ -23,6 +23,8 @@ import {
   helveticaLight,
   helveticaThin,
   font64,
+  font104,
+  font89,
 } from '../../common/globalStyle';
 
 const Apollo: FunctionComponent = () => {
@@ -110,26 +112,20 @@ const Apollo: FunctionComponent = () => {
         <Zoom cascade duraction={1500}>
           <div css={wrapTypoWrap}>
             <div css={typoPostWrap}>
-              <div css={[helveticaCondensedBold, textLineHeight, font64]}>
-                Design
-              </div>
-              <div css={[helveticaBold, textLineHeight, font64]}>Design</div>
-              <div css={[helveticaMedium, textLineHeight, font64]}>Design</div>
-              <div css={[helveticaRegular, textLineHeight, font64]}>Design</div>
-              <div css={[helveticaLight, textLineHeight, font64]}>Design</div>
-              <div css={[helveticaThin, textLineHeight, font64]}>Design</div>
+              <div css={[helveticaBold, textLineHeight, font89]}>Design</div>
+              <div css={[helveticaMedium, textLineHeight, font89]}>Design</div>
+              <div css={[helveticaRegular, textLineHeight, font89]}>Design</div>
+              <div css={[helveticaLight, textLineHeight, font89]}>Design</div>
+              <div css={[helveticaThin, textLineHeight, font89]}>Design</div>
             </div>
             <div css={typoPostWrap}>
-              <div css={[helveticaThin, textLineHeight, font64]}>Compute</div>
-              <div css={[helveticaLight, textLineHeight, font64]}>Compute</div>
-              <div css={[helveticaRegular, textLineHeight, font64]}>
+              <div css={[helveticaThin, textLineHeight, font89]}>Compute</div>
+              <div css={[helveticaLight, textLineHeight, font89]}>Compute</div>
+              <div css={[helveticaRegular, textLineHeight, font89]}>
                 Compute
               </div>
-              <div css={[helveticaMedium, textLineHeight, font64]}>Compute</div>
-              <div css={[helveticaBold, textLineHeight, font64]}>Compute</div>
-              <div css={[helveticaCondensedBold, textLineHeight, font64]}>
-                Compute
-              </div>
+              <div css={[helveticaMedium, textLineHeight, font89]}>Compute</div>
+              <div css={[helveticaBold, textLineHeight, font89]}>Compute</div>
             </div>
           </div>
         </Zoom>

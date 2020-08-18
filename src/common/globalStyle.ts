@@ -66,6 +66,7 @@ export const font40 = css({ fontSize: pointSize40 });
 export const font48 = css({ fontSize: pointSize48 });
 export const font56 = css({ fontSize: pointSize56 });
 export const font64 = css({ fontSize: pointSize64 });
+export const font89 = css({ fontSize: pointSize80 });
 export const font104 = css({ fontSize: pointSize104 });
 export const font120 = css({ fontSize: pointSize120 });
 
