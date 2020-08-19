@@ -13,7 +13,6 @@ import {
   logoRow,
   logoRowWrap,
   logoA1,
-  splashTitle,
 } from '../common/components/Layout/style';
 import { helveticaMedium, helveticaRegular } from '../common/globalStyle';
 import { mainText } from '../common/components/Article/ArticleHead/articleHeaderStyle';
@@ -46,11 +45,7 @@ import BabelIcon from '../common/components/icons/Babel';
 import LinuxIcon from '../common/components/icons/Linux';
 import { ITheme } from '../common/components/Layout/Theme';
 import TextLink from '../common/components/Article/textLink/TextLink';
-import {
-  detailButton,
-  detailButtonText,
-  detailButtonLogo,
-} from '../common/components/Category/categoryStyle';
+
 import CategoryItem from '../common/components/Category/CategoryItem';
 
 const Index: FunctionComponent = () => {
@@ -105,7 +100,7 @@ const Index: FunctionComponent = () => {
         tabPos={{ rowStart: 9, rowEnd: 10, columnStart: 1, columnEnd: 25 }}
         mobilPos={{ rowStart: 5, rowEnd: 6, columnStart: 1, columnEnd: 25 }}
       >
-        <Fade left duration={1500} delay={1500}>
+        <Fade left mountOnEnter duration={1500} delay={1500}>
           <div css={[mainText(theme)]}>
             Hi, my name is Maxime Fleurant and i'm a Full-Stack web developer
             based in Paris. This App is intended to be a presentation of the
