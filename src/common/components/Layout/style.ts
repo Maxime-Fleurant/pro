@@ -1467,3 +1467,5 @@ export const wrapTypoWrap = css({
   display: 'flex',
   justifyContent: 'space-evenly',
 });
+
+export const animmm = css({ opacity: 0 });
