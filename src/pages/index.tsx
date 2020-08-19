@@ -100,7 +100,7 @@ const Index: FunctionComponent = () => {
         tabPos={{ rowStart: 9, rowEnd: 10, columnStart: 1, columnEnd: 25 }}
         mobilPos={{ rowStart: 5, rowEnd: 6, columnStart: 1, columnEnd: 25 }}
       >
-        <Fade left mountOnEnter duration={1500} delay={1500}>
+        <Zoom duration={1500} delay={1500}>
           <div css={[mainText(theme)]}>
             Hi, my name is Maxime Fleurant and i'm a Full-Stack web developer
             based in Paris. This App is intended to be a presentation of the
@@ -167,7 +167,7 @@ const Index: FunctionComponent = () => {
             </span>
             .
           </div>
-        </Fade>
+        </Zoom>
       </SimpleCell>
 
       <SimpleCell
