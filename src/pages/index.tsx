@@ -12,10 +12,7 @@ import {
   homeTitle2,
   logoRow,
   logoRowWrap,
-  logoA1,
   animeMainTextHeader,
-  animeDelay,
-  animmm,
 } from '../common/components/Layout/style';
 import { helveticaMedium, helveticaRegular } from '../common/globalStyle';
 import { mainText } from '../common/components/Article/ArticleHead/articleHeaderStyle';
