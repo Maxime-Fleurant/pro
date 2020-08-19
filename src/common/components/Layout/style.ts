@@ -1467,3 +1467,5 @@ export const wrapTypoWrap = css({
   display: 'flex',
   justifyContent: 'space-evenly',
 });
+
+export const delay = css({ animationDelay: '1.5s', animationFillMode: 'both' });
