@@ -14,6 +14,7 @@ import {
   logoRowWrap,
   animeMainTextHeader,
   delay,
+  delay2,
 } from '../common/components/Layout/style';
 import { helveticaMedium, helveticaRegular } from '../common/globalStyle';
 import { mainText } from '../common/components/Article/ArticleHead/articleHeaderStyle';
@@ -178,7 +179,7 @@ const Index: FunctionComponent = () => {
         mobilPos={{ rowStart: 8, rowEnd: 9, columnStart: 1, columnEnd: 25 }}
       >
         <div
-          css={[logoRowWrap, animeMainTextHeader, delay]}
+          css={[logoRowWrap, animeMainTextHeader, delay2]}
           className="  animate__fadeIn  "
         >
           <div css={[logoRow(theme)]}>

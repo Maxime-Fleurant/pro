@@ -1469,3 +1469,5 @@ export const wrapTypoWrap = css({
 });
 
 export const delay = css({ animationDelay: '1.5s', animationFillMode: 'both' });
+
+export const delay2 = css({ animationDelay: '2s', animationFillMode: 'both' });
