@@ -13,6 +13,7 @@ import {
   logoRow,
   logoRowWrap,
   logoA1,
+  animeMainTextHeader,
 } from '../common/components/Layout/style';
 import { helveticaMedium, helveticaRegular } from '../common/globalStyle';
 import { mainText } from '../common/components/Article/ArticleHead/articleHeaderStyle';
@@ -100,74 +101,75 @@ const Index: FunctionComponent = () => {
         tabPos={{ rowStart: 9, rowEnd: 10, columnStart: 1, columnEnd: 25 }}
         mobilPos={{ rowStart: 5, rowEnd: 6, columnStart: 1, columnEnd: 25 }}
       >
-        <Zoom duration={1500} delay={1500}>
-          <div css={[mainText(theme)]}>
-            Hi, my name is Maxime Fleurant and i'm a Full-Stack web developer
-            based in Paris. This App is intended to be a presentation of the
-            technology and design techniques that I use. The app is divided into
-            four segments: Design - Compute - Project - Life. In the compute
-            segment you will find descriptions of the technologies used in
-            different projects, in combinations of what other technologies they
-            are used as well as code snippets I wrote. For more detailed code
-            examples links to the
-            <TextLink
-              outside
-              logo={<span className="icon-github-filled" />}
-              text=" Github "
-              href="https://github.com/Maxime-Fleurant/Next-React-Portefolio"
-            />{' '}
-            repositories of these projects are also available. Most of the
-            artciles revolve around the
-            <TextLink
-              outside
-              logo={<span>👁</span>}
-              text=" Anime Search Project "
-              href="https://anime.maximefleurant.com/"
-            />{' '}
-            which aims to present code examples from Back to Front using
-            different technologies. The
-            <TextLink
-              logo={<span></span>}
-              text=" Life "
-              href="/life/cinema/dreyer"
-            />
-            segment is a presentation of various things i like.
-            <br />
-            <br />
-            This app is built without using any CSS framework. All the CSS /
-            Layout is hand crafted with Emotion Css In JS solution. The layout
-            is based on a
-            <TextLink
-              logo={<span></span>}
-              text=" Grid "
-              href="/design/grid"
-            />{' '}
-            system that I built Using css-grid and Flexbox. The app is
-            statically rendered by
-            <TextLink
-              logo={<span className="icon-react" />}
-              text=" React "
-              href="/compute/react"
-            />{' '}
-            and
-            <TextLink
-              logo={<span className="icon-next-js" />}
-              text=" Next "
-              href="/compute/next"
-            />
-            .
-            <br />
-            <br />
-            You can also install this app as a{' '}
-            <span
-              css={promptState ? helveticaMedium : helveticaRegular}
-              onClick={promptState ? promptt : null}
-            >
-              PWA
-            </span>
-            .
-          </div>
-        </Zoom>
+        <div
+          css={[mainText(theme), animeMainTextHeader]}
+          className="animate__fadeInLeft"
+        >
+          Hi, my name is Maxime Fleurant and i'm a Full-Stack web developer
+          based in Paris. This App is intended to be a presentation of the
+          technology and design techniques that I use. The app is divided into
+          four segments: Design - Compute - Project - Life. In the compute
+          segment you will find descriptions of the technologies used in
+          different projects, in combinations of what other technologies they
+          are used as well as code snippets I wrote. For more detailed code
+          examples links to the
+          <TextLink
+            outside
+            logo={<span className="icon-github-filled" />}
+            text=" Github "
+            href="https://github.com/Maxime-Fleurant/Next-React-Portefolio"
+          />{' '}
+          repositories of these projects are also available. Most of the
+          artciles revolve around the
+          <TextLink
+            outside
+            logo={<span>👁</span>}
+            text=" Anime Search Project "
+            href="https://anime.maximefleurant.com/"
+          />{' '}
+          which aims to present code examples from Back to Front using different
+          technologies. The
+          <TextLink
+            logo={<span></span>}
+            text=" Life "
+            href="/life/cinema/dreyer"
+          />
+          segment is a presentation of various things i like.
+          <br />
+          <br />
+          This app is built without using any CSS framework. All the CSS /
+          Layout is hand crafted with Emotion Css In JS solution. The layout is
+          based on a
+          <TextLink
+            logo={<span></span>}
+            text=" Grid "
+            href="/design/grid"
+          />{' '}
+          system that I built Using css-grid and Flexbox. The app is statically
+          rendered by
+          <TextLink
+            logo={<span className="icon-react" />}
+            text=" React "
+            href="/compute/react"
+          />{' '}
+          and
+          <TextLink
+            logo={<span className="icon-next-js" />}
+            text=" Next "
+            href="/compute/next"
+          />
+          .
+          <br />
+          <br />
+          You can also install this app as a{' '}
+          <span
+            css={promptState ? helveticaMedium : helveticaRegular}
+            onClick={promptState ? promptt : null}
+          >
+            PWA
+          </span>
+          .
+        </div>
       </SimpleCell>
 
       <SimpleCell
