@@ -101,7 +101,7 @@ const Index: FunctionComponent = () => {
         mobilPos={{ rowStart: 5, rowEnd: 6, columnStart: 1, columnEnd: 25 }}
       >
         <div
-          css={[mainText(theme), animeMainTextHeader, animmm]}
+          css={[mainText(theme), animeMainTextHeader]}
           className="animate__animated animate__fadeIn animate__delay-2s"
         >
           Hi, my name is Maxime Fleurant and i'm a Full-Stack web developer
