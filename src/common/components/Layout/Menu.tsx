@@ -548,6 +548,15 @@ const Menu: TMenu = ({ open, returnHandler }) => {
         >
           Anime <span>👁</span>
         </a>
+
+        <a
+          css={aMenuLink}
+          href="https://quantum.maximefleurant.com/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          QuanTum <span>🛰</span>
+        </a>
         {/* </div> */}
 
         {/* <div onClick={returnHandlerInside}> */}

@@ -118,6 +118,15 @@ const ComputeSide: FunctionComponent = () => {
         >
           <a>Next</a>
         </CLink>
+
+        <a
+          href="https://quantum.maximefleurant.com/"
+          target="_blank"
+          rel="noreferrer"
+          css={sideLink(theme)}
+        >
+          3D
+        </a>
       </div>
 
       <div css={linkBlockWrapp}>
