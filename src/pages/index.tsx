@@ -1003,7 +1003,7 @@ const Index: FunctionComponent = () => {
           name="PassportJS"
           logo={<PassportIcon />}
           detail="Simple, unobtrusive authentication for Node.js"
-          href="/compute/passportjs"
+          href="/compute/passport"
         />
       </SimpleCell>
 

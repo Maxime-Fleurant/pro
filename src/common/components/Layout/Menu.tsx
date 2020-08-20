@@ -22,6 +22,7 @@ import {
   homeButton,
   menuIndex,
   returnClick,
+  cancelMargin,
 } from './style';
 
 import { helveticaThin, helveticaMedium } from '../../globalStyle';
@@ -199,7 +200,7 @@ const Menu: TMenu = ({ open, returnHandler }) => {
         <Link href="/contact">
           <div onClick={returnHandlerInside}>
             <a css={withinButton} href="/contact">
-              <span css={withingButtonText}>Contact</span>
+              <span css={[withingButtonText, cancelMargin]}>Contact</span>
             </a>
           </div>
         </Link>
