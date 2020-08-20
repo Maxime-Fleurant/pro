@@ -838,7 +838,7 @@ const Index: FunctionComponent = () => {
           name="Next"
           logo={<span className="icon-next-js" />}
           detail="Server Side Rendering for react App"
-          href="/compute/emotion"
+          href="/compute/next"
         />
       </SimpleCell>
 
@@ -928,7 +928,7 @@ const Index: FunctionComponent = () => {
           name="DRY"
           logo={<span>🌵</span>}
           detail="Don't repeat yourself (DRY, or sometimes do not repeat yourself)"
-          href="/compute/neo4j"
+          href="/compute/dry"
         />
       </SimpleCell>
 
@@ -943,7 +943,7 @@ const Index: FunctionComponent = () => {
           name="Dependencies Injection"
           logo={<span>🧱</span>}
           detail="Inversion of Control Containers using  Dependencies Injection"
-          href="/compute/dbnormalization"
+          href="/compute/di"
         />
       </SimpleCell>
 
@@ -958,7 +958,7 @@ const Index: FunctionComponent = () => {
           name="TypeDI"
           logo={<span>⚙️</span>}
           detail="Simple yet powerful dependency injection tool for JavaScript and TypeScript"
-          href="/compute/3layer"
+          href="/compute/typedi"
         />
       </SimpleCell>
 
@@ -973,7 +973,7 @@ const Index: FunctionComponent = () => {
           name="Jest"
           logo={<JestIcon />}
           detail="Jest is a delightful JavaScript Testing Framework with a focus on simplicity"
-          href="/compute/neo4j"
+          href="/compute/jest"
         />
       </SimpleCell>
 
@@ -988,7 +988,7 @@ const Index: FunctionComponent = () => {
           name="Docker"
           logo={<span className="icon-docker-icon" />}
           detail="Define and run multi-container applications with Docker"
-          href="/compute/dbnormalization"
+          href="/compute/docker"
         />
       </SimpleCell>
 
@@ -1003,7 +1003,7 @@ const Index: FunctionComponent = () => {
           name="PassportJS"
           logo={<PassportIcon />}
           detail="Simple, unobtrusive authentication for Node.js"
-          href="/compute/neo4j"
+          href="/compute/passportjs"
         />
       </SimpleCell>
 
@@ -1018,7 +1018,7 @@ const Index: FunctionComponent = () => {
           name="JWT"
           logo={<JWTIcon />}
           detail="JSON Web Tokens are an open, industry standard RFC 7519 method for representing claims securely between two parties"
-          href="/compute/dbnormalization"
+          href="/compute/jwt"
         />
       </SimpleCell>
 
@@ -1033,7 +1033,7 @@ const Index: FunctionComponent = () => {
           name="Color"
           logo={<span>🎨</span>}
           detail="Any ground subtracts its own hue from the colors which it carries and therefore influences"
-          href="/compute/dbnormalization"
+          href="/design/color"
         />
       </SimpleCell>
 
@@ -1048,7 +1048,7 @@ const Index: FunctionComponent = () => {
           name="Grid"
           logo={<span>📐</span>}
           detail="The use of the grid implies the will to cultivate objectivity instead of subjectivity"
-          href="/compute/neo4j"
+          href="/design/grid"
         />
       </SimpleCell>
 
@@ -1064,7 +1064,7 @@ const Index: FunctionComponent = () => {
           logo={<span>💠</span>}
           detail="Every drawing can be understood as a motion study since it is a path
           of motion recorded by graphic means"
-          href="/compute/dbnormalization"
+          href="/design/motion"
         />
       </SimpleCell>
 
@@ -1079,7 +1079,7 @@ const Index: FunctionComponent = () => {
           name="Typography"
           logo={<span>🖋</span>}
           detail="The whole point with type is for you not to be aware it is there. If you remember the shape of a spoon with which you just ate some soup, then the spoon had a poor shape"
-          href="/compute/dbnormalization"
+          href="/design/typography"
         />
       </SimpleCell>
     </>
