@@ -207,9 +207,14 @@ const FilmArticle: TFilmArticle = ({ director, directorWiki, films }) => {
         >
           <div css={videoWrap}>
             <Fade bottom duration={1500}>
-              <YouTube
-                videoId={film.videoId}
-                opts={{ height: '100%', width: '100%' }}
+              <iframe
+                title="fldk"
+                width="100%"
+                height="100%"
+                src={`https://www.youtube.com/embed/${film.videoId}`}
+                frameBorder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
               />
             </Fade>
           </div>
