@@ -1401,6 +1401,7 @@ export const animeMobileH = css`
 `;
 
 export const animeMainTextHeader = css({ animationDuration: '1.5s' });
+export const animeMain22 = css({ animationDuration: '2.5s' });
 
 export const screenImage = css`
   background-size: cover;
@@ -1470,6 +1471,9 @@ export const wrapTypoWrap = css({
 
 export const delay = css({ animationDelay: '1.5s', animationFillMode: 'both' });
 
-export const delay2 = css({ animationDelay: '2s', animationFillMode: 'both' });
+export const delay2 = css({
+  animationDelay: '1.5s',
+  animationFillMode: 'both',
+});
 
 export const cancelMargin = css({ marginRight: 0 });

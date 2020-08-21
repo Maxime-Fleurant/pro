@@ -15,6 +15,7 @@ import {
   animeMainTextHeader,
   delay,
   delay2,
+  animeMain22,
 } from '../common/components/Layout/style';
 import { helveticaMedium, helveticaRegular } from '../common/globalStyle';
 import { mainText } from '../common/components/Article/ArticleHead/articleHeaderStyle';
@@ -103,8 +104,8 @@ const Index: FunctionComponent = () => {
         mobilPos={{ rowStart: 5, rowEnd: 6, columnStart: 1, columnEnd: 25 }}
       >
         <div
-          css={[mainText(theme), animeMainTextHeader, delay]}
-          className=" animate__fadeInLeft "
+          css={[mainText(theme), animeMain22, delay2]}
+          className=" animate__fadeIn "
         >
           Hi, my name is Maxime Fleurant and i'm a Full-Stack web developer
           based in Paris. This App is intended to be a presentation of the
@@ -179,7 +180,7 @@ const Index: FunctionComponent = () => {
         mobilPos={{ rowStart: 8, rowEnd: 9, columnStart: 1, columnEnd: 25 }}
       >
         <div
-          css={[logoRowWrap, animeMainTextHeader, delay2]}
+          css={[logoRowWrap, animeMain22, delay2]}
           className="  animate__fadeIn  "
         >
           <div css={[logoRow(theme)]}>
