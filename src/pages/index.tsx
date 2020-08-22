@@ -1,8 +1,6 @@
 import Link from 'next/link';
 import { FunctionComponent, useEffect, useState } from 'react';
 import Typist from 'react-typist';
-import Fade from 'react-reveal/Fade';
-import Zoom from 'react-reveal/Zoom';
 import Head from 'next/head';
 import { useTheme } from 'emotion-theming';
 import { SimpleCell } from '../common/components/Cell/SimpleCell';
@@ -12,8 +10,6 @@ import {
   homeTitle2,
   logoRow,
   logoRowWrap,
-  animeMainTextHeader,
-  delay,
   delay2,
   animeMain22,
 } from '../common/components/Layout/style';

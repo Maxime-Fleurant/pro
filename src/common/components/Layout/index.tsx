@@ -141,11 +141,13 @@ const Layout: FunctionComponent = ({ children }) => {
           />
 
           <Link href="/">
-            <div css={[logo, centerLogo]}>
-              <div css={[logoAnimeHeader, animeMobileH]}>
-                <LogoAnime />
+            <a href="/" onClick={menuOpen ? menuHandler : null}>
+              <div css={[logo, centerLogo]}>
+                <div css={[logoAnimeHeader, animeMobileH]}>
+                  <LogoAnime />
+                </div>
               </div>
-            </div>
+            </a>
           </Link>
 
           <span
@@ -159,22 +161,26 @@ const Layout: FunctionComponent = ({ children }) => {
       <div css={[navWrap(theme), navCell]}>
         <div css={nav}>
           <Link href="/">
-            <div css={logo}>
-              <div css={logoAnimeHeader}>
-                <LogoAnime />
+            <a href="/" onClick={menuOpen ? menuHandler : null}>
+              <div css={logo}>
+                <div css={logoAnimeHeader}>
+                  <LogoAnime />
+                </div>
+                <span>
+                  <span
+                    css={[logoPart, theme.text.textColor700, helveticaThin]}
+                  >
+                    Design,
+                  </span>
+                  <br />
+                  <span
+                    css={[logoPart, theme.text.textColor900, helveticaMedium]}
+                  >
+                    Compute.
+                  </span>
+                </span>
               </div>
-              <span>
-                <span css={[logoPart, theme.text.textColor700, helveticaThin]}>
-                  Design,
-                </span>
-                <br />
-                <span
-                  css={[logoPart, theme.text.textColor900, helveticaMedium]}
-                >
-                  Compute.
-                </span>
-              </span>
-            </div>
+            </a>
           </Link>
 
           <div css={flexNavWrap}>

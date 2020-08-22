@@ -1,8 +1,13 @@
 import { FunctionComponent } from 'react';
 import Head from 'next/head';
-import Zoom from 'react-reveal/Zoom';
+import Particles from 'react-tsparticles';
+
+import Fade from 'react-reveal/Fade';
 import { useTheme } from 'emotion-theming';
-import { animeMainTextHeader } from '../../common/components/Layout/style';
+import {
+  animeMainTextHeader,
+  motionPart,
+} from '../../common/components/Layout/style';
 import ArticleNavigation from '../../common/components/Article/Navigation/ArticleNavigation';
 import { SimpleCell } from '../../common/components/Cell/SimpleCell';
 import ArticleHead from '../../common/components/Article/ArticleHead/ArticleHead';
@@ -81,15 +86,71 @@ const Apollo: FunctionComponent = () => {
       </SimpleCell>
 
       <SimpleCell
-        deskPos={{ rowStart: 12, rowEnd: 13, columnStart: 14, columnEnd: 21 }}
-        tabPos={{ rowStart: 8, rowEnd: 9, columnStart: 4, columnEnd: 22 }}
-        mobilPos={{ rowStart: 3, rowEnd: 4, columnStart: 4, columnEnd: 22 }}
+        deskPos={{ rowStart: 12, rowEnd: 13, columnStart: 13, columnEnd: 22 }}
+        tabPos={{ rowStart: 8, rowEnd: 9, columnStart: 1, columnEnd: 25 }}
+        mobilPos={{ rowStart: 3, rowEnd: 4, columnStart: 1, columnEnd: 25 }}
         relative
         ratio={1}
       >
-        <Zoom duration={1500}>
-          <LogoAnimeFull />
-        </Zoom>
+        <div css={motionPart}>
+          <Fade duration={1500}>
+            <Particles
+              id="tsparticles"
+              options={{
+                fpsLimit: 60,
+                interactivity: {
+                  detectsOn: 'window',
+                  events: {
+                    onHover: {
+                      enable: true,
+                      mode: 'grab',
+                    },
+                    resize: true,
+                  },
+                  modes: {
+                    grab: {
+                      distance: 100,
+                    },
+                  },
+                },
+                particles: {
+                  color: {
+                    value: theme.base.baseColor900,
+                  },
+                  links: {
+                    color: theme.base.baseColor600,
+                    distance: 120,
+                    enable: true,
+                    opacity: 0.5,
+                    width: 0.5,
+                  },
+
+                  move: {
+                    direction: 'none',
+                    enable: true,
+                    outMode: 'bounce',
+                    random: false,
+                    speed: 2.5,
+                    straight: false,
+                  },
+                  number: {
+                    value: 60,
+                  },
+                  opacity: {
+                    value: 1,
+                  },
+                  shape: {
+                    type: 'edge',
+                  },
+                  size: {
+                    value: 1,
+                  },
+                },
+                detectRetina: true,
+              }}
+            />
+          </Fade>
+        </div>
       </SimpleCell>
     </>
   );

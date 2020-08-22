@@ -1472,8 +1472,28 @@ export const wrapTypoWrap = css({
 export const delay = css({ animationDelay: '1.5s', animationFillMode: 'both' });
 
 export const delay2 = css({
-  animationDelay: '1.5s',
+  animationDelay: '2s',
   animationFillMode: 'both',
 });
 
 export const cancelMargin = css({ marginRight: 0 });
+
+export const motionPart = css(
+  { width: '100%', height: '100%' },
+  css`
+    .react-reveal {
+      width: 100%;
+      height: 100%;
+    }
+    #tsparticles {
+      width: 100%;
+      height: 100%;
+    }
+  `
+);
+
+export const menuwrappp = (theme: ITheme): SerializedStyles =>
+  css(
+    { position: 'fixed', height: '100%', width: '100%' },
+    theme.background.backgroundColor100
+  );

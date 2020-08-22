@@ -929,7 +929,10 @@ const Menu: TMenu = ({ open, returnHandler }) => {
               >
                 <span className="icon-outline-arrow-back-ios" />
               </span>
-              <span css={returnButton(theme)} onClick={returnHome}>
+              <span
+                css={returnButton(theme)}
+                onClick={back ? returnHome : returnHandlerInside}
+              >
                 <span className="icon-home-filled" css={homeButton} />
               </span>
             </div>
