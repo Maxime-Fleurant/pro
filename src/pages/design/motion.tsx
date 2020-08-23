@@ -13,7 +13,6 @@ import { SimpleCell } from '../../common/components/Cell/SimpleCell';
 import ArticleHead from '../../common/components/Article/ArticleHead/ArticleHead';
 import { mainText } from '../../common/components/Article/ArticleHead/articleHeaderStyle';
 import { ITheme } from '../../common/components/Layout/Theme';
-import LogoAnimeFull from '../../common/components/Layout/logoAnimeFull';
 
 const Apollo: FunctionComponent = () => {
   const theme = useTheme<ITheme>();

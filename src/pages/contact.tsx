@@ -29,7 +29,11 @@ const King = (): JSX.Element => {
         mobilPos={{ rowStart: 9, rowEnd: 10, columnStart: 1, columnEnd: 25 }}
       >
         <div css={mainText}>
-          <div css={contactWrap}>maximefleurant.pro@gmail.com </div>
+          <div css={contactWrap}>
+            <a href="mailto:maximefleurant.pro@gmail.com">
+              maximefleurant.pro@gmail.com
+            </a>
+          </div>
         </div>
       </SimpleCell>
 

@@ -4,7 +4,6 @@ import Typist from 'react-typist';
 import Head from 'next/head';
 import { useTheme } from 'emotion-theming';
 import { SimpleCell } from '../common/components/Cell/SimpleCell';
-import ArticleHead from '../common/components/Article/ArticleHead/ArticleHead';
 import {
   homeTitle,
   homeTitle2,
@@ -12,6 +11,7 @@ import {
   logoRowWrap,
   delay2,
   animeMain22,
+  indexTitle,
 } from '../common/components/Layout/style';
 import { helveticaMedium, helveticaRegular } from '../common/globalStyle';
 import { mainText } from '../common/components/Article/ArticleHead/articleHeaderStyle';
@@ -77,21 +77,17 @@ const Index: FunctionComponent = () => {
         deskPos={{ rowStart: 9, rowEnd: 11, columnStart: 4, columnEnd: 13 }}
         tabPos={{ rowStart: 7, rowEnd: 8, columnStart: 1, columnEnd: 25 }}
         mobilPos={{ rowStart: 2, rowEnd: 3, columnStart: 1, columnEnd: 25 }}
+        extraCss={[indexTitle]}
       >
-        <ArticleHead
-          titleContent={
-            <Typist
-              cursor={{ hideWhenDone: true, hideWhenDoneDelay: 1 }}
-              startDelay={300}
-              avgTypingDelay={100}
-            >
-              <span css={homeTitle}>Design,</span>
-              <br />
-              <span css={homeTitle2}>Compute.</span>
-            </Typist>
-          }
-          bigSub
-        />
+        <Typist
+          cursor={{ hideWhenDone: true, hideWhenDoneDelay: 1 }}
+          startDelay={300}
+          avgTypingDelay={100}
+        >
+          <span css={homeTitle}>Design,</span>
+          <br />
+          <span css={homeTitle2}>Compute.</span>
+        </Typist>
       </SimpleCell>
 
       <SimpleCell
@@ -251,21 +247,13 @@ const Index: FunctionComponent = () => {
             </span>
 
             <span>
-              <a
-                href="https://www.microsoft.com/en-us/windows"
-                target="_blank"
-                rel="noreferrer"
-              >
+              <a href="https://redis.io/" target="_blank" rel="noreferrer">
                 <RedIcon />
               </a>
             </span>
 
             <span>
-              <a
-                href="https://www.microsoft.com/en-us/windows"
-                target="_blank"
-                rel="noreferrer"
-              >
+              <a href="https://ubuntu.com/" target="_blank" rel="noreferrer">
                 <UbIcon />
               </a>
             </span>
@@ -273,11 +261,9 @@ const Index: FunctionComponent = () => {
 
           <div css={[logoRow(theme)]}>
             <span>
-              <Link href="/design/color">
-                <a href="/design/color">
-                  <span className="icon-graphql" />
-                </a>
-              </Link>
+              <a href="https://graphql.org/">
+                <span className="icon-graphql" />
+              </a>
             </span>
 
             <span>

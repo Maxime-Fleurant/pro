@@ -22,6 +22,7 @@ import {
   themeButton,
   themeButtonMobile,
   animeMobileH,
+  footer,
 } from './style';
 import { helveticaThin, helveticaMedium } from '../../globalStyle';
 import ComputeSide from './ComputeSide';
@@ -197,6 +198,14 @@ const Layout: FunctionComponent = ({ children }) => {
             {sidePanel}
 
             {children}
+          </div>
+
+          <div css={footer}>
+            <Link href="/contact">
+              <a href="/contact">
+                Maxime Fleurant Fullstack Javascript web developer Paris
+              </a>
+            </Link>
           </div>
         </div>
       </div>

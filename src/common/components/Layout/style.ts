@@ -28,6 +28,8 @@ import {
   font56,
   pointSize1,
   pointSize2,
+  font104,
+  font120,
 } from '../../globalStyle';
 import { ITheme } from './Theme';
 
@@ -1496,4 +1498,18 @@ export const menuwrappp = (theme: ITheme): SerializedStyles =>
   css(
     { position: 'fixed', height: '100%', width: '100%' },
     theme.background.backgroundColor100
+  );
+
+export const indexTitle = css(font120);
+
+export const footer = (theme: ITheme): SerializedStyles =>
+  css(
+    font20,
+    {
+      margin: `0 ${pointSize48}`,
+      padding: `${pointSize32} 0`,
+      textAlign: 'center',
+    },
+    helveticaLight,
+    theme.text.textColor500
   );
