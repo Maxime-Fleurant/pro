@@ -141,13 +141,13 @@ const Emotion = (): JSX.Element => {
             supported.
             <br />
             <br />
-            J'utilise Emotion comme
+            I use Emotion
             <TextLink
               logo={<Jss />}
               text=" Css In Jss "
               href="/compute/emotion"
             />{' '}
-            solution dans la plupart de mes projets
+            solution in most of my
             <TextLink
               logo={<span className="icon-react" />}
               text=" React "
@@ -158,8 +158,8 @@ const Emotion = (): JSX.Element => {
               logo={<span className="icon-next-js" />}
               text=" Next "
               href="/compute/next"
-            />
-            .
+            />{' '}
+            projects.
             <br />
             <br />
             Live Demo :{' '}
