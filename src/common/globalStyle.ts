@@ -132,3 +132,5 @@ export const imgFit = css({
 export const imgBorder = css({
   border: `0.04rem solid black`,
 });
+
+export const noOpacity = css({ opacity: 0 });

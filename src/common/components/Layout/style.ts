@@ -1500,7 +1500,7 @@ export const menuwrappp = (theme: ITheme): SerializedStyles =>
     theme.background.backgroundColor100
   );
 
-export const indexTitle = css(font120);
+export const indexTitle = css({ height: '10rem' });
 
 export const footer = (theme: ITheme): SerializedStyles =>
   css(

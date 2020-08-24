@@ -1,19 +1,19 @@
 import Link from 'next/link';
-import { FunctionComponent, useEffect, useState } from 'react';
-import Typist from 'react-typist';
+import { FunctionComponent, useEffect, useState, useRef } from 'react';
 import Head from 'next/head';
 import { useTheme } from 'emotion-theming';
+import anime from 'animejs';
 import { SimpleCell } from '../common/components/Cell/SimpleCell';
 import {
-  homeTitle,
-  homeTitle2,
   logoRow,
   logoRowWrap,
-  delay2,
-  animeMain22,
   indexTitle,
 } from '../common/components/Layout/style';
-import { helveticaMedium, helveticaRegular } from '../common/globalStyle';
+import {
+  helveticaMedium,
+  helveticaRegular,
+  noOpacity,
+} from '../common/globalStyle';
 import { mainText } from '../common/components/Article/ArticleHead/articleHeaderStyle';
 import NpmIcon from '../common/components/icons/Npm';
 import JWTIcon from '../common/components/icons/JWT';
@@ -46,6 +46,7 @@ import { ITheme } from '../common/components/Layout/Theme';
 import TextLink from '../common/components/Article/textLink/TextLink';
 
 import CategoryItem from '../common/components/Category/CategoryItem';
+import LogoSvg from '../common/components/splash/Logo';
 
 const Index: FunctionComponent = () => {
   const theme = useTheme<ITheme>();
@@ -56,6 +57,9 @@ const Index: FunctionComponent = () => {
   const promptt = () => {
     promptState.prompt();
   };
+
+  const textDesc = useRef(null);
+  const LogoDesc = useRef(null);
 
   useEffect(() => {
     window.addEventListener('beforeinstallprompt', (e) => {
@@ -68,26 +72,58 @@ const Index: FunctionComponent = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  useEffect(() => {
+    const tl = anime.timeline({
+      easing: 'easeInOutSine',
+    });
+
+    tl.add({
+      targets: '.ma path',
+      strokeDashoffset: [anime.setDashoffset, 0],
+      stroke: theme.base.baseColor500,
+      duration: 1000,
+      delay: anime.stagger(100),
+    });
+
+    tl.add({
+      targets: '.ma path',
+      strokeDashoffset: [0, anime.setDashoffset],
+      duration: 1000,
+      fillOpacity: 1,
+      delay: anime.stagger(100),
+    });
+
+    tl.add(
+      {
+        targets: textDesc.current,
+        duration: 1500,
+        opacity: 1,
+      },
+      1000
+    );
+
+    tl.add(
+      {
+        targets: LogoDesc.current,
+        duration: 1500,
+        opacity: 1,
+      },
+      1500
+    );
+  }, []);
+
   return (
     <>
       <Head>
         <title>Maxime Fleurant Full Stack Developement Paris</title>
       </Head>
       <SimpleCell
-        deskPos={{ rowStart: 9, rowEnd: 11, columnStart: 4, columnEnd: 13 }}
-        tabPos={{ rowStart: 7, rowEnd: 8, columnStart: 1, columnEnd: 25 }}
-        mobilPos={{ rowStart: 2, rowEnd: 3, columnStart: 1, columnEnd: 25 }}
+        deskPos={{ rowStart: 9, rowEnd: 11, columnStart: 4, columnEnd: 12 }}
+        tabPos={{ rowStart: 7, rowEnd: 8, columnStart: 1, columnEnd: 20 }}
+        mobilPos={{ rowStart: 2, rowEnd: 3, columnStart: 1, columnEnd: 20 }}
         extraCss={[indexTitle]}
       >
-        <Typist
-          cursor={{ hideWhenDone: true, hideWhenDoneDelay: 1 }}
-          startDelay={300}
-          avgTypingDelay={100}
-        >
-          <span css={homeTitle}>Design,</span>
-          <br />
-          <span css={homeTitle2}>Compute.</span>
-        </Typist>
+        <LogoSvg />
       </SimpleCell>
 
       <SimpleCell
@@ -95,10 +131,7 @@ const Index: FunctionComponent = () => {
         tabPos={{ rowStart: 9, rowEnd: 10, columnStart: 1, columnEnd: 25 }}
         mobilPos={{ rowStart: 5, rowEnd: 6, columnStart: 1, columnEnd: 25 }}
       >
-        <div
-          css={[mainText(theme), animeMain22, delay2]}
-          className=" animate__fadeIn "
-        >
+        <div css={[mainText(theme), noOpacity]} ref={textDesc}>
           Hi, my name is Maxime Fleurant and i'm a Full-Stack web developer
           based in Paris. This App is intended to be a presentation of the
           technology and design techniques that I use. The app is divided into
@@ -114,7 +147,7 @@ const Index: FunctionComponent = () => {
             href="https://github.com/Maxime-Fleurant/Next-React-Portefolio"
           />{' '}
           repositories of these projects are also available. Most of the
-          artciles revolve around the
+          articles revolve around the
           <TextLink
             outside
             logo={<span>👁</span>}
@@ -171,10 +204,7 @@ const Index: FunctionComponent = () => {
         tabPos={{ rowStart: 11, rowEnd: 12, columnStart: 1, columnEnd: 25 }}
         mobilPos={{ rowStart: 8, rowEnd: 9, columnStart: 1, columnEnd: 25 }}
       >
-        <div
-          css={[logoRowWrap, animeMain22, delay2]}
-          className="  animate__fadeIn  "
-        >
+        <div css={[logoRowWrap, noOpacity]} ref={LogoDesc}>
           <div css={[logoRow(theme)]}>
             <span>
               <a
